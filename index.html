@@ -89,9 +89,74 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--black); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: none;
+      padding: 4px;
+      z-index: 200;
+      position: relative;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--black);
+      transition: transform 0.35s cubic-bezier(.16,1,.3,1), opacity 0.2s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* ── HERO ── */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(14,14,14,0.3);
+      z-index: 98;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .nav-overlay.visible { opacity: 1; }
+
+    @media (max-width: 900px) {
+      .nav-hamburger { display: flex; }
+      .nav-overlay { display: block; }
+
+      .nav-links {
+        position: fixed;
+        top: 0; right: 0;
+        width: 72vw;
+        max-width: 300px;
+        height: 100dvh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0;
+        padding: 80px 40px 40px;
+        z-index: 99;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(.16,1,.3,1);
+        border-left: 1px solid var(--line);
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links li { width: 100%; border-bottom: 1px solid var(--line); }
+      .nav-links a {
+        display: block;
+        padding: 20px 0;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        color: var(--black);
+      }
+    }
     #hero {
       min-height: 100vh;
       display: grid;
@@ -478,7 +543,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 24px 24px; }
+      nav { padding: 20px 24px; }
       #hero { grid-template-columns: 1fr; padding: 0 24px 80px; padding-top: 100px; gap: 60px; }
       .hero-right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 32px; }
       #services { padding: 80px 24px; }
@@ -509,13 +574,17 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">디자인 쿨쿨쿨</a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Work</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services" class="nav-close">Services</a></li>
+      <li><a href="#portfolio" class="nav-close">Work</a></li>
+      <li><a href="#process" class="nav-close">Process</a></li>
+      <li><a href="#contact" class="nav-close">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
 
   <!-- HERO -->
   <section id="hero">
@@ -707,6 +776,30 @@
   </footer>
 
   <script>
+    // ── HAMBURGER MENU ──
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks  = document.getElementById('navLinks');
+    const overlay   = document.getElementById('navOverlay');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      navLinks.classList.add('open');
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.nav-close').forEach(a => a.addEventListener('click', closeMenu));
+
     // ── CUSTOM CURSOR ──
     const cursor = document.getElementById('cursor');
     const ring   = document.getElementById('cursorRing');

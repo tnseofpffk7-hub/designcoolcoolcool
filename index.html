@@ -512,6 +512,31 @@
     }
     .form-submit:hover { background: #2a2a2a; gap: 20px; }
 
+    .form-success-msg {
+      background: #edf4ee;
+      color: #2d6a3f;
+      border: 1px solid #b7dbbe;
+      padding: 16px 20px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .form-error-msg {
+      background: #fdf0f0;
+      color: #9b2c2c;
+      border: 1px solid #f5c0c0;
+      padding: 16px 20px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .field-error {
+      font-size: 12px;
+      color: #9b2c2c;
+      margin-top: 4px;
+      display: block;
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--line);
@@ -767,23 +792,37 @@
           📱 카카오톡 @esuy
         </p>
       </div>
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div data-fs-success style="display:none;" class="form-success-msg">
+        ✓ 문의가 전송되었습니다. 곧 연락드릴게요!
+      </div>
+      <div data-fs-error style="display:none;" class="form-error-msg">
+        전송 중 오류가 발생했습니다. 다시 시도해주세요.
+      </div>
+      <form id="contact-form" class="contact-form reveal">
         <div class="form-field">
           <label>이름 / Name</label>
-          <input type="text" placeholder="홍길동" required />
+          <input type="text" name="name" placeholder="홍길동" required data-fs-field />
+          <span data-fs-error="name" class="field-error"></span>
         </div>
         <div class="form-field">
           <label>이메일 / Email</label>
-          <input type="email" placeholder="hello@company.com" required />
+          <input type="email" name="email" placeholder="hello@company.com" required data-fs-field />
+          <span data-fs-error="email" class="field-error"></span>
         </div>
         <div class="form-field">
           <label>프로젝트 내용</label>
-          <textarea placeholder="어떤 프로젝트인지 간단히 알려주세요(예산/ 레퍼런스 사이트/ 요구사항)." rows="4"></textarea>
+          <textarea name="message" placeholder="어떤 프로젝트인지 간단히 알려주세요(예산/ 레퍼런스 사이트/ 요구사항)." rows="4" data-fs-field></textarea>
+          <span data-fs-error="message" class="field-error"></span>
         </div>
-        <button type="submit" class="form-submit">
+        <button type="submit" class="form-submit" data-fs-submit-btn>
           문의 보내기 <span>→</span>
         </button>
       </form>
+      <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contact-form', formId: 'xwvaoybd' });
+      </script>
+      <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     </div>
   </section>
 
@@ -859,18 +898,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ── FORM SUBMIT ──
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = '✓ 전송 완료';
-      btn.style.background = '#4a7c59';
-      setTimeout(() => {
-        btn.innerHTML = '문의 보내기 <span>→</span>';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
   </script>
 </body>
 </html>

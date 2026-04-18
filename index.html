@@ -6,18 +6,18 @@
   <title>디자인 쿨쿨쿨</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --black: #0e0e0e;
       --white: #f5f4f0;
-      --grey: #9a9791;
+      --grey: #2a2825;
       --accent: #c8b89a;
       --line: #e2e0da;
       --font-display: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -301,7 +301,7 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
     }
     .service-item {
@@ -571,6 +571,10 @@
       footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
     }
     @media (max-width: 1100px) and (min-width: 901px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-item:nth-child(2) { border-right: none; }
+      .service-item:nth-child(3) { border-top: 1px solid var(--line); }
+      .service-item:nth-child(4) { border-top: 1px solid var(--line); border-right: none; }
       .behance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .be-frame-wrap:last-child { border-right: none; border-top: 1px solid var(--line); grid-column: 1 / -1; aspect-ratio: auto; height: 316px; }
     }
@@ -659,10 +663,18 @@
           <span class="tag">Proposal</span>
         </div>
       </div>
+      <div class="service-item reveal" style="transition-delay: 0.3s">
+        <div class="service-num">04</div>
+        <h3 class="service-title">Instagram Integration</h3>
+        <p class="service-desc">인스타그램 연동을 통해 관리자의 번거로움을 최소화, 방문자에게 언제나 브랜드의 생생한 활동을 전달합니다.</p>
+        <div class="service-tags">
+          <span class="tag">Instagram</span>
+          <span class="tag">Auto-sync</span>
+          <span class="tag">Live Feed</span>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="portfolio-header reveal">
       <h2 class="section-title">Selected<br><em style="font-style:italic;color:var(--grey)">Work</em></h2>

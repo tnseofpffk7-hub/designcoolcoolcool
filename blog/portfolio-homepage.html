@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>포트폴리오 홈페이지 제작 전에 꼭 알아야 할 것 5가지 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="단순히 작업물을 나열한 페이지가 아니라, 클라이언트를 설득하는 포트폴리오 웹사이트를 만들려면 무엇이 필요할까요? 핵심 5가지를 정리했습니다." />
+  <meta property="og:title" content="포트폴리오 홈페이지 제작 전에 꼭 알아야 할 것 5가지 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="클라이언트를 설득하는 포트폴리오 웹사이트를 만들려면 무엇이 필요할까요?" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/portfolio-homepage" />
+  <meta property="article:published_time" content="2026-04-10" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/portfolio-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "포트폴리오 홈페이지 제작 전에 꼭 알아야 할 것 5가지",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-04-10",
+    "url": "https://designcoolcoolcool.vercel.app/blog/portfolio-homepage"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 32px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .article-wrap { padding: 120px 24px 80px; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+
+  <article class="article-wrap">
+
+    <div class="article-eyebrow">
+      <span>포트폴리오</span>
+      <span>2026. 04. 10</span>
+    </div>
+
+    <h1 class="article-title">포트폴리오 홈페이지 제작 전에<br>꼭 알아야 할 것 5가지</h1>
+
+    <p class="article-lead">단순히 작업물을 나열한 페이지가 아니라, 클라이언트를 설득하는 웹사이트를 만들려면 무엇이 필요할까요? 수십 개의 포트폴리오 사이트를 제작하면서 매번 체크하는 핵심 요소를 정리했습니다.</p>
+
+    <div class="article-body">
+      <p>포트폴리오 홈페이지 제작을 의뢰하는 분들과 이야기하다 보면, 대부분 "작업물만 잘 보여주면 되는 거 아닌가요?"라고 물어봅니다. 맞는 말입니다. 그런데 그 '잘 보여주는 것'이 생각보다 훨씬 전략적인 작업이에요.</p>
+      <p>지금까지 다양한 직군의 프리랜서와 스튜디오의 포트폴리오 사이트를 만들어오면서, 처음부터 제대로 방향을 잡는 것이 얼마나 중요한지 매번 느낍니다. 오늘은 포트폴리오 홈페이지 제작을 시작하기 전에 반드시 짚고 가야 할 5가지를 정리했습니다.</p>
+
+      <h2>1. 타겟 클라이언트를 먼저 정하세요</h2>
+      <p>포트폴리오 사이트는 '모든 사람'을 위한 페이지가 아닙니다. 내가 함께 일하고 싶은 클라이언트가 누구인지를 먼저 정의해야, 그에 맞는 톤과 구성이 나옵니다. 스타트업 대표에게 어필할 사이트와, 대기업 마케팅 팀장에게 어필할 사이트는 완전히 다릅니다.</p>
+      <p><strong>실전 팁:</strong> 내가 가장 잘했다고 생각하는 프로젝트의 클라이언트를 떠올리고, 그 사람이 처음 사이트를 봤을 때 무엇을 느끼기를 바라는지 한 문장으로 써보세요.</p>
+
+      <h2>2. 작업물 선별에 시간을 가장 많이 투자하세요</h2>
+      <p>포트폴리오 홈페이지 제작에서 가장 중요한 작업은 코딩도, 디자인도 아닙니다. 어떤 작업물을 어떤 순서로 보여줄 것인가의 편집 작업입니다. 20개를 다 보여주는 것보다, 가장 잘한 5개를 깊이 있게 설명하는 것이 훨씬 강한 인상을 남깁니다.</p>
+      <p>선별 기준은 세 가지입니다. <strong>결과가 명확한 것</strong>, <strong>내가 하고 싶은 일과 연결되는 것</strong>, <strong>클라이언트의 문제를 어떻게 풀었는지 설명할 수 있는 것</strong>. 이 세 가지를 충족하는 작업물이 포트폴리오의 핵심이 됩니다.</p>
+
+      <h2>3. 모바일 경험을 데스크탑보다 먼저 생각하세요</h2>
+      <p>포트폴리오 사이트를 처음 보게 되는 상황을 생각해보세요. 미팅에서 명함을 받고, 이동 중에 핸드폰으로 검색하는 경우가 대부분입니다. 데스크탑에서 완벽하게 보이는 사이트도, 모바일에서 글자가 깨지거나 이미지가 뭉개지면 첫인상은 끝납니다.</p>
+      <p>포트폴리오 홈페이지 제작 단계에서 모바일 레이아웃을 먼저 설계하고, 데스크탑으로 확장하는 방식을 추천합니다. 이렇게 하면 정보의 우선순위도 자연스럽게 정리됩니다.</p>
+
+      <h2>4. '나는 이런 사람입니다'가 3초 안에 전달되어야 합니다</h2>
+      <p>사이트에 처음 들어온 방문자는 평균 3~5초 안에 '여기가 내가 찾는 곳인가'를 판단합니다. 히어로 섹션의 한 줄 카피, 또는 작업물 썸네일 하나로 그 판단이 이루어집니다. 포트폴리오 홈페이지 제작에서 히어로 영역에 가장 많은 에너지를 쏟아야 하는 이유입니다.</p>
+
+      <h2>5. 문의 경로는 최대한 단순하게</h2>
+      <p>아무리 멋진 포트폴리오라도, 연락하는 과정이 복잡하면 리드를 잃게 됩니다. 이메일 주소 하나, 또는 간단한 문의 폼 하나. 클릭 한 번으로 연락할 수 있어야 합니다. 카카오 채널이나 오픈채팅을 연동하는 것도 좋은 방법입니다.</p>
+      <p>포트폴리오 홈페이지 제작은 결국 '나를 알리는 영업 도구'입니다. 보기 좋은 것도 중요하지만, 실제로 문의로 이어지는 구조를 만드는 것이 더 중요합니다.</p>
+    </div>
+
+    <div class="article-cta">
+      <p>포트폴리오 사이트,<br><em>함께 만들어볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/interior-portfolio-site" class="related-item">
+          <p class="related-tag">인테리어</p>
+          <p class="related-title">인테리어 포트폴리오 사이트, 이렇게 만들어야 수주가 됩니다</p>
+        </a>
+        <a href="/blog/website-cost" class="related-item" style="border-left: 1px solid var(--line); padding-left: 32px;">
+          <p class="related-tag">웹사이트 제작</p>
+          <p class="related-title">포트폴리오 웹사이트 제작 비용, 솔직하게 알려드립니다</p>
+        </a>
+        <a href="/blog/homepage-guide" class="related-item" style="border-left: 1px solid var(--line); padding-left: 32px;">
+          <p class="related-tag">홈페이지 제작</p>
+          <p class="related-title">홈페이지 제작, 어떻게 시작해야 할까요? 업종별 완벽 가이드</p>
+        </a>
+      </div>
+    </section>
+
+  </article>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

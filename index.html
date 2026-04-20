@@ -284,10 +284,13 @@
       animation: scrollDown 1.8s 1.2s ease-in-out infinite;
     }
 
-    /* ── SERVICES ── */
+    /* ── SERVICES (process 레이아웃) ── */
     #services {
       padding: 120px 48px;
       border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
     }
     .section-label {
       font-size: 11px;
@@ -306,48 +309,52 @@
       background: var(--line);
       max-width: 80px;
     }
-    .services-grid {
+    .services-left {
+      /* 좌측 고정 소개 영역 */
+    }
+    .services-right {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 0;
+      align-content: start;
     }
     .service-item {
-      padding: 48px 40px 48px 0;
-      border-right: 1px solid var(--line);
+      padding: 40px;
+      border: 1px solid var(--line);
+      margin: -1px 0 0 -1px;
       transition: background 0.3s;
+      position: relative;
     }
-    .service-item:last-child { border-right: none; padding-right: 0; }
-    .service-item:not(:first-child) { padding-left: 40px; }
+    .service-item:hover { background: #eceae4; }
     .service-num {
       font-family: var(--font-display);
       font-size: 13px;
       color: var(--accent);
-      margin-bottom: 28px;
+      margin-bottom: 16px;
     }
     .service-title {
-      font-family: var(--font-display);
-      font-size: 26px;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-      line-height: 1.2;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
     }
     .service-desc {
       color: var(--grey);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.8;
     }
     .service-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
+      gap: 6px;
+      margin-top: 20px;
     }
     .tag {
       font-size: 11px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       border: 1px solid var(--line);
-      padding: 4px 10px;
+      padding: 3px 8px;
       color: var(--grey);
     }
 
@@ -708,10 +715,11 @@
       nav { padding: 20px 24px; }
       #hero { grid-template-columns: 1fr; padding: 0 24px 80px; padding-top: 100px; gap: 60px; }
       .hero-right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 32px; }
-      #services { padding: 80px 24px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .service-item { border-right: none; border-bottom: 1px solid var(--line); padding: 40px 0; }
-      .service-item:not(:first-child) { padding-left: 0; }
+
+      /* services 모바일 */
+      #services { padding: 80px 24px; grid-template-columns: 1fr; gap: 48px; }
+      .services-right { grid-template-columns: 1fr; }
+
       #portfolio { padding: 80px 24px; }
       .behance-grid { grid-template-columns: 1fr; }
       .be-frame-wrap { border-right: none; border-bottom: 1px solid var(--line); }
@@ -729,10 +737,6 @@
       footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
     }
     @media (max-width: 1100px) and (min-width: 901px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .service-item:nth-child(2) { border-right: none; }
-      .service-item:nth-child(3) { border-top: 1px solid var(--line); }
-      .service-item:nth-child(4) { border-top: 1px solid var(--line); border-right: none; }
       .behance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .be-frame-wrap:last-child { border-right: none; border-top: 1px solid var(--line); grid-column: 1 / -1; aspect-ratio: auto; height: 316px; }
     }
@@ -790,42 +794,49 @@
 
   <!-- SERVICES -->
   <section id="services">
-    <p class="section-label reveal">What I do</p>
-    <div class="services-grid">
+    <div class="services-left reveal">
+      <p class="section-label">What I do</p>
+      <h2 class="section-title" style="font-size:clamp(32px,3.5vw,48px)">One Studio.<br><em style="font-style:italic;color:var(--grey)">Full Ownership.</em></h2>
+      <p style="color:var(--grey);font-size:14px;line-height:1.9;margin-top:28px;">
+        대기업 홍보팀에서 쌓은 브랜드 커뮤니케이션을 웹으로 옮깁니다.<br>
+        기획부터 퍼블리싱, 유지관리까지—<br>한 사람이 처음부터 끝까지 책임집니다.
+      </p>
+    </div>
+    <div class="services-right">
       <div class="service-item reveal">
         <div class="service-num">01</div>
-        <h3 class="service-title">UI/UX Design</h3>
-        <p class="service-desc">사용자 중심의 인터페이스 설계. 와이어프레임부터 애니메이션 프로토타입까지 일관된 디자인 시스템으로 구현합니다.</p>
+        <div class="service-title">UI/UX Design</div>
+        <div class="service-desc">사용자 중심의 인터페이스 설계. 와이어프레임부터 애니메이션 프로토타입까지 일관된 디자인 시스템으로 구현합니다.</div>
         <div class="service-tags">
           <span class="tag">Branding</span>
           <span class="tag">Wireframe</span>
           <span class="tag">Prototyping</span>
         </div>
       </div>
-      <div class="service-item reveal" style="transition-delay: 0.1s">
+      <div class="service-item reveal" style="transition-delay:0.1s">
         <div class="service-num">02</div>
-        <h3 class="service-title">Responsive Publishing</h3>
-        <p class="service-desc">모바일에서도 완벽한 디자인. 인터랙티브 웹사이트 빌드 및 배포, 관리 인수인계까지 담당합니다.</p>
+        <div class="service-title">Responsive Publishing</div>
+        <div class="service-desc">모바일에서도 완벽한 디자인. 인터랙티브 웹사이트 빌드 및 배포, 관리 인수인계까지 담당합니다.</div>
         <div class="service-tags">
           <span class="tag">Responsive</span>
           <span class="tag">CMS</span>
           <span class="tag">Animation</span>
         </div>
       </div>
-      <div class="service-item reveal" style="transition-delay: 0.2s">
+      <div class="service-item reveal" style="transition-delay:0.15s">
         <div class="service-num">03</div>
-        <h3 class="service-title">Brand Web Strategy</h3>
-        <p class="service-desc">클라이언트 제안서, 사이트맵 설계, 카피라이팅까지. 웹 프로젝트의 전 과정을 전략적으로 이끕니다.</p>
+        <div class="service-title">Brand Web Strategy</div>
+        <div class="service-desc">클라이언트 제안서, 사이트맵 설계, 카피라이팅까지. 웹 프로젝트의 전 과정을 전략적으로 이끕니다.</div>
         <div class="service-tags">
           <span class="tag">Sitemap</span>
           <span class="tag">Copywriting</span>
           <span class="tag">Proposal</span>
         </div>
       </div>
-      <div class="service-item reveal" style="transition-delay: 0.3s">
+      <div class="service-item reveal" style="transition-delay:0.2s">
         <div class="service-num">04</div>
-        <h3 class="service-title">Instagram Integration</h3>
-        <p class="service-desc">인스타그램 연동을 통해 관리자의 번거로움을 최소화, 방문자에게 언제나 브랜드의 생생한 활동을 전달합니다.</p>
+        <div class="service-title">Instagram Integration</div>
+        <div class="service-desc">인스타그램 연동을 통해 관리자의 번거로움을 최소화, 방문자에게 언제나 브랜드의 생생한 활동을 전달합니다.</div>
         <div class="service-tags">
           <span class="tag">Instagram</span>
           <span class="tag">Auto-sync</span>

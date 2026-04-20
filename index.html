@@ -172,6 +172,8 @@
         opacity: 1;
       }
     }
+
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: grid;
@@ -385,7 +387,6 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0;
       border: 1px solid var(--line);
-      margin-bottom: 0;
     }
     .be-frame-wrap {
       position: relative;
@@ -405,11 +406,132 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
-    .be-frame-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
+
+    /* ── MAINTENANCE ── */
+    #maintenance {
+      padding: 120px 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    .maintenance-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .maintenance-header-desc {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.8;
+      max-width: 320px;
+      text-align: right;
+    }
+    .maintenance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+    }
+    .maintenance-card {
+      padding: 52px 40px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      transition: background 0.3s;
+    }
+    .maintenance-card:last-child { border-right: none; }
+    .maintenance-card:hover { background: #eceae4; }
+
+    /* 인기 뱃지 */
+    .maintenance-card.featured {
+      background: #eceae4;
+      color: var(--black);
+    }
+    .maintenance-card.featured:hover { background: #BCB5A0; }
+    .maintenance-card.featured .mcard-num { color: var(--accent); }
+    .maintenance-card.featured .mcard-desc,
+    .maintenance-card.featured .mcard-feature { color: var(--grey); }
+    .maintenance-card.featured .mcard-title { color: var(--black); }
+    .maintenance-card.featured .mcard-divider { background: var(--line); }
+    .maintenance-card.featured .mtag {
+      border-color: var(--line);
+      color: var(--grey);
+    }
+
+    .popular-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: #E8E5DE;
+      color: var(--grey);
+      padding: 5px 12px;
+      margin-bottom: 36px;
+    }
+    .popular-badge-placeholder {
+      height: 29px;
+      margin-bottom: 36px;
+    }
+
+    .mcard-num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .mcard-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .mcard-desc {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.85;
+    }
+    .mcard-divider {
+      width: 32px;
+      height: 1px;
+      background: var(--line);
+      margin: 28px 0;
+    }
+    .mcard-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mcard-feature {
+      font-size: 13px;
+      color: var(--grey);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+    .mcard-feature::before {
+      content: '—';
+      font-size: 11px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .mtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .mtag {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      color: var(--grey);
     }
 
     /* ── PROCESS ── */
@@ -594,6 +716,12 @@
       .behance-grid { grid-template-columns: 1fr; }
       .be-frame-wrap { border-right: none; border-bottom: 1px solid var(--line); }
       .be-frame-wrap:last-child { border-bottom: none; }
+      #maintenance { padding: 80px 24px; }
+      .maintenance-header { flex-direction: column; align-items: flex-start; }
+      .maintenance-header-desc { text-align: left; max-width: 100%; }
+      .maintenance-grid { grid-template-columns: 1fr; }
+      .maintenance-card { border-right: none; border-bottom: 1px solid var(--line); }
+      .maintenance-card:last-child { border-bottom: none; }
       #process { padding: 80px 24px; grid-template-columns: 1fr; gap: 48px; }
       .process-right { grid-template-columns: 1fr; }
       #contact { padding: 80px 24px 60px; }
@@ -621,6 +749,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#services" class="nav-close">Services</a></li>
       <li><a href="#portfolio" class="nav-close">Work</a></li>
+      <li><a href="#maintenance" class="nav-close">Maintenance</a></li>
       <li><a href="#process" class="nav-close">Process</a></li>
       <li><a href="#contact" class="nav-close">Contact</a></li>
     </ul>
@@ -705,6 +834,8 @@
       </div>
     </div>
   </section>
+
+  <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="portfolio-header reveal">
       <h2 class="section-title">Selected<br><em style="font-style:italic;color:var(--grey)">Work</em></h2>
@@ -713,7 +844,6 @@
       </a>
     </div>
 
-    <!-- Behance 3열 그리드 embed -->
     <div class="behance-grid reveal">
       <div class="be-frame-wrap">
         <iframe
@@ -746,8 +876,78 @@
         </iframe>
       </div>
     </div>
+  </section>
 
+  <!-- MAINTENANCE -->
+  <section id="maintenance">
+    <div class="maintenance-header reveal">
+      <h2 class="section-title">Site<br><em style="font-style:italic;color:var(--grey)">Maintenance</em></h2>
+      <p class="maintenance-header-desc">
+        런칭 이후에도 브랜드는 계속됩니다.<br>
+        목적에 맞는 플랜으로 사이트를 유지하세요.
+      </p>
+    </div>
 
+    <div class="maintenance-grid">
+
+      <!-- 01 자율관리형 -->
+      <div class="maintenance-card reveal">
+        <div class="popular-badge-placeholder"></div>
+        <div class="mcard-num">01</div>
+        <h3 class="mcard-title">Self-<br>Managed</h3>
+        <p class="mcard-desc">블로그처럼 직접 포트폴리오를 업데이트하는 합리적인 모델. CMS 사용법 인수인계 포함.</p>
+        <div class="mcard-divider"></div>
+        <ul class="mcard-features">
+          <li class="mcard-feature">CMS 직접 편집 권한 제공</li>
+          <li class="mcard-feature">초기 세팅 및 사용법 교육</li>
+          <li class="mcard-feature">콘텐츠 업로드 자율 운영</li>
+        </ul>
+        <div class="mtags">
+          <span class="mtag">CMS</span>
+          <span class="mtag">Self-edit</span>
+          <span class="mtag">Handoff</span>
+        </div>
+      </div>
+
+      <!-- 02 전문관리형 (featured) -->
+      <div class="maintenance-card featured reveal" style="transition-delay:0.1s">
+        <div class="popular-badge">★ 인기</div>
+        <div class="mcard-num">02</div>
+        <h3 class="mcard-title">Pro-<br>Managed</h3>
+        <p class="mcard-desc">월 3시간 내외, 포트폴리오 업로드 약 30개 규모의 수정을 전담합니다.</p>
+        <div class="mcard-divider"></div>
+        <ul class="mcard-features">
+          <li class="mcard-feature">월 3시간 내외 작업량 기준</li>
+          <li class="mcard-feature">텍스트·이미지 무제한 수정</li>
+          <li class="mcard-feature">손 하나 안 대도 늘 최신 상태</li>
+        </ul>
+        <div class="mtags">
+          <span class="mtag">Zero-effort</span>
+          <span class="mtag">Always fresh</span>
+          <span class="mtag">Full-care</span>
+        </div>
+      </div>
+
+      <!-- 03 비즈니스 성장형 -->
+      <div class="maintenance-card reveal" style="transition-delay:0.2s">
+        <div class="popular-badge-placeholder"></div>
+        <div class="mcard-num">03</div>
+        <h3 class="mcard-title">Business<br>Growth</h3>
+        <p class="mcard-desc">전문관리형 서비스에 고급 SEO 최적화와 구글 애널리틱스 통계 분석을 더한 성장 중심 플랜.</p>
+        <div class="mcard-divider"></div>
+        <ul class="mcard-features">
+          <li class="mcard-feature">전문관리형 전 항목 포함</li>
+          <li class="mcard-feature">고급 SEO 최적화 작업</li>
+          <li class="mcard-feature">Google Analytics 월간 리포트</li>
+        </ul>
+        <div class="mtags">
+          <span class="mtag">SEO</span>
+          <span class="mtag">Analytics</span>
+          <span class="mtag">Growth</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- PROCESS -->
@@ -903,7 +1103,6 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
   </script>
 </body>
 </html>

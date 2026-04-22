@@ -5,9 +5,9 @@
   <meta name="google-site-verification" content="h6wbgmaGXe3tFKeiSfSnshYWHOn5EmjgmJqTyGgrCdY" />
     <!-- 네이버콘솔 -->
     <meta name="naver-site-verification" content="d6fcbc8ce66e90b7e670894c6714e8e11fac1f72" />
-<!-- Favicon (이모지) -->
+    <!-- Favicon (이모지) -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
-    
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>디자인 쿨쿨쿨</title>
@@ -19,10 +19,13 @@
 
     :root {
       --black: #0e0e0e;
-      --white: #f5f4f0;
+      --white: #EFF2FA;
       --grey: #2a2825;
-      --accent: #c8b89a;
-      --line: #e2e0da;
+      --accent: #8B9CDA;
+      --accent-mid: #5971CA;
+      --accent-deep: #364FAB;
+      --line: #BDC7EA;
+      --hover-bg: #D4DBEF;
       --font-display: 'DM Serif Display', Georgia, serif;
       --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     }
@@ -58,7 +61,7 @@
     }
     .cursor-ring {
       width: 36px; height: 36px;
-      border: 1px solid var(--black);
+      border: 1px solid var(--accent-deep);
       border-radius: 50%;
       position: fixed;
       top: 0; left: 0;
@@ -102,6 +105,7 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--accent-deep); }
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -151,7 +155,7 @@
         width: 72vw;
         max-width: 300px;
         height: 100dvh;
-        background: #f5f4f0;
+        background: var(--white);
         opacity: 1;
         flex-direction: column;
         justify-content: center;
@@ -243,7 +247,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: var(--black);
+      background: var(--accent-deep);
       color: var(--white);
       text-decoration: none;
       padding: 16px 28px;
@@ -252,7 +256,7 @@
       text-transform: uppercase;
       transition: background 0.3s, gap 0.3s;
     }
-    .hero-cta:hover { background: #2a2a2a; gap: 20px; }
+    .hero-cta:hover { background: var(--accent-mid); gap: 20px; }
     .hero-cta .arrow { font-size: 18px; }
 
     .hero-scroll-hint {
@@ -282,11 +286,11 @@
       position: absolute;
       top: -100%; left: 0;
       width: 100%; height: 100%;
-      background: var(--grey);
+      background: var(--accent-deep);
       animation: scrollDown 1.8s 1.2s ease-in-out infinite;
     }
 
-    /* ── SERVICES (process 레이아웃) ── */
+    /* ── SERVICES ── */
     #services {
       padding: 120px 48px;
       border-bottom: 1px solid var(--line);
@@ -311,9 +315,6 @@
       background: var(--line);
       max-width: 80px;
     }
-    .services-left {
-      /* 좌측 고정 소개 영역 */
-    }
     .services-right {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -327,7 +328,7 @@
       transition: background 0.3s;
       position: relative;
     }
-    .service-item:hover { background: #eceae4; }
+    .service-item:hover { background: var(--hover-bg); }
     .service-num {
       font-family: var(--font-display);
       font-size: 13px;
@@ -388,7 +389,7 @@
       gap: 8px;
       transition: color 0.2s, gap 0.2s;
     }
-    .portfolio-link-out:hover { color: var(--black); gap: 14px; }
+    .portfolio-link-out:hover { color: var(--accent-deep); gap: 14px; }
 
     /* ── BEHANCE 3열 그리드 ── */
     .behance-grid {
@@ -402,7 +403,7 @@
       aspect-ratio: 404 / 316;
       overflow: hidden;
       border-right: 1px solid var(--line);
-      background: #f0ede8;
+      background: #D4DBEF;
     }
     .be-frame-wrap:last-child { border-right: none; }
     .be-frame-wrap iframe {
@@ -449,14 +450,13 @@
       transition: background 0.3s;
     }
     .maintenance-card:last-child { border-right: none; }
-    .maintenance-card:hover { background: #eceae4; }
+    .maintenance-card:hover { background: var(--hover-bg); }
 
-    /* 인기 뱃지 */
     .maintenance-card.featured {
-      background: #eceae4;
+      background: var(--hover-bg);
       color: var(--black);
     }
-    .maintenance-card.featured:hover { background: #D9D5C9; }
+    .maintenance-card.featured:hover { background: var(--line); }
     .maintenance-card.featured .mcard-num { color: var(--accent); }
     .maintenance-card.featured .mcard-desc,
     .maintenance-card.featured .mcard-feature { color: var(--grey); }
@@ -474,8 +474,8 @@
       font-size: 10px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      background: #E8E5DE;
-      color: var(--grey);
+      background: var(--accent);
+      color: #fff;
       padding: 5px 12px;
       margin-bottom: 36px;
     }
@@ -563,7 +563,7 @@
       margin: -1px 0 0 -1px;
       transition: background 0.3s;
     }
-    .process-step:hover { background: #eceae4; }
+    .process-step:hover { background: var(--hover-bg); }
     .step-num {
       font-family: var(--font-display);
       font-size: 11px;
@@ -627,13 +627,13 @@
       resize: none;
     }
     .form-field input:focus,
-    .form-field textarea:focus { border-color: var(--black); }
+    .form-field textarea:focus { border-color: var(--accent-deep); }
     .form-field textarea { min-height: 100px; }
     .form-submit {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: var(--black);
+      background: var(--accent-deep);
       color: var(--white);
       border: none;
       padding: 16px 28px;
@@ -646,7 +646,7 @@
       align-self: flex-start;
       margin-top: 8px;
     }
-    .form-submit:hover { background: #2a2a2a; gap: 20px; }
+    .form-submit:hover { background: var(--accent-mid); gap: 20px; }
 
     .form-success-msg {
       background: #edf4ee;
@@ -691,7 +691,7 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--black); }
+    .footer-links a:hover { color: var(--accent-deep); }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
@@ -718,7 +718,6 @@
       #hero { grid-template-columns: 1fr; padding: 0 24px 80px; padding-top: 100px; gap: 60px; }
       .hero-right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 32px; }
 
-      /* services 모바일 */
       #services { padding: 80px 24px; grid-template-columns: 1fr; gap: 48px; }
       .services-right { grid-template-columns: 1fr; }
 
@@ -902,8 +901,6 @@
     </div>
 
     <div class="maintenance-grid">
-
-      <!-- 01 자율관리형 -->
       <div class="maintenance-card reveal">
         <div class="popular-badge-placeholder"></div>
         <div class="mcard-num">01</div>
@@ -922,7 +919,6 @@
         </div>
       </div>
 
-      <!-- 02 전문관리형 (featured) -->
       <div class="maintenance-card featured reveal" style="transition-delay:0.1s">
         <div class="popular-badge">★ 인기</div>
         <div class="mcard-num">02</div>
@@ -941,7 +937,6 @@
         </div>
       </div>
 
-      <!-- 03 비즈니스 성장형 -->
       <div class="maintenance-card reveal" style="transition-delay:0.2s">
         <div class="popular-badge-placeholder"></div>
         <div class="mcard-num">03</div>
@@ -959,7 +954,6 @@
           <span class="mtag">Growth</span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -1080,7 +1074,7 @@
     overlay.addEventListener('click', closeMenu);
     document.querySelectorAll('.nav-close').forEach(a => a.addEventListener('click', closeMenu));
 
-    // ── CUSTOM CURSOR (데스크탑 전용) ──
+    // ── CUSTOM CURSOR ──
     const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
     const cursor = document.getElementById('cursor');
     const ring   = document.getElementById('cursorRing');

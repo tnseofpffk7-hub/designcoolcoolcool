@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- Favicon (이모지) -->
+   <!-- Favicon (이모지) -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>블로그 — 포트폴리오 웹사이트 제작 가이드 | 디자인 쿨쿨쿨</title>
-  <meta name="description" content="포트폴리오 홈페이지 제작부터 인테리어 포트폴리오 사이트까지. 웹 디자이너 이수연이 직접 쓰는 실전 웹사이트 제작 가이드." />
-  <meta name="keywords" content="포트폴리오 홈페이지 제작, 포트폴리오 웹사이트 제작, 인테리어 포트폴리오 사이트, 웹디자인, 홈페이지 제작 업체" />
-  <meta property="og:title" content="포트폴리오 웹사이트 제작 가이드 | 디자인 쿨쿨쿨" />
-  <meta property="og:description" content="포트폴리오 홈페이지 제작부터 인테리어 포트폴리오 사이트까지. 웹 디자이너 이수연이 직접 쓰는 실전 가이드." />
+  <title>블로그 — 홈페이지 제작 가이드 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="홈페이지 제작 비용부터 포트폴리오, 프랜차이즈, 스타트업, SEO까지 — 웹 디자이너 이수연이 직접 쓰는 실전 홈페이지 제작 가이드." />
+  <meta name="keywords" content="홈페이지 제작, 포트폴리오 홈페이지 제작, 홈페이지 제작 비용, 랜딩페이지 제작, 프랜차이즈 홈페이지" />
+  <meta property="og:title" content="블로그 — 홈페이지 제작 가이드 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="웹 디자이너 이수연이 직접 쓰는 실전 홈페이지 제작 가이드." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog" />
   <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog" />
@@ -18,197 +18,52 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #0e0e0e;
-      --white: #f5f4f0;
-      --grey: #2a2825;
-      --accent: #c8b89a;
-      --line: #e2e0da;
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
       --font-display: 'DM Serif Display', Georgia, serif;
       --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     }
-
     html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
 
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 48px;
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 18px;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      color: var(--black);
-    }
-    .nav-back {
-      text-decoration: none;
-      color: var(--grey);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s, gap 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
     .nav-back:hover { color: var(--black); gap: 14px; }
 
-    /* ── BLOG HERO ── */
-    .blog-hero {
-      padding: 160px 48px 80px;
-      border-bottom: 1px solid var(--line);
-    }
-    .blog-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .blog-eyebrow::after {
-      content: '';
-      width: 40px;
-      height: 1px;
-      background: var(--line);
-    }
-    .blog-hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(40px, 5vw, 72px);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      max-width: 700px;
-    }
+    .blog-hero { padding: 160px 48px 80px; border-bottom: 1px solid var(--line); }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .blog-hero-title { font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px); letter-spacing: -0.03em; line-height: 1.05; max-width: 700px; }
     .blog-hero-title em { font-style: italic; color: var(--grey); }
-    .blog-hero-desc {
-      margin-top: 28px;
-      color: var(--grey);
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 480px;
-    }
+    .blog-hero-desc { margin-top: 28px; color: var(--grey); font-size: 15px; line-height: 1.8; max-width: 480px; }
 
-    /* ── POST LIST ── */
-    .post-list {
-      padding: 0 48px 120px;
-    }
-    .post-item {
-      display: grid;
-      grid-template-columns: 1fr 2fr auto;
-      gap: 48px;
-      align-items: start;
-      padding: 56px 0;
-      border-bottom: 1px solid var(--line);
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.2s;
-    }
+    .post-list { padding: 0 48px 120px; }
+    .post-item { display: grid; grid-template-columns: 1fr 2fr auto; gap: 48px; align-items: start; padding: 56px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; transition: background 0.2s; }
     .post-item:first-child { border-top: 1px solid var(--line); margin-top: 64px; }
     .post-item:hover .post-title { color: var(--grey); }
     .post-item:hover .post-arrow { gap: 20px; }
 
     .post-meta { padding-top: 4px; }
-    .post-num {
-      font-family: var(--font-display);
-      font-size: 13px;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .post-date {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: var(--grey);
-      text-transform: uppercase;
-    }
-    .post-tag {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid var(--line);
-      padding: 4px 10px;
-      color: var(--grey);
-    }
+    .post-num { font-family: var(--font-display); font-size: 13px; color: var(--accent); margin-bottom: 16px; }
+    .post-date { font-size: 12px; letter-spacing: 0.08em; color: var(--grey); text-transform: uppercase; }
+    .post-tag { display: inline-block; margin-top: 12px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--line); padding: 4px 10px; color: var(--grey); }
 
-    .post-title {
-      font-family: var(--font-display);
-      font-size: clamp(22px, 2.4vw, 32px);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      transition: color 0.2s;
-    }
-    .post-excerpt {
-      color: var(--grey);
-      font-size: 14px;
-      line-height: 1.9;
-      max-width: 560px;
-    }
-    .post-arrow {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--black);
-      align-self: center;
-      white-space: nowrap;
-      transition: gap 0.2s;
-    }
+    .post-title { font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 32px); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; transition: color 0.2s; }
+    .post-excerpt { color: var(--grey); font-size: 14px; line-height: 1.9; max-width: 560px; }
+    .post-arrow { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--black); align-self: center; white-space: nowrap; transition: gap 0.2s; }
 
-    /* ── FOOTER ── */
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 32px 48px;
-      border-top: 1px solid var(--line);
-      font-size: 12px;
-      color: var(--grey);
-    }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
     .footer-links { list-style: none; display: flex; gap: 32px; }
-    .footer-links a {
-      text-decoration: none;
-      color: var(--grey);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .footer-links a:hover { color: var(--black); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 20px 24px; }
       .blog-hero { padding: 120px 24px 60px; }
       .post-list { padding: 0 24px 80px; }
-      .post-item {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 40px 0;
-      }
+      .post-item { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
       .post-arrow { display: none; }
       footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
     }
@@ -224,14 +79,53 @@
   <header class="blog-hero">
     <p class="blog-eyebrow">Blog</p>
     <h1 class="blog-hero-title">홈페이지 제작,<br><em>친절한 가이드</em></h1>
-    <p class="blog-hero-desc">포트폴리오 홈페이지 제작부터 인테리어 웹사이트까지 — 실제 프로젝트에서 얻은 인사이트를 공유합니다.</p>
+    <p class="blog-hero-desc">포트폴리오부터 프랜차이즈, 스타트업, 쇼핑몰까지 — 실제 프로젝트에서 건진 인사이트를 공유합니다.</p>
   </header>
 
   <main class="post-list" role="main">
 
-    <a class="post-item" href="/blog/portfolio-homepage">
+    <a class="post-item" href="/blog/homepage-guide">
       <div class="post-meta">
         <div class="post-num">01</div>
+        <div class="post-date">2026. 04. 18</div>
+        <span class="post-tag">홈페이지 제작</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">홈페이지 제작, 어떻게 시작해야 할까요? 업종별 완벽 가이드</h2>
+        <p class="post-excerpt">스튜디오, 스타트업, 프랜차이즈, 포트폴리오까지 — 내 브랜드에 맞는 홈페이지를 제대로 만드는 방법을 웹 디자이너가 직접 알려드립니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/homepage-making-cost">
+      <div class="post-meta">
+        <div class="post-num">02</div>
+        <div class="post-date">2026. 04. 15</div>
+        <span class="post-tag">홈페이지 제작 비용</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">홈페이지 제작 비용, 2026년 기준으로 정리했습니다</h2>
+        <p class="post-excerpt">견적을 받아보면 30만 원부터 1,000만 원까지 범위가 너무 넓습니다. 이 차이가 어디서 오는지, 내 상황에 맞는 예산은 얼마인지 실제 제작자 입장에서 솔직하게 정리해드립니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/homepage-platform">
+      <div class="post-meta">
+        <div class="post-num">03</div>
+        <div class="post-date">2026. 04. 12</div>
+        <span class="post-tag">플랫폼 비교</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">아임웹 vs Wix vs 크리에이터링크, 뭐가 다를까요?</h2>
+        <p class="post-excerpt">홈페이지를 직접 만들려고 할 때 가장 먼저 맞닥뜨리는 질문입니다. 세 플랫폼을 모두 실제로 써본 웹 디자이너 입장에서, 각각 언제 어떤 사람에게 맞는지 정리했습니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/portfolio-homepage">
+      <div class="post-meta">
+        <div class="post-num">04</div>
         <div class="post-date">2026. 04. 10</div>
         <span class="post-tag">포트폴리오</span>
       </div>
@@ -242,41 +136,132 @@
       <div class="post-arrow">읽기 →</div>
     </a>
 
+    <a class="post-item" href="/blog/freelancer-homepage">
+      <div class="post-meta">
+        <div class="post-num">05</div>
+        <div class="post-date">2026. 04. 08</div>
+        <span class="post-tag">프리랜서</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">프리랜서 홈페이지 제작, 이것만 알면 됩니다</h2>
+        <p class="post-excerpt">인스타그램 DM으로 문의를 받다가 어느 순간 한계를 느끼게 됩니다. 홈페이지 하나가 프리랜서의 단가와 신뢰도를 어떻게 바꾸는지, 그리고 무엇을 어떻게 만들어야 하는지 정리했습니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/homepage-seo">
+      <div class="post-meta">
+        <div class="post-num">06</div>
+        <div class="post-date">2026. 04. 05</div>
+        <span class="post-tag">SEO</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</h2>
+        <p class="post-excerpt">홈페이지를 만들었는데 구글에 내 사이트가 나오지 않는다면? 검색 노출은 운이 아니라 구조의 문제입니다. 처음 만들 때부터 SEO를 염두에 두면 훨씬 유리합니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/one-page-homepage">
+      <div class="post-meta">
+        <div class="post-num">07</div>
+        <div class="post-date">2026. 04. 01</div>
+        <span class="post-tag">원페이지</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">원페이지 홈페이지, 언제 만들면 좋을까요?</h2>
+        <p class="post-excerpt">홈페이지를 만들려고 할 때 원페이지로 갈지, 멀티페이지로 갈지 고민하는 분들이 많습니다. 원페이지가 빛나는 경우와, 오히려 독이 되는 경우를 정리했습니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/landing-page-cost">
+      <div class="post-meta">
+        <div class="post-num">08</div>
+        <div class="post-date">2026. 03. 25</div>
+        <span class="post-tag">랜딩페이지</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">랜딩페이지 제작 비용과 업체 선택 기준, 솔직하게 알려드립니다</h2>
+        <p class="post-excerpt">랜딩페이지 제작을 알아보면 50만 원부터 500만 원까지 견적이 천차만별입니다. 무엇이 이 차이를 만드는지, 좋은 랜딩페이지 제작 업체를 고르는 기준은 무엇인지 정리했습니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/franchise-homepage">
+      <div class="post-meta">
+        <div class="post-num">09</div>
+        <div class="post-date">2026. 03. 20</div>
+        <span class="post-tag">프랜차이즈</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">프랜차이즈 홈페이지 제작과 디자인, 이렇게 달라야 합니다</h2>
+        <p class="post-excerpt">프랜차이즈 홈페이지는 일반 브랜드 홈페이지와 목적이 다릅니다. 소비자 신뢰와 가맹점주 모집이라는 두 가지 목표를 동시에 달성해야 합니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/startup-homepage">
+      <div class="post-meta">
+        <div class="post-num">10</div>
+        <div class="post-date">2026. 03. 10</div>
+        <span class="post-tag">스타트업</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">스타트업 홈페이지 제작, 투자자와 고객을 동시에 설득하는 법</h2>
+        <p class="post-excerpt">스타트업 홈페이지는 두 가지 역할을 동시에 해야 합니다. 고객에게는 서비스를, 투자자에게는 가능성을 보여줘야 합니다. 이 두 메시지를 하나의 페이지에 녹이는 방법을 정리했습니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/shopping-mall-homepage">
+      <div class="post-meta">
+        <div class="post-num">11</div>
+        <div class="post-date">2026. 03. 05</div>
+        <span class="post-tag">쇼핑몰</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">쇼핑몰 홈페이지 제작, 아임웹으로 시작하기 전에 알아야 할 것</h2>
+        <p class="post-excerpt">쇼핑몰을 처음 만들 때 가장 많이 고민하는 것이 플랫폼 선택입니다. 아임웹과 카페24, 무엇이 다른지, 그리고 쇼핑몰 홈페이지 제작 전에 반드시 확인해야 할 것들을 정리했습니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
     <a class="post-item" href="/blog/interior-portfolio-site">
       <div class="post-meta">
-        <div class="post-num">02</div>
+        <div class="post-num">12</div>
         <div class="post-date">2026. 03. 28</div>
         <span class="post-tag">인테리어</span>
       </div>
       <div class="post-body">
         <h2 class="post-title">인테리어 포트폴리오 사이트, 이렇게 만들어야 수주가 됩니다</h2>
-        <p class="post-excerpt">인테리어 업계는 '보여주는 것'이 곧 설득입니다. 공간 사진을 그냥 올리는 것과, 이야기로 엮어내는 것은 완전히 다른 결과를 만듭니다. 실제 인테리어 스튜디오 3곳의 사이트를 만들면서 배운 것들을 공유합니다.</p>
+        <p class="post-excerpt">인테리어 업계는 '보여주는 것'이 곧 설득입니다. 공간 사진을 그냥 올리는 것과, 이야기로 엮어내는 것은 완전히 다른 결과를 만듭니다.</p>
+      </div>
+      <div class="post-arrow">읽기 →</div>
+    </a>
+
+    <a class="post-item" href="/blog/homepage-renewal">
+      <div class="post-meta">
+        <div class="post-num">13</div>
+        <div class="post-date">2026. 02. 20</div>
+        <span class="post-tag">홈페이지 리뉴얼</span>
+      </div>
+      <div class="post-body">
+        <h2 class="post-title">홈페이지 리뉴얼, 언제 해야 하고 무엇을 바꿔야 할까요?</h2>
+        <p class="post-excerpt">홈페이지를 만든 지 몇 년이 지났는데 손을 대야 할지 모르겠다는 분들이 많습니다. 리뉴얼이 필요한 시점을 판단하는 기준과 전략을 정리했습니다.</p>
       </div>
       <div class="post-arrow">읽기 →</div>
     </a>
 
     <a class="post-item" href="/blog/website-cost">
       <div class="post-meta">
-        <div class="post-num">03</div>
+        <div class="post-num">14</div>
         <div class="post-date">2026. 03. 14</div>
         <span class="post-tag">웹사이트 제작</span>
       </div>
       <div class="post-body">
         <h2 class="post-title">포트폴리오 웹사이트 제작 비용, 솔직하게 알려드립니다</h2>
         <p class="post-excerpt">외주 견적을 받아보면 왜 이렇게 천차만별일까요? 30만 원짜리와 300만 원짜리 포트폴리오 웹사이트의 차이, 그리고 나에게 맞는 선택이 무엇인지 기준을 드립니다.</p>
-      </div>
-      <div class="post-arrow">읽기 →</div>
-    </a>
-
-     <a class="post-item" href="/blog/homepage-guide">
-      <div class="post-meta">
-        <div class="post-num">04</div>
-        <div class="post-date">2025. 12. 08</div>
-        <span class="post-tag">홈페이지 제작</span>
-      </div>
-      <div class="post-body">
-        <h2 class="post-title">홈페이지 제작, 어떻게 시작해야 할까요? 업종별 완벽 가이드</h2>
-        <p class="post-excerpt">스튜디오, 스타트업, 프랜차이즈, 포트폴리오까지 — 내 브랜드에 맞는 홈페이지를 제대로 만드는 방법을 웹 디자이너가 직접 알려드립니다.</p>
       </div>
       <div class="post-arrow">읽기 →</div>
     </a>

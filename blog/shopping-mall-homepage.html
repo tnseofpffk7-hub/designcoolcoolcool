@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>쇼핑몰 홈페이지 제작, 아임웹으로 시작하기 전에 알아야 할 것 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="쇼핑몰 홈페이지 제작을 고민 중이신가요? 아임웹, 카페24 중 무엇이 맞는지, 꼭 갖춰야 할 기능과 디자인 전략을 정리했습니다." />
+  <meta name="keywords" content="쇼핑몰 홈페이지 제작, 쇼핑몰 만들기, 아임웹 쇼핑몰, 소규모 쇼핑몰 제작, 온라인 쇼핑몰 홈페이지" />
+  <meta property="og:title" content="쇼핑몰 홈페이지 제작, 아임웹으로 시작하기 전에 알아야 할 것 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="아임웹, 카페24 중 무엇이 맞는지, 꼭 갖춰야 할 기능과 디자인 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/shopping-mall-homepage" />
+  <meta property="article:published_time" content="2026-03-05" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/shopping-mall-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "쇼핑몰 홈페이지 제작, 아임웹으로 시작하기 전에 알아야 할 것",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-03-05",
+    "url": "https://designcoolcoolcool.vercel.app/blog/shopping-mall-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .price-table { width: 100%; border-collapse: collapse; margin: 24px 0 40px; font-size: 14px; }
+    .price-table th { text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .price-table td { padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--grey); vertical-align: top; line-height: 1.6; }
+    .price-table td:first-child { font-weight: 500; color: var(--black); width: 30%; padding-right: 24px; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>쇼핑몰</span><span>2026. 03. 05</span></div>
+    <h1 class="article-title">쇼핑몰 홈페이지 제작,<br>아임웹으로 시작하기 전에<br><em>알아야 할 것</em></h1>
+    <p class="article-lead">쇼핑몰을 처음 만들 때 가장 많이 고민하는 것이 플랫폼 선택입니다. 아임웹과 카페24, 무엇이 다른지, 그리고 쇼핑몰 홈페이지 제작 전에 반드시 확인해야 할 것들을 정리했습니다.</p>
+    <div class="article-body">
+      <p>온라인 쇼핑몰을 시작하려면 제품 준비만큼이나 홈페이지 구축이 중요합니다. 아무리 좋은 제품이어도 사이트가 불편하거나 신뢰감이 없으면 구매로 이어지지 않습니다. 특히 처음 방문한 고객에게 '이 쇼핑몰이 믿을 수 있는가'를 순식간에 보여줘야 합니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>아임웹 vs 카페24, 뭘 선택해야 할까요?</h2>
+
+      <table class="price-table">
+        <thead><tr><th>플랫폼</th><th>특징</th><th>추천 대상</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>아임웹</td>
+            <td>디자인 자유도 높음, 홈페이지+쇼핑몰 통합 운영, 직관적인 관리자</td>
+            <td>브랜드 감성이 중요한 소규모 쇼핑몰, 디자인에 신경 쓰고 싶은 경우</td>
+          </tr>
+          <tr>
+            <td>카페24</td>
+            <td>쇼핑몰 특화 기능, 다양한 마켓 연동, 대용량 상품 관리</td>
+            <td>상품 수가 많거나 네이버 스마트스토어와 병행 운영하는 경우</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>브랜드 감성이 중요하고 상품 수가 100개 이하라면 아임웹을 추천합니다. 상품이 많거나 도매·위탁 판매를 병행한다면 카페24가 더 적합합니다.</p>
+      </div>
+
+      <div class="section-num">02</div>
+      <h2>쇼핑몰 홈페이지 제작 전 체크리스트</h2>
+
+      <h3>브랜드 아이덴티티 먼저</h3>
+      <p>쇼핑몰 홈페이지는 제품 나열이 아니라 브랜드 경험입니다. 컬러, 폰트, 사진 톤앤매너가 일관되게 유지될 때 재방문율과 구매 전환율이 높아집니다. 제품 사진의 퀄리티와 통일감이 특히 중요합니다.</p>
+
+      <h3>모바일 구매 경험 우선</h3>
+      <p>온라인 쇼핑의 70% 이상이 모바일에서 이루어집니다. 모바일에서 상품 사진이 크고 선명하게 보이는지, 장바구니와 결제 버튼이 엄지손가락으로 누르기 쉬운 위치에 있는지 반드시 확인하세요.</p>
+
+      <h3>결제 수단 다양화</h3>
+      <p>카카오페이, 네이버페이, 토스페이, 신용카드, 무통장입금까지 가능하면 많은 결제 수단을 지원하세요. 원하는 결제 수단이 없으면 이탈하는 고객이 생각보다 많습니다.</p>
+
+      <ul class="checklist">
+        <li>브랜드 컬러·폰트·사진 톤앤매너 통일</li>
+        <li>모바일 최적화 — 상품 사진, 버튼 크기, 결제 흐름</li>
+        <li>카카오페이·네이버페이 등 다양한 결제 수단</li>
+        <li>상품 상세 페이지 — 소재, 사이즈, 배송 정보 명확하게</li>
+        <li>고객 후기 수집 기능</li>
+        <li>카카오 채널 또는 채팅 문의 연동</li>
+        <li>배송 추적 기능</li>
+      </ul>
+
+      <div class="section-num">03</div>
+      <h2>전환율을 높이는 쇼핑몰 홈페이지 디자인 팁</h2>
+
+      <p>쇼핑몰 홈페이지에서 가장 중요한 페이지는 메인 페이지가 아니라 <strong>상품 상세 페이지</strong>입니다. 상세 페이지에서 구매 결정이 이루어지기 때문입니다. 제품 사진을 다양한 각도로 충분히 보여주고, 리뷰·사이즈 가이드·소재 설명을 꼼꼼하게 담아주세요.</p>
+      <p>메인 페이지는 브랜드 첫인상을 담당합니다. 히어로 배너에서 현재 가장 중요한 컬렉션이나 프로모션을 강조하고, 신상품·베스트 상품 섹션을 바로 아래에 배치하는 것이 일반적인 구성입니다.</p>
+    </div>
+    <div class="article-cta">
+      <p>팔리는 쇼핑몰,<br><em>디자인부터 함께 잡아드릴게요.</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/homepage-platform" class="related-item">
+          <p class="related-tag">플랫폼 비교</p>
+          <p class="related-title">아임웹 vs Wix vs 크리에이터링크, 뭐가 다를까요?</p>
+        </a>
+        <a href="/blog/homepage-making-cost" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">홈페이지 제작 비용</p>
+          <p class="related-title">홈페이지 제작 비용, 2026년 기준으로 정리했습니다</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

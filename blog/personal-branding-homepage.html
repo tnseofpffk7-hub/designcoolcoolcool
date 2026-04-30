@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인 브랜딩 홈페이지, 나를 브랜드로 만드는 방법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="개인 브랜딩 홈페이지는 단순한 자기소개 페이지가 아닙니다. 나라는 사람을 하나의 브랜드로 설계하는 방법을 정리했습니다." />
+  <meta name="keywords" content="개인 브랜딩 홈페이지, 개인 홈페이지 제작, 퍼스널 브랜딩 사이트, 개인 포트폴리오 홈페이지, 1인 브랜드 홈페이지" />
+  <meta property="og:title" content="개인 브랜딩 홈페이지, 나를 브랜드로 만드는 방법 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="나라는 사람을 하나의 브랜드로 설계하는 개인 브랜딩 홈페이지 제작 방법을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/personal-branding-homepage" />
+  <meta property="article:published_time" content="2026-04-20" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/personal-branding-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "개인 브랜딩 홈페이지, 나를 브랜드로 만드는 방법",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-04-20",
+    "url": "https://designcoolcoolcool.vercel.app/blog/personal-branding-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>개인 브랜딩</span><span>2026. 04. 20</span></div>
+    <h1 class="article-title">개인 브랜딩 홈페이지,<br><em>나를 브랜드로 만드는 방법</em></h1>
+    <p class="article-lead">컨설턴트, 강사, 작가, 유튜버, 전문직 종사자까지 — 이제는 개인도 브랜드입니다. 개인 브랜딩 홈페이지는 나를 검색했을 때 가장 먼저 나오는 '공식 채널'입니다.</p>
+    <div class="article-body">
+      <p>퍼스널 브랜딩이라는 개념이 더 이상 낯설지 않습니다. 내 이름을 검색했을 때 아무것도 나오지 않는 것과, 잘 정돈된 홈페이지가 나오는 것은 전혀 다른 인상을 줍니다. 특히 강의, 컨설팅, 코칭, 집필, 외부 강연 등 개인의 전문성을 기반으로 일하는 분들에게 홈페이지는 명함 이상의 역할을 합니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>개인 브랜딩 홈페이지가 필요한 순간</h2>
+      <ul class="checklist">
+        <li>외부 강연이나 강의 요청을 받기 시작했을 때</li>
+        <li>책을 출간하거나 출간 계획이 있을 때</li>
+        <li>컨설팅·코칭 서비스를 론칭하려 할 때</li>
+        <li>유튜브나 뉴스레터 등 콘텐츠 채널을 운영할 때</li>
+        <li>링크드인·인스타그램 프로필에서 더 깊은 정보를 연결하고 싶을 때</li>
+        <li>내 이름을 검색했을 때 컨트롤할 수 있는 공간이 필요할 때</li>
+      </ul>
+
+      <div class="section-num">02</div>
+      <h2>개인 브랜딩 홈페이지에 담아야 할 것</h2>
+
+      <h3>나를 한 줄로 정의하는 헤드라인</h3>
+      <p>홈페이지 첫 화면에서 "이 사람이 어떤 사람인가"가 5초 안에 전달되어야 합니다. 직함보다는 내가 어떤 변화를 만드는 사람인지를 담는 것이 효과적입니다. "마케터"보다 "스타트업이 첫 100명의 고객을 찾도록 돕는 마케터"가 훨씬 강합니다.</p>
+
+      <h3>나의 이야기 — About 페이지</h3>
+      <p>개인 브랜딩에서 About 페이지는 단순한 이력서가 아닙니다. 왜 이 일을 하게 됐는지, 어떤 경험이 지금의 나를 만들었는지, 어떤 관점으로 세상을 보는지가 담겨야 합니다. 사람들은 스펙보다 스토리에 연결됩니다.</p>
+
+      <h3>대표 콘텐츠 또는 작업물</h3>
+      <p>강의 영상, 책, 아티클, 인터뷰, 팟캐스트 등 나의 전문성을 보여주는 콘텐츠를 큐레이션해서 보여주세요. 전부 올릴 필요는 없습니다. 가장 잘 나를 드러내는 3~5개를 선별하는 것이 좋습니다.</p>
+
+      <h3>협업 또는 강연 문의</h3>
+      <p>홈페이지를 통해 어떤 종류의 협업을 원하는지 명확하게 안내하세요. 강연 가능한 주제, 컨설팅 방식, 협업 조건 등을 미리 적어두면 적합하지 않은 문의를 줄이고 원하는 기회를 더 잘 끌어올 수 있습니다.</p>
+
+      <div class="callout">
+        <p>개인 브랜딩 홈페이지에서 가장 중요한 것은 '나답게 느껴지는가'입니다. 디자인이 화려하거나 정보가 많은 것보다, 홈페이지에 들어왔을 때 나라는 사람의 인상이 일관되게 전달되는 것이 훨씬 중요합니다.</p>
+      </div>
+
+      <div class="section-num">03</div>
+      <h2>플랫폼 선택과 도메인</h2>
+      <p>개인 브랜딩 홈페이지는 복잡한 기능보다 콘텐츠와 디자인이 핵심입니다. 아임웹이나 Wix로도 충분히 좋은 결과물을 만들 수 있습니다. 도메인은 가능하면 <strong>본인 이름.com</strong> 형태를 추천합니다. 내 이름을 검색했을 때 홈페이지가 상위에 노출되려면 도메인 자체에 이름이 포함되어 있는 것이 SEO에 유리합니다.</p>
+    </div>
+    <div class="article-cta">
+      <p>나다운 개인 브랜딩 홈페이지,<br><em>같이 만들어볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/freelancer-homepage" class="related-item">
+          <p class="related-tag">프리랜서</p>
+          <p class="related-title">프리랜서 홈페이지 제작, 이것만 알면 됩니다</p>
+        </a>
+        <a href="/blog/portfolio-homepage" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">포트폴리오</p>
+          <p class="related-title">포트폴리오 홈페이지 제작 전에 꼭 알아야 할 것 5가지</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

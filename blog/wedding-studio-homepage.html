@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>웨딩 촬영·스튜디오 홈페이지 제작, 예비부부의 마음을 잡는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="웨딩 촬영, 스드메 스튜디오 홈페이지 제작 전략을 정리했습니다. 예비부부가 홈페이지에서 무엇을 보고 결정하는지, 포트폴리오 구성부터 예약 연동까지 실전 가이드입니다." />
+  <meta name="keywords" content="웨딩 촬영 홈페이지, 스튜디오 홈페이지 제작, 웨딩 사진 포트폴리오 사이트, 스드메 홈페이지, 웨딩 스튜디오 웹사이트 제작" />
+  <meta property="og:title" content="웨딩 촬영·스튜디오 홈페이지 제작, 예비부부의 마음을 잡는 법 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="예비부부가 홈페이지에서 무엇을 보고 결정하는지, 웨딩 스튜디오 홈페이지 제작 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/wedding-studio-homepage" />
+  <meta property="article:published_time" content="2026-05-01" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/wedding-studio-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "웨딩 촬영·스튜디오 홈페이지 제작, 예비부부의 마음을 잡는 법",
+    "description": "예비부부가 홈페이지에서 무엇을 보고 결정하는지, 웨딩 스튜디오 홈페이지 제작 전략을 정리했습니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-05-01",
+    "url": "https://designcoolcoolcool.vercel.app/blog/wedding-studio-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>웨딩·스튜디오</span><span>2026. 05. 01</span></div>
+    <h1 class="article-title">웨딩 촬영·스튜디오 홈페이지 제작,<br><em>예비부부의 마음을 잡는 법</em></h1>
+    <p class="article-lead">웨딩 시장에서 홈페이지는 첫 번째 상담입니다. 예비부부는 촬영 문의 전에 반드시 홈페이지를 봅니다. 포트폴리오 구성부터 패키지 안내, 예약 흐름까지 — 선택받는 웨딩 스튜디오 홈페이지의 조건을 정리했습니다.</p>
+    <div class="article-body">
+      <p>웨딩 촬영과 스드메 스튜디오는 경쟁이 치열한 시장입니다. 예비부부는 수많은 스튜디오 중 하나를 선택해야 하고, 그 선택의 시작은 대부분 인스타그램과 홈페이지입니다. 인스타그램에서 스타일이 마음에 들었다면, 다음으로 홈페이지를 방문해 더 많은 작업물을 보고 패키지 금액을 확인하고 문의 여부를 결정합니다.</p>
+      <p>이 흐름에서 홈페이지가 기대에 미치지 못하면 예비부부는 다음 스튜디오로 넘어갑니다. 반대로 홈페이지가 신뢰감을 주고 정보가 명확하다면, 문의로 이어질 가능성이 크게 높아집니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>예비부부가 웨딩 스튜디오 홈페이지에서 찾는 것</h2>
+
+      <h3>스타일과 감성 — 이 스튜디오가 내 취향인가</h3>
+      <p>웨딩 촬영의 선택 기준 1순위는 스타일입니다. 자연광 위주의 필름 감성인지, 화이트 배경의 클린한 스타일인지, 야외 로케이션 위주인지 — 홈페이지 첫 화면에서 이 스타일이 명확하게 느껴져야 합니다. 히어로 이미지 선택이 가장 중요하고, 전체적인 컬러톤과 레이아웃도 스튜디오의 감성과 일치해야 합니다.</p>
+
+      <h3>충분한 포트폴리오 — 이 스튜디오가 잘하는가</h3>
+      <p>예비부부는 많은 사진을 보고 싶어합니다. 인스타그램의 정방형 피드로는 전체적인 흐름을 보기 어렵습니다. 홈페이지에서는 촬영 컨셉별, 장소별로 충분한 수의 사진을 보여주세요. 한 커플의 촬영 전체 흐름을 보여주는 시리즈 구성이 특히 효과적입니다.</p>
+
+      <h3>패키지와 가격 — 예산에 맞는가</h3>
+      <p>가격을 공개하지 않는 스튜디오도 많지만, 최소한 "패키지 금액은 ○○만 원대부터"라는 기준이라도 있어야 합니다. 가격 정보가 전혀 없으면 문의 자체를 포기하는 예비부부가 생깁니다. 패키지 구성(컷 수, 보정 수, 앨범 포함 여부)을 명확하게 안내하면 문의의 질도 높아집니다.</p>
+
+      <h3>예약 가능 여부와 문의 방법</h3>
+      <p>원하는 날짜에 예약이 가능한지, 어떻게 문의해야 하는지가 바로 보여야 합니다. 카카오 채널 링크나 문의 폼을 눈에 잘 보이는 위치에 배치하세요. 예약 가능 날짜를 캘린더로 보여주는 방식은 예비부부의 불안감을 크게 줄여줍니다.</p>
+
+      <div class="section-num">02</div>
+      <h2>웨딩 스튜디오 홈페이지 필수 구성</h2>
+      <ul class="checklist">
+        <li>히어로 — 가장 대표적인 웨딩 사진으로 감성 첫인상 결정</li>
+        <li>컨셉별 포트폴리오 갤러리 (스튜디오/야외/해외 등 분류)</li>
+        <li>패키지 구성 및 가격 범위 안내</li>
+        <li>작가 소개 — 누가 찍는지 신뢰감 형성</li>
+        <li>촬영 과정 안내 — 예약 → 상담 → 촬영 → 보정 → 납품</li>
+        <li>실제 커플 후기 또는 리뷰</li>
+        <li>카카오 채널 또는 문의 폼 연동</li>
+        <li>인스타그램 연결</li>
+      </ul>
+
+      <div class="callout">
+        <p>웨딩 스튜디오 홈페이지에서 가장 흔한 실수는 사진 퀄리티가 뛰어난데 로딩이 너무 느린 것입니다. 고해상도 원본 사진을 그대로 올리면 홈페이지가 느려지고, 예비부부가 기다리다 이탈합니다. 반드시 웹용으로 압축(WebP, 300KB 이하)해서 올리세요.</p>
+      </div>
+
+      <div class="section-num">03</div>
+      <h2>웨딩 스튜디오 홈페이지 SEO</h2>
+
+      <h3>지역 + 웨딩 키워드 조합</h3>
+      <p>"서울 웨딩 스냅 작가", "강남 웨딩 촬영 스튜디오", "홍대 야외 웨딩 촬영", "제주 웨딩 촬영 추천" — 이런 키워드로 검색하는 예비부부를 잡으려면 홈페이지 텍스트에 지역명과 촬영 유형을 자연스럽게 포함해야 합니다.</p>
+
+      <h3>커플별 촬영 후기 블로그</h3>
+      <p>실제 촬영 후기를 블로그로 발행하면 SEO와 신뢰도를 동시에 높입니다. "○○ 웨딩홀 로케이션 촬영 후기", "가을 단풍 야외 웨딩 스냅 현장" 같은 제목은 구체적인 검색어로 유입을 만들고, 예비부부에게 실제 촬영 결과물을 보여주는 효과도 있습니다.</p>
+
+      <h3>구글 이미지 검색 최적화</h3>
+      <p>웨딩 사진은 구글 이미지 검색으로도 유입이 생깁니다. 이미지 파일명을 "서울-야외-웨딩-스냅-촬영.jpg"처럼 키워드가 담긴 이름으로 저장하고, alt 텍스트에도 구체적인 설명을 입력하세요.</p>
+    </div>
+    <div class="article-cta">
+      <p>예비부부가 반하는 웨딩 홈페이지,<br><em>같이 만들어볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/photographer-creator-homepage" class="related-item">
+          <p class="related-tag">사진·영상</p>
+          <p class="related-title">사진작가·영상 크리에이터 홈페이지 제작, 작업물로 말하는 사이트</p>
+        </a>
+        <a href="/blog/homepage-loading-speed" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">성능 최적화</p>
+          <p class="related-title">홈페이지 로딩 속도 개선, 3초 안에 열리게 만드는 방법</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

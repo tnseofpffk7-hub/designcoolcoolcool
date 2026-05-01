@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아임웹으로 홈페이지 만들기, 시작 전에 알아야 할 모든 것 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="아임웹으로 홈페이지를 직접 만들려는 분들을 위한 완벽 가이드입니다. 요금제 선택부터 도메인 연결, 디자인 설정, SEO까지 아임웹 홈페이지 제작 전 과정을 정리했습니다." />
+  <meta name="keywords" content="아임웹 홈페이지 만들기, 아임웹 제작 가이드, 아임웹 시작하기, 아임웹 사용법, 아임웹 요금제, 아임웹 도메인 연결" />
+  <meta property="og:title" content="아임웹으로 홈페이지 만들기, 시작 전에 알아야 할 모든 것 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="아임웹 요금제 선택부터 도메인 연결, 디자인 설정, SEO까지 전 과정을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/imweb-homepage-guide" />
+  <meta property="article:published_time" content="2026-04-28" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/imweb-homepage-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "아임웹으로 홈페이지 만들기, 시작 전에 알아야 할 모든 것",
+    "description": "아임웹 요금제 선택부터 도메인 연결, 디자인 설정, SEO까지 전 과정을 정리했습니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-04-28",
+    "url": "https://designcoolcoolcool.vercel.app/blog/imweb-homepage-guide"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .price-table { width: 100%; border-collapse: collapse; margin: 24px 0 40px; font-size: 14px; }
+    .price-table th { text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .price-table td { padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--grey); vertical-align: top; line-height: 1.6; }
+    .price-table td:first-child { font-weight: 500; color: var(--black); width: 30%; padding-right: 24px; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>아임웹</span><span>2026. 04. 28</span></div>
+    <h1 class="article-title">아임웹으로 홈페이지 만들기,<br>시작 전에 알아야 할<br><em>모든 것</em></h1>
+    <p class="article-lead">아임웹은 국내에서 가장 많이 사용되는 홈페이지 제작 플랫폼입니다. 직접 만들기 전에 알아야 할 요금제, 도메인, 디자인 설정, SEO까지 한 번에 정리했습니다.</p>
+    <div class="article-body">
+      <p>아임웹은 코딩 없이 홈페이지를 만들 수 있는 노코드 플랫폼입니다. 드래그앤드롭 방식으로 페이지를 구성하고, 쇼핑몰 기능, 예약 시스템, 블로그까지 한 플랫폼 안에서 운영할 수 있다는 것이 강점입니다. 특히 국내 결제 수단 연동이 잘 되어 있어 국내 사업자에게 적합합니다.</p>
+      <p>하지만 아임웹도 처음 시작하면 생각보다 고려할 것이 많습니다. 요금제 선택, 도메인 연결 방법, 템플릿 선택 기준, SEO 설정 등 모르면 시간을 낭비하거나 나중에 후회할 수 있는 선택들이 있습니다. 미리 알고 시작하면 훨씬 효율적입니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>아임웹 요금제, 어떻게 선택할까요?</h2>
+      <p>아임웹은 무료 플랜부터 비즈니스 플랜까지 여러 요금제를 제공합니다. 무료 플랜은 아임웹 서브도메인(○○.imweb.me)만 사용 가능하고 기능이 제한적입니다. 실제 사업용으로 사용하려면 최소 베이직 플랜 이상이 필요합니다.</p>
+
+      <table class="price-table">
+        <thead><tr><th>플랜</th><th>주요 특징</th><th>추천 대상</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>무료</td>
+            <td>아임웹 서브도메인, 기능 제한, 광고 표시</td>
+            <td>테스트·미리보기 용도</td>
+          </tr>
+          <tr>
+            <td>베이직</td>
+            <td>개인 도메인 연결, 기본 페이지 제작, 블로그</td>
+            <td>소개 페이지·포트폴리오</td>
+          </tr>
+          <tr>
+            <td>스탠다드</td>
+            <td>쇼핑몰 기능, 예약 시스템, 회원 관리</td>
+            <td>소규모 쇼핑몰·서비스업</td>
+          </tr>
+          <tr>
+            <td>비즈니스</td>
+            <td>고급 기능 전체, 대용량 스토리지, API 연동</td>
+            <td>중규모 이상 사업자</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>아임웹 요금제는 연간 결제 시 월 요금이 낮아집니다. 처음 시작할 때는 월 단위로 결제해서 써보고, 맞으면 연간으로 전환하는 것을 추천합니다. 요금제는 언제든지 업그레이드할 수 있습니다.</p>
+      </div>
+
+      <div class="section-num">02</div>
+      <h2>도메인 연결 — 가장 먼저 해야 할 것</h2>
+      <p>아임웹으로 홈페이지를 만들 때 가장 먼저 해야 할 것이 도메인 구매와 연결입니다. 도메인은 아임웹에서 직접 구매할 수도 있고, 가비아·후이즈 같은 도메인 등록 업체에서 별도로 구매해서 연결할 수도 있습니다.</p>
+      <p>도메인 선택 팁은 세 가지입니다. <strong>짧고 기억하기 쉬울 것</strong>, <strong>브랜드명이나 이름이 포함될 것</strong>, <strong>.com 또는 .co.kr 확장자 우선</strong>. 한글 도메인은 직관적이지만 URL 공유 시 인코딩 문제가 생길 수 있어서 영문 도메인을 권장합니다.</p>
+
+      <div class="section-num">03</div>
+      <h2>아임웹 템플릿 선택 기준</h2>
+      <p>아임웹은 다양한 템플릿을 무료로 제공합니다. 템플릿을 고를 때 디자인보다 <strong>구조</strong>를 먼저 보세요. 내가 원하는 페이지 구성(메인·서비스·포트폴리오·문의)과 비슷한 구조의 템플릿을 고르면 수정 작업이 줄어듭니다. 나중에 컬러와 폰트는 쉽게 바꿀 수 있지만, 구조를 바꾸는 것은 시간이 많이 걸립니다.</p>
+
+      <div class="section-num">04</div>
+      <h2>아임웹 SEO 설정 — 꼭 해야 할 것들</h2>
+
+      <h3>페이지별 SEO 설정</h3>
+      <p>아임웹 관리자 > 각 페이지 설정에서 페이지 제목(Title)과 메타 설명(Description)을 직접 입력할 수 있습니다. 기본값으로 두면 홈페이지 제목이 "아임웹으로 제작한 사이트"처럼 나올 수 있습니다. 각 페이지마다 핵심 키워드가 담긴 고유한 제목과 설명을 반드시 작성하세요.</p>
+
+      <h3>사이트맵 자동 생성</h3>
+      <p>아임웹은 사이트맵을 자동으로 생성합니다. 관리자 > SEO 설정에서 사이트맵 URL을 확인하고, 구글 서치콘솔과 네이버 서치어드바이저에 제출하세요. 이 한 단계만 해도 검색엔진 크롤링이 훨씬 빨라집니다.</p>
+
+      <h3>구글 애널리틱스 연동</h3>
+      <p>아임웹 관리자 > 고급 설정 > 스크립트 추가에서 구글 애널리틱스 코드를 삽입할 수 있습니다. 어떤 페이지에 방문자가 많은지, 어디서 유입되는지 파악하면 홈페이지를 지속적으로 개선할 수 있습니다.</p>
+
+      <ul class="checklist">
+        <li>모든 페이지 제목·메타 설명 개별 설정</li>
+        <li>사이트맵 구글·네이버 서치콘솔 제출</li>
+        <li>구글 애널리틱스 코드 삽입</li>
+        <li>이미지 alt 텍스트 입력</li>
+        <li>모바일 미리보기로 반응형 확인</li>
+        <li>페이지 로딩 속도 확인 (PageSpeed Insights)</li>
+        <li>robots.txt 설정 확인</li>
+      </ul>
+
+      <div class="section-num">05</div>
+      <h2>아임웹 직접 제작 vs 제작 대행, 어떤 게 나을까요?</h2>
+      <p>아임웹을 직접 만드는 것이 좋은 경우가 있고, 전문가에게 맡기는 것이 나은 경우가 있습니다. 시간이 있고 디자인에 관심이 있다면 직접 도전해볼 만합니다. 반면 시간이 부족하거나 브랜드 완성도가 중요하다면 아임웹 기반 제작 대행을 의뢰하는 것이 효율적입니다. 플랫폼 기반 대행은 50~150만 원 선에서 전문적인 결과물을 받을 수 있습니다.</p>
+    </div>
+    <div class="article-cta">
+      <p>아임웹 제작 대행,<br><em>브랜드에 맞게 만들어드릴게요.</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/homepage-platform" class="related-item">
+          <p class="related-tag">플랫폼 비교</p>
+          <p class="related-title">아임웹 vs Wix vs 크리에이터링크, 뭐가 다를까요?</p>
+        </a>
+        <a href="/blog/homepage-making-cost" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">홈페이지 제작 비용</p>
+          <p class="related-title">홈페이지 제작 비용, 2026년 기준으로 정리했습니다</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

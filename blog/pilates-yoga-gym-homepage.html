@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>필라테스·요가·헬스장 홈페이지 제작, 회원을 부르는 구조 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="필라테스, 요가 스튜디오, 헬스장 홈페이지 제작 전략을 정리했습니다. 강사 소개, 수업 구성, 가격 안내, 체험 신청 연동까지 신규 회원을 유치하는 홈페이지 만드는 법입니다." />
+  <meta name="keywords" content="필라테스 홈페이지 제작, 요가 스튜디오 홈페이지, 헬스장 홈페이지, 필라테스 웹사이트, 요가 홈페이지 만들기" />
+  <meta property="og:title" content="필라테스·요가·헬스장 홈페이지 제작, 회원을 부르는 구조 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="강사 소개부터 수업 구성, 체험 신청 연동까지 신규 회원을 유치하는 홈페이지 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/pilates-yoga-gym-homepage" />
+  <meta property="article:published_time" content="2026-05-02" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/pilates-yoga-gym-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "필라테스·요가·헬스장 홈페이지 제작, 회원을 부르는 구조",
+    "description": "강사 소개부터 수업 구성, 체험 신청 연동까지 신규 회원을 유치하는 홈페이지 전략을 정리했습니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-05-02",
+    "url": "https://designcoolcoolcool.vercel.app/blog/pilates-yoga-gym-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>필라테스·요가·헬스</span><span>2026. 05. 02</span></div>
+    <h1 class="article-title">필라테스·요가·헬스장 홈페이지 제작,<br><em>회원을 부르는 구조</em></h1>
+    <p class="article-lead">필라테스 스튜디오와 요가원, 헬스장은 신규 회원 유치가 가장 중요한 과제입니다. 강사 소개부터 수업 구성, 체험 수업 신청까지 — 신규 회원을 유치하는 홈페이지 구조를 정리했습니다.</p>
+    <div class="article-body">
+      <p>필라테스와 요가 스튜디오는 최근 몇 년 사이 급격히 늘었습니다. 경쟁이 치열해질수록 온라인 존재감이 중요해집니다. 네이버 플레이스와 인스타그램에서 관심을 가진 잠재 회원이 홈페이지를 통해 더 많은 정보를 확인하고 체험 수업을 신청하는 흐름이 가장 효과적인 신규 회원 유치 루트입니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>피트니스 홈페이지에서 잠재 회원이 확인하는 것</h2>
+
+      <h3>어떤 수업을 하는가</h3>
+      <p>필라테스인지 요가인지, 그리고 그 안에서도 어떤 종류의 수업을 제공하는지를 명확하게 안내해야 합니다. 개인 PT, 소그룹, 그룹 수업의 차이와 각각의 특징을 설명하면 고객이 자신에게 맞는 수업을 스스로 선택할 수 있습니다.</p>
+
+      <h3>강사가 어떤 사람인가</h3>
+      <p>피트니스 서비스에서 강사의 신뢰도는 핵심입니다. 자격증, 경력, 전문 분야, 본인의 운동 철학을 담은 강사 소개 페이지를 만들어주세요. 친근한 사진과 함께 짧은 소개 글이 있으면 처음 방문하는 회원의 심리적 거리가 줄어듭니다.</p>
+
+      <h3>공간이 어떠한가</h3>
+      <p>스튜디오 내부 사진은 방문 결정에 큰 영향을 줍니다. 장비 수준, 공간의 청결함, 분위기를 잘 보여주는 사진을 충분히 담아주세요. 환기 시스템, 샤워실, 주차 여부 등 실용적인 정보도 함께 안내하면 좋습니다.</p>
+
+      <h3>가격과 패키지</h3>
+      <p>회원권 종류(1개월·3개월·10회권 등)와 가격을 명확하게 공개하세요. 가격을 숨기면 문의를 막는 장벽이 됩니다. 신규 회원 혜택이나 체험 수업 할인 정보도 눈에 잘 보이는 곳에 배치하세요.</p>
+
+      <div class="section-num">02</div>
+      <h2>신규 회원 유치를 위한 핵심 기능</h2>
+
+      <h3>체험 수업 신청 폼</h3>
+      <p>피트니스 홈페이지에서 가장 중요한 전환 장치는 체험 수업 신청입니다. "첫 수업 무료", "체험 수업 신청" 버튼을 히어로 영역과 상단 고정 메뉴에 배치하고, 이름·연락처·희망 시간 정도만 받는 간단한 폼으로 구성하세요. 입력 항목이 많을수록 신청률이 낮아집니다.</p>
+
+      <h3>시간표 또는 예약 캘린더</h3>
+      <p>그룹 수업을 운영한다면 주간 시간표를 홈페이지에 게시하거나, 네이버 예약·카카오 예약과 연동하세요. 특히 요가원과 필라테스 스튜디오에서 시간표를 쉽게 확인하고 바로 예약할 수 있는 구조는 회원 만족도와 재방문율 모두에 긍정적입니다.</p>
+
+      <h3>회원 후기와 변화 사례</h3>
+      <p>필라테스나 요가의 효과를 가장 잘 증명하는 것은 실제 회원의 이야기입니다. "○개월 만에 허리 통증이 사라졌어요", "체형 교정이 되면서 자세가 달라졌어요" 같은 구체적인 후기가 신규 회원의 결정을 이끌어냅니다.</p>
+
+      <ul class="checklist">
+        <li>수업 종류·구성·소요 시간 명확한 안내</li>
+        <li>강사 소개 (자격증·경력·철학)</li>
+        <li>스튜디오 내부 사진 (공간·장비·분위기)</li>
+        <li>회원권 종류·가격 공개</li>
+        <li>체험 수업 신청 폼</li>
+        <li>주간 시간표 또는 예약 연동</li>
+        <li>실제 회원 후기·변화 사례</li>
+        <li>위치·주차·교통 안내</li>
+      </ul>
+
+      <div class="callout">
+        <p>필라테스·요가 홈페이지에서 가장 효과적인 CTA는 "무료 체험 신청"입니다. "문의하기"보다 구체적이고 혜택이 명확합니다. 체험 수업 신청자의 등록 전환율은 업종 특성상 매우 높기 때문에, 체험 신청을 늘리는 것이 곧 회원 증가로 이어집니다.</p>
+      </div>
+
+      <div class="section-num">03</div>
+      <h2>필라테스·요가 홈페이지 SEO 전략</h2>
+
+      <h3>지역 + 수업 유형 키워드</h3>
+      <p>"강남 필라테스", "홍대 요가 스튜디오", "서초 소그룹 필라테스", "마포 아침 요가 클래스" — 이런 키워드로 검색하는 사람이 실제 잠재 회원입니다. 페이지 제목, 메타 설명, 본문에 지역명과 수업 유형을 자연스럽게 포함시키세요.</p>
+
+      <h3>건강·운동 관련 블로그 콘텐츠</h3>
+      <p>"필라테스로 허리 통증 개선하는 방법", "요가 입문자가 알아야 할 것들", "직장인 어깨 스트레칭 루틴" — 이런 주제의 블로그 포스팅은 운동에 관심 있는 잠재 회원을 홈페이지로 유입시키는 효과적인 콘텐츠 SEO 전략입니다. 유익한 정보를 먼저 제공하고 자연스럽게 체험 신청으로 연결하는 흐름을 만드세요.</p>
+    </div>
+    <div class="article-cta">
+      <p>신규 회원이 찾아오는 홈페이지,<br><em>같이 만들어볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/beauty-salon-homepage" class="related-item">
+          <p class="related-tag">헤어샵·뷰티</p>
+          <p class="related-title">헤어샵·뷰티샵 홈페이지 제작, 예약을 부르는 구조</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+        <a href="/blog/landing-page-cost" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">랜딩페이지</p>
+          <p class="related-title">랜딩페이지 제작 비용과 업체 선택 기준</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

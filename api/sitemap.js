@@ -4,7 +4,6 @@ import { join } from 'path';
 const BASE_URL = 'https://designcoolcoolcool.vercel.app';
 
 export default function handler(req, res) {
-  // blog/ 폴더에서 index.html 제외한 html 파일 목록 읽기
   const blogDir = join(process.cwd(), 'blog');
   let blogSlugs = [];
 
@@ -38,7 +37,8 @@ ${allPages.map(page => `  <url>
   </url>`).join('\n')}
 </urlset>`;
 
-  res.setHeader('Content-Type', 'application/xml');
-  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
-  res.status(200).send(xml);
+  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+  return res.status(200).send(xml);
 }

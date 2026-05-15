@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>동물병원·펫샵·반려동물 서비스 홈페이지 제작 전략 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="동물병원, 펫샵, 반려동물 미용·호텔·유치원 홈페이지 제작 전략을 정리했습니다. 보호자 신뢰를 얻는 구조, 예약 연동, 지역 SEO까지 실전 가이드입니다." />
+  <meta name="keywords" content="동물병원 홈페이지 제작, 펫샵 홈페이지, 반려동물 홈페이지 만들기, 펫미용 홈페이지, 동물병원 홈페이지" />
+  <meta property="og:title" content="동물병원·펫샵·반려동물 서비스 홈페이지 제작 전략 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="보호자 신뢰를 얻는 구조, 예약 연동, 지역 SEO까지 반려동물 업종 홈페이지 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/pet-veterinary-homepage" />
+  <meta property="article:published_time" content="2026-05-15" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/pet-veterinary-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "동물병원·펫샵·반려동물 서비스 홈페이지 제작 전략",
+    "description": "보호자 신뢰를 얻는 구조, 예약 연동, 지역 SEO까지 반려동물 업종 홈페이지 전략을 정리했습니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-05-15",
+    "url": "https://designcoolcoolcool.vercel.app/blog/pet-veterinary-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>반려동물 업종</span><span>2026. 05. 15</span></div>
+    <h1 class="article-title">동물병원·펫샵·반려동물 서비스<br><em>홈페이지 제작 전략</em></h1>
+    <p class="article-lead">반려동물 보호자는 내 아이를 맡기는 곳을 고를 때 누구보다 꼼꼼합니다. 동물병원, 펫 미용, 펫 호텔, 펫샵 홈페이지에 보호자의 신뢰를 얻는 구조를 만드는 방법을 정리했습니다.</p>
+    <div class="article-body">
+      <p>반려동물 인구가 1,500만을 넘으면서 반려동물 관련 업종도 빠르게 성장하고 있습니다. 동네 동물병원부터 프리미엄 펫 호텔, 수제 간식 브랜드까지 경쟁이 치열해졌고, 보호자들은 온라인으로 꼼꼼하게 비교한 뒤 선택합니다. 홈페이지는 이 선택 과정에서 결정적인 역할을 합니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>반려동물 업종 홈페이지의 특징</h2>
+
+      <h3>보호자는 아이를 '맡기는' 결정을 한다</h3>
+      <p>동물병원, 펫 미용, 펫 호텔을 선택하는 보호자는 단순히 서비스를 구매하는 것이 아닙니다. 소중한 반려동물을 낯선 공간과 사람에게 맡기는 결정입니다. 이 심리적 장벽을 낮추는 것이 홈페이지의 핵심 역할입니다. 수의사·그루머·케어 스태프의 얼굴, 시설 사진, 운영 방침이 신뢰의 근거가 됩니다.</p>
+
+      <h3>인스타그램과 홈페이지의 역할 분리</h3>
+      <p>반려동물 업종은 인스타그램이 매우 강력한 채널입니다. 귀엽고 예쁜 고객 아이들 사진이 팔로워를 끌어모읍니다. 그런데 인스타그램은 '발견'의 채널이고, 홈페이지는 '확신'의 채널입니다. 인스타에서 발견한 잠재 고객이 홈페이지에서 예약까지 연결되는 흐름을 만드는 것이 중요합니다.</p>
+
+      <div class="section-num">02</div>
+      <h2>업종별 홈페이지 핵심 요소</h2>
+
+      <h3>동물병원 — 수의사 소개와 진료 분야가 핵심</h3>
+      <p>어떤 수의사가 진료하는지, 전문 분야가 무엇인지가 병원 선택에 가장 큰 영향을 줍니다. 수의사 프로필(사진, 학력, 경력, 전문 분야)을 상세히 소개하세요. 진료 가능 동물 종류(개, 고양이, 소동물, 파충류 등), 진료 시간, 야간·응급 진료 여부도 명확히 안내해야 합니다. 예약 시스템 연동으로 온라인 예약이 가능하면 전화 문의 부담 없이 예약으로 이어집니다.</p>
+
+      <h3>펫 미용·그루밍 — 포트폴리오와 시술 메뉴가 전부</h3>
+      <p>Before & After 사진, 견종별 미용 사례, 스타일별 포트폴리오를 충분히 보여주세요. 사용하는 제품이 저자극·천연 성분인지, 마취 없이 진행하는지 등 안전 관련 정보도 중요한 신뢰 요소입니다. 미용 시간 소요, 요금, 예약 방법을 명확히 안내하면 문의 없이도 예약으로 이어집니다.</p>
+
+      <h3>펫 호텔·돌봄 서비스 — 시설과 케어 방식이 결정적</h3>
+      <p>펫 호텔은 시설 사진이 가장 중요합니다. 케이지 크기, 운동 공간, 수면 환경, CCTV 설치 여부를 보여주세요. 하루 일과 스케줄, 케어 스태프의 자격과 경력, 비상 시 대응 방법(동물병원 연계 여부)도 불안한 보호자에게 결정적인 정보입니다. 실시간 사진·영상 공유 서비스를 제공한다면 강하게 어필하세요.</p>
+
+      <h3>펫샵·용품 쇼핑몰 — 신뢰와 정보가 구매를 결정</h3>
+      <p>반려동물 용품, 사료, 간식 쇼핑몰은 원재료·성분 정보, 제조사 정보, 실제 급여 후기가 구매 결정의 핵심입니다. 알레르기·특이체질 반려동물을 위한 정보, 연령별·크기별 추천 상품 가이드도 콘텐츠로 만들면 검색 유입과 구매 전환 모두에 효과적입니다.</p>
+
+      <ul class="checklist">
+        <li>수의사·그루머·케어 스태프 소개 (사진·경력·전문 분야)</li>
+        <li>시설 사진 (내부·외부·케어 공간 상세)</li>
+        <li>서비스 메뉴 및 요금 안내</li>
+        <li>Before & After 포트폴리오 (미용 업종)</li>
+        <li>예약 시스템 연동 (네이버·카카오 예약)</li>
+        <li>안전·위생 관리 방침 안내</li>
+        <li>고객 후기 및 인스타그램 피드 연동</li>
+        <li>진료 시간·영업시간·응급 연락처</li>
+      </ul>
+
+      <div class="section-num">03</div>
+      <h2>SEO와 지역 검색 전략</h2>
+
+      <h3>지역 + 종류 + 특징 조합 키워드</h3>
+      <p>"강남 고양이 동물병원", "마포 강아지 미용 잘하는 곳", "분당 펫 호텔 소형견", "제주 반려동물 동반 숙소"처럼 지역명, 반려동물 종류, 서비스 특징을 조합한 키워드가 실제 예약·방문으로 이어지는 검색입니다. 이런 키워드를 홈페이지 텍스트에 자연스럽게 녹이세요.</p>
+
+      <div class="callout">
+        <p>반려동물 관련 콘텐츠는 인터넷에서 높은 관심을 받습니다. "강아지 스케일링 주기는?", "고양이 중성화 수술 비용", "소형견 미용 종류와 차이" 같은 정보성 콘텐츠를 홈페이지 블로그에 올리면 검색 유입을 만들 수 있고, 전문성 어필에도 효과적입니다.</p>
+      </div>
+
+      <h3>구글 비즈니스 프로필 적극 활용</h3>
+      <p>"근처 동물병원", "○○동 펫 미용" 같은 검색에서 구글 지도 결과가 가장 먼저 노출됩니다. 구글 비즈니스 프로필을 등록하고 시설 사진, 진료 시간, 서비스 항목을 최신 상태로 유지하세요. 고객 리뷰를 꾸준히 관리하면 신규 보호자에게 신뢰 있는 첫인상을 줄 수 있습니다.</p>
+
+      <h3>인스타그램 → 홈페이지 → 예약 흐름 만들기</h3>
+      <p>인스타그램 프로필 링크에 홈페이지 URL을 연결하고, 홈페이지에서 바로 예약할 수 있는 구조를 만드세요. 인스타그램 게시물에 "홈페이지 예약 링크 프로필에 있어요"라는 안내를 자주 추가하면 팔로워를 실제 고객으로 전환하는 흐름이 만들어집니다.</p>
+    </div>
+    <div class="article-cta">
+      <p>보호자가 믿고 맡기게 되는 홈페이지,<br><em>같이 만들어볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/beauty-salon-homepage" class="related-item">
+          <p class="related-tag">헤어샵·뷰티</p>
+          <p class="related-title">헤어샵·뷰티샵 홈페이지 제작, 예약을 부르는 구조</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+        <a href="/blog/small-business-homepage" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">소상공인</p>
+          <p class="related-title">소상공인 홈페이지, 이것만 갖추면 충분합니다</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

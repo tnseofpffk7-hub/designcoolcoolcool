@@ -3,17 +3,79 @@
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- 신규 포스팅 (2026-05-19) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/manufacturing-b2b-homepage</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 신규 포스팅 (2026-05-15) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/clinic-hospital-homepage</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/google-analytics-guide</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/pet-veterinary-homepage</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-renewal-timing</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/school-academy-homepage</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/pension-guesthouse-homepage</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/legal-tax-realestate-homepage</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 기존 포스팅 -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/online-class-homepage</loc>
@@ -24,13 +86,6 @@
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/architecture-homepage</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/legal-tax-realestate-homepage</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

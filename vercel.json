@@ -1,12 +1,11 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/page", "destination": "/blog", "permanent": true }
-  ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/blog/:path*",
+      "destination": "/blog/:path*/index.html"
+    },
+    {
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ],
@@ -24,5 +23,8 @@
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
       ]
     }
+  ],
+  "redirects": [
+    { "source": "/page", "destination": "/blog", "permanent": true }
   ]
 }

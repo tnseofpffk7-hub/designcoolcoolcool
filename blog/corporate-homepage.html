@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기업 홈페이지 제작, B2B 신뢰를 만드는 설계 전략 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="기업 홈페이지 제작 시 B2B 신뢰를 높이는 구성 전략을 정리했습니다. 회사 소개, 서비스 페이지, 실적 소개, 채용 섹션까지 기업 웹사이트 설계의 핵심을 알아보세요." />
+  <meta name="keywords" content="기업홈페이지, 기업 홈페이지 제작, 회사 홈페이지 만들기, B2B 홈페이지, 기업 웹사이트 제작, 중소기업 홈페이지" />
+  <meta property="og:title" content="기업 홈페이지 제작, B2B 신뢰를 만드는 설계 전략 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="B2B 신뢰를 높이는 기업 홈페이지 구성과 설계 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/corporate-homepage" />
+  <meta property="article:published_time" content="2026-06-11" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/corporate-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "기업 홈페이지 제작, B2B 신뢰를 만드는 설계 전략",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-06-11",
+    "url": "https://designcoolcoolcool.vercel.app/blog/corporate-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>기업·B2B</span><span>2026. 06. 11</span></div>
+    <h1 class="article-title">기업 홈페이지 제작,<br><em>B2B 신뢰를 만드는 설계 전략</em></h1>
+    <p class="article-lead">기업 홈페이지는 영업사원이 없을 때도 회사를 대신해 일합니다. 처음 거래를 고려하는 잠재 고객이 가장 먼저 확인하는 곳이 홈페이지입니다. 신뢰를 만들고 문의로 이어지는 기업 홈페이지 설계 전략을 정리했습니다.</p>
+    <div class="article-body">
+      <p>B2B 거래에서 홈페이지의 역할은 B2C와 다릅니다. 충동 구매를 유도하는 것이 아니라, 여러 업체를 비교 검토하는 잠재 고객에게 "이 회사와 거래해도 안전하다"는 확신을 심어주는 것입니다. 제품이나 서비스의 품질만큼이나 홈페이지가 전달하는 신뢰감이 의사결정에 영향을 미칩니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>B2B 거래처가 기업 홈페이지에서 확인하는 것</h2>
+
+      <h3>회사의 규모와 안정성</h3>
+      <p>설립 연도, 직원 수, 주요 거래처, 인증 현황 등이 기업의 안정성을 보여주는 지표입니다. "저희는 2008년에 설립된 16년 경력의 회사입니다"보다 "설립 16년, 누적 납품 기업 450개사, ISO 9001 인증"이 더 구체적이고 설득력이 있습니다.</p>
+
+      <h3>무엇을 잘하는 회사인가</h3>
+      <p>서비스나 제품 목록이 너무 광범위하면 오히려 전문성이 느껴지지 않습니다. "우리가 가장 잘하는 것"을 명확히 전달하는 것이 중요합니다. 강점이 분명한 기업은 그 강점이 필요한 고객을 더 강하게 끌어당깁니다.</p>
+
+      <h3>실제 납품·서비스 사례</h3>
+      <p>포트폴리오 또는 사례 연구(Case Study) 페이지는 기업 홈페이지에서 가장 강력한 신뢰 도구입니다. "어떤 기업에, 어떤 문제를, 어떻게 해결했는지"를 구체적으로 보여주는 사례가 있으면 검토 중인 잠재 고객의 불안을 크게 낮출 수 있습니다.</p>
+
+      <div class="section-num">02</div>
+      <h2>기업 홈페이지 필수 구성 요소</h2>
+
+      <h3>명확한 서비스/제품 소개 페이지</h3>
+      <p>각 서비스나 제품에 대해 독립된 페이지를 만드세요. 페이지마다 어떤 고객에게 맞는지, 어떤 문제를 해결하는지, 주요 특징과 차별점이 무엇인지를 명확하게 설명해야 합니다. 기능 나열보다 고객이 얻는 효과를 중심으로 서술하는 것이 효과적입니다.</p>
+
+      <h3>회사 소개 페이지에 숫자를 넣으세요</h3>
+      <p>설립 연도, 임직원 수, 거래처 수, 특허 수, 인증 현황, 주요 수상 이력 등 수치화할 수 있는 모든 정보를 담으세요. "다양한 고객사"보다 "250개 이상의 제조사 납품 경험"이 훨씬 설득력 있습니다.</p>
+
+      <h3>파트너사·거래처 로고</h3>
+      <p>함께 일한 기업들의 로고를 노출하는 것은 강력한 신뢰 신호입니다. 특히 인지도 있는 대기업과의 거래 이력이 있다면 반드시 홈페이지에서 보여주세요. 단, 거래처 측 사전 동의가 필요한 경우도 있으니 확인하세요.</p>
+
+      <h3>채용 섹션</h3>
+      <p>채용 섹션이 있는 기업 홈페이지는 성장하고 있는 회사라는 인상을 줍니다. 잠재 거래처에게도 긍정적인 신호로 작용합니다.</p>
+
+      <ul class="checklist">
+        <li>서비스/제품별 개별 소개 페이지</li>
+        <li>회사 소개 (설립 연도·규모·인증·수상)</li>
+        <li>납품·서비스 사례 (숫자와 결과 포함)</li>
+        <li>거래처·파트너사 로고</li>
+        <li>팀 소개 (대표·핵심 인력)</li>
+        <li>뉴스·보도자료·블로그</li>
+        <li>문의 폼 + 빠른 연락처 노출</li>
+        <li>채용 정보 섹션</li>
+      </ul>
+
+      <div class="callout">
+        <p>기업 홈페이지에서 가장 흔한 실수는 "우리 회사 이야기"만 잔뜩 쓰는 것입니다. 방문자는 당신의 역사보다 "이 회사가 내 문제를 해결해줄 수 있는가"에 관심이 있습니다. 모든 페이지를 "고객이 얻는 가치" 중심으로 작성하세요.</p>
+      </div>
+
+      <div class="section-num">03</div>
+      <h2>기업 홈페이지 제작 플랫폼 선택</h2>
+
+      <h3>아임웹</h3>
+      <p>국내 기업 홈페이지 제작에 많이 사용됩니다. 한국어 지원과 국내 서버 환경에 최적화되어 있으며, 다국어 지원도 가능합니다. CMS 기능이 있어 공지사항, 뉴스, 블로그를 직접 업데이트하기 편리합니다.</p>
+
+      <h3>웹플로우</h3>
+      <p>디자인 자유도가 높아 브랜드 아이덴티티가 강한 기업 홈페이지에 잘 맞습니다. CMS 기능으로 콘텐츠 관리가 편리하고, 글로벌 시장을 타겟으로 하는 기업에 적합합니다.</p>
+
+      <h3>카페24</h3>
+      <p>제품 판매나 B2B 견적 시스템이 필요한 기업에 강점이 있습니다. 쇼핑몰 기능과 기업 홈페이지 기능을 함께 구현해야 할 때 효율적입니다.</p>
+
+      <div class="section-num">04</div>
+      <h2>기업 홈페이지 SEO 전략</h2>
+
+      <h3>업종 + 지역 키워드</h3>
+      <p>"서울 금속 가공 업체", "경기도 물류 대행사", "인천 포장재 제조" 같은 업종과 지역을 조합한 키워드가 B2B 검색의 핵심입니다. 서비스 페이지마다 해당 키워드를 자연스럽게 포함시키세요.</p>
+
+      <h3>전문 지식 콘텐츠 발행</h3>
+      <p>업계 전문 지식을 블로그나 뉴스 형태로 꾸준히 발행하면 검색 유입이 늘어나고 업계 전문성을 인정받는 효과도 생깁니다. "우리 업계 사람만 아는 것"을 쉽게 풀어 쓴 콘텐츠가 잠재 고객의 신뢰를 만듭니다.</p>
+    </div>
+    <div class="article-cta">
+      <p>거래처가 신뢰하는 기업 홈페이지,<br><em>함께 설계해드릴게요.</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/manufacturing-b2b-homepage" class="related-item">
+          <p class="related-tag">제조·B2B</p>
+          <p class="related-title">제조업 B2B 홈페이지 제작 전략</p>
+        </a>
+        <a href="/blog/startup-homepage" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">스타트업</p>
+          <p class="related-title">스타트업 홈페이지 제작, 투자자를 설득하는 구성법</p>
+        </a>
+        <a href="/blog/homepage-content-strategy" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">콘텐츠</p>
+          <p class="related-title">홈페이지 콘텐츠 전략, 방문자를 고객으로 만드는 법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

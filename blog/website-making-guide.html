@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>웹사이트 제작 처음부터 끝까지, 단계별 완벽 가이드 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="웹사이트 제작 전 과정을 단계별로 정리했습니다. 기획, 디자인, 개발, 도메인 연결, SEO 설정까지 처음 홈페이지를 만드는 분들을 위한 완벽 가이드입니다." />
+  <meta name="keywords" content="웹사이트제작, 홈페이지 만들기, 웹사이트 만드는 법, 홈페이지 제작 과정, 웹사이트 제작 순서, 비즈니스 홈페이지 만들기" />
+  <meta property="og:title" content="웹사이트 제작 처음부터 끝까지, 단계별 완벽 가이드 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="기획부터 SEO 설정까지 웹사이트 제작 전 과정을 단계별로 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/website-making-guide" />
+  <meta property="article:published_time" content="2026-06-11" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/website-making-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "웹사이트 제작 처음부터 끝까지, 단계별 완벽 가이드",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-06-11",
+    "url": "https://designcoolcoolcool.vercel.app/blog/website-making-guide"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>웹사이트 제작</span><span>2026. 06. 11</span></div>
+    <h1 class="article-title">웹사이트 제작<br><em>처음부터 끝까지, 단계별 완벽 가이드</em></h1>
+    <p class="article-lead">처음 웹사이트를 만들려는 분들이 가장 많이 하는 질문은 "어디서부터 시작해야 하나요?"입니다. 기획부터 도메인 연결, SEO 설정까지 웹사이트 제작 전 과정을 순서대로 정리했습니다.</p>
+    <div class="article-body">
+      <p>웹사이트 제작은 단순히 디자인 작업이 아닙니다. 목적 설정 → 기획 → 콘텐츠 준비 → 디자인 → 개발 → 테스트 → 론칭 → 운영으로 이어지는 일련의 과정입니다. 어느 단계에서 준비가 부족해도 결과물의 품질에 영향을 미칩니다. 단계별로 무엇을 준비해야 하는지 알아보겠습니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>STEP 1. 목적과 목표 설정</h2>
+
+      <h3>웹사이트로 무엇을 얻고 싶은가</h3>
+      <p>웹사이트의 목적을 명확히 해야 합니다. 신규 고객 문의 유입, 온라인 판매, 브랜드 신뢰도 구축, 채용, 투자 유치 중 어느 것이 주 목적인지에 따라 구성이 완전히 달라집니다. 목적이 불분명한 채 제작에 들어가면 완성 후에도 "뭔가 아쉽다"는 결과로 이어집니다.</p>
+
+      <h3>타겟 방문자는 누구인가</h3>
+      <p>내 웹사이트에 와야 하는 사람이 누구인지를 구체적으로 정의하세요. 연령대, 직업, 고민거리, 검색 키워드를 생각해보면 어떤 콘텐츠와 구조가 필요한지 자연스럽게 도출됩니다.</p>
+
+      <div class="section-num">02</div>
+      <h2>STEP 2. 사이트맵과 구조 설계</h2>
+
+      <h3>어떤 페이지가 필요한가</h3>
+      <p>홈, 서비스 소개, 포트폴리오/사례, 회사 소개, 블로그, 문의 등 필요한 페이지 목록을 작성하세요. 각 페이지에 어떤 내용이 담길지까지 미리 정해두면 디자인과 개발 단계가 훨씬 빠르게 진행됩니다.</p>
+
+      <h3>SEO를 고려한 URL 구조</h3>
+      <p>각 페이지의 URL은 검색 최적화를 위해 의미 있는 단어로 구성하는 것이 좋습니다. /about, /services, /blog처럼 영문 소문자로 간결하게 설계하세요. 아임웹, 웹플로우, Wix, 카페24 모두 URL 커스터마이징이 가능합니다.</p>
+
+      <div class="section-num">03</div>
+      <h2>STEP 3. 도메인과 호스팅 선택</h2>
+
+      <h3>도메인 이름 선택</h3>
+      <p>비즈니스 이름이나 핵심 서비스를 반영한 짧고 기억하기 쉬운 도메인을 선택하세요. .co.kr은 국내 신뢰도가 높고, .com은 글로벌 범용성이 있습니다. 한번 정하면 바꾸기 어려우니 신중하게 결정하세요.</p>
+
+      <h3>호스팅 방식</h3>
+      <p>아임웹과 카페24는 호스팅이 플랫폼에 포함되어 있어 별도 서버 설정이 필요 없습니다. Wix도 마찬가지입니다. 웹플로우는 자체 호스팅을 제공하며, 외부 도메인 연결이 간단합니다. 어떤 플랫폼을 선택하든 SSL(https) 인증서가 자동 적용되는지 확인하세요.</p>
+
+      <div class="callout">
+        <p>도메인은 제작업체가 아닌 본인 명의로 등록하세요. 가비아, 후이즈 등 도메인 등록 서비스에서 직접 구매하면 나중에 업체가 바뀌어도 도메인 소유권이 안전하게 유지됩니다.</p>
+      </div>
+
+      <div class="section-num">04</div>
+      <h2>STEP 4. 콘텐츠 준비</h2>
+
+      <h3>텍스트 콘텐츠</h3>
+      <p>디자인 작업 전에 각 페이지에 들어갈 텍스트를 미리 준비하면 제작 기간이 크게 단축됩니다. 회사 소개, 서비스 설명, 자주 묻는 질문, 연락처 정보를 문서로 정리해두세요. 콘텐츠가 완성되지 않은 상태에서 디자인부터 시작하면 나중에 대규모 수정이 필요해집니다.</p>
+
+      <h3>이미지와 사진</h3>
+      <p>제품이나 서비스, 팀, 공간 사진이 필요합니다. 품질 낮은 스마트폰 사진보다 전문 사진가에게 촬영을 의뢰한 이미지가 홈페이지 완성도를 크게 높입니다. 준비가 어렵다면 Unsplash, Pexels 같은 무료 스톡 이미지를 임시로 활용할 수 있습니다.</p>
+
+      <div class="section-num">05</div>
+      <h2>STEP 5. 디자인과 개발</h2>
+
+      <h3>플랫폼 vs 커스텀 개발</h3>
+      <p>대부분의 소규모 비즈니스에는 아임웹, 카페24, Wix, 웹플로우 같은 플랫폼이 적합합니다. 비용이 적게 들고 제작 기간도 짧습니다. 복잡한 데이터베이스나 고도화된 기능이 필요한 경우에는 커스텀 개발을 고려하지만, 이 경우 비용과 시간이 상당히 증가합니다.</p>
+
+      <h3>모바일 반응형은 기본</h3>
+      <p>디자인 단계부터 모바일 화면을 함께 설계해야 합니다. 데스크탑 디자인을 완성한 후 모바일 대응을 덧붙이는 방식은 품질이 떨어집니다. 좋은 웹사이트 제작업체는 모바일과 데스크탑 레이아웃을 처음부터 함께 설계합니다.</p>
+
+      <div class="section-num">06</div>
+      <h2>STEP 6. 론칭 전 체크리스트</h2>
+
+      <ul class="checklist">
+        <li>모든 페이지 링크가 정상 작동하는지 확인</li>
+        <li>문의 폼 이메일 수신 테스트</li>
+        <li>스마트폰·태블릿·데스크탑 3환경 직접 확인</li>
+        <li>구글 애널리틱스 또는 네이버 애널리틱스 설치</li>
+        <li>각 페이지 메타 타이틀·설명 설정</li>
+        <li>구글 서치콘솔에 사이트맵 제출</li>
+        <li>SSL(https) 인증서 적용 확인</li>
+        <li>페이지 로딩 속도 테스트 (PageSpeed Insights)</li>
+        <li>OG 태그(SNS 공유 미리보기) 설정</li>
+        <li>대표 키워드로 검색 시 사이트 노출 확인</li>
+      </ul>
+
+      <div class="callout">
+        <p>론칭 후에도 웹사이트는 꾸준히 관리해야 합니다. 정보가 오래된 홈페이지는 신뢰를 깎습니다. 최소 분기에 한 번은 서비스 정보, 연락처, 포트폴리오를 업데이트하고, 블로그 콘텐츠를 꾸준히 발행하면 검색 유입이 지속적으로 늘어납니다.</p>
+      </div>
+    </div>
+    <div class="article-cta">
+      <p>처음 만드는 웹사이트,<br><em>처음부터 제대로 만들어드릴게요.</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/homepage-guide" class="related-item">
+          <p class="related-tag">가이드</p>
+          <p class="related-title">홈페이지 제작 전에 꼭 읽어야 할 기본 가이드</p>
+        </a>
+        <a href="/blog/homepage-platform" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">플랫폼</p>
+          <p class="related-title">홈페이지 제작 플랫폼 비교, 어떤 걸 써야 할까?</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

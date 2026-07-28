@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네이버 스마트스토어 vs 자체 쇼핑몰 홈페이지, 무엇이 맞을까 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="스마트스토어와 자체 쇼핑몰 홈페이지의 차이를 정리했습니다. 수수료, 브랜딩, SEO, 확장성까지 내 상황에 맞는 선택 기준을 알려드립니다." />
+  <meta name="keywords" content="스마트스토어 vs 자체 쇼핑몰, 쇼핑몰 홈페이지 제작, 자체몰 vs 플랫폼, 카페24 쇼핑몰, 아임웹 쇼핑몰" />
+  <meta property="og:title" content="네이버 스마트스토어 vs 자체 쇼핑몰 홈페이지, 무엇이 맞을까 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="수수료, 브랜딩, SEO, 확장성까지 스마트스토어와 자체몰의 차이와 선택 기준을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/smartstore-vs-selfmall" />
+  <meta property="article:published_time" content="2026-05-20" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/smartstore-vs-selfmall" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "네이버 스마트스토어 vs 자체 쇼핑몰 홈페이지, 무엇이 맞을까",
+    "description": "수수료, 브랜딩, SEO, 확장성까지 스마트스토어와 자체몰의 차이와 선택 기준을 정리했습니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-05-20",
+    "url": "https://designcoolcoolcool.vercel.app/blog/smartstore-vs-selfmall"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 36px; font-size: 14px; }
+    .compare-table th { background: var(--black); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 400; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .compare-table th:first-child { width: 28%; }
+    .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--grey); vertical-align: top; line-height: 1.6; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { color: var(--black); font-weight: 400; }
+    .tag-smart { display: inline-block; font-size: 11px; background: #03c75a; color: #fff; padding: 2px 7px; border-radius: 2px; margin-right: 4px; }
+    .tag-self { display: inline-block; font-size: 11px; background: var(--black); color: #fff; padding: 2px 7px; border-radius: 2px; margin-right: 4px; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .compare-table { font-size: 13px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>쇼핑몰</span><span>2026. 05. 20</span></div>
+    <h1 class="article-title">스마트스토어 vs 자체 쇼핑몰,<br><em>무엇이 내게 맞을까</em></h1>
+    <p class="article-lead">스마트스토어로 시작해서 자체 쇼핑몰로 가야 할까, 처음부터 자체몰을 만들어야 할까. 판매 규모, 브랜딩 목표, 운영 능력에 따라 답이 다릅니다. 기준을 정리했습니다.</p>
+    <div class="article-body">
+      <p>온라인으로 제품을 팔기 시작할 때 가장 먼저 부딪히는 질문입니다. 스마트스토어는 진입 장벽이 낮고 네이버 트래픽을 활용할 수 있지만, 브랜드가 남지 않습니다. 자체 쇼핑몰은 브랜드를 온전히 표현할 수 있지만, 트래픽을 직접 만들어야 합니다. 두 채널은 경쟁 관계가 아니라 역할이 다릅니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>한눈에 보는 비교</h2>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>비교 항목</th>
+            <th><span class="tag-smart">스마트스토어</span></th>
+            <th><span class="tag-self">자체 쇼핑몰</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>초기 비용</td>
+            <td>무료 (수수료만 발생)</td>
+            <td>제작비 100만~500만 원+</td>
+          </tr>
+          <tr>
+            <td>수수료</td>
+            <td>결제 수수료 약 3.74%~</td>
+            <td>결제 PG사 수수료 약 2~3%</td>
+          </tr>
+          <tr>
+            <td>트래픽</td>
+            <td>네이버 쇼핑 자연 유입</td>
+            <td>직접 광고·SEO로 확보</td>
+          </tr>
+          <tr>
+            <td>브랜딩</td>
+            <td>제한적 (네이버 틀 안에서)</td>
+            <td>완전 자유 (디자인·UX 모두)</td>
+          </tr>
+          <tr>
+            <td>고객 데이터</td>
+            <td>제한적 (네이버가 소유)</td>
+            <td>완전 소유 (CRM 연동 가능)</td>
+          </tr>
+          <tr>
+            <td>SEO</td>
+            <td>네이버 쇼핑 노출 중심</td>
+            <td>구글·네이버 검색 최적화 가능</td>
+          </tr>
+          <tr>
+            <td>운영 난이도</td>
+            <td>쉬움</td>
+            <td>보통~어려움</td>
+          </tr>
+          <tr>
+            <td>확장성</td>
+            <td>낮음</td>
+            <td>높음 (멤버십·구독·글로벌 등)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-num">02</div>
+      <h2>스마트스토어가 맞는 경우</h2>
+
+      <h3>이제 막 시작하는 셀러</h3>
+      <p>제품이 팔릴지 아직 모르는 상태에서 자체 쇼핑몰에 수백만 원을 투자하는 건 위험합니다. 스마트스토어는 무료로 시작해서 시장 반응을 확인할 수 있습니다. 초기 제품 검증 단계에서는 스마트스토어가 최적입니다.</p>
+
+      <h3>네이버 쇼핑 트래픽이 강력한 카테고리</h3>
+      <p>생활용품, 식품, 뷰티 소모품처럼 가격 비교 구매가 많은 카테고리는 네이버 쇼핑 노출이 매출에 직결됩니다. 이런 카테고리에서는 스마트스토어의 네이버 검색 연동이 자체몰보다 훨씬 유리합니다.</p>
+
+      <h3>운영 인력이 부족한 1인 사업자</h3>
+      <p>자체 쇼핑몰은 만들고 나서도 관리가 필요합니다. 호스팅, 보안 업데이트, 결제 시스템 관리까지 혼자 해야 합니다. 운영 부담이 적은 스마트스토어가 더 효율적인 경우가 많습니다.</p>
+
+      <div class="section-num">03</div>
+      <h2>자체 쇼핑몰이 맞는 경우</h2>
+
+      <h3>브랜드가 경쟁력인 제품</h3>
+      <p>감성, 스토리, 브랜드 세계관이 구매 이유인 제품은 자체몰이 훨씬 유리합니다. 스마트스토어에서는 내 브랜드 감성을 제대로 표현할 수 없습니다. 핸드메이드, 디자이너 제품, 프리미엄 식품 브랜드라면 자체몰이 필수입니다.</p>
+
+      <h3>재구매율이 높은 제품</h3>
+      <p>소모품이나 구독형 제품처럼 재구매가 많다면 자체몰의 회원 관리·적립금·구독 시스템이 장기적으로 훨씬 유리합니다. 고객 데이터를 직접 소유하면 CRM 마케팅(이메일, 카카오 알림톡)으로 재구매를 유도할 수 있습니다.</p>
+
+      <h3>해외 판매가 목표인 경우</h3>
+      <p>스마트스토어는 기본적으로 국내 시장 중심입니다. 해외 판매가 목표라면 영문 자체몰이 필요합니다. 카페24의 글로벌 쇼핑몰 기능이나 Wix의 다국어 쇼핑몰이 이런 경우에 적합합니다.</p>
+
+      <div class="callout">
+        <p>스마트스토어와 자체몰은 함께 운영하는 것이 현실적으로 가장 효과적인 전략입니다. 스마트스토어로 네이버 유입을 잡고, 자체몰에서 브랜드 경험과 재구매를 만드는 이중 채널 전략을 쓰는 브랜드가 늘고 있습니다. 자체몰 직구매 고객에게 추가 할인이나 적립금 혜택을 주면 자체몰 비중을 점차 높일 수 있습니다.</p>
+      </div>
+
+      <div class="section-num">04</div>
+      <h2>자체 쇼핑몰 플랫폼 선택</h2>
+
+      <h3>카페24</h3>
+      <p>국내 쇼핑몰 자체몰의 표준에 가깝습니다. 결제·배송·세금계산서·통관까지 한국 이커머스에 필요한 기능이 잘 갖춰져 있습니다. 글로벌 쇼핑몰 기능으로 해외 판매도 지원합니다. 디자인 자유도가 높고 앱스토어로 기능 확장도 됩니다. 다만 초보자에게는 다소 복잡할 수 있습니다.</p>
+
+      <h3>아임웹</h3>
+      <p>디자인 감성이 뛰어나고 한국 결제 시스템 연동이 편리합니다. 브랜딩이 중요한 패션·뷰티·라이프스타일 쇼핑몰에 많이 사용됩니다. 카페24보다 기능이 단순하지만 그만큼 관리가 쉽습니다. 소규모에서 중규모 쇼핑몰에 적합합니다.</p>
+
+      <h3>Wix</h3>
+      <p>다국어 지원과 구글 SEO 친화적인 구조가 강점입니다. 해외 고객을 타깃으로 하거나 글로벌 결제(PayPal, Stripe)가 필요한 경우에 유리합니다. 국내 결제 시스템(카카오페이, 네이버페이) 연동은 카페24나 아임웹이 더 편리합니다.</p>
+
+      <ul class="checklist">
+        <li>초기 검증 단계, 운영 인력 부족 → 스마트스토어 먼저</li>
+        <li>브랜드 감성이 경쟁력, 프리미엄 제품 → 자체몰 필수</li>
+        <li>재구매·구독 모델, 고객 데이터 중요 → 자체몰 + CRM</li>
+        <li>해외 판매 목표 → Wix 또는 카페24 글로벌</li>
+        <li>국내 중심, 감성 브랜딩 → 아임웹</li>
+        <li>기능 확장·대규모 운영 → 카페24</li>
+      </ul>
+    </div>
+    <div class="article-cta">
+      <p>내 브랜드에 맞는 쇼핑몰 구조,<br><em>같이 설계해볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/shopping-mall-homepage" class="related-item">
+          <p class="related-tag">쇼핑몰</p>
+          <p class="related-title">쇼핑몰 홈페이지 제작, 아임웹으로 시작하기 전에 알아야 할 것</p>
+        </a>
+        <a href="/blog/homepage-platform" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">플랫폼 비교</p>
+          <p class="related-title">아임웹 vs Wix vs 크리에이터링크, 뭐가 다를까요?</p>
+        </a>
+        <a href="/blog/homepage-making-cost" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">홈페이지 제작 비용</p>
+          <p class="related-title">홈페이지 제작 비용, 2026년 기준으로 정리했습니다</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

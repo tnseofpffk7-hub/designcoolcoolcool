@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 이미지 최적화, 느려지지 않고 예쁘게 쓰는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="홈페이지 이미지 최적화 방법을 정리했습니다. 파일 포맷 선택(WebP·JPEG·PNG), 이미지 압축, alt 텍스트, 이미지 SEO까지 로딩 속도와 검색 노출을 동시에 잡는 실전 가이드입니다." />
+  <meta name="keywords" content="홈페이지 이미지 최적화, 이미지 압축, WebP 변환, 이미지 SEO, alt 텍스트 작성법" />
+  <meta property="og:title" content="홈페이지 이미지 최적화, 느려지지 않고 예쁘게 쓰는 법 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="파일 포맷 선택, 이미지 압축, alt 텍스트, 이미지 SEO까지 로딩 속도와 검색 노출을 동시에 잡는 실전 가이드입니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/homepage-image-optimization" />
+  <meta property="article:published_time" content="2026-05-21" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/homepage-image-optimization" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "홈페이지 이미지 최적화, 느려지지 않고 예쁘게 쓰는 법",
+    "description": "파일 포맷 선택, 이미지 압축, alt 텍스트, 이미지 SEO까지 로딩 속도와 검색 노출을 동시에 잡는 실전 가이드입니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-05-21",
+    "url": "https://designcoolcoolcool.vercel.app/blog/homepage-image-optimization"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); margin: 24px 0 36px; border: 1px solid var(--line); }
+    .format-card { background: var(--white); padding: 20px; }
+    .format-name { font-family: var(--font-display); font-size: 20px; color: var(--black); margin-bottom: 8px; }
+    .format-tag { display: inline-block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--accent); padding: 2px 7px; margin-bottom: 10px; }
+    .format-desc { font-size: 12px; color: var(--grey); line-height: 1.7; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .format-grid { grid-template-columns: 1fr; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>성능 최적화</span><span>2026. 05. 21</span></div>
+    <h1 class="article-title">홈페이지 이미지 최적화,<br><em>느려지지 않고 예쁘게 쓰는 법</em></h1>
+    <p class="article-lead">홈페이지가 느린 원인의 80%는 이미지입니다. 사진을 많이 쓰면서도 빠른 홈페이지를 만들려면 포맷, 압축, alt 텍스트까지 이미지 전략이 필요합니다.</p>
+    <div class="article-body">
+      <p>홈페이지를 만들 때 "사진을 크고 예쁘게 쓰고 싶다"는 요청이 많습니다. 당연히 좋은 사진은 홈페이지 퀄리티를 높입니다. 그런데 최적화 없이 원본 사진을 그대로 올리면 파일 크기가 수 MB에 달해 로딩 속도가 치명적으로 느려집니다. 잘 최적화된 이미지는 화질 손실 없이 파일 크기를 80% 이상 줄일 수 있습니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>이미지 파일 포맷 선택</h2>
+
+      <div class="format-grid">
+        <div class="format-card">
+          <div class="format-name">WebP</div>
+          <div class="format-tag">권장 포맷</div>
+          <div class="format-desc">구글이 만든 차세대 이미지 포맷. JPEG보다 25~35% 더 작은 파일 크기로 동일한 화질을 냅니다. 현재 모든 주요 브라우저에서 지원합니다. 홈페이지 이미지의 기본 포맷으로 WebP를 사용하세요.</div>
+        </div>
+        <div class="format-card">
+          <div class="format-name">JPEG</div>
+          <div class="format-tag">사진 일반</div>
+          <div class="format-desc">사진에 가장 널리 쓰이는 포맷. WebP를 지원하지 않는 환경을 위한 폴백으로 사용합니다. 품질 80~85%로 압축하면 육안으로 차이가 거의 없으면서 파일 크기를 크게 줄일 수 있습니다.</div>
+        </div>
+        <div class="format-card">
+          <div class="format-name">PNG</div>
+          <div class="format-tag">투명 배경</div>
+          <div class="format-desc">투명 배경이 필요한 로고, 아이콘, 그래픽에 사용합니다. 파일 크기가 JPEG보다 크므로 사진에는 사용하지 마세요. 투명도가 필요 없는 이미지라면 JPEG나 WebP가 훨씬 효율적입니다.</div>
+        </div>
+      </div>
+
+      <div class="section-num">02</div>
+      <h2>이미지 크기와 압축</h2>
+
+      <h3>업로드 전에 크기를 줄여야 한다</h3>
+      <p>스마트폰이나 카메라로 찍은 원본 사진은 보통 3,000~6,000px 너비에 5~20MB 크기입니다. 홈페이지에서 전체 너비로 표시되는 이미지도 1,920px이면 충분합니다. 원본을 그대로 올리면 브라우저가 작게 표시하더라도 큰 파일을 모두 다운로드해야 하므로 느려집니다. 업로드 전에 반드시 크기를 줄이세요.</p>
+
+      <h3>권장 이미지 크기 기준</h3>
+      <ul class="checklist">
+        <li>히어로 배너 (전체 너비) — 최대 1,920px 너비, 300KB 이하 목표</li>
+        <li>서비스·포트폴리오 섹션 이미지 — 최대 1,200px 너비, 150KB 이하</li>
+        <li>블로그 대표 이미지 — 최대 1,200px 너비, 100KB 이하</li>
+        <li>로고·아이콘 — SVG 포맷 권장 (벡터라 어떤 크기에서도 선명)</li>
+        <li>모바일 전용 이미지 — 최대 768px 너비로 별도 제공하면 이상적</li>
+      </ul>
+
+      <h3>무료 압축 도구</h3>
+      <p>Squoosh(squoosh.app)는 구글이 만든 무료 이미지 압축 도구입니다. 브라우저에서 바로 사용할 수 있고, WebP 변환과 품질 조정이 직관적입니다. TinyPNG(tinypng.com)는 PNG와 JPEG 압축에 특화되어 있고, 드래그앤드롭으로 간편하게 사용할 수 있습니다. 아임웹, Wix, 카페24는 이미지 업로드 시 자동 압축 기능을 제공하기도 하지만, 업로드 전에 직접 압축하는 것이 더 효과적입니다.</p>
+
+      <div class="section-num">03</div>
+      <h2>alt 텍스트 — SEO와 접근성 동시에</h2>
+
+      <h3>alt 텍스트가 하는 두 가지 역할</h3>
+      <p>이미지의 alt(대체 텍스트) 속성은 이미지가 로드되지 않을 때 표시되는 텍스트이자, 구글이 이미지 내용을 이해하는 근거입니다. alt 텍스트를 제대로 작성하면 구글 이미지 검색에서 노출될 수 있고, 시각 장애인을 위한 스크린 리더도 이 텍스트를 읽어 접근성이 높아집니다.</p>
+
+      <h3>좋은 alt 텍스트 작성법</h3>
+      <p>이미지가 무엇을 보여주는지 간결하고 구체적으로 설명하되, 자연스럽게 SEO 키워드를 포함시키세요. "image001.jpg"나 "사진"처럼 의미 없는 alt는 쓰지 마세요. "강남 필라테스 스튜디오 소그룹 수업 모습"처럼 장소, 서비스, 상황을 담은 설명이 이상적입니다. 장식용 이미지(배경 패턴 등)는 alt=""로 비워두는 것이 올바른 방법입니다.</p>
+
+      <div class="callout">
+        <p>아임웹, Wix, 카페24 모두 이미지 업로드 시 alt 텍스트를 입력할 수 있습니다. 홈페이지에 이미지를 올릴 때 alt 입력을 습관화하세요. 한 번 작성해두면 SEO 효과가 장기적으로 쌓입니다. 특히 뷰티샵, 인테리어, 음식점처럼 이미지 검색으로 발견되는 업종에서 이미지 alt는 매우 중요합니다.</p>
+      </div>
+
+      <div class="section-num">04</div>
+      <h2>이미지 파일명도 SEO에 영향을 준다</h2>
+
+      <h3>의미 있는 파일명을 쓰자</h3>
+      <p>카메라에서 나오는 "IMG_4523.jpg"나 "DSC_0012.jpg" 같은 파일명은 구글이 이미지 내용을 파악하는 데 도움이 되지 않습니다. 업로드 전에 파일명을 "gangnam-pilates-class.jpg"나 "강남-필라테스-수업.jpg"처럼 내용을 설명하는 이름으로 바꾸세요. 영문 파일명이 한글보다 SEO에 조금 더 유리합니다.</p>
+
+      <ul class="checklist">
+        <li>이미지 업로드 전 WebP 또는 JPEG로 변환 및 압축</li>
+        <li>히어로 이미지 1,920px 이하, 300KB 이하로 조정</li>
+        <li>파일명을 내용을 설명하는 영문으로 변경</li>
+        <li>모든 이미지에 alt 텍스트 작성 (키워드 자연스럽게 포함)</li>
+        <li>로고·아이콘은 SVG 포맷 사용</li>
+        <li>Squoosh 또는 TinyPNG로 압축 확인</li>
+        <li>압축 후 PageSpeed Insights로 로딩 속도 측정</li>
+      </ul>
+    </div>
+    <div class="article-cta">
+      <p>빠르고 예쁜 홈페이지,<br><em>처음부터 제대로 만들어드립니다</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/homepage-loading-speed" class="related-item">
+          <p class="related-tag">성능 최적화</p>
+          <p class="related-title">홈페이지 로딩 속도 개선, 3초 안에 열리게 만드는 방법</p>
+        </a>
+        <a href="/blog/homepage-seo" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">SEO</p>
+          <p class="related-title">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</p>
+        </a>
+        <a href="/blog/photographer-creator-homepage" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">사진·영상</p>
+          <p class="related-title">사진작가·영상 크리에이터 홈페이지 제작, 작업물로 말하는 사이트</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

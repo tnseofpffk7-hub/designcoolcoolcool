@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뮤지션·아티스트·갤러리 홈페이지 제작, 작품이 빛나는 공간 만들기 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="뮤지션, 시각 예술가, 갤러리 홈페이지 제작 전략을 정리했습니다. 작품 포트폴리오 구성, 공연·전시 일정 안내, 음악 스트리밍 연동, 아티스트 SEO까지 실전 가이드입니다." />
+  <meta name="keywords" content="뮤지션 홈페이지 제작, 아티스트 홈페이지, 갤러리 홈페이지 만들기, 음악가 홈페이지, 예술가 홈페이지 제작" />
+  <meta property="og:title" content="뮤지션·아티스트·갤러리 홈페이지 제작, 작품이 빛나는 공간 만들기 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="작품 포트폴리오 구성, 공연·전시 일정, 음악 스트리밍 연동까지 아티스트 홈페이지 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/musician-artist-homepage" />
+  <meta property="article:published_time" content="2026-05-21" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/musician-artist-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "뮤지션·아티스트·갤러리 홈페이지 제작, 작품이 빛나는 공간 만들기",
+    "description": "작품 포트폴리오 구성, 공연·전시 일정, 음악 스트리밍 연동까지 아티스트 홈페이지 전략을 정리했습니다.",
+    "author": { "@type": "Person", "name": "이수연", "url": "https://designcoolcoolcool.vercel.app" },
+    "publisher": { "@type": "Organization", "name": "디자인 쿨쿨쿨", "url": "https://designcoolcoolcool.vercel.app" },
+    "datePublished": "2026-05-21",
+    "url": "https://designcoolcoolcool.vercel.app/blog/musician-artist-homepage"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); margin: 24px 0 36px; border: 1px solid var(--line); }
+    .type-item { background: var(--white); padding: 22px; }
+    .type-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .type-title { font-size: 15px; font-weight: 500; color: var(--black); margin-bottom: 8px; }
+    .type-desc { font-size: 13px; color: var(--grey); line-height: 1.7; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .type-grid { grid-template-columns: 1fr; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>뮤지션·아티스트</span><span>2026. 05. 21</span></div>
+    <h1 class="article-title">뮤지션·아티스트·갤러리 홈페이지,<br><em>작품이 빛나는 공간 만들기</em></h1>
+    <p class="article-lead">SNS는 알고리즘이 결정하지만, 홈페이지는 아티스트가 직접 설계합니다. 작품을 가장 잘 보여주고, 공연과 전시 정보를 전달하며, 협업 제안을 받는 공간을 만드는 방법을 정리했습니다.</p>
+    <div class="article-body">
+      <p>뮤지션과 시각 예술가, 갤러리에게 홈페이지는 인스타그램이나 유튜브와는 다른 역할을 합니다. 플랫폼에서는 알고리즘에 의해 작품이 소비되지만, 홈페이지는 작가가 원하는 맥락과 순서로 작품을 전달할 수 있는 유일한 공간입니다. 진지한 컬렉터, 큐레이터, 레이블, 공연 기획사는 인스타그램보다 홈페이지를 더 신뢰합니다.</p>
+
+      <div class="section-num">01</div>
+      <h2>분야별 홈페이지의 핵심 목적</h2>
+
+      <div class="type-grid">
+        <div class="type-item">
+          <div class="type-label">뮤지션·밴드</div>
+          <div class="type-title">음악과 공연 일정이 중심</div>
+          <div class="type-desc">스포티파이·애플뮤직 스트리밍 연동, 최신 앨범 소개, 공연 일정 및 티켓 링크, 프레스 킷 다운로드. 팬과의 접점을 만드는 뉴스레터 구독도 효과적입니다.</div>
+        </div>
+        <div class="type-item">
+          <div class="type-label">시각 예술가</div>
+          <div class="type-title">작품 포트폴리오가 전부</div>
+          <div class="type-desc">시리즈·매체별로 잘 분류된 작품 갤러리, 작가 노트, 전시 이력. 작품 구매나 프린트 판매 기능을 추가하면 수익 채널이 생깁니다.</div>
+        </div>
+        <div class="type-item">
+          <div class="type-label">갤러리</div>
+          <div class="type-title">현재·과거 전시 아카이브</div>
+          <div class="type-desc">현재 진행 중인 전시, 소속 작가 목록, 과거 전시 아카이브, 방문 안내. 컬렉터를 위한 작품 문의 기능과 프레스 보도자료 섹션도 필요합니다.</div>
+        </div>
+        <div class="type-item">
+          <div class="type-label">공연 예술가·댄서</div>
+          <div class="type-title">영상과 일정이 설득한다</div>
+          <div class="type-desc">공연 영상 임베드, 레퍼토리 소개, 공연 일정, 워크숍·클래스 안내. 영상이 가장 강력한 설득 도구이므로 화질과 편집 품질에 신경 쓰세요.</div>
+        </div>
+      </div>
+
+      <div class="section-num">02</div>
+      <h2>아티스트 홈페이지 필수 구성 요소</h2>
+
+      <h3>작품 갤러리 — 보여주는 방식이 전부</h3>
+      <p>작품 사진은 배경 없이 흰 벽이나 검은 벽에서 촬영한 것이 가장 좋습니다. 갤러리 페이지는 클릭 없이 이미지를 스크롤로 볼 수 있는 구성이 이상적입니다. 이미지가 클릭 전에 작게 썸네일로 보이고, 클릭 시 크게 확대되는 라이트박스 기능이 있어야 합니다. 작품마다 제목, 제작 연도, 재료, 크기를 병기하는 것이 전문적입니다.</p>
+
+      <h3>아티스트 스테이트먼트</h3>
+      <p>작가가 어떤 생각으로 작업하는지, 어떤 주제와 질문에 천착하는지를 설명하는 짧은 글입니다. 너무 길면 읽히지 않으므로 200~400자 정도의 핵심적인 내용으로 정리하세요. 평론가나 큐레이터가 보는 첫 번째 텍스트이므로 신중하게 작성하는 것이 중요합니다.</p>
+
+      <h3>CV (경력 사항)</h3>
+      <p>전시 이력, 수상 경력, 레지던시, 소장처를 연도 역순으로 정리한 페이지입니다. PDF 다운로드 기능을 함께 제공하면 큐레이터나 갤러리스트가 편하게 검토할 수 있습니다. 뮤지션은 디스코그래피, 주요 공연 이력, 미디어 보도를 정리합니다.</p>
+
+      <h3>프레스 킷 및 미디어</h3>
+      <p>미디어 보도, 인터뷰, 리뷰 링크를 모아두는 섹션입니다. 고화질 아티스트 사진, 바이오그래피 텍스트를 ZIP으로 묶어 다운로드할 수 있게 제공하면 미디어가 보도 시 직접 사용할 수 있어 노출 기회가 늘어납니다.</p>
+
+      <ul class="checklist">
+        <li>작품 갤러리 (시리즈·매체별 분류, 라이트박스 기능)</li>
+        <li>아티스트 스테이트먼트 (200~400자)</li>
+        <li>CV / 디스코그래피 (PDF 다운로드 포함)</li>
+        <li>공연·전시 일정 및 티켓 링크</li>
+        <li>음악 스트리밍 플레이어 또는 영상 임베드</li>
+        <li>프레스 킷 (고화질 사진·바이오 다운로드)</li>
+        <li>협업·문의 연락처 (에이전트 또는 직접 연락)</li>
+        <li>뉴스레터 구독 또는 팬 커뮤니케이션 채널</li>
+      </ul>
+
+      <div class="section-num">03</div>
+      <h2>아티스트 홈페이지 디자인 원칙</h2>
+
+      <h3>작품이 주인공, 디자인은 배경</h3>
+      <p>아티스트 홈페이지에서 가장 흔한 실수는 디자인이 작품보다 튀는 것입니다. 화려한 애니메이션, 복잡한 레이아웃, 강렬한 배경색은 작품에 집중해야 할 시선을 분산시킵니다. 흰 배경, 충분한 여백, 절제된 타이포그래피가 작품을 가장 잘 보이게 만듭니다.</p>
+
+      <div class="callout">
+        <p>아티스트 홈페이지는 Wix나 아임웹으로 만드는 경우가 많습니다. Wix는 포트폴리오 템플릿이 다양하고 갤러리 기능이 훌륭합니다. 영문 홈페이지가 필요하다면 Wix의 다국어 기능이나 별도 영문 도메인으로 운영하는 것이 해외 갤러리·레이블 접근에 효과적입니다.</p>
+      </div>
+
+      <h3>이름을 검색하면 홈페이지가 뜨게</h3>
+      <p>아티스트 이름을 구글에서 검색했을 때 홈페이지가 첫 번째로 나오도록 해야 합니다. 홈페이지 제목 태그에 아티스트 이름을 정확히 담고, 구글 서치 콘솔에 사이트를 등록하면 이름 검색에서 홈페이지가 상위에 노출됩니다. 이름이 같은 다른 사람이 있다면 장르나 지역을 함께 표기하면 차별화됩니다.</p>
+    </div>
+    <div class="article-cta">
+      <p>작품이 온전히 빛나는 홈페이지,<br><em>같이 만들어볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/photographer-creator-homepage" class="related-item">
+          <p class="related-tag">사진·영상</p>
+          <p class="related-title">사진작가·영상 크리에이터 홈페이지 제작, 작업물로 말하는 사이트</p>
+        </a>
+        <a href="/blog/portfolio-homepage" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">포트폴리오</p>
+          <p class="related-title">포트폴리오 홈페이지 제작 전에 꼭 알아야 할 것 5가지</p>
+        </a>
+        <a href="/blog/personal-branding-homepage" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;">
+          <p class="related-tag">개인 브랜딩</p>
+          <p class="related-title">개인 브랜딩 홈페이지, 나를 브랜드로 만드는 방법</p>
+        </a>
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

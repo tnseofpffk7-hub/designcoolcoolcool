@@ -10,9 +10,67 @@
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- 신규 포스팅 (2026-08-06 ~ 2026-08-01) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/law-firm-homepage</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/travel-agency-homepage</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/church-religious-homepage</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/coworking-space-homepage</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/auto-dealer-repair-homepage</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/florist-homepage</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/postpartum-elderly-care-homepage</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/cosmetics-brand-homepage</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- 신규 포스팅 (2026-05-21) -->

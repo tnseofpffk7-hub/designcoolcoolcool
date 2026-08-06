@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스킨케어·화장품 브랜드 홈페이지 제작, 성분과 감성을 함께 파는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="스킨케어·화장품 브랜드 홈페이지 제작 전략을 정리했습니다. 제품 상세페이지 구성, 성분 정보 신뢰도, 브랜드 스토리, 구매 전환 설계까지 다룹니다." />
+  <meta name="keywords" content="화장품 홈페이지, 스킨케어 브랜드 홈페이지 제작, 뷰티 브랜드 홈페이지, 화장품 쇼핑몰" />
+  <meta property="og:title" content="스킨케어·화장품 브랜드 홈페이지 제작, 성분과 감성을 함께 파는 법" />
+  <meta property="og:description" content="스킨케어·화장품 브랜드 홈페이지 제작 전략을 정리했습니다. 제품 상세페이지 구성, 성분 정보 신뢰도, 브랜드 스토리, 구매 전환 설계까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/cosmetics-brand-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/cosmetics-brand-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">스킨케어·화장품</p>
+    <h1 class="post-hero-title">스킨케어·화장품 브랜드 홈페이지 제작, 성분과 감성을 함께 파는 법</h1>
+    <p class="post-hero-meta">2026. 07. 30 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">화장품은 두 가지를 동시에 팔아야 하는 상품입니다. 감성적인 브랜드 이미지, 그리고 성분에 대한 근거 있는 정보. 이 균형을 홈페이지 구조가 결정합니다.</p>
+
+    <h2>1. 브랜드 스토리는 짧고 진정성 있게</h2>
+    <p>창업 계기, 브랜드가 추구하는 가치를 장황하게 설명하기보다, 한두 문장의 핵심 메시지와 그것을 뒷받침하는 사진 한 장이 더 효과적입니다. 브랜드 페이지는 별도로 두되, 메인 화면에는 그 정수만 짧게 녹여내세요.</p>
+
+    <h2>2. 제품 상세페이지, 성분표는 숨기지 않기</h2>
+    <p>전 성분표, 핵심 성분의 함량과 기능, 피부 타입별 추천 여부를 명확히 표기하면 신뢰가 크게 올라갑니다. 최근 소비자들은 성분을 직접 검색해보는 경우가 많기 때문에, 정보를 숨기기보다 오히려 앞세우는 것이 더 유리합니다.</p>
+
+    <h2>3. 사용 전후 비교, 과장 없이</h2>
+    <p>비포·애프터 이미지는 강력한 설득 도구지만, 화장품 표시광고법상 과장된 효능 표현은 제재 대상이 될 수 있습니다. 실제 사용자 후기와 함께 "느껴지는 변화" 중심으로 표현하고, 임상 결과가 있다면 출처와 함께 명확히 밝히는 것이 안전합니다.</p>
+
+    <h2>4. 구매 전환, 선택지를 단순하게</h2>
+    <p>용량별 옵션, 세트 구성이 많을수록 오히려 구매를 망설이게 만들 수 있습니다. 베스트셀러를 상단에 배치하고, 처음 구매하는 고객을 위한 "입문 세트"처럼 선택을 도와주는 구성을 함께 제공하면 전환율이 올라갑니다.</p>
+
+    <h2>5. 재구매를 만드는 구조</h2>
+    <p>정기구독 옵션, 리뷰 작성 시 적립금, 다음 구매 알림처럼 재구매를 유도하는 장치를 상세페이지와 결제 완료 페이지에 자연스럽게 녹여두는 것이 장기적인 매출에 큰 영향을 줍니다.</p>
+
+    <p>화장품 브랜드 홈페이지는 감성만으로도, 정보만으로도 부족합니다. 두 가지가 같은 페이지 안에서 자연스럽게 공존할 때 방문자는 구매 버튼을 누릅니다.</p>
+
+    <div class="cta-box">
+      <p>스킨케어·화장품 브랜드 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

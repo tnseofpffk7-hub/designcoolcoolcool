@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>여행사·투어 홈페이지 제작, 예약까지 이어지는 여정을 설계하는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="여행사·투어 상품 홈페이지 제작 전략을 정리했습니다. 상품 페이지 구성, 후기·사진 노출, 예약·결제 연동, 시즌별 콘텐츠 전략까지 다룹니다." />
+  <meta name="keywords" content="여행사 홈페이지, 투어 홈페이지 제작, 여행상품 홈페이지, 패키지 여행 홈페이지" />
+  <meta property="og:title" content="여행사·투어 홈페이지 제작, 예약까지 이어지는 여정을 설계하는 법" />
+  <meta property="og:description" content="여행사·투어 상품 홈페이지 제작 전략을 정리했습니다. 상품 페이지 구성, 후기·사진 노출, 예약·결제 연동, 시즌별 콘텐츠 전략까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/travel-agency-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/travel-agency-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">여행사·투어</p>
+    <h1 class="post-hero-title">여행사·투어 홈페이지 제작, 예약까지 이어지는 여정을 설계하는 법</h1>
+    <p class="post-hero-meta">2026. 08. 05 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">여행 상품은 눈으로 먼저 삽니다. 사진과 일정표를 보며 그 순간을 상상할 수 있어야 예약 버튼을 누릅니다. 여행사 홈페이지는 정보 전달자인 동시에, 여행지를 미리 보여주는 쇼케이스여야 합니다.</p>
+
+    <h2>1. 상품 페이지, 일정표보다 이야기 순서로</h2>
+    <p>1일차부터 N일차까지 표로만 나열하면 지루합니다. 하이라이트가 되는 장면(일출, 액티비티, 식사) 사진을 먼저 배치하고, 그 아래 상세 일정을 펼치는 구조가 스크롤을 끝까지 이어지게 만듭니다. 포함 사항과 불포함 사항은 예약 직전 이탈을 막기 위해 반드시 눈에 잘 띄게 표시해야 합니다.</p>
+
+    <h2>2. 후기는 사진과 함께, 최신순으로</h2>
+    <p>텍스트 후기보다 실제 참가자가 남긴 사진 후기가 훨씬 강한 신뢰 신호입니다. 인스타그램 피드나 자체 후기 갤러리를 상품 페이지 하단에 연동하고, 최신 후기가 먼저 보이도록 정렬하면 "지금도 운영 중인 상품"이라는 인상을 줍니다.</p>
+
+    <h2>3. 예약과 결제, 이탈 없이 한 흐름으로</h2>
+    <p>날짜 선택 → 인원 입력 → 결제까지 페이지 이동 없이 진행되는 구조가 이상적입니다. 부득이하게 카카오톡이나 전화 상담으로 넘어가야 한다면, 상품 페이지 안에서 바로 연결되는 버튼을 배치해 이탈을 최소화하세요.</p>
+
+    <h2>4. 시즌 콘텐츠로 검색 유입을 넓히기</h2>
+    <p>"제주도 가을 여행 코스", "동남아 우기 여행 팁"처럼 시즌성 콘텐츠는 검색 유입이 꾸준한 카테고리입니다. 상품 판매 페이지와 별도로 여행 정보 콘텐츠를 블로그 형태로 쌓아두면, 구매 의도가 아직 명확하지 않은 잠재 고객도 자연스럽게 유입시킬 수 있습니다.</p>
+
+    <h2>5. 모바일에서 예약 흐름을 반드시 테스트</h2>
+    <p>여행 상품 탐색과 예약의 상당수는 모바일에서 이루어집니다. 캘린더 선택, 인원 수 입력 같은 인터랙션이 작은 화면에서도 손가락으로 편하게 조작되는지 반드시 실기기로 확인해야 합니다.</p>
+
+    <p>좋은 여행사 홈페이지는 상품을 나열하지 않고, 여행을 미리 경험하게 합니다. 그 경험이 신뢰가 되고, 신뢰가 예약으로 이어집니다.</p>
+
+    <div class="cta-box">
+      <p>여행사·투어 상품 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

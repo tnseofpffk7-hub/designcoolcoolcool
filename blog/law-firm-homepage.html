@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로펌·변호사 사무소 홈페이지 제작, 상담 문의로 이어지는 신뢰 설계 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="변호사·로펌 홈페이지 제작 전략을 정리했습니다. 전문 분야별 페이지 구성, 승소 사례 공개 범위, 상담 예약 흐름, 변호사 광고 규정까지 다룹니다." />
+  <meta name="keywords" content="변호사 홈페이지, 로펌 홈페이지 제작, 법률사무소 홈페이지, 법률 상담 홈페이지" />
+  <meta property="og:title" content="로펌·변호사 사무소 홈페이지 제작, 상담 문의로 이어지는 신뢰 설계" />
+  <meta property="og:description" content="변호사·로펌 홈페이지 제작 전략을 정리했습니다. 전문 분야별 페이지 구성, 승소 사례 공개 범위, 상담 예약 흐름, 변호사 광고 규정까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/law-firm-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/law-firm-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">로펌·변호사</p>
+    <h1 class="post-hero-title">로펌·변호사 사무소 홈페이지 제작, 상담 문의로 이어지는 신뢰 설계</h1>
+    <p class="post-hero-meta">2026. 08. 06 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">의뢰인이 변호사를 찾을 때 가장 먼저 하는 행동은 검색입니다. 지인 추천을 받았더라도 이름을 검색해 홈페이지를 확인하고, 그 인상으로 상담을 결정할지 말지를 정합니다. 로펌·변호사 홈페이지는 화려함보다 신뢰와 명확성이 우선인 영역입니다.</p>
+
+    <h2>1. 전문 분야는 나눠서, 명확하게</h2>
+    <p>이혼, 형사, 상속, 기업자문을 한 페이지에 뭉뚱그려 놓으면 방문자는 "내 사건을 잘 아는 곳인가"라는 확신을 갖기 어렵습니다. 분야별로 별도 페이지를 만들고, 각 페이지 안에서 해당 분야의 절차·비용 구조·자주 묻는 질문을 따로 정리하는 것이 좋습니다. 검색 엔진 입장에서도 "이혼 변호사"와 "기업 자문 변호사"는 전혀 다른 검색 의도이기 때문에, 페이지를 나누는 편이 SEO에도 유리합니다.</p>
+
+    <h2>2. 승소 사례, 공개 범위를 먼저 정하세요</h2>
+    <p>변호사 광고에 관한 규정상 특정 승소 금액이나 의뢰인을 특정할 수 있는 정보는 공개에 제한이 있을 수 있습니다. 사건 유형과 쟁점, 대응 전략 중심으로 각색해 소개하는 방식이 안전하면서도 설득력을 유지하는 방법입니다. "무엇을 공개할 수 있는가"를 디자인 이전에 먼저 정리해야, 나중에 페이지를 다시 만드는 일을 피할 수 있습니다.</p>
+
+    <h2>3. 상담 신청까지의 거리를 줄이기</h2>
+    <p>법률 상담은 방문자에게 심리적 장벽이 큰 행동입니다. 전화 상담, 온라인 상담 신청 폼, 카카오톡 채널 중 최소 두 가지 이상의 채널을 페이지 상단과 하단 모두에 배치하고, 상담 신청 폼은 이름·연락처·사건 유형·간단한 상황 설명 정도로 짧게 구성하는 것이 완료율을 높입니다.</p>
+
+    <h2>4. 변호사 소개, 이력보다 신뢰 신호</h2>
+    <p>학력과 경력을 나열하는 것도 필요하지만, 그보다 중요한 건 "이 사건을 얼마나 다뤄봤는가"입니다. 주력 분야, 소속 협회, 인터뷰·기고 이력, 실제 상담 방식(직접 대응하는지, 팀으로 대응하는지)을 함께 보여주면 신뢰가 더 구체적으로 전달됩니다.</p>
+
+    <h2>5. 지역 SEO도 놓치지 마세요</h2>
+    <p>"강남 이혼전문변호사"처럼 지역명이 결합된 검색은 실제 상담으로 이어질 확률이 높은 키워드입니다. 지역명, 법원 인근 위치, 네이버 플레이스 연동을 함께 준비하면 검색 노출과 실제 방문 상담 전환을 동시에 잡을 수 있습니다.</p>
+
+    <p>홈페이지는 변호사를 대신해 첫 상담을 진행하는 창구입니다. 전문성과 접근성을 함께 설계하면, 방문자가 다른 사무소를 검색하지 않고 바로 상담을 신청하게 됩니다.</p>
+
+    <div class="cta-box">
+      <p>로펌·변호사 사무소 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

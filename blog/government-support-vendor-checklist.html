@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정부지원사업 홈페이지 제작업체 선정, 후회 없이 고르는 체크리스트 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="정부지원사업으로 홈페이지를 제작할 때 지정업체를 선택하는 기준과, 포트폴리오 확인부터 커뮤니케이션 방식까지 후회 없는 선택을 위한 체크리스트를 정리했습니다." />
+  <meta name="keywords" content="정부지원사업 홈페이지 업체, 홈페이지 제작업체 선정, 정부지원 홈페이지 제작, 지정업체 선택" />
+  <meta property="og:title" content="정부지원사업 홈페이지 제작업체 선정, 후회 없이 고르는 체크리스트" />
+  <meta property="og:description" content="정부지원사업으로 홈페이지를 제작할 때 지정업체를 선택하는 기준과, 포트폴리오 확인부터 커뮤니케이션 방식까지 후회 없는 선택을 위한 체크리스트를 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/government-support-vendor-checklist" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/government-support-vendor-checklist" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">정부지원 홈페이지 제작</p>
+    <h1 class="post-hero-title">정부지원사업 홈페이지 제작업체 선정, 후회 없이 고르는 체크리스트</h1>
+    <p class="post-hero-meta">2026. 08. 08 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">정부지원사업은 대부분 여러 지정업체 중 하나를 선택할 수 있는 구조로 운영됩니다. "어차피 지원사업이니 아무 곳이나 상관없다"고 생각하기 쉽지만, 지정업체 사이에서도 결과물의 차이는 생각보다 큽니다.</p>
+
+    <h2>1. 포트폴리오, 최근 작업 위주로 확인</h2>
+    <p>수년 전 포트폴리오만 걸어둔 업체보다, 최근 6개월 이내 작업물을 보유한 업체가 현재 디자인 트렌드를 더 잘 반영합니다. 실제 운영 중인 사이트 링크를 직접 접속해 로딩 속도와 모바일 화면까지 확인해보세요.</p>
+
+    <h2>2. 같은 업종 작업 경험이 있는지</h2>
+    <p>내 업종과 유사한 프로젝트를 진행해본 업체는 필요한 페이지 구성과 자주 발생하는 문제를 미리 알고 있습니다. 문의 시 "저희 업종과 비슷한 작업을 해보셨나요"라고 직접 물어보는 것이 좋습니다.</p>
+
+    <h2>3. 제작 기간과 소통 방식</h2>
+    <p>지정업체는 여러 지원사업 건을 동시에 진행하는 경우가 많아, 담당자가 자주 바뀌거나 응답이 느려지는 경우가 있습니다. 계약 전 예상 제작 기간과 담당자 배정 방식을 명확히 확인하세요.</p>
+
+    <h2>4. 수정 횟수와 완성 후 유지보수</h2>
+    <p>지원사업 예산 안에 포함된 수정 횟수, 완성 후 유지보수 비용 발생 여부를 미리 확인해야 나중에 추가 비용으로 놀라는 일을 막을 수 있습니다.</p>
+
+    <h2>5. 그래도 아쉬움이 남는다면</h2>
+    <p>지정업체 풀 안에서 아무리 신중하게 골라도, 획일적인 템플릿 구조라는 제약 자체는 벗어나기 어려운 경우가 많습니다. 브랜드에 딱 맞는 디자인과 빠른 소통이 우선이라면, 지원사업과 별개로 전문 프리랜서와 함께 진행하는 방법도 함께 검토해보시길 권합니다.</p>
+
+    <p>정부지원사업은 비용 부담을 줄여주는 좋은 제도지만, 그 안에서도 선택은 신중해야 합니다. 몇 가지 기준만 미리 세워두면 같은 예산으로도 훨씬 나은 결과물을 받을 수 있습니다.</p>
+
+    <div class="cta-box">
+      <p>지정업체 풀 안에서도 더 나은 선택지를 찾고 싶다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

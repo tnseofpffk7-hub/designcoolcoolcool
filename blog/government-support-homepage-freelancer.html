@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정부지원 홈페이지 제작, 지정업체 계약 전에 알아두면 좋은 것들 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="정부지원 홈페이지 제작 사업의 지정업체 구조와 한계를 짚어보고, 빠르고 트렌디한 홈페이지가 필요할 때 전문 프리랜서를 함께 고려해야 하는 이유를 정리했습니다." />
+  <meta name="keywords" content="정부지원 홈페이지 제작, 정부지원사업 홈페이지, 소상공인 홈페이지 지원, 홈페이지 제작 지원금" />
+  <meta property="og:title" content="정부지원 홈페이지 제작, 지정업체 계약 전에 알아두면 좋은 것들" />
+  <meta property="og:description" content="정부지원 홈페이지 제작 사업의 지정업체 구조와 한계를 짚어보고, 빠르고 트렌디한 홈페이지가 필요할 때 전문 프리랜서를 함께 고려해야 하는 이유를 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/government-support-homepage-freelancer" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/government-support-homepage-freelancer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">정부지원 홈페이지 제작</p>
+    <h1 class="post-hero-title">정부지원 홈페이지 제작, 지정업체 계약 전에 알아두면 좋은 것들</h1>
+    <p class="post-hero-meta">2026. 08. 10 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">소상공인시장진흥공단이나 각 지자체에서 진행하는 홈페이지 제작 지원사업은 비용 부담을 크게 줄여주는 좋은 제도입니다. 다만 실제로 신청해본 사업자라면 한 가지 공통된 아쉬움을 이야기합니다. "지정된 업체 중에서만 골라야 한다"는 구조적인 한계입니다.</p>
+
+    <h2>1. 정부지원 홈페이지 제작, 왜 지정업체에서만 가능할까</h2>
+    <p>정부지원사업은 예산 집행의 투명성과 사후 관리를 위해 사전에 등록·심사된 업체 풀 안에서 제작사를 선택하도록 운영됩니다. 이는 세금이 투입되는 사업이기 때문에 당연한 절차이지만, 신청자 입장에서는 선택의 폭이 좁아진다는 뜻이기도 합니다.</p>
+
+    <h2>2. 지정업체 제작의 현실적인 아쉬움</h2>
+    <p>지정업체는 다수의 지원사업 물량을 동시에 처리하는 경우가 많습니다. 그러다 보니 정해진 템플릿 안에서 로고와 텍스트만 바꿔 넣는 방식으로 제작이 진행되는 경우가 적지 않고, 트렌드를 반영한 디자인보다는 "일단 완성"에 초점이 맞춰지는 경우가 많습니다. 제작 기간도 신청부터 완성까지 수개월이 걸리는 경우가 흔합니다.</p>
+
+    <h2>3. 속도와 트렌드가 더 중요하다면, 선택지는 따로 있습니다</h2>
+    <p>사업 오픈 시점이 촉박하거나, 경쟁사보다 먼저 시장에 홈페이지를 선보여야 하거나, 지정업체의 획일적인 템플릿이 아니라 브랜드에 맞는 트렌디한 디자인이 꼭 필요한 경우라면 이야기가 달라집니다. 이럴 때는 정부지원 예산에 얽매이지 않고, <strong>전문 프리랜서 디자이너에게 직접 의뢰</strong>하는 방식이 시간과 완성도 두 가지를 동시에 확보하는 현실적인 선택이 될 수 있습니다.</p>
+
+    <p>프리랜서 제작은 담당자와 직접 소통하며 진행되기 때문에 의사결정 단계가 짧고, 완성까지의 기간도 지정업체 대비 훨씬 빠른 경우가 많습니다. 또한 다수의 물량을 처리해야 하는 지정업체와 달리, 한 프로젝트에 집중해 최신 디자인 트렌드를 반영할 수 있다는 점도 차이입니다.</p>
+
+    <h2>4. 정부지원과 프리랜서 제작, 함께 고려하는 법</h2>
+    <p>반드시 둘 중 하나를 선택해야 하는 것은 아닙니다. 정부지원사업은 비용 절감 목적으로 별도로 활용하고, 사업 오픈처럼 시간이 중요한 시점에는 프리랜서를 통해 먼저 홈페이지를 완성한 뒤, 이후 지원사업으로 추가 페이지나 별도 채널을 제작하는 방식으로 병행하는 사업자도 많습니다.</p>
+
+    <h2>5. 결정 전에 스스로에게 물어볼 것</h2>
+    <ul>
+      <li>홈페이지가 필요한 시점이 언제인가 (지정업체 제작 기간을 기다릴 수 있는가)</li>
+      <li>브랜드에 맞는 디자인 커스터마이징이 얼마나 중요한가</li>
+      <li>제작 후 빠른 수정·유지보수 대응이 필요한가</li>
+    </ul>
+    <p>이 세 가지 질문에 "시간이 부족하다", "커스터마이징이 중요하다", "빠른 대응이 필요하다"는 답이 많이 나온다면, 정부지원 지정업체보다 전문 프리랜서 제작을 우선 검토해보시길 권합니다.</p>
+
+    <div class="cta-box">
+      <p>정부지원 예산과 별개로, 빠르고 트렌디한 홈페이지가 필요하다면 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

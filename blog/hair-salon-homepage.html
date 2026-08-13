@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>미용실·헤어샵 홈페이지 제작, 예약 전환율을 높이는 구조 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="미용실·헤어샵 홈페이지 제작 전략을 정리했습니다. 시술 포트폴리오 구성, 디자이너별 소개, 예약 시스템 연동, 가격 공개 범위까지 다룹니다." />
+  <meta name="keywords" content="미용실 홈페이지, 헤어샵 홈페이지 제작, 미용실 홈페이지 예약, 헤어살롱 웹사이트" />
+  <meta property="og:title" content="미용실·헤어샵 홈페이지 제작, 예약 전환율을 높이는 구조" />
+  <meta property="og:description" content="미용실·헤어샵 홈페이지 제작 전략을 정리했습니다. 시술 포트폴리오 구성, 디자이너별 소개, 예약 시스템 연동, 가격 공개 범위까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/hair-salon-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/hair-salon-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">미용실·헤어샵</p>
+    <h1 class="post-hero-title">미용실·헤어샵 홈페이지 제작, 예약 전환율을 높이는 구조</h1>
+    <p class="post-hero-meta">2026. 08. 13 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">미용실을 고를 때 사람들은 인스타그램만큼이나 홈페이지를 봅니다. 특히 처음 방문하는 손님은 "이 디자이너가 내 스타일을 잘 알까"를 홈페이지에서 먼저 확인하려 합니다.</p>
+
+    <h2>1. 시술 포트폴리오는 카테고리별로</h2>
+    <p>커트, 펌, 염색, 클리닉을 뒤섞어 나열하면 원하는 스타일을 찾기 어렵습니다. 카테고리별로 갤러리를 나누고, 같은 스타일이라도 다양한 얼굴형·모발 길이의 사례를 함께 보여주면 방문자가 자신과 비슷한 사례를 더 쉽게 찾을 수 있습니다.</p>
+
+    <h2>2. 디자이너 소개, 강점 중심으로</h2>
+    <p>디자이너마다 잘하는 시술과 스타일이 다릅니다. 경력 연차보다 "어떤 스타일을 주로 하는지", "어떤 손님에게 잘 맞는지"를 짧게 소개하면 지명 예약률을 높일 수 있습니다.</p>
+
+    <h2>3. 온라인 예약, 디자이너 지정까지 한 번에</h2>
+    <p>날짜, 시간, 원하는 디자이너, 시술 종류를 한 화면에서 선택할 수 있는 예약 시스템이 이상적입니다. 예약 확정 알림을 문자나 카카오톡으로 자동 발송하면 노쇼도 줄일 수 있습니다.</p>
+
+    <h2>4. 가격, 공개할수록 문의가 준다는 착각</h2>
+    <p>가격을 숨기면 오히려 문의 부담이 커져 예약 전환이 떨어지는 경우가 많습니다. 기본 시술 가격을 명확히 공개하고, 모발 길이나 두께에 따라 추가 비용이 발생할 수 있다는 점을 미리 안내하면 오히려 신뢰를 얻습니다.</p>
+
+    <h2>5. 지역 키워드로 신규 유입 확보</h2>
+    <p>"홍대 펌 잘하는 곳"처럼 지역과 시술이 결합된 검색은 실제 방문으로 이어질 확률이 높습니다. 블로그 콘텐츠나 시술 페이지에 지역명을 자연스럽게 포함시키고, 네이버 플레이스도 함께 관리하세요.</p>
+
+    <p>미용실 홈페이지는 결국 "이 디자이너에게 맡기고 싶다"는 확신을 주는 공간입니다. 포트폴리오와 예약 흐름을 함께 다듬으면 신규 손님의 첫 방문을 훨씬 쉽게 만들 수 있습니다.</p>
+
+    <div class="cta-box">
+      <p>미용실·헤어샵 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

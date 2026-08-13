@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>필라테스·요가 스튜디오 홈페이지 제작, 체험 신청으로 이어지는 구조 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="필라테스·요가 스튜디오 홈페이지 제작 전략을 정리했습니다. 수업 종류 안내, 강사 소개, 체험 수업 신청 흐름, 회원권 안내까지 다룹니다." />
+  <meta name="keywords" content="필라테스 홈페이지, 요가 스튜디오 홈페이지 제작, 필라테스 학원 홈페이지, 요가원 웹사이트" />
+  <meta property="og:title" content="필라테스·요가 스튜디오 홈페이지 제작, 체험 신청으로 이어지는 구조" />
+  <meta property="og:description" content="필라테스·요가 스튜디오 홈페이지 제작 전략을 정리했습니다. 수업 종류 안내, 강사 소개, 체험 수업 신청 흐름, 회원권 안내까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/pilates-yoga-studio-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/pilates-yoga-studio-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">필라테스·요가</p>
+    <h1 class="post-hero-title">필라테스·요가 스튜디오 홈페이지 제작, 체험 신청으로 이어지는 구조</h1>
+    <p class="post-hero-meta">2026. 08. 13 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">필라테스·요가는 브랜드보다 "이 선생님, 이 공간이 나와 맞는가"가 결정을 좌우하는 업종입니다. 홈페이지는 그 판단을 돕는 첫 번째 관문입니다.</p>
+
+    <h2>1. 수업 종류, 목적별로 구분해서 소개</h2>
+    <p>체형 교정, 다이어트, 재활, 그룹·개인 수업처럼 목적이 다른 프로그램을 한 페이지에 뒤섞지 마세요. 각 프로그램이 어떤 사람에게 맞는지, 어떤 효과를 기대할 수 있는지 구체적으로 안내하면 방문자가 자신에게 맞는 수업을 스스로 찾을 수 있습니다.</p>
+
+    <h2>2. 강사 소개는 자격증보다 티칭 스타일</h2>
+    <p>자격증 나열도 필요하지만, 그보다 중요한 건 "어떤 방식으로 가르치는가"입니다. 꼼꼼하게 자세를 봐주는 스타일인지, 강도 높은 트레이닝을 선호하는지 등을 소개하면 회원이 자신과 맞는 강사를 미리 파악할 수 있습니다.</p>
+
+    <h2>3. 체험 수업 신청, 최대한 짧게</h2>
+    <p>체험 수업은 신규 회원 등록의 첫 관문입니다. 이름, 연락처, 희망 시간대 정도의 짧은 입력만으로 신청이 완료되도록 하고, 신청 즉시 확인 문자가 발송되면 이탈을 줄일 수 있습니다.</p>
+
+    <h2>4. 회원권 구성, 표로 명확하게</h2>
+    <p>횟수권, 기간권, 그룹·개인 옵션이 섞여 있으면 헷갈리기 쉽습니다. 표 형태로 정리하고, 가장 많이 선택되는 옵션을 강조 표시하면 결정 피로를 줄여줍니다.</p>
+
+    <h2>5. 공간 사진, 실제 수업 장면 위주로</h2>
+    <p>텅 빈 스튜디오 사진보다 실제 수업 중인 장면, 기구 사용 모습을 보여주는 것이 훨씬 신뢰감을 줍니다. 회원 동의를 받은 실제 수업 사진을 활용하면 더욱 효과적입니다.</p>
+
+    <p>필라테스·요가 스튜디오 홈페이지는 화려함보다 "믿고 맡길 수 있겠다"는 인상이 우선입니다. 체험 신청까지의 거리를 최대한 짧게 설계하세요.</p>
+
+    <div class="cta-box">
+      <p>필라테스·요가 스튜디오 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

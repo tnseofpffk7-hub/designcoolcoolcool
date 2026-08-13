@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B2B 제조업·산업재 홈페이지 제작, 견적 문의로 연결하는 구조 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="B2B 제조업·산업재 홈페이지 제작 전략을 정리했습니다. 제품 스펙 페이지 구성, 카탈로그 다운로드, 견적 문의 흐름, 해외 바이어 대응까지 다룹니다." />
+  <meta name="keywords" content="제조업 홈페이지, B2B 홈페이지 제작, 산업재 홈페이지, 공장 홈페이지 제작" />
+  <meta property="og:title" content="B2B 제조업·산업재 홈페이지 제작, 견적 문의로 연결하는 구조" />
+  <meta property="og:description" content="B2B 제조업·산업재 홈페이지 제작 전략을 정리했습니다. 제품 스펙 페이지 구성, 카탈로그 다운로드, 견적 문의 흐름, 해외 바이어 대응까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/b2b-manufacturing-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/b2b-manufacturing-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">B2B 제조업</p>
+    <h1 class="post-hero-title">B2B 제조업·산업재 홈페이지 제작, 견적 문의로 연결하는 구조</h1>
+    <p class="post-hero-meta">2026. 08. 11 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">B2B 제조업 홈페이지의 방문자는 일반 소비자가 아니라 구매 담당자, 엔지니어, 바이어입니다. 이들이 원하는 건 감성이 아니라 정확한 스펙과 신뢰할 수 있는 실적입니다.</p>
+
+    <h2>1. 제품 스펙, 표로 명확하게</h2>
+    <p>재질, 규격, 허용 오차, 인증 정보를 표 형태로 정리하면 구매 담당자가 다른 업체와 빠르게 비교할 수 있습니다. 스펙 정보가 부실하면 아무리 디자인이 좋아도 문의로 이어지지 않습니다.</p>
+
+    <h2>2. 카탈로그·도면 다운로드는 필수</h2>
+    <p>PDF 카탈로그나 도면 파일을 다운로드할 수 있게 하면, 담당자가 내부 검토 과정에서 자료를 쉽게 공유할 수 있어 실제 거래로 이어질 확률이 높아집니다. 다운로드 시 간단한 정보(회사명, 이메일)만 받는 정도로 진입 장벽을 낮추는 것이 좋습니다.</p>
+
+    <h2>3. 인증·실적은 신뢰의 핵심 근거</h2>
+    <p>ISO 인증, KS 인증, 주요 거래처(공개 가능한 범위 내에서), 납품 실적은 B2B 거래에서 가장 강력한 신뢰 신호입니다. 별도 페이지로 정리해 눈에 잘 띄는 위치에 배치하세요.</p>
+
+    <h2>4. 견적 문의, 산업재 특성에 맞게 구성</h2>
+    <p>제품명, 수량, 규격, 납기 희망일을 입력할 수 있는 견적 문의 폼을 마련하면 담당자가 첫 연락부터 구체적인 검토를 할 수 있습니다. 일반적인 "문의하기" 버튼보다 견적 요청에 특화된 폼이 전환율을 높입니다.</p>
+
+    <h2>5. 해외 바이어를 고려한다면 영문 페이지도</h2>
+    <p>수출을 염두에 둔 제조업이라면 최소한의 영문 페이지(회사 소개, 제품 스펙, 연락처)를 함께 준비하는 것이 좋습니다. 해외 바이어는 한글로만 된 사이트에서 신뢰를 형성하기 어렵습니다.</p>
+
+    <p>B2B 제조업 홈페이지는 화려함보다 정확성과 신뢰가 우선입니다. 구매 담당자가 필요한 정보를 빠르게 찾고, 부담 없이 견적을 요청할 수 있는 구조를 만드세요.</p>
+
+    <div class="cta-box">
+      <p>B2B 제조업·산업재 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프랜차이즈 가맹 모집 홈페이지 제작, 예비 점주의 신뢰를 얻는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="프랜차이즈 가맹 모집 홈페이지 제작 전략을 정리했습니다. 창업 비용 공개 범위, 매장 실적 소개, 가맹 상담 흐름, 정보공개서 안내까지 다룹니다." />
+  <meta name="keywords" content="프랜차이즈 홈페이지, 가맹점 모집 홈페이지, 프랜차이즈 창업 홈페이지, 가맹 상담 홈페이지" />
+  <meta property="og:title" content="프랜차이즈 가맹 모집 홈페이지 제작, 예비 점주의 신뢰를 얻는 법" />
+  <meta property="og:description" content="프랜차이즈 가맹 모집 홈페이지 제작 전략을 정리했습니다. 창업 비용 공개 범위, 매장 실적 소개, 가맹 상담 흐름, 정보공개서 안내까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/franchise-recruitment-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/franchise-recruitment-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">프랜차이즈 가맹</p>
+    <h1 class="post-hero-title">프랜차이즈 가맹 모집 홈페이지 제작, 예비 점주의 신뢰를 얻는 법</h1>
+    <p class="post-hero-meta">2026. 08. 14 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">프랜차이즈 가맹을 고민하는 예비 점주는 인생이 걸린 결정을 앞두고 있습니다. 홈페이지가 애매한 정보만 나열하면 신뢰를 얻기 어렵습니다.</p>
+
+    <h2>1. 창업 비용, 항목별로 투명하게</h2>
+    <p>가맹비, 교육비, 인테리어비, 초도물품비 등을 항목별로 명확히 공개하면 예비 점주가 실제 준비해야 할 자금 규모를 정확히 판단할 수 있습니다. 막연한 "창업 문의" 유도보다 투명한 정보 제공이 오히려 신뢰를 만듭니다.</p>
+
+    <h2>2. 매장 실적, 근거 있는 데이터로</h2>
+    <p>평균 매출이나 회전율 같은 수치를 제시할 때는 반드시 정보공개서에 기재된 근거 있는 데이터를 활용해야 합니다. 과장된 수치는 법적 문제로 이어질 수 있으므로, 공정거래위원회에 등록된 정보공개서 기준을 벗어나지 않는 것이 중요합니다.</p>
+
+    <h2>3. 정보공개서, 다운로드 가능하게</h2>
+    <p>정보공개서를 홈페이지에서 바로 확인하거나 다운로드할 수 있게 하면, 예비 점주가 투명성을 신뢰하는 계기가 됩니다. 법적으로도 정보공개서 제공은 가맹 계약 전 필수 절차입니다.</p>
+
+    <h2>4. 기존 가맹점주 인터뷰로 현실감 더하기</h2>
+    <p>실제 운영 중인 점주의 인터뷰나 후기는 본사의 일방적인 설명보다 훨씬 설득력 있습니다. 창업 계기, 운영하며 느낀 점을 솔직하게 담으면 신뢰도가 크게 올라갑니다.</p>
+
+    <h2>5. 가맹 상담, 단계별로 안내</h2>
+    <p>문의부터 계약까지의 전체 절차(상담 → 입지 분석 → 계약 → 교육 → 오픈)를 미리 안내하면 예비 점주가 전체 그림을 이해하고 접근할 수 있어 상담 만족도가 높아집니다.</p>
+
+    <p>프랜차이즈 가맹 홈페이지는 화려한 약속보다 투명한 정보가 신뢰를 만듭니다. 정확한 정보를 제공하는 것이 결국 좋은 점주를 만나는 지름길입니다.</p>
+
+    <div class="cta-box">
+      <p>프랜차이즈 가맹 모집 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "프랜차이즈 홈페이지에 매출 실적을 공개해도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "공정거래위원회에 등록된 정보공개서에 기재된 근거 있는 데이터를 활용해야 하며, 과장되거나 근거 없는 수치는 법적 문제로 이어질 수 있어 주의가 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "창업 비용은 어느 정도까지 자세히 공개해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가맹비, 교육비, 인테리어비, 초도물품비 등을 항목별로 명확히 공개하면 예비 점주가 실제 필요한 자금을 정확히 판단할 수 있어 신뢰를 높이는 데 도움이 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "정보공개서를 홈페이지에 올려야 하는 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정보공개서 제공은 가맹 계약 전 법적으로 필수적인 절차이며, 홈페이지에서 바로 확인할 수 있게 하면 투명성에 대한 신뢰를 높일 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "기존 가맹점주 인터뷰가 왜 효과적인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "본사의 일방적인 설명보다 실제 운영 중인 점주의 경험담이 훨씬 설득력 있고, 예비 점주가 현실적인 운영 상황을 파악하는 데 도움이 됩니다."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

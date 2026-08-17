@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사진관·스튜디오 홈페이지 제작, 예약을 부르는 포트폴리오 구성 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="사진관·스튜디오 홈페이지 제작 전략을 정리했습니다. 촬영 카테고리 구성, 포트폴리오 노출 방식, 예약·상담 흐름, 가격 안내까지 다룹니다." />
+  <meta name="keywords" content="사진관 홈페이지, 스튜디오 홈페이지 제작, 사진 스튜디오 웹사이트, 프로필 사진관 홈페이지" />
+  <meta property="og:title" content="사진관·스튜디오 홈페이지 제작, 예약을 부르는 포트폴리오 구성" />
+  <meta property="og:description" content="사진관·스튜디오 홈페이지 제작 전략을 정리했습니다. 촬영 카테고리 구성, 포트폴리오 노출 방식, 예약·상담 흐름, 가격 안내까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/photo-studio-homepage" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/photo-studio-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">사진관·스튜디오</p>
+    <h1 class="post-hero-title">사진관·스튜디오 홈페이지 제작, 예약을 부르는 포트폴리오 구성</h1>
+    <p class="post-hero-meta">2026. 08. 14 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">사진관을 고르는 기준은 결국 "이 스튜디오가 찍은 사진이 내 마음에 드는가"입니다. 홈페이지는 실제 촬영 결과물을 가장 먼저, 가장 많이 보여줘야 하는 채널입니다.</p>
+
+    <h2>1. 촬영 카테고리, 목적별로 명확히</h2>
+    <p>프로필, 가족사진, 웨딩, 반려동물, 제품 촬영처럼 촬영 목적이 다르면 방문자가 찾는 정보도 완전히 다릅니다. 카테고리별로 페이지를 나누고, 각 카테고리 안에서 스타일(밝은 톤, 흑백, 필름 감성 등)까지 세분화하면 원하는 결과물을 빠르게 찾을 수 있습니다.</p>
+
+    <h2>2. 포트폴리오는 최신순, 다양한 얼굴형과 상황으로</h2>
+    <p>같은 스타일이라도 다양한 연령대와 상황의 사진을 보여줘야 방문자가 자신의 경우를 상상하기 쉽습니다. 오래된 포트폴리오만 걸려 있으면 "요즘도 운영하는 곳인가"라는 의심을 살 수 있으니 정기적으로 최신 촬영본을 업데이트하세요.</p>
+
+    <h2>3. 가격, 옵션별로 표로 정리</h2>
+    <p>기본 촬영, 보정 매수, 액자·앨범 추가 옵션이 섞이면 헷갈리기 쉽습니다. 표 형태로 정리하고 가장 많이 선택되는 패키지를 강조하면 예약 결정을 빠르게 도울 수 있습니다.</p>
+
+    <h2>4. 예약, 날짜 확인부터 한 번에</h2>
+    <p>촬영 가능한 날짜와 시간을 캘린더로 바로 확인하고 예약할 수 있는 구조가 이상적입니다. 예약 후 준비물, 촬영 전 안내사항을 자동으로 안내하면 당일 진행이 훨씬 매끄러워집니다.</p>
+
+    <h2>5. 후기는 사진과 함께</h2>
+    <p>텍스트 후기보다 실제 고객이 남긴 사진과 함께 배치된 후기가 훨씬 설득력 있습니다. 고객 동의를 받은 사진을 활용해 실제 경험을 보여주세요.</p>
+
+    <p>사진관 홈페이지는 결국 "이 스튜디오라면 믿고 맡길 수 있겠다"는 확신을 사진으로 증명하는 공간입니다.</p>
+
+    <div class="cta-box">
+      <p>사진관·스튜디오 홈페이지 제작이 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "사진관 홈페이지에 포트폴리오는 몇 장 정도 올리는 게 좋나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "카테고리별로 10~20장 내외의 최신 사진을 정기적으로 교체하며 보여주는 것이 좋습니다. 너무 많은 사진을 한 번에 올리면 오히려 핵심 스타일이 흐려질 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "촬영 가격을 홈페이지에 꼭 공개해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "패키지 구성과 대략적인 가격대를 공개하면 문의 전 이탈을 줄이고 예약 전환율을 높일 수 있습니다. 옵션에 따른 추가 비용은 별도로 안내하면 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "온라인 예약 시스템은 꼭 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필수는 아니지만, 캘린더 기반 예약 시스템을 연동하면 전화 응대 부담을 줄이고 24시간 예약 접수가 가능해 예약 전환율을 높이는 데 효과적입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "후기는 어떤 방식으로 보여주는 게 효과적인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "텍스트만 있는 후기보다 실제 촬영 사진과 함께 배치된 후기가 훨씬 신뢰를 줍니다. 고객 동의를 받은 사진을 활용하는 것이 좋습니다."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

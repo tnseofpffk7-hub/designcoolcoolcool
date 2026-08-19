@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>"일주일 만에 완성"이라는 홈페이지 광고, 실제로 가능한 이야기일까 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="AI를 활용해 홈페이지를 빠르게 완성한다는 광고 문구의 실제 의미를 짚어봅니다. 속도와 완성도 사이에서 어떤 부분이 생략되는지 정리했습니다." />
+  <meta name="keywords" content="홈페이지 빠른 제작, AI 홈페이지 제작 기간, 홈페이지 제작 속도, 홈페이지 빨리 만들기" />
+  <meta property="og:title" content=""일주일 만에 완성"이라는 홈페이지 광고, 실제로 가능한 이야기일까" />
+  <meta property="og:description" content="AI를 활용해 홈페이지를 빠르게 완성한다는 광고 문구의 실제 의미를 짚어봅니다. 속도와 완성도 사이에서 어떤 부분이 생략되는지 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/fast-homepage-one-week-reality" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/fast-homepage-one-week-reality" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-back { text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s, gap 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--black); gap: 14px; }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .cta-box { margin-top: 64px; padding: 40px; background: var(--black); color: var(--white); text-align: center; }
+    .cta-box p { color: var(--white); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; padding: 14px 32px; border: 1px solid var(--white); color: var(--white); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; transition: 0.2s; }
+    .cta-btn:hover { background: var(--white); color: var(--black); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/blog" class="nav-back">← 블로그로</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">홈페이지 제작 AI</p>
+    <h1 class="post-hero-title">"일주일 만에 완성"이라는 홈페이지 광고, 실제로 가능한 이야기일까</h1>
+    <p class="post-hero-meta">2026. 08. 18 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">"AI로 일주일 만에 완성"이라는 문구를 자주 보게 됩니다. 실제로 AI 덕분에 제작 속도가 빨라진 것은 사실입니다. 다만 이 문구가 생략하고 있는 것들을 짚어볼 필요가 있습니다.</p>
+
+    <h2>"완성"의 기준이 다르다</h2>
+    <p>템플릿에 로고와 텍스트만 바꿔 끼운 상태를 "완성"이라고 부르는 경우와, 브랜드에 맞게 구조와 디자인을 다듬어 실제 방문자를 문의나 구매로 전환시킬 수 있는 상태를 "완성"이라고 부르는 경우는 전혀 다른 결과물입니다. 일주일 안에 가능한 것은 대부분 전자에 가깝습니다.</p>
+
+    <h2>콘텐츠 준비 기간은 별도</h2>
+    <p>홈페이지 제작 기간에는 대개 사진 촬영, 카피 작성, 자료 정리처럼 클라이언트가 준비해야 하는 콘텐츠 기간이 포함되지 않은 채 안내되는 경우가 많습니다. "제작 기간 일주일"이라는 말은 실제로는 "콘텐츠가 모두 준비된 상태에서 조립하는 기간"을 의미하는 경우가 대부분입니다.</p>
+
+    <h2>수정 요청, 몇 번까지 가능할까</h2>
+    <p>빠른 제작을 강조하는 서비스일수록 수정 횟수나 수정 가능 범위가 제한적인 경우가 많습니다. 처음 나온 결과물이 마음에 들지 않아 방향을 크게 바꾸고 싶다면, 그 순간부터 "일주일"이라는 약속은 지켜지기 어려워집니다.</p>
+
+    <h2>속도와 완성도, 실제로는 트레이드오프</h2>
+    <p>AI를 활용하면 분명 초안까지 도달하는 속도는 빨라집니다. 하지만 그 초안을 브랜드에 맞게, 실제 목표(문의 전환, 판매 전환)를 달성하도록 다듬는 과정은 여전히 시간이 필요한 작업입니다. "빠르다"는 광고는 대체로 이 다듬는 과정을 최소화했거나 생략했다는 뜻일 수 있습니다.</p>
+
+    <h2>현실적으로 빠르면서 완성도 있게 만드는 방법</h2>
+    <p>정말 빠른 완성이 필요하다면, 콘텐츠(사진, 텍스트, 자료)를 미리 준비해두고 제작에 들어가는 것이 가장 확실한 단축 방법입니다. 여기에 방향을 정확히 이해하고 있는 디자이너가 AI를 도구로 활용하면, 처음부터 시행착오 없이 목표에 맞는 결과물에 빠르게 도달할 수 있습니다. 속도는 도구가 아니라, 얼마나 준비된 상태로 시작하는가에서 결정되는 경우가 더 많습니다.</p>
+
+    <div class="cta-box">
+      <p>정말 빠르면서도 완성도 있는 홈페이지가 필요하다면, 지금 문의해 주세요.</p>
+      <a href="mailto:jpgpngwebp@gmail.com" class="cta-btn">무료 상담 문의하기</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "일주일 만에 홈페이지가 완성된다는 광고, 믿어도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "템플릿에 로고와 텍스트만 바꾼 상태를 '완성'으로 보는 경우가 많아, 실제로 방문자를 문의나 구매로 전환시킬 수 있는 완성도와는 차이가 있을 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "제작 기간에 콘텐츠 준비 시간도 포함되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대부분 포함되지 않습니다. 사진 촬영, 카피 작성, 자료 정리처럼 클라이언트가 준비해야 하는 기간은 별도로 소요되는 경우가 일반적입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "빠른 제작 서비스는 수정을 몇 번까지 해주나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "빠른 제작을 강조하는 서비스일수록 수정 횟수나 범위가 제한적인 경우가 많아, 방향을 크게 바꾸고 싶다면 예상보다 시간이 더 걸릴 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "정말 빠르면서 완성도 있게 만드는 방법이 있을까요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "사진, 텍스트, 자료 같은 콘텐츠를 미리 준비해두고 제작에 들어가는 것이 가장 확실한 방법입니다. 방향을 정확히 이해한 디자이너가 AI를 도구로 활용하면 시행착오 없이 빠르게 목표에 도달할 수 있습니다."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

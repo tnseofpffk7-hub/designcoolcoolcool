@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>병원 홈페이지 제작 가이드, 진료과가 많을수록 신경 써야 할 것들 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="진료과별 정보 구조, 의료진 소개, 건강검진·진료 예약, 의료광고 규정까지 — 종합병원·2차병원급 병원 홈페이지 제작 가이드를 정리했습니다." />
+  <meta name="keywords" content="병원 홈페이지 제작, 병원 홈페이지 제작 가이드, 종합병원 홈페이지, 병원 홈페이지 구조, 의료광고 규정 홈페이지" />
+  <meta property="og:title" content="병원 홈페이지 제작 가이드, 진료과가 많을수록 신경 써야 할 것들" />
+  <meta property="og:description" content="진료과별 정보 구조, 의료진 소개, 건강검진·진료 예약, 의료광고 규정까지 — 종합병원·2차병원급 병원 홈페이지 제작 가이드를 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/hospital-homepage-production-guide" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/hospital-homepage-production-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .blog-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .blog-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero { padding: 160px 48px 60px; border-bottom: 1px solid var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 54px); letter-spacing: -0.03em; line-height: 1.2; max-width: 820px; }
+    .post-hero-meta { margin-top: 24px; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .post-content { max-width: 720px; margin: 0 auto; padding: 64px 48px 100px; }
+    .post-content p { margin-bottom: 24px; color: var(--black); font-size: 16px; line-height: 1.9; }
+    .post-content h2 { font-family: var(--font-display); font-size: clamp(23px, 3vw, 30px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-content h3 { font-size: 16px; font-weight: 600; margin: 32px 0 12px; letter-spacing: -0.01em; }
+    .post-content ul, .post-content ol { margin: 0 0 24px 20px; color: var(--grey); }
+    .post-content li { margin-bottom: 10px; line-height: 1.85; font-size: 15px; }
+    .post-content strong { color: var(--black); font-weight: 600; }
+    .post-content blockquote { border-left: 2px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--grey); font-style: italic; }
+    .post-content a { color: var(--black); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .lede { font-size: 18px !important; color: var(--grey) !important; }
+    .article-cta { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 26px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .article-cta .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .article-cta .cta-btn:hover { background: var(--grey); }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; text-decoration: none; color: var(--grey); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.2s, color 0.2s; }
+    .back-to-blog:hover { color: var(--black); gap: 14px; }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      .post-content { padding: 48px 24px 80px; }
+      .article-cta { flex-direction: column; align-items: flex-start; gap: 20px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+  <header class="post-hero">
+    <p class="blog-eyebrow">병원 홈페이지</p>
+    <h1 class="post-hero-title">병원 홈페이지 제작 가이드, 진료과가 많을수록 신경 써야 할 것들</h1>
+    <p class="post-hero-meta">2026. 09. 10 · 이수연</p>
+  </header>
+  <main class="post-content">
+
+    <p class="lede">한의원이나 동네 피부과처럼 진료과가 하나인 병의원과, 내과·외과·정형외과·영상의학과가 함께 있는 2차·3차병원급 병원은 홈페이지에 담아야 할 정보의 양과 구조 자체가 다릅니다. 진료과가 많아질수록 "환자가 원하는 정보를 얼마나 빨리 찾게 하는가"가 신뢰만큼 중요해집니다. 이 글에서는 여러 진료과를 운영하는 병원 홈페이지 제작에서 놓치기 쉬운 구조적인 부분을 정리했습니다. 한의원·피부과·치과처럼 단일 진료과 중심 병의원의 신뢰 설계는 <a href="/blog/clinic-hospital-homepage">한의원·피부과·치과 홈페이지 제작, 환자 신뢰를 만드는 구조</a>에서 다뤘으니 함께 참고하시길 권합니다.</p>
+
+    <h2>진료과가 많을수록 정보 구조가 먼저다</h2>
+    <p>진료과가 10개 이상인 병원에서 가장 많이 벌어지는 실수는 모든 진료과를 똑같은 형식의 페이지로 나열하는 것입니다. 환자는 "어떤 과에 가야 할지도 모르는 상태"로 홈페이지에 들어오는 경우가 많기 때문에, 증상 기반으로 진료과를 안내하는 탐색 장치(예: "소화가 안 돼요 → 소화기내과")가 있으면 이탈을 크게 줄일 수 있습니다. 진료과 목록은 알파벳순이나 무작위가 아니라, 방문 빈도가 높은 과를 상단에 배치하는 것이 기본입니다.</p>
+
+    <h2>의료진 소개, 신뢰의 8할은 여기서 결정된다</h2>
+    <p>환자가 병원을 고를 때 가장 오래 머무는 페이지 중 하나가 의료진 소개입니다. 전문의 자격, 세부 전공, 주요 시술·수술 경험, 소속 학회를 명확히 밝히는 것이 기본이며, 진료과별로 의료진을 묶어 보여주면 환자가 "이 과에 어떤 의사가 있는지" 한눈에 파악할 수 있습니다. 가능하다면 의료진별 진료 가능 요일까지 함께 보여주는 것이 예약 전환에 직접적으로 도움이 됩니다.</p>
+
+    <h2>건강검진·진료 예약, 진료과별로 흐름이 다르다</h2>
+    <p>병원 예약은 크게 일반 진료 예약과 건강검진 예약으로 나뉘는데, 이 둘은 준비 사항(금식 여부, 검사 소요 시간)이 전혀 다르기 때문에 예약 흐름을 분리하는 것이 좋습니다. 진료과별로 예약 가능 시간대나 담당의 지정 여부도 다르므로, 하나의 범용 예약 폼보다 진료과 특성에 맞게 세분화된 예약 시스템이 이탈을 줄입니다. 예약 시스템 자체를 어떤 방식(네이버 예약, 자체 위젯 등)으로 붙일지는 <a href="/blog/homepage-reservation-system-comparison">홈페이지 예약 시스템, 네이버·카카오·자체 시스템 뭐가 다를까</a>에서 비교한 기준을 그대로 적용할 수 있습니다.</p>
+
+    <h2>의료광고 규정, 병원 규모가 커질수록 더 엄격하게</h2>
+    <p>의료법상 의료광고 규정은 병의원 규모와 무관하게 동일하게 적용되지만, 진료과가 많고 다루는 시술·수술의 범위가 넓을수록 검토해야 할 항목도 늘어납니다. 치료 효과를 단정하는 표현, 과장된 치료 전후 사진, 환자 후기를 광고처럼 활용하는 것은 모두 제재 대상이 될 수 있습니다. 홈페이지 제작 단계에서부터 병원 자체 심의 담당자 또는 대행 기관과 콘텐츠를 함께 검토하는 프로세스를 마련해두는 것이 안전합니다.</p>
+
+    <h2>응급실·주차·교통 안내는 최상단 정보로</h2>
+    <p>응급실 운영 여부와 위치, 주차장 정보, 대중교통 접근 경로는 환자와 보호자가 가장 급하게 찾는 정보 중 하나입니다. 이런 정보를 메뉴 깊숙한 곳에 숨겨두면 정작 필요한 순간에 찾지 못하는 경우가 많으므로, 헤더나 푸터처럼 모든 페이지에서 항상 접근 가능한 위치에 고정하는 것이 좋습니다. 고령 환자와 보호자가 주 사용자층인 만큼, 글자 크기와 버튼 크기를 충분히 크게 유지하는 모바일 최적화 기준은 <a href="/blog/homepage-mobile-optimization">홈페이지 모바일 최적화, 왜 중요하고 어떻게 해야 할까요?</a>에서 다뤘습니다.</p>
+
+    <h2>외국인 환자를 위한 다국어 페이지가 필요하다면</h2>
+    <p>K-뷰티·K-메디컬 열풍으로 외국인 환자 유치가 활발한 병원이라면 다국어 페이지 구성이 별도로 필요합니다. 언어별로 진료과 안내와 예약 흐름을 어떻게 구성해야 하는지는 <a href="/blog/hospital-multilingual-homepage">병원·성형외과 홈페이지 제작, 다국어로 외국인 환자를 잡는 법</a>에서 자세히 다뤘으니 함께 참고하시길 권합니다.</p>
+
+    <h2>결론 — 정보의 양이 아니라 도달 속도가 관건이다</h2>
+    <p>병원 홈페이지는 담아야 할 정보 자체가 많은 업종입니다. 그래서 오히려 얼마나 많은 정보를 담느냐보다, 환자가 원하는 정보에 몇 번의 클릭으로 도달하느냐가 성패를 가릅니다. 증상 기반 진료과 안내, 명확한 의료진 소개, 세분화된 예약 흐름, 그리고 언제나 접근 가능한 응급·교통 정보 — 이 네 가지만 제대로 갖춰도 환자 경험은 크게 달라집니다.</p>
+
+    <div class="article-cta">
+      <p>진료과가 많아 정보가 복잡하게 얽혀 있다면,<br><em>환자 중심으로 구조를 다시 설계해 드립니다</em></p>
+      <a href="https://designcoolcoolcool.vercel.app/contact" class="cta-btn">프로젝트 문의 →</a>
+    </div>
+    <a class="back-to-blog" href="/blog">← 다른 포스팅 보러가기</a>
+  </main>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "병원 홈페이지와 동네 병의원 홈페이지는 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "진료과가 많은 병원은 정보의 양과 탐색 구조가 훨씬 복잡해집니다. 증상 기반 진료과 안내, 진료과별 예약 분리, 응급실·주차 정보 등 단일 진료과 병의원에는 필요 없는 구조가 추가로 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "건강검진 예약과 일반 진료 예약을 같은 폼으로 받아도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "권장하지 않습니다. 금식 여부, 검사 소요 시간 등 준비 사항이 전혀 다르기 때문에 예약 흐름을 분리하는 것이 환자 혼란을 줄이고 노쇼를 예방하는 데 더 효과적입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "병원 홈페이지 콘텐츠도 의료광고 규정을 지켜야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 병원 규모와 무관하게 의료법상 의료광고 규정이 동일하게 적용됩니다. 치료 효과 단정, 과장된 전후 사진, 후기의 광고성 활용 등은 제재 대상이 될 수 있어 사전 검토가 필요합니다."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

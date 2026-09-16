@@ -3,16 +3,62 @@
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- 신규 포스팅 (2026-09-12) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-web-accessibility-guide</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-security-guide</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/escape-room-vr-homepage</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/kids-cafe-playground-homepage</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/craft-studio-oneday-class-homepage</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 신규 포스팅 (2026-09-11) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/webzine-cms-homepage-guide</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- 신규 포스팅 (2026-09-10) -->

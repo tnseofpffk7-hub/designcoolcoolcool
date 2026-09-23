@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>구조화 데이터(Schema Markup) 완벽 가이드, 검색에서 한 번 더 보이는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="구조화 데이터가 무엇이고 왜 필요한지, Organization·BlogPosting·FAQPage·Product 등 주요 스키마 타입과 JSON-LD 작성법, 검증 도구까지 — 홈페이지 SEO를 위한 구조화 데이터 실전 가이드." />
+  <meta name="keywords" content="구조화 데이터, Schema Markup, JSON-LD, 리치 스니펫, 홈페이지 SEO, FAQPage 스키마, BlogPosting 스키마" />
+  <meta property="og:title" content="구조화 데이터(Schema Markup) 완벽 가이드, 검색에서 한 번 더 보이는 법" />
+  <meta property="og:description" content="구조화 데이터가 무엇이고 왜 필요한지, 주요 스키마 타입과 JSON-LD 작성법, 검증 도구까지 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/schema-markup-seo-guide" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/schema-markup-seo-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+
+    .post-hero { padding: 160px 48px 40px; border-bottom: 1px solid var(--line); }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(32px, 4.4vw, 56px); letter-spacing: -0.03em; line-height: 1.15; max-width: 720px; margin: 0 auto; }
+    .post-meta-line { max-width: 720px; margin: 28px auto 0; font-size: 12px; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; padding-bottom: 40px; }
+
+    main.post-body { max-width: 720px; margin: 0 auto; padding: 56px 48px 40px; }
+    .lead { font-size: 17px; line-height: 1.9; color: var(--grey); margin-bottom: 40px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-body h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.01em; margin: 36px 0 14px; }
+    .post-body p { margin-bottom: 20px; font-size: 15px; line-height: 1.9; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 20px; }
+    .post-body li { margin-bottom: 10px; font-size: 15px; line-height: 1.8; }
+    .post-body a { color: var(--black); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .post-body strong { font-weight: 500; }
+    .post-body code { font-family: 'SF Mono', Menlo, Consolas, monospace; background: #eceae3; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    pre.code-block { background: #1c1b19; color: #f0eee7; padding: 22px 24px; border-radius: 12px; overflow-x: auto; margin: 24px 0 32px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.7; }
+    pre.code-block code { background: none; padding: 0; color: inherit; }
+
+    .callout { border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; background: #efece4; font-size: 14px; line-height: 1.8; color: var(--grey); }
+    .callout strong { color: var(--black); }
+
+    .internal-link-box { border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .internal-link-box p { margin: 0; font-size: 14px; }
+    .internal-link-box a { font-weight: 500; }
+
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); }
+
+    .faq-item { border-top: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 17px; margin-bottom: 10px; }
+    .faq-a { font-size: 14px; color: var(--grey); line-height: 1.85; }
+
+    .post-cta { max-width: 720px; margin: 64px auto 0; padding: 48px 48px; border-top: 1px solid var(--line); text-align: left; }
+    .post-cta p { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.02em; margin-bottom: 22px; line-height: 1.4; }
+    .post-cta p em { font-style: italic; color: var(--grey); }
+    .post-cta-btn { display: inline-block; text-decoration: none; color: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .post-cta-btn:hover { background: var(--black); color: var(--white); }
+
+    .back-link { max-width: 720px; margin: 32px auto 0; padding: 0 48px; }
+    .back-link a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; }
+    .back-link a:hover { color: var(--black); }
+
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); margin-top: 64px; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 20px; }
+      main.post-body { padding: 40px 24px 24px; }
+      .post-cta { padding: 40px 24px 0; }
+      .back-link { padding: 0 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "구조화 데이터(Schema Markup) 완벽 가이드, 검색에서 한 번 더 보이는 법",
+  "description": "구조화 데이터가 무엇이고 왜 필요한지, Organization·BlogPosting·FAQPage·Product 등 주요 스키마 타입과 JSON-LD 작성법, 검증 도구까지 — 홈페이지 SEO를 위한 구조화 데이터 실전 가이드.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/schema-markup-seo-guide",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/favicon.png"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "구조화 데이터를 넣으면 검색 순위가 바로 올라가나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구조화 데이터 자체는 직접적인 순위 상승 요인은 아닙니다. 다만 검색 결과에 별점, FAQ, 빵부스러기 같은 리치 스니펫이 노출되면 클릭률이 올라가고, 검색엔진이 페이지 내용을 더 정확히 이해하게 되어 간접적으로 노출과 트래픽에 긍정적인 영향을 줍니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "구조화 데이터는 어디에 넣어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JSON-LD 형식이라면 보통 head 태그 안, 혹은 body 어디에 넣어도 검색엔진이 인식합니다. 다만 관리 편의성과 관례상 head 태그를 닫기 직전에 script 태그로 삽입하는 방식을 가장 많이 씁니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "모든 페이지에 구조화 데이터를 넣어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전체에 넣을 필요는 없습니다. 홈페이지에는 Organization이나 LocalBusiness, 블로그 글에는 BlogPosting이나 Article, 상품 페이지에는 Product, FAQ가 있는 페이지에는 FAQPage처럼 페이지의 실제 콘텐츠 유형에 맞는 스키마만 넣는 것이 원칙입니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">구조화 데이터 · SEO</p>
+    <h1 class="post-hero-title">구조화 데이터(Schema Markup) 완벽 가이드,<br>검색에서 한 번 더 보이는 법</h1>
+    <p class="post-meta-line">2026. 09. 23 · 이수연</p>
+  </header>
+
+  <main class="post-body">
+    <p class="lead">같은 순위에 떠도 어떤 결과는 별점과 후기 수가 함께 보이고, 어떤 결과는 제목과 회색 URL 한 줄뿐입니다. 이 차이를 만드는 것이 구조화 데이터(Structured Data), 흔히 스키마 마크업이라 부르는 코드입니다. 홈페이지 디자인이나 카피만큼 눈에 띄지 않지만, 검색 결과 화면에서는 오히려 더 직접적인 차이를 만듭니다.</p>
+
+    <h2>구조화 데이터란 무엇인가</h2>
+    <p>구조화 데이터는 <a href="https://schema.org" target="_blank" rel="noopener">schema.org</a>라는 공통 어휘 체계를 이용해, "이 페이지는 회사 소개다", "이 글은 2026년 9월에 발행된 블로그 글이다", "이 상품은 가격이 얼마다"처럼 페이지의 내용을 검색엔진이 이해할 수 있는 형태로 정리해서 알려주는 코드입니다. 사람은 페이지를 읽으면서 어디가 제목이고 어디가 가격인지 자연스럽게 구분하지만, 검색엔진 크롤러는 HTML 구조만으로는 이를 완벽히 구분하기 어렵습니다. 구조화 데이터는 이 해석의 모호함을 줄여주는 역할을 합니다.</p>
+    <p>구조화 데이터를 넣는 방식은 세 가지가 있지만, 구글이 공식적으로 권장하는 방식은 <strong>JSON-LD</strong>입니다. 본문 HTML 구조를 건드리지 않고 <code>&lt;script type="application/ld+json"&gt;</code> 태그 하나로 페이지 정보를 따로 정리해서 넣을 수 있어, 디자인이나 퍼블리싱에 영향을 주지 않으면서 적용하기가 가장 쉽습니다. 이 블로그의 모든 글에도 JSON-LD 형식으로 구조화 데이터를 넣고 있습니다.</p>
+
+    <h2>왜 구조화 데이터가 필요한가</h2>
+    <h3>1. 리치 스니펫으로 검색 결과가 더 눈에 띈다</h3>
+    <p>제품 리뷰의 별점, 레시피의 조리 시간, FAQ의 질문·답변 아코디언, 빵부스러기(breadcrumb) 경로처럼 검색 결과에서 제목과 URL 이상의 정보가 함께 표시되는 것을 리치 스니펫이라고 합니다. 같은 순위라도 리치 스니펫이 있는 결과가 더 많은 정보를 미리 보여주기 때문에 클릭률이 높아지는 경향이 있습니다.</p>
+    <h3>2. 검색엔진이 콘텐츠를 더 정확히 이해한다</h3>
+    <p>사업체의 업종, 위치, 영업시간을 구조화 데이터로 명확히 제공하면, 검색엔진이 "지역 검색"이나 "지도 검색" 맥락에서 해당 페이지를 더 정확한 결과로 매칭시킬 확률이 올라갑니다. 애매하게 텍스트로만 적혀 있는 정보보다 명시적으로 태깅된 정보가 신뢰도 높은 근거로 취급됩니다.</p>
+    <h3>3. AI 검색·생성형 엔진 대응에도 유리하다</h3>
+    <p>챗GPT, 퍼플렉시티 같은 생성형 검색 서비스는 페이지 전체를 처음부터 읽고 요약하기보다, 명확하게 구조화된 정보를 우선적으로 참조하는 경향이 있습니다. 구조화 데이터를 갖춘 페이지는 이런 GEO(생성형 엔진 최적화) 관점에서도 유리한 출발선에 서게 됩니다. GEO에 대한 더 자세한 내용은 아래 글에서 다뤘습니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/geo-marketing-guide">GEO 마케팅 완벽 가이드, '홈페이지 제작 AI' 시대에 검색되는 홈페이지 만드는 법</a></p>
+    </div>
+
+    <h2>홈페이지에서 자주 쓰는 스키마 타입</h2>
+    <p>schema.org에는 수백 개의 타입이 있지만, 일반적인 홈페이지·블로그 운영에서는 아래 몇 가지만 정확히 알아도 충분합니다.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>스키마 타입</th><th>적용 위치</th><th>주요 목적</th></tr>
+        <tr><td>Organization</td><td>홈페이지, 회사소개 페이지</td><td>회사명, 로고, 연락처, SNS 채널을 검색엔진에 공식 정보로 등록</td></tr>
+        <tr><td>LocalBusiness</td><td>매장·지점이 있는 업종</td><td>주소, 영업시간, 전화번호로 지역 검색·지도 노출에 활용</td></tr>
+        <tr><td>BlogPosting / Article</td><td>블로그 글, 칼럼</td><td>제목, 발행일, 작성자, 발행처를 명시해 뉴스·블로그 검색에 활용</td></tr>
+        <tr><td>FAQPage</td><td>자주 묻는 질문 섹션이 있는 페이지</td><td>질문·답변을 검색 결과 아코디언 형태로 노출</td></tr>
+        <tr><td>Product / Offer</td><td>쇼핑몰 상품 상세 페이지</td><td>가격, 재고 상태, 리뷰 평점을 검색 결과에 노출</td></tr>
+        <tr><td>BreadcrumbList</td><td>카테고리 구조가 있는 모든 페이지</td><td>검색 결과 URL 자리에 페이지 경로를 계층적으로 표시</td></tr>
+        <tr><td>Review / AggregateRating</td><td>후기가 쌓이는 업체·상품 페이지</td><td>별점과 리뷰 수를 검색 결과에 직접 노출</td></tr>
+      </table>
+    </div>
+
+    <h2>JSON-LD 실전 작성법</h2>
+    <p>가장 기본이 되는 회사 정보(Organization) 스키마는 아래와 같은 형태로 작성합니다. <code>&lt;/head&gt;</code> 태그 바로 앞에 넣는 것이 가장 일반적인 방식입니다.</p>
+    <pre class="code-block"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "회사명",
+  "url": "https://example.com",
+  "logo": "https://example.com/logo.png",
+  "sameAs": [
+    "https://www.instagram.com/example",
+    "https://www.facebook.com/example"
+  ]
+}
+&lt;/script&gt;</code></pre>
+    <p>블로그 글이라면 BlogPosting 타입을 사용하며, <code>headline</code>(제목), <code>datePublished</code>(발행일), <code>dateModified</code>(수정일), <code>author</code>(작성자), <code>publisher</code>(발행 주체)까지 채워주는 것이 원칙입니다. 이 글 역시 같은 형식으로 <code>&lt;/head&gt;</code> 직전에 BlogPosting 스키마를 넣어두었습니다.</p>
+    <p>페이지에 자주 묻는 질문(FAQ) 섹션이 있다면, BlogPosting과는 별개의 <code>&lt;script&gt;</code> 태그로 FAQPage 스키마를 추가로 넣어줍니다. 한 페이지에 여러 개의 <code>application/ld+json</code> 스크립트를 넣는 것은 전혀 문제가 되지 않습니다. 이 글 하단의 FAQ 섹션에도 FAQPage 스키마가 별도로 적용되어 있습니다.</p>
+
+    <div class="callout"><strong>주의할 점</strong> — 구조화 데이터에 적은 정보는 반드시 페이지에 실제로 보이는 내용과 일치해야 합니다. 화면에는 없는 별점이나 가격을 스키마에만 적어 넣는 것은 구글 가이드라인 위반이며, 적발 시 리치 스니펫 노출이 제한될 수 있습니다.</div>
+
+    <h2>구조화 데이터 검증하는 법</h2>
+    <ul>
+      <li><strong>구글 리치 결과 테스트</strong> — URL이나 코드를 붙여넣으면 어떤 리치 스니펫이 인식되는지, 오류나 경고가 있는지 바로 확인할 수 있습니다.</li>
+      <li><strong>Schema Markup Validator</strong> — schema.org 문법 자체가 올바른지 좀 더 엄격하게 검사합니다.</li>
+      <li><strong>구글 서치 콘솔</strong> — 실제로 구글이 내 사이트의 구조화 데이터를 어떻게 인식하고 있는지, 시간이 지나면서 노출 리포트로 확인할 수 있습니다.</li>
+    </ul>
+    <p>서치 콘솔과 애널리틱스를 아직 연동하지 않았다면 아래 글을 먼저 참고해보시길 권합니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/google-analytics-guide">홈페이지 구글 애널리틱스, 연동하고 제대로 활용하는 법</a></p>
+    </div>
+
+    <h2>자주 하는 실수</h2>
+    <ul>
+      <li><strong>모든 페이지에 같은 스키마를 복붙한다</strong> — 페이지마다 실제 내용에 맞는 타입을 써야 합니다. 블로그 글에 Product 스키마를 넣는 식의 불일치는 오히려 신뢰도를 떨어뜨립니다.</li>
+      <li><strong>화면에 없는 정보를 스키마에만 넣는다</strong> — 검증은 통과할 수 있어도 가이드라인 위반으로 페널티를 받을 수 있습니다.</li>
+      <li><strong>날짜를 갱신하지 않는다</strong> — 글을 수정했다면 <code>dateModified</code>도 함께 최신 날짜로 업데이트해야 합니다.</li>
+      <li><strong>사이트맵·canonical과 따로 논다</strong> — 구조화 데이터의 <code>url</code> 값은 반드시 canonical 태그와 사이트맵에 등록된 URL과 일치해야 합니다.</li>
+    </ul>
+    <p>URL 구조와 canonical 설정 전반을 아직 점검해본 적이 없다면, 리뉴얼 시점에 함께 정리하는 것을 추천합니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-renewal-seo-ranking">홈페이지 리뉴얼할 때 SEO 순위 떨어뜨리지 않는 법</a></p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>구조화 데이터는 화려한 결과를 즉시 만들어주는 장치는 아닙니다. 하지만 같은 콘텐츠, 같은 순위라도 검색 결과 화면에서 더 많은 정보를 보여주고, 검색엔진과 AI 검색 도구 모두에게 "이 페이지는 무엇에 대한 페이지인지" 더 명확하게 전달하는 기본기입니다. 홈페이지 SEO의 다른 요소들과 마찬가지로, 한 번 제대로 구조를 잡아두면 이후에는 페이지를 추가할 때마다 같은 틀을 반복해서 쓰기만 하면 됩니다.</p>
+    <p>SEO 기본기부터 다시 점검하고 싶다면 아래 글도 함께 참고해보세요.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-seo">홈페이지 SEO 최적화, 처음부터 제대로 하는 방법</a></p>
+    </div>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item">
+      <p class="faq-q">구조화 데이터를 넣으면 검색 순위가 바로 올라가나요?</p>
+      <p class="faq-a">구조화 데이터 자체는 직접적인 순위 상승 요인은 아닙니다. 다만 검색 결과에 별점, FAQ, 빵부스러기 같은 리치 스니펫이 노출되면 클릭률이 올라가고, 검색엔진이 페이지 내용을 더 정확히 이해하게 되어 간접적으로 노출과 트래픽에 긍정적인 영향을 줍니다.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">구조화 데이터는 어디에 넣어야 하나요?</p>
+      <p class="faq-a">JSON-LD 형식이라면 보통 head 태그 안, 혹은 body 어디에 넣어도 검색엔진이 인식합니다. 다만 관리 편의성과 관례상 head 태그를 닫기 직전에 script 태그로 삽입하는 방식을 가장 많이 씁니다.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">모든 페이지에 구조화 데이터를 넣어야 하나요?</p>
+      <p class="faq-a">전체에 넣을 필요는 없습니다. 홈페이지에는 Organization이나 LocalBusiness, 블로그 글에는 BlogPosting이나 Article, 상품 페이지에는 Product, FAQ가 있는 페이지에는 FAQPage처럼 페이지의 실제 콘텐츠 유형에 맞는 스키마만 넣는 것이 원칙입니다.</p>
+    </div>
+  </main>
+
+  <div class="post-cta">
+    <p>구조화 데이터까지 챙긴 홈페이지,<br><em>지금 문의해 주시면 SEO 기본기부터 함께 점검해드립니다</em></p>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="post-cta-btn">프로젝트 문의 →</a>
+  </div>
+  <div class="back-link">
+    <a href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

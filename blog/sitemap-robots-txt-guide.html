@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XML Sitemap과 robots.txt 완벽 가이드, 크롤러에게 보내는 안내판 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="사이트맵과 robots.txt의 역할과 차이, 작성 예시 코드, 제출 방법, 가장 흔한 실수까지 — 홈페이지 크롤링 관리 실전 가이드." />
+  <meta name="keywords" content="XML Sitemap, robots.txt, 사이트맵 제출, 크롤링, 홈페이지 SEO" />
+  <meta property="og:title" content="XML Sitemap과 robots.txt 완벽 가이드, 크롤러에게 보내는 안내판" />
+  <meta property="og:description" content="사이트맵과 robots.txt의 역할과 차이, 작성 예시 코드, 제출 방법, 가장 흔한 실수까지 — 홈페이지 크롤링 관리 실전 가이드." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/sitemap-robots-txt-guide" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/sitemap-robots-txt-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+
+    .post-hero { padding: 160px 48px 40px; border-bottom: 1px solid var(--line); }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(32px, 4.4vw, 56px); letter-spacing: -0.03em; line-height: 1.15; max-width: 720px; margin: 0 auto; }
+    .post-meta-line { max-width: 720px; margin: 28px auto 0; font-size: 12px; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; padding-bottom: 40px; }
+
+    main.post-body { max-width: 720px; margin: 0 auto; padding: 56px 48px 40px; }
+    .lead { font-size: 17px; line-height: 1.9; color: var(--grey); margin-bottom: 40px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-body h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.01em; margin: 36px 0 14px; }
+    .post-body p { margin-bottom: 20px; font-size: 15px; line-height: 1.9; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 20px; }
+    .post-body li { margin-bottom: 10px; font-size: 15px; line-height: 1.8; }
+    .post-body a { color: var(--black); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .post-body strong { font-weight: 500; }
+    .post-body code { font-family: 'SF Mono', Menlo, Consolas, monospace; background: #eceae3; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    pre.code-block { background: #1c1b19; color: #f0eee7; padding: 22px 24px; border-radius: 12px; overflow-x: auto; margin: 24px 0 32px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.7; }
+    pre.code-block code { background: none; padding: 0; color: inherit; }
+
+    .callout { border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; background: #efece4; font-size: 14px; line-height: 1.8; color: var(--grey); }
+    .callout strong { color: var(--black); }
+
+    .internal-link-box { border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .internal-link-box p { margin: 0; font-size: 14px; }
+    .internal-link-box a { font-weight: 500; }
+
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); }
+
+    .faq-item { border-top: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 17px; margin-bottom: 10px; }
+    .faq-a { font-size: 14px; color: var(--grey); line-height: 1.85; }
+
+    .post-cta { max-width: 720px; margin: 64px auto 0; padding: 48px 48px; border-top: 1px solid var(--line); text-align: left; }
+    .post-cta p { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.02em; margin-bottom: 22px; line-height: 1.4; }
+    .post-cta p em { font-style: italic; color: var(--grey); }
+    .post-cta-btn { display: inline-block; text-decoration: none; color: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .post-cta-btn:hover { background: var(--black); color: var(--white); }
+
+    .back-link { max-width: 720px; margin: 32px auto 0; padding: 0 48px; }
+    .back-link a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; }
+    .back-link a:hover { color: var(--black); }
+
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); margin-top: 64px; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 20px; }
+      main.post-body { padding: 40px 24px 24px; }
+      .post-cta { padding: 40px 24px 0; }
+      .back-link { padding: 0 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "XML Sitemap과 robots.txt 완벽 가이드, 크롤러에게 보내는 안내판",
+  "description": "사이트맵과 robots.txt의 역할과 차이, 작성 예시 코드, 제출 방법, 가장 흔한 실수까지 — 홈페이지 크롤링 관리 실전 가이드.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/sitemap-robots-txt-guide",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/favicon.png"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "사이트맵과 robots.txt는 둘 다 꼭 있어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필수는 아니지만 강력히 권장됩니다. 사이트맵이 없어도 크롤러가 링크를 따라가며 페이지를 발견할 수는 있지만, 사이트맵은 이 과정을 훨씬 빠르고 정확하게 만들어줍니다. robots.txt는 없으면 기본적으로 모든 페이지 크롤링을 허용한 것으로 간주됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "robots.txt로 페이지를 막으면 검색 결과에서 완전히 사라지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "robots.txt는 크롤링만 막을 뿐 색인 자체를 막는 것은 아닙니다. 다른 곳에서 그 페이지로 링크가 걸려 있다면, 내용은 크롤링하지 못해도 URL만 검색 결과에 노출될 수 있습니다. 완전히 검색에서 제외하려면 noindex 메타 태그를 사용해야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "사이트맵을 제출한 후 얼마나 걸려야 색인이 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "페이지 수, 사이트 권위, 콘텐츠 품질에 따라 며칠에서 몇 주까지 편차가 큽니다. 서치 콘솔의 URL 검사 도구로 개별 페이지의 색인 요청을 별도로 넣으면 이 과정을 조금 앞당길 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">Sitemap·robots.txt · SEO</p>
+    <h1 class="post-hero-title">XML Sitemap과 robots.txt 완벽 가이드,<br>크롤러에게 보내는 안내판</h1>
+    <p class="post-meta-line">2026. 09. 23 · 이수연</p>
+  </header>
+
+  <main class="post-body">
+
+    <p class="lead">사이트맵과 robots.txt는 홈페이지에서 가장 작은 파일이지만, 검색엔진 크롤러가 사이트에 도착했을 때 제일 먼저 참고하는 안내판입니다. 두 파일의 역할을 정확히 이해하고 있어야 원하지 않는 페이지가 검색에 노출되거나, 반대로 꼭 노출돼야 할 페이지가 빠지는 문제를 막을 수 있습니다.</p>
+
+    <h2>XML Sitemap, 페이지 목록을 제출하는 파일</h2>
+    <p>사이트맵은 사이트에 존재하는 URL 목록을 XML 형식으로 정리한 파일입니다. 검색엔진에게 "우리 사이트에는 이런 페이지들이 있다"고 명시적으로 알려주는 역할을 하며, 특히 페이지 수가 많거나 새 콘텐츠가 자주 추가되는 사이트에서 크롤링 효율을 크게 높여줍니다.</p>
+    <pre class="code-block"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://example.com/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-09-23&lt;/lastmod&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</code></pre>
+    <p><code>lastmod</code>는 마지막 수정일, <code>changefreq</code>는 갱신 빈도에 대한 힌트, <code>priority</code>는 사이트 내 상대적 중요도를 나타냅니다. 세 값 모두 구글이 참고는 하지만 절대적으로 따르지는 않는 힌트일 뿐입니다.</p>
+
+    <h2>robots.txt, 크롤러의 출입을 안내하는 파일</h2>
+    <p>robots.txt는 도메인 루트(<code>/robots.txt</code>)에 위치하는 텍스트 파일로, 어떤 크롤러가 어떤 경로를 크롤링해도 되는지 규칙을 정의합니다.</p>
+    <pre class="code-block"><code>User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml</code></pre>
+    <p>관리자 페이지, 장바구니, 검색 결과 페이지처럼 검색엔진에게 노출될 필요가 없는 경로를 <code>Disallow</code>로 지정하고, 마지막 줄에 사이트맵 위치를 명시해주는 것이 일반적인 구성입니다.</p>
+
+    <div class="callout"><strong>가장 흔한 실수</strong> — 개발 중이던 사이트를 운영 서버로 옮기면서 <code>Disallow: /</code>(전체 차단) 설정을 그대로 남겨두는 경우입니다. 이 한 줄 때문에 사이트 전체가 몇 주간 검색에서 사라지는 사고가 실제로 자주 발생합니다. 배포 후에는 반드시 robots.txt를 다시 확인해야 합니다.</div>
+
+    <h2>사이트맵 제출하는 법</h2>
+    <ol>
+      <li>구글 서치 콘솔에 사이트를 등록하고 소유권을 확인한다.</li>
+      <li>왼쪽 메뉴의 '사이트맵'에서 sitemap.xml의 URL을 입력해 제출한다.</li>
+      <li>제출 후 상태가 '성공'으로 표시되는지, 발견된 URL 수가 실제 페이지 수와 맞는지 확인한다.</li>
+    </ol>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/google-search-console-guide">구글 서치 콘솔, 가입부터 실전 활용까지</a></p>
+    </div>
+
+    <h2>사이트맵·robots.txt와 함께 챙길 것들</h2>
+    <p>사이트맵에 등록된 URL은 canonical 태그, 구조화 데이터의 url 값과도 모두 일치해야 합니다. 하나라도 어긋나면 검색엔진이 어떤 URL을 정본으로 봐야 할지 혼란스러워집니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/url-structure-seo-guide">홈페이지 SEO, URL 구조는 왜 처음부터 잘 잡아야 할까</a></p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>사이트맵과 robots.txt는 한 번 잘 설정해두면 크게 손댈 일이 없는 파일이지만, 잘못 설정하면 사이트 전체의 검색 노출에 영향을 주는 민감한 파일이기도 합니다. 특히 리뉴얼이나 서버 이전 직후에는 반드시 두 파일을 다시 점검하는 습관을 들이는 것이 좋습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item"><p class="faq-q">사이트맵과 robots.txt는 둘 다 꼭 있어야 하나요?</p><p class="faq-a">필수는 아니지만 강력히 권장됩니다. 사이트맵이 없어도 크롤러가 링크를 따라가며 페이지를 발견할 수는 있지만, 사이트맵은 이 과정을 훨씬 빠르고 정확하게 만들어줍니다. robots.txt는 없으면 기본적으로 모든 페이지 크롤링을 허용한 것으로 간주됩니다.</p></div>
+    <div class="faq-item"><p class="faq-q">robots.txt로 페이지를 막으면 검색 결과에서 완전히 사라지나요?</p><p class="faq-a">robots.txt는 크롤링만 막을 뿐 색인 자체를 막는 것은 아닙니다. 다른 곳에서 그 페이지로 링크가 걸려 있다면, 내용은 크롤링하지 못해도 URL만 검색 결과에 노출될 수 있습니다. 완전히 검색에서 제외하려면 noindex 메타 태그를 사용해야 합니다.</p></div>
+    <div class="faq-item"><p class="faq-q">사이트맵을 제출한 후 얼마나 걸려야 색인이 되나요?</p><p class="faq-a">페이지 수, 사이트 권위, 콘텐츠 품질에 따라 며칠에서 몇 주까지 편차가 큽니다. 서치 콘솔의 URL 검사 도구로 개별 페이지의 색인 요청을 별도로 넣으면 이 과정을 조금 앞당길 수 있습니다.</p></div>
+
+  </main>
+
+  <div class="post-cta">
+    <p>사이트맵부터 구조화 데이터까지,<br><em>검색엔진이 좋아하는 구조로 홈페이지를 만들고 싶다면 문의해 주세요</em></p>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="post-cta-btn">프로젝트 문의 →</a>
+  </div>
+  <div class="back-link">
+    <a href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

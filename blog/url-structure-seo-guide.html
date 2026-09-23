@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 SEO, URL 구조는 왜 처음부터 잘 잡아야 할까 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="URL 구조가 SEO에 미치는 영향, 좋은 URL의 원칙, 피해야 할 패턴, 하이픈과 언더스코어 차이까지 — 홈페이지 URL 설계 실전 가이드." />
+  <meta name="keywords" content="URL 구조, 홈페이지 SEO, URL 슬러그, 301 리다이렉트, URL 설계" />
+  <meta property="og:title" content="홈페이지 SEO, URL 구조는 왜 처음부터 잘 잡아야 할까" />
+  <meta property="og:description" content="URL 구조가 SEO에 미치는 영향, 좋은 URL의 원칙, 피해야 할 패턴, 하이픈과 언더스코어 차이까지 — 홈페이지 URL 설계 실전 가이드." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/url-structure-seo-guide" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/url-structure-seo-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+
+    .post-hero { padding: 160px 48px 40px; border-bottom: 1px solid var(--line); }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(32px, 4.4vw, 56px); letter-spacing: -0.03em; line-height: 1.15; max-width: 720px; margin: 0 auto; }
+    .post-meta-line { max-width: 720px; margin: 28px auto 0; font-size: 12px; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; padding-bottom: 40px; }
+
+    main.post-body { max-width: 720px; margin: 0 auto; padding: 56px 48px 40px; }
+    .lead { font-size: 17px; line-height: 1.9; color: var(--grey); margin-bottom: 40px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-body h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.01em; margin: 36px 0 14px; }
+    .post-body p { margin-bottom: 20px; font-size: 15px; line-height: 1.9; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 20px; }
+    .post-body li { margin-bottom: 10px; font-size: 15px; line-height: 1.8; }
+    .post-body a { color: var(--black); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .post-body strong { font-weight: 500; }
+    .post-body code { font-family: 'SF Mono', Menlo, Consolas, monospace; background: #eceae3; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    pre.code-block { background: #1c1b19; color: #f0eee7; padding: 22px 24px; border-radius: 12px; overflow-x: auto; margin: 24px 0 32px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.7; }
+    pre.code-block code { background: none; padding: 0; color: inherit; }
+
+    .callout { border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; background: #efece4; font-size: 14px; line-height: 1.8; color: var(--grey); }
+    .callout strong { color: var(--black); }
+
+    .internal-link-box { border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .internal-link-box p { margin: 0; font-size: 14px; }
+    .internal-link-box a { font-weight: 500; }
+
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); }
+
+    .faq-item { border-top: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 17px; margin-bottom: 10px; }
+    .faq-a { font-size: 14px; color: var(--grey); line-height: 1.85; }
+
+    .post-cta { max-width: 720px; margin: 64px auto 0; padding: 48px 48px; border-top: 1px solid var(--line); text-align: left; }
+    .post-cta p { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.02em; margin-bottom: 22px; line-height: 1.4; }
+    .post-cta p em { font-style: italic; color: var(--grey); }
+    .post-cta-btn { display: inline-block; text-decoration: none; color: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .post-cta-btn:hover { background: var(--black); color: var(--white); }
+
+    .back-link { max-width: 720px; margin: 32px auto 0; padding: 0 48px; }
+    .back-link a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; }
+    .back-link a:hover { color: var(--black); }
+
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); margin-top: 64px; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 20px; }
+      main.post-body { padding: 40px 24px 24px; }
+      .post-cta { padding: 40px 24px 0; }
+      .back-link { padding: 0 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "홈페이지 SEO, URL 구조는 왜 처음부터 잘 잡아야 할까",
+  "description": "URL 구조가 SEO에 미치는 영향, 좋은 URL의 원칙, 피해야 할 패턴, 하이픈과 언더스코어 차이까지 — 홈페이지 URL 설계 실전 가이드.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/url-structure-seo-guide",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/favicon.png"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "URL에 한글을 써도 되나요, 영문 슬러그가 나은가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구글은 한글 URL도 인코딩해서 정상적으로 인식하지만, 실제로 공유되거나 브라우저 주소창에 표시될 때 깨져 보이는 경우가 많아 가독성이 떨어집니다. 가능하면 짧은 영문 슬러그를 쓰고, 한글 키워드는 title과 본문에 충분히 녹이는 방식을 권장합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "URL 뎁스(depth)는 몇 단계까지가 적당한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정답은 없지만 일반적으로 도메인 이후 2~3단계 이내를 권장합니다. /blog/글제목 처럼 얕은 구조가 크롤링과 기억, 공유 모두에 유리합니다. 카테고리가 꼭 필요하다면 /카테고리/글제목 정도로 제한하는 것이 좋습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이미 만든 URL을 나중에 바꿔도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능하지만 반드시 301 리다이렉트를 함께 설정해야 합니다. 리다이렉트 없이 URL만 바꾸면 기존에 쌓인 검색 순위와 백링크가 모두 사라집니다. 리뉴얼 시점의 URL 변경 체크리스트는 본문의 연결 글을 참고하세요."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">URL 구조 · SEO</p>
+    <h1 class="post-hero-title">홈페이지 SEO, URL 구조는<br>왜 처음부터 잘 잡아야 할까</h1>
+    <p class="post-meta-line">2026. 09. 23 · 이수연</p>
+  </header>
+
+  <main class="post-body">
+
+    <p class="lead">검색 결과에서 제목 아래 회색으로 표시되는 그 한 줄, URL. 방문자는 거의 클릭하지 않는 부분이지만 검색엔진에게는 페이지의 위치와 성격을 알려주는 가장 압축된 정보입니다. 잘 설계된 URL 구조는 크롤링 효율, 클릭률, 그리고 사이트 전체의 정보 위계까지 함께 정리해줍니다.</p>
+
+    <h2>좋은 URL 구조의 3가지 원칙</h2>
+    <h3>1. 짧고 예측 가능해야 한다</h3>
+    <p>URL만 보고도 방문자가 어떤 페이지인지 짐작할 수 있어야 합니다. <code>/blog/homepage-seo</code>는 예측 가능하지만, <code>/view.php?id=8231&cate=12</code>는 어떤 정보도 전달하지 못합니다.</p>
+    <h3>2. 키워드는 넣되 욱여넣지 않는다</h3>
+    <p>핵심 키워드 한두 개를 슬러그에 포함시키는 것은 도움이 되지만, <code>/best-cheap-homepage-design-agency-seoul-2026</code>처럼 키워드를 나열하는 방식은 오히려 스팸으로 보일 수 있습니다.</p>
+    <h3>3. 구조가 사이트의 위계를 반영해야 한다</h3>
+    <p>카테고리, 하위 카테고리, 개별 페이지의 관계가 URL 경로에 자연스럽게 드러나면 검색엔진이 사이트 구조를 훨씬 빠르게 파악합니다.</p>
+
+    <h2>피해야 할 URL 패턴</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>패턴</th><th>문제점</th><th>대안</th></tr>
+        <tr><td>동적 파라미터 남용</td><td><code>?id=123&sort=asc&page=2</code> — 중복 콘텐츠로 인식될 위험</td><td>정적 슬러그 사용, 불가피할 경우 canonical 태그 병행</td></tr>
+        <tr><td>대문자·특수문자 혼용</td><td>대소문자를 다르게 인식하는 서버에서 중복 URL 발생</td><td>소문자와 하이픈(-)만 사용</td></tr>
+        <tr><td>세션 ID 노출</td><td><code>;jsessionid=...</code> — 방문할 때마다 다른 URL 생성</td><td>쿠키 기반으로 세션 관리</td></tr>
+        <tr><td>과도한 뎁스</td><td><code>/shop/category/sub/sub2/product</code> — 크롤링 우선순위 하락</td><td>2~3단계 이내로 단순화</td></tr>
+      </table>
+    </div>
+
+    <h2>실전 예시</h2>
+    <pre class="code-block"><code>❌ https://example.com/index.php?page_id=48&cat=3
+✅ https://example.com/service/branding
+
+❌ https://example.com/2026/09/23/이것이-홈페이지-제작-비용-정말-모든-것을-담은-글입니다
+✅ https://example.com/blog/homepage-making-cost
+
+❌ https://example.com/product?id=8821
+✅ https://example.com/product/organic-hand-cream</code></pre>
+
+    <h2>하이픈(-) vs 언더스코어(_)</h2>
+    <p>구글은 하이픈을 단어 구분자로 인식하지만 언더스코어는 단어를 이어 붙인 것으로 해석하는 경향이 있습니다. <code>homepage_seo</code>보다 <code>homepage-seo</code>가 검색엔진이 각 단어를 개별 키워드로 인식하기에 유리합니다.</p>
+
+    <h2>URL 구조와 canonical, 사이트맵의 관계</h2>
+    <p>URL을 정리했다면 그 URL이 canonical 태그와 사이트맵에 등록된 주소와 정확히 일치하는지도 함께 확인해야 합니다. 구조화 데이터 안의 <code>url</code> 값 역시 마찬가지입니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/schema-markup-seo-guide">구조화 데이터(Schema Markup) 완벽 가이드</a></p>
+    </div>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/sitemap-robots-txt-guide">XML Sitemap과 robots.txt 완벽 가이드</a></p>
+    </div>
+
+    <h2>리뉴얼 시 URL을 바꿔야 한다면</h2>
+    <p>기존 URL을 바꾸는 것은 SEO 관점에서 가장 위험한 작업 중 하나입니다. 반드시 301 리다이렉트 맵을 미리 만들어두고 하나씩 확인해야 합니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-renewal-seo-ranking">홈페이지 리뉴얼할 때 SEO 순위 떨어뜨리지 않는 법</a></p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>URL은 한번 정하면 쉽게 바꾸기 어려운 요소입니다. 페이지를 처음 만들 때부터 짧고 예측 가능한 구조로 설계해두면, 이후 콘텐츠가 아무리 늘어나도 사이트 전체가 정돈된 상태를 유지할 수 있습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item"><p class="faq-q">URL에 한글을 써도 되나요, 영문 슬러그가 나은가요?</p><p class="faq-a">구글은 한글 URL도 인코딩해서 정상적으로 인식하지만, 실제로 공유되거나 브라우저 주소창에 표시될 때 깨져 보이는 경우가 많아 가독성이 떨어집니다. 가능하면 짧은 영문 슬러그를 쓰고, 한글 키워드는 title과 본문에 충분히 녹이는 방식을 권장합니다.</p></div>
+    <div class="faq-item"><p class="faq-q">URL 뎁스(depth)는 몇 단계까지가 적당한가요?</p><p class="faq-a">정답은 없지만 일반적으로 도메인 이후 2~3단계 이내를 권장합니다. /blog/글제목 처럼 얕은 구조가 크롤링과 기억, 공유 모두에 유리합니다. 카테고리가 꼭 필요하다면 /카테고리/글제목 정도로 제한하는 것이 좋습니다.</p></div>
+    <div class="faq-item"><p class="faq-q">이미 만든 URL을 나중에 바꿔도 되나요?</p><p class="faq-a">가능하지만 반드시 301 리다이렉트를 함께 설정해야 합니다. 리다이렉트 없이 URL만 바꾸면 기존에 쌓인 검색 순위와 백링크가 모두 사라집니다. 리뉴얼 시점의 URL 변경 체크리스트는 본문의 연결 글을 참고하세요.</p></div>
+
+  </main>
+
+  <div class="post-cta">
+    <p>URL부터 구조화 데이터까지,<br><em>SEO 기본기가 탄탄한 홈페이지를 원하신다면 지금 문의해 주세요</em></p>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="post-cta-btn">프로젝트 문의 →</a>
+  </div>
+  <div class="back-link">
+    <a href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

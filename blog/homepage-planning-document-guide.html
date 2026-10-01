@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 기획서, 제작 전에 꼭 정리해야 할 것들 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="목적, 타겟, 페이지 구성, 레퍼런스, 예산까지 — 홈페이지 제작 업체와의 첫 미팅을 수월하게 만드는 기획서 작성법을 정리했습니다." />
+  <meta name="keywords" content="홈페이지 기획서, 홈페이지 기획, 웹사이트 기획서, 홈페이지 제작 준비" />
+  <meta property="og:title" content="홈페이지 기획서, 제작 전에 꼭 정리해야 할 것들" />
+  <meta property="og:description" content="목적, 타겟, 페이지 구성, 레퍼런스, 예산까지 — 홈페이지 제작 업체와의 첫 미팅을 수월하게 만드는 기획서 작성법을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/homepage-planning-document-guide" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/homepage-planning-document-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+
+    .post-hero { padding: 160px 48px 40px; border-bottom: 1px solid var(--line); }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(32px, 4.4vw, 56px); letter-spacing: -0.03em; line-height: 1.15; max-width: 720px; margin: 0 auto; }
+    .post-meta-line { max-width: 720px; margin: 28px auto 0; font-size: 12px; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; padding-bottom: 40px; }
+
+    main.post-body { max-width: 720px; margin: 0 auto; padding: 56px 48px 40px; }
+    .lead { font-size: 17px; line-height: 1.9; color: var(--grey); margin-bottom: 40px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-body h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.01em; margin: 36px 0 14px; }
+    .post-body p { margin-bottom: 20px; font-size: 15px; line-height: 1.9; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 20px; }
+    .post-body li { margin-bottom: 10px; font-size: 15px; line-height: 1.8; }
+    .post-body a { color: var(--black); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .post-body strong { font-weight: 500; }
+    .post-body code { font-family: 'SF Mono', Menlo, Consolas, monospace; background: #eceae3; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    pre.code-block { background: #1c1b19; color: #f0eee7; padding: 22px 24px; border-radius: 12px; overflow-x: auto; margin: 24px 0 32px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.7; }
+    pre.code-block code { background: none; padding: 0; color: inherit; }
+
+    .callout { border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; background: #efece4; font-size: 14px; line-height: 1.8; color: var(--grey); }
+    .callout strong { color: var(--black); }
+
+    .internal-link-box { border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .internal-link-box p { margin: 0; font-size: 14px; }
+    .internal-link-box a { font-weight: 500; }
+
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); }
+
+    .faq-item { border-top: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 17px; margin-bottom: 10px; }
+    .faq-a { font-size: 14px; color: var(--grey); line-height: 1.85; }
+
+    .post-cta { max-width: 720px; margin: 64px auto 0; padding: 48px 48px; border-top: 1px solid var(--line); text-align: left; }
+    .post-cta p { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.02em; margin-bottom: 22px; line-height: 1.4; }
+    .post-cta p em { font-style: italic; color: var(--grey); }
+    .post-cta-btn { display: inline-block; text-decoration: none; color: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .post-cta-btn:hover { background: var(--black); color: var(--white); }
+
+    .back-link { max-width: 720px; margin: 32px auto 0; padding: 0 48px; }
+    .back-link a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; }
+    .back-link a:hover { color: var(--black); }
+
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); margin-top: 64px; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 20px; }
+      main.post-body { padding: 40px 24px 24px; }
+      .post-cta { padding: 40px 24px 0; }
+      .back-link { padding: 0 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "홈페이지 기획서, 제작 전에 꼭 정리해야 할 것들",
+  "description": "목적, 타겟, 페이지 구성, 레퍼런스, 예산까지 — 홈페이지 제작 업체와의 첫 미팅을 수월하게 만드는 기획서 작성법을 정리했습니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/homepage-planning-document-guide",
+  "datePublished": "2026-09-30",
+  "dateModified": "2026-09-30",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/favicon.png"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "기획서는 꼭 전문적인 양식으로 써야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 형식보다 내용이 중요합니다. 워드나 노션, 심지어 메모 앱에 정리해도 괜찮습니다. 핵심은 목적, 타겟, 페이지 구성, 레퍼런스 같은 필수 항목이 빠짐없이 담겨 있는지입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "기획서 없이 바로 업체와 미팅해도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능하지만 기획서 없이 미팅하면 업체가 질문을 던지고 답하는 데 시간을 쓰게 되어, 정작 중요한 디자인 방향 논의에 쓸 시간이 줄어듭니다. 간단하게라도 정리해 가면 미팅의 밀도가 훨씬 높아집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "기획서를 다 써야 견적을 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "완벽하지 않아도 됩니다. 페이지 수와 주요 기능 정도만 정리돼 있어도 업체는 대략적인 견적 범위를 산출할 수 있습니다. 다만 세부 내용이 구체적일수록 견적의 정확도도 함께 올라갑니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">제작 지식 · 기획</p>
+    <h1 class="post-hero-title">홈페이지 기획서,<br>제작 전에 꼭 정리해야 할 것들</h1>
+    <p class="post-meta-line">2026. 09. 30 · 이수연</p>
+  </header>
+
+  <main class="post-body">
+
+    <p class="lead">"기획서를 어떻게 써야 할지 모르겠어요"는 홈페이지 제작을 처음 의뢰하는 분들에게서 가장 자주 듣는 말입니다. 제작 업체 입장에서 보면, 기획서는 거창한 문서가 아니라 몇 가지 질문에 대한 솔직한 답변만 있으면 충분합니다.</p>
+
+    <h2>기획서에 반드시 담아야 할 5가지</h2>
+    <h3>1. 홈페이지를 만드는 목적</h3>
+    <p>'회사 소개용'인지, '문의·예약 전환이 목표'인지, '투자 유치 자료로 쓸 것'인지에 따라 전체 구조와 디자인 톤이 완전히 달라집니다. 목적이 분명하지 않으면 업체도 방향을 잡기 어렵습니다.</p>
+    <h3>2. 타겟 방문자</h3>
+    <p>누가 이 홈페이지를 보게 될지 구체적으로 적어야 합니다. "20~30대 여성 고객"처럼 단순히 인구통계만이 아니라, "가격 비교를 많이 해보고 오는 신중한 고객"처럼 행동 특성까지 담을수록 설계에 도움이 됩니다.</p>
+    <h3>3. 필요한 페이지와 기능 목록</h3>
+    <p>메인, 회사소개, 서비스, 포트폴리오, 문의하기처럼 필요한 페이지를 나열하고, 예약 시스템·다국어·회원가입처럼 특별한 기능이 필요하다면 함께 적어둡니다.</p>
+    <h3>4. 레퍼런스 사이트</h3>
+    <p>"이런 느낌이 좋다"는 사이트를 2~3개 찾아 링크와 함께, 구체적으로 어떤 부분이 마음에 드는지(색감, 레이아웃, 폰트, 애니메이션 등) 짧게 메모해두면 커뮤니케이션 시간이 크게 줄어듭니다.</p>
+    <h3>5. 예산과 일정</h3>
+    <p>대략적인 예산 범위와 오픈 희망 시점을 미리 생각해두면, 업체가 그 범위 안에서 가능한 선택지를 제안해줄 수 있습니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>항목</th><th>작성 예시</th></tr>
+        <tr><td>목적</td><td>신규 고객 문의 전환 증가</td></tr>
+        <tr><td>타겟</td><td>30~40대, 처음 방문하는 잠재 고객</td></tr>
+        <tr><td>페이지</td><td>메인, 서비스 소개, 포트폴리오, 문의하기 (4페이지)</td></tr>
+        <tr><td>레퍼런스</td><td>○○스튜디오 — 미니멀한 레이아웃이 마음에 듦</td></tr>
+        <tr><td>예산/일정</td><td>300만원 내외, 11월 초 오픈 희망</td></tr>
+      </table>
+    </div>
+
+    <div class="callout"><strong>팁</strong> — 완벽하게 쓰려고 하기보다, 위 5가지 항목에 대해 떠오르는 대로 짧게라도 먼저 적어보세요. 업체와의 첫 미팅에서 이 메모를 공유하는 것만으로도 소통 효율이 크게 올라갑니다.</div>
+
+    <h2>기획서 다음은 콘텐츠 전략</h2>
+    <p>페이지 구성까지 정리했다면, 각 페이지에 실제로 어떤 글을 담을지 고민할 차례입니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-content-strategy">홈페이지 콘텐츠 전략, 방문자를 고객으로 만드는 글쓰기</a></p>
+    </div>
+
+    <h2>기획서가 준비되면 일정도 명확해진다</h2>
+    <p>기획서가 구체적일수록 업체가 제시하는 제작 기간의 정확도도 함께 올라갑니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-production-timeline-guide">홈페이지 제작 기간, 2주짜리와 2개월짜리는 무엇이 다른가</a></p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>기획서는 완벽한 문서가 아니라 '생각을 정리한 기록'입니다. 목적, 타겟, 페이지, 레퍼런스, 예산 이 다섯 가지만 미리 정리해 가도, 제작 업체와의 첫 미팅이 훨씬 밀도 있게 진행됩니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item"><p class="faq-q">기획서는 꼭 전문적인 양식으로 써야 하나요?</p><p class="faq-a">아닙니다. 형식보다 내용이 중요합니다. 워드나 노션, 심지어 메모 앱에 정리해도 괜찮습니다. 핵심은 목적, 타겟, 페이지 구성, 레퍼런스 같은 필수 항목이 빠짐없이 담겨 있는지입니다.</p></div>
+    <div class="faq-item"><p class="faq-q">기획서 없이 바로 업체와 미팅해도 되나요?</p><p class="faq-a">가능하지만 기획서 없이 미팅하면 업체가 질문을 던지고 답하는 데 시간을 쓰게 되어, 정작 중요한 디자인 방향 논의에 쓸 시간이 줄어듭니다. 간단하게라도 정리해 가면 미팅의 밀도가 훨씬 높아집니다.</p></div>
+    <div class="faq-item"><p class="faq-q">기획서를 다 써야 견적을 받을 수 있나요?</p><p class="faq-a">완벽하지 않아도 됩니다. 페이지 수와 주요 기능 정도만 정리돼 있어도 업체는 대략적인 견적 범위를 산출할 수 있습니다. 다만 세부 내용이 구체적일수록 견적의 정확도도 함께 올라갑니다.</p></div>
+
+  </main>
+
+  <div class="post-cta">
+    <p>기획이 막막하다면 그 단계부터 함께해드립니다,<br><em>지금 문의해 주시면 기획서 작성부터 도와드립니다</em></p>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="post-cta-btn">프로젝트 문의 →</a>
+  </div>
+  <div class="back-link">
+    <a href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

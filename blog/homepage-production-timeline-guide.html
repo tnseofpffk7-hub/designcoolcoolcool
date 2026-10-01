@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 제작 기간, 2주짜리와 2개월짜리는 무엇이 다른가 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="템플릿 기반과 자체 개발의 제작 기간 차이, 단계별 표준 일정, 기간을 단축하는 준비물까지 — 홈페이지 제작 기간을 결정하는 변수를 정리했습니다." />
+  <meta name="keywords" content="홈페이지 제작 기간, 홈페이지 제작 일정, 템플릿 홈페이지, 자체 개발 홈페이지" />
+  <meta property="og:title" content="홈페이지 제작 기간, 2주짜리와 2개월짜리는 무엇이 다른가" />
+  <meta property="og:description" content="템플릿 기반과 자체 개발의 제작 기간 차이, 단계별 표준 일정, 기간을 단축하는 준비물까지 — 홈페이지 제작 기간을 결정하는 변수를 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/homepage-production-timeline-guide" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/homepage-production-timeline-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+
+    .post-hero { padding: 160px 48px 40px; border-bottom: 1px solid var(--line); }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-hero-title { font-family: var(--font-display); font-size: clamp(32px, 4.4vw, 56px); letter-spacing: -0.03em; line-height: 1.15; max-width: 720px; margin: 0 auto; }
+    .post-meta-line { max-width: 720px; margin: 28px auto 0; font-size: 12px; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; padding-bottom: 40px; }
+
+    main.post-body { max-width: 720px; margin: 0 auto; padding: 56px 48px 40px; }
+    .lead { font-size: 17px; line-height: 1.9; color: var(--grey); margin-bottom: 40px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.02em; margin: 56px 0 20px; line-height: 1.3; }
+    .post-body h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.01em; margin: 36px 0 14px; }
+    .post-body p { margin-bottom: 20px; font-size: 15px; line-height: 1.9; }
+    .post-body ul, .post-body ol { margin: 0 0 24px 20px; }
+    .post-body li { margin-bottom: 10px; font-size: 15px; line-height: 1.8; }
+    .post-body a { color: var(--black); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .post-body strong { font-weight: 500; }
+    .post-body code { font-family: 'SF Mono', Menlo, Consolas, monospace; background: #eceae3; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    pre.code-block { background: #1c1b19; color: #f0eee7; padding: 22px 24px; border-radius: 12px; overflow-x: auto; margin: 24px 0 32px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 12.5px; line-height: 1.7; }
+    pre.code-block code { background: none; padding: 0; color: inherit; }
+
+    .callout { border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; background: #efece4; font-size: 14px; line-height: 1.8; color: var(--grey); }
+    .callout strong { color: var(--black); }
+
+    .internal-link-box { border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .internal-link-box p { margin: 0; font-size: 14px; }
+    .internal-link-box a { font-weight: 500; }
+
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); }
+
+    .faq-item { border-top: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 17px; margin-bottom: 10px; }
+    .faq-a { font-size: 14px; color: var(--grey); line-height: 1.85; }
+
+    .post-cta { max-width: 720px; margin: 64px auto 0; padding: 48px 48px; border-top: 1px solid var(--line); text-align: left; }
+    .post-cta p { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.02em; margin-bottom: 22px; line-height: 1.4; }
+    .post-cta p em { font-style: italic; color: var(--grey); }
+    .post-cta-btn { display: inline-block; text-decoration: none; color: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .post-cta-btn:hover { background: var(--black); color: var(--white); }
+
+    .back-link { max-width: 720px; margin: 32px auto 0; padding: 0 48px; }
+    .back-link a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey); text-decoration: none; }
+    .back-link a:hover { color: var(--black); }
+
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); margin-top: 64px; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 20px; }
+      main.post-body { padding: 40px 24px 24px; }
+      .post-cta { padding: 40px 24px 0; }
+      .back-link { padding: 0 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "홈페이지 제작 기간, 2주짜리와 2개월짜리는 무엇이 다른가",
+  "description": "템플릿 기반과 자체 개발의 제작 기간 차이, 단계별 표준 일정, 기간을 단축하는 준비물까지 — 홈페이지 제작 기간을 결정하는 변수를 정리했습니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/homepage-production-timeline-guide",
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/favicon.png"
+    }
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "템플릿 기반 제작과 자체 개발, 기간 차이가 왜 이렇게 큰가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "템플릿 기반은 이미 만들어진 레이아웃과 기능 모듈을 조합하는 방식이라 디자인·퍼블리싱 과정이 크게 단축됩니다. 반면 자체 개발은 와이어프레임부터 디자인, 퍼블리싱, 기능 개발, QA까지 전 과정을 처음부터 쌓아 올리기 때문에 구조적으로 시간이 더 걸립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "빨리 끝내고 싶으면 어떻게 해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가장 효과적인 방법은 콘텐츠(텍스트, 이미지, 로고, 레퍼런스)를 제작 업체에 넘기기 전에 미리 준비해두는 것입니다. 실제 제작 기간보다 콘텐츠를 받는 데 걸리는 시간이 전체 일정을 늘리는 가장 흔한 원인입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "제작 기간에 유지보수나 도메인 연결 시간도 포함되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반적으로 견적서에 명시된 제작 기간은 기획부터 오픈까지를 의미하며, 도메인 연결이나 초기 유지보수는 별도 일정으로 안내되는 경우가 많습니다. 계약 전에 '오픈'의 기준이 무엇인지 명확히 확인하는 것이 좋습니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">제작 지식 · 일정</p>
+    <h1 class="post-hero-title">홈페이지 제작 기간,<br>2주짜리와 2개월짜리는 무엇이 다른가</h1>
+    <p class="post-meta-line">2026. 09. 26 · 이수연</p>
+  </header>
+
+  <main class="post-body">
+
+    <p class="lead">"홈페이지 제작 기간 얼마나 걸리나요?"라는 질문에 업체마다 "2주"부터 "3개월"까지 답이 제각각입니다. 거짓말을 하는 게 아니라, 애초에 서로 다른 것을 만들겠다는 전제로 답하고 있기 때문입니다. 기간을 가르는 것은 성실함이 아니라 제작 방식과 규모입니다.</p>
+
+    <h2>기간을 결정하는 3가지 변수</h2>
+    <h3>1. 제작 방식 — 템플릿 vs 자체 개발</h3>
+    <p>이미 만들어진 템플릿에 콘텐츠를 채워 넣는 방식은 2~3주 안에도 완성이 가능합니다. 반면 브랜드에 맞춰 디자인을 처음부터 그리고 퍼블리싱하는 자체 개발 방식은 보통 4~6주, 기능이 복잡하면 그 이상이 걸립니다.</p>
+    <h3>2. 페이지 수와 기능 복잡도</h3>
+    <p>단순 소개 페이지 5~6장과, 예약 시스템·다국어·회원 기능이 포함된 20페이지 이상의 사이트는 같은 선상에서 비교할 수 없습니다. 기능 하나가 추가될 때마다 기획, 개발, QA 단계가 함께 늘어납니다.</p>
+    <h3>3. 콘텐츠 준비 상태</h3>
+    <p>실무에서 전체 일정을 가장 많이 늘리는 변수는 사실 디자인이나 개발이 아니라, 의뢰인이 텍스트와 이미지를 넘겨주는 시점입니다. 완성된 카피와 사진을 미리 준비해두면 전체 일정이 눈에 띄게 단축됩니다.</p>
+
+    <h2>단계별 표준 일정 예시</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>단계</th><th>템플릿 기반</th><th>자체 개발</th></tr>
+        <tr><td>기획·콘텐츠 정리</td><td>2~4일</td><td>1~2주</td></tr>
+        <tr><td>디자인 시안</td><td>3~5일</td><td>1.5~3주</td></tr>
+        <tr><td>퍼블리싱·개발</td><td>3~5일</td><td>2~3주</td></tr>
+        <tr><td>검수·QA·오픈</td><td>2~3일</td><td>3~5일</td></tr>
+        <tr><td><strong>합계</strong></td><td><strong>2~3주</strong></td><td><strong>4~6주</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="callout"><strong>참고</strong> — "일주일 만에 완성"을 내세우는 광고 문구는 대부분 최소 기능의 템플릿 기반 제작을 전제로 합니다. 완성의 기준과 수정 가능 범위가 다를 수 있으니, 계약 전 반드시 확인이 필요합니다.</div>
+
+    <h2>기간을 단축하려면 무엇을 준비해야 할까</h2>
+    <ul>
+      <li>로고, 브랜드 컬러, 서체 등 기존 브랜드 자료를 정리해둔다.</li>
+      <li>각 페이지에 들어갈 텍스트(서비스 소개, 연혁, 인사말 등)를 미리 써둔다.</li>
+      <li>원하는 레퍼런스 사이트 2~3개를 미리 골라둔다.</li>
+      <li>시안 피드백을 줄 담당자를 한 명으로 정해 커뮤니케이션 지연을 줄인다.</li>
+    </ul>
+    <p>기획서를 미리 정리해두면 이 과정 전체가 훨씬 수월해집니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-planning-document-guide">홈페이지 기획서, 제작 전에 꼭 정리해야 할 것들</a></p>
+    </div>
+
+    <h2>비용과 기간은 함께 움직인다</h2>
+    <p>제작 기간이 짧아지면 비용도 함께 낮아지는 경우가 많지만, 항상 비례하지는 않습니다. 비용 구조를 함께 이해하고 있어야 견적을 받았을 때 합리적인 판단이 가능합니다.</p>
+    <div class="internal-link-box">
+      <p>→ <a href="https://designcoolcoolcool.vercel.app/blog/homepage-making-cost">홈페이지 제작 비용, 2026년 기준으로 정리했습니다</a></p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>제작 기간은 업체의 실력을 가르는 기준이 아니라, 내가 어떤 결과물을 원하는지에 따라 달라지는 변수입니다. "얼마나 걸리나요"보다 "이 기간 안에 어디까지 완성되나요"를 묻는 것이 더 정확한 질문입니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item"><p class="faq-q">템플릿 기반 제작과 자체 개발, 기간 차이가 왜 이렇게 큰가요?</p><p class="faq-a">템플릿 기반은 이미 만들어진 레이아웃과 기능 모듈을 조합하는 방식이라 디자인·퍼블리싱 과정이 크게 단축됩니다. 반면 자체 개발은 와이어프레임부터 디자인, 퍼블리싱, 기능 개발, QA까지 전 과정을 처음부터 쌓아 올리기 때문에 구조적으로 시간이 더 걸립니다.</p></div>
+    <div class="faq-item"><p class="faq-q">빨리 끝내고 싶으면 어떻게 해야 하나요?</p><p class="faq-a">가장 효과적인 방법은 콘텐츠(텍스트, 이미지, 로고, 레퍼런스)를 제작 업체에 넘기기 전에 미리 준비해두는 것입니다. 실제 제작 기간보다 콘텐츠를 받는 데 걸리는 시간이 전체 일정을 늘리는 가장 흔한 원인입니다.</p></div>
+    <div class="faq-item"><p class="faq-q">제작 기간에 유지보수나 도메인 연결 시간도 포함되나요?</p><p class="faq-a">일반적으로 견적서에 명시된 제작 기간은 기획부터 오픈까지를 의미하며, 도메인 연결이나 초기 유지보수는 별도 일정으로 안내되는 경우가 많습니다. 계약 전에 '오픈'의 기준이 무엇인지 명확히 확인하는 것이 좋습니다.</p></div>
+
+  </main>
+
+  <div class="post-cta">
+    <p>우리 프로젝트는 얼마나 걸릴까요?<br><em>지금 문의해 주시면 범위에 맞는 현실적인 일정을 안내해드립니다</em></p>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="post-cta-btn">프로젝트 문의 →</a>
+  </div>
+  <div class="back-link">
+    <a href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

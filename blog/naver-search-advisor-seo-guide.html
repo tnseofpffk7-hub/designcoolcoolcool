@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네이버 서치어드바이저 등록·활용 가이드, 네이버 검색 노출을 위한 설정 총정리 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="네이버 서치어드바이저 사이트 등록, 소유확인, 사이트맵·RSS 제출, 웹 페이지 수집 요청, 검색 노출 리포트 읽는 법까지 — 내 홈페이지를 네이버에 노출시키는 설정 순서를 정리했습니다." />
+  <meta name="keywords" content="네이버 서치어드바이저, 네이버 SEO, 네이버 검색등록, 네이버 사이트 등록, 네이버 웹마스터도구, 네이버 노출" />
+  <meta name="author" content="이수연" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:title" content="네이버 서치어드바이저 등록·활용 가이드, 네이버 검색 노출을 위한 설정 총정리" />
+  <meta property="og:description" content="네이버 서치어드바이저 사이트 등록, 소유확인, 사이트맵·RSS 제출, 웹 페이지 수집 요청, 검색 노출 리포트 읽는 법까지 — 내 홈페이지를 네이버에 노출시키는 설정 순서를 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/naver-search-advisor-seo-guide" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인 쿨쿨쿨" />
+  <meta property="article:published_time" content="2026-10-08" />
+  <meta property="article:modified_time" content="2026-10-08" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="네이버 서치어드바이저 등록·활용 가이드, 네이버 검색 노출을 위한 설정 총정리" />
+  <meta name="twitter:description" content="네이버 서치어드바이저 사이트 등록, 소유확인, 사이트맵·RSS 제출, 웹 페이지 수집 요청, 검색 노출 리포트 읽는 법까지 — 내 홈페이지를 네이버에 노출시키는 설정 순서를 정리했습니다." />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/naver-search-advisor-seo-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0e0e0e;--white:#f5f4f0;--grey:#2a2825;--accent:#c8b89a;--line:#e2e0da;--font-display:'DM Serif Display',Georgia,serif;--font-body:-apple-system,'SF Pro Text','SF Pro Display',BlinkMacSystemFont,'Helvetica Neue',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:var(--font-body);font-weight:300;font-size:15px;line-height:1.7}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;background:var(--white);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:var(--font-display);font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--black)}
+.nav-cta{text-decoration:none;color:var(--black);background:var(--white);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--black);border-radius:10px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--black);color:var(--white)}
+.post-hero{padding:160px 48px 48px;max-width:860px;margin:0 auto}
+.post-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.post-h1{font-family:var(--font-display);font-size:clamp(28px,4vw,46px);letter-spacing:-.02em;line-height:1.2;font-weight:400;margin-bottom:20px}
+.post-info{font-size:12px;letter-spacing:.08em;color:var(--grey)}
+article{max-width:860px;margin:0 auto;padding:0 48px 80px}
+.lead{font-size:16px;line-height:2;color:var(--grey);margin-bottom:36px}
+article h2{font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;line-height:1.3;margin:64px 0 20px;padding-top:28px;border-top:1px solid var(--line)}
+article h3{font-size:16px;font-weight:600;margin:28px 0 10px}
+article p{margin-bottom:18px;color:var(--grey);line-height:2}
+article ul,article ol{margin:0 0 22px 22px;color:var(--grey)}
+article li{margin-bottom:10px;line-height:1.9}
+article a{color:var(--black);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;transition:text-decoration-color .2s}
+article a:hover{text-decoration-color:var(--black)}
+code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:#ece9e2;padding:2px 6px;border-radius:4px}
+pre{background:var(--black);color:var(--white);padding:20px 24px;border-radius:10px;overflow-x:auto;margin:0 0 22px;line-height:1.7}
+pre code{background:none;padding:0;color:inherit}
+.toc{border:1px solid var(--line);padding:24px 28px;margin:0 0 20px}
+.toc-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px!important}
+.toc ol{margin-bottom:0}
+.toc li{margin-bottom:4px}
+.callout{border-left:3px solid var(--accent);background:#ece9e2;padding:18px 24px;margin:0 0 22px}
+.callout p{margin:0}
+.table-wrap{overflow-x:auto;margin:0 0 24px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.7}
+th{font-weight:600;border-bottom:1px solid var(--black);white-space:nowrap}
+.faq-item{border-bottom:1px solid var(--line);padding:20px 0}
+.faq-item h3{margin:0 0 8px}
+.faq-item p{margin:0}
+.cta{text-align:center;border-top:1px solid var(--line);padding:64px 24px}
+.cta p{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);line-height:1.5;margin-bottom:24px}
+.cta em{color:var(--grey)}
+.cta-btn{display:inline-block;text-decoration:none;color:var(--white);background:var(--black);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:10px}
+.back{display:block;text-align:center;padding:0 0 56px;font-size:13px}
+.back a{color:var(--grey);text-decoration:none}
+footer{display:flex;justify-content:space-between;align-items:center;padding:32px 48px;border-top:1px solid var(--line);font-size:12px;color:var(--grey)}
+.footer-links{list-style:none;display:flex;gap:32px}
+.footer-links a{text-decoration:none;color:var(--grey);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.footer-links a:hover{color:var(--black)}
+@media(max-width:900px){nav.top{padding:20px 24px}.post-hero{padding:120px 24px 32px}article{padding:0 24px 64px}footer{padding:24px;flex-direction:column;gap:16px;text-align:center}}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://designcoolcoolcool.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "블로그",
+      "item": "https://designcoolcoolcool.vercel.app/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "네이버 서치어드바이저 등록·활용 가이드, 네이버 검색 노출을 위한 설정 총정리",
+      "item": "https://designcoolcoolcool.vercel.app/blog/naver-search-advisor-seo-guide"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "네이버 서치어드바이저 등록은 꼭 해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필수는 아니지만, 등록하지 않으면 네이버가 새 사이트를 발견하는 데 오래 걸리거나 일부 페이지만 수집될 수 있습니다. 소유확인과 사이트맵 제출만 해도 수집 속도와 진단 가능성이 크게 달라집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "구글 서치콘솔만 등록하면 네이버에도 노출되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아닙니다. 두 검색엔진의 수집 시스템은 별개입니다. 구글에서 잘 보이는 사이트라도 네이버에는 별도로 등록해야 수집 상태를 확인하고 문제를 진단할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "사이트 등록 후 검색 결과에 나오기까지 얼마나 걸리나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "사이트 규모와 품질에 따라 다르며 보통 며칠에서 수 주 정도 걸립니다. 웹 페이지 수집 요청을 하면 발견은 빨라질 수 있지만, 노출 순위와 색인 여부를 보장하지는 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "robots.txt에서 네이버 검색로봇을 막으면 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네이버 검색로봇(Yeti)이 접근하지 못해 수집과 노출이 되지 않습니다. 실수로 전체 차단(Disallow: /) 상태인 경우가 많으니 서치어드바이저의 robots.txt 검사 도구로 반드시 확인하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아임웹·워드프레스 같은 빌더 사이트도 등록할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 소유확인은 HTML 태그 방식이 가장 보편적이며, 대부분의 빌더는 head 영역 코드 삽입 기능을 제공합니다. 다만 빌더별 자동 사이트맵 경로는 직접 확인해야 합니다."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "네이버 서치어드바이저 등록·활용 가이드, 네이버 검색 노출을 위한 설정 총정리",
+  "description": "네이버 서치어드바이저 사이트 등록, 소유확인, 사이트맵·RSS 제출, 웹 페이지 수집 요청, 검색 노출 리포트 읽는 법까지 — 내 홈페이지를 네이버에 노출시키는 설정 순서를 정리했습니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/naver-search-advisor-seo-guide",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/naver-search-advisor-seo-guide"
+  },
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "inLanguage": "ko",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <nav class="top" aria-label="주요 메뉴">
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+  <header class="post-hero">
+    <p class="post-eyebrow">SEO · 검색 노출</p>
+    <h1 class="post-h1">네이버 서치어드바이저 등록·활용 가이드, 네이버 검색 노출을 위한 설정 총정리</h1>
+    <p class="post-info"><time datetime="2026-10-08">2026. 10. 08</time> · 이수연</p>
+  </header>
+  <article>
+<p class="lead">"구글에는 나오는데 네이버에는 왜 안 나오죠?" 홈페이지를 오픈한 뒤 가장 자주 듣는 질문입니다. 원인은 대부분 단순합니다. 네이버에 우리 사이트의 존재를 알리지 않았기 때문입니다. 이 글에서는 네이버 서치어드바이저의 <strong>등록 → 소유확인 → 사이트맵 제출 → 수집 요청 → 리포트 분석</strong>까지 순서대로 정리합니다.</p>
+
+<nav class="toc" aria-label="목차"><p class="toc-title">목차</p><ol>
+<li><a href="#s1">네이버 서치어드바이저란</a></li><li><a href="#s2">시작 전 체크리스트</a></li><li><a href="#s3">사이트 등록과 소유확인</a></li><li><a href="#s4">사이트맵·RSS 제출</a></li><li><a href="#s5">robots.txt 점검</a></li><li><a href="#s6">웹 페이지 수집 요청</a></li><li><a href="#s7">검색 노출 리포트 읽는 법</a></li><li><a href="#s8">네이버 노출을 돕는 콘텐츠 원칙</a></li><li><a href="#s9">자주 하는 실수 7가지</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav>
+
+<h2 id="s1">1. 네이버 서치어드바이저란</h2>
+<p>네이버 서치어드바이저(구 웹마스터도구)는 사이트 운영자가 네이버 검색로봇에게 사이트 정보를 전달하고, 수집·노출 상태를 확인하는 무료 도구입니다. 역할은 <a href="/blog/google-search-console-guide">구글 서치콘솔</a>과 비슷하지만, 두 도구는 완전히 별개이며 데이터도 공유되지 않습니다.</p>
+<div class="table-wrap"><table><thead><tr><th>구분</th><th>구글 서치콘솔</th><th>네이버 서치어드바이저</th></tr></thead><tbody>
+<tr><td>검색로봇</td><td>Googlebot</td><td>Yeti</td></tr>
+<tr><td>핵심 기능</td><td>색인 현황, 성능 리포트</td><td>수집 현황, 검색 반응, 진단</td></tr>
+<tr><td>소유확인</td><td>DNS, HTML 태그 등</td><td>HTML 태그, HTML 파일 업로드</td></tr>
+<tr><td>사이트맵</td><td>sitemap.xml</td><td>sitemap.xml, RSS</td></tr></tbody></table></div>
+<p>구글 쪽 설정은 <a href="/blog/google-search-console-guide">구글 서치콘솔 등록 가이드</a>에서, 사이트맵 파일 자체의 작성법은 <a href="/blog/sitemap-robots-txt-guide">sitemap.xml·robots.txt 가이드</a>에서 다뤘습니다. 이 글은 네이버 쪽 설정에만 집중합니다.</p>
+
+<h2 id="s2">2. 시작 전 체크리스트</h2>
+<p>등록 전에 아래 항목이 준비되어 있어야 수집이 매끄럽습니다.</p>
+<ul>
+<li><strong>HTTPS 적용:</strong> http와 https, www 유무 중 하나로 통일하고 나머지는 301 리다이렉트합니다. 보안 설정은 <a href="/blog/homepage-security-guide">홈페이지 보안 가이드</a>를 참고하세요.</li>
+<li><strong>대표 도메인 확정:</strong> 등록하는 주소가 실제 대표 주소와 같아야 합니다. 도메인 선택은 <a href="/blog/homepage-domain-guide">홈페이지 도메인 가이드</a>에 정리했습니다.</li>
+<li><strong>모바일 대응:</strong> 네이버 검색 이용의 큰 비중이 모바일입니다. <a href="/blog/homepage-mobile-optimization">모바일 최적화</a>와 <a href="/blog/responsive-web-design-guide">반응형 웹디자인</a>이 선행되어야 합니다.</li>
+<li><strong>페이지별 고유 제목과 설명:</strong> <a href="/blog/title-tag-meta-description-guide">타이틀·메타 디스크립션 작성법</a>대로 페이지마다 다르게 작성합니다.</li>
+<li><strong>수집 가능한 구조:</strong> 핵심 텍스트가 이미지나 스크립트 안에만 있으면 수집이 어렵습니다. 본문은 HTML 텍스트로 제공합니다.</li></ul>
+
+<h2 id="s3">3. 사이트 등록과 소유확인</h2>
+<ol class="steps">
+<li><strong>서치어드바이저 접속 및 로그인:</strong> 네이버 계정으로 로그인한 뒤 '웹마스터 도구'에서 '사이트 등록'을 선택합니다.</li>
+<li><strong>사이트 URL 입력:</strong> 대표 주소를 프로토콜(https)까지 포함해 입력합니다. 하위 경로가 아닌 도메인 단위로 등록하는 것이 일반적입니다.</li>
+<li><strong>소유확인 방식 선택:</strong> HTML 파일 업로드 또는 HTML 태그 삽입 중 하나를 고릅니다.</li>
+<li><strong>확인 실행:</strong> 코드를 반영·배포한 뒤 '소유확인'을 눌러 완료합니다.</li></ol>
+<h3>HTML 태그 방식 (권장)</h3>
+<p>제공되는 메타 태그를 홈페이지 첫 화면의 <code>&lt;head&gt;</code> 안에 넣습니다. 배포 후에도 태그를 지우지 마세요. 삭제하면 소유권이 해제될 수 있습니다.</p>
+<pre><code>&lt;meta name="naver-site-verification" content="발급받은_인증코드" /&gt;</code></pre>
+<h3>HTML 파일 업로드 방식</h3>
+<p>제공되는 HTML 파일을 사이트 루트에 업로드하는 방식입니다. 호스팅 구조상 루트 접근이 가능할 때 편합니다. 빌더 서비스는 head 코드 삽입이 더 쉬운 경우가 많습니다.</p>
+<div class="callout"><p><strong>Tip.</strong> 개발·운영 사이트를 분리했다면 운영 도메인에만 등록하세요. 테스트 도메인이 함께 수집되면 중복 콘텐츠 문제가 생길 수 있습니다.</p></div>
+
+<h2 id="s4">4. 사이트맵·RSS 제출</h2>
+<p>소유확인이 끝나면 '요청 &gt; 사이트맵 제출'에서 사이트맵 주소를 등록합니다. 사이트맵은 "우리 사이트에 이런 페이지가 있어요"라는 목록표입니다.</p>
+<ul>
+<li><strong>sitemap.xml:</strong> 전체 페이지 목록. 예: <code>https://designcoolcoolcool.vercel.app/sitemap.xml</code></li>
+<li><strong>RSS:</strong> 블로그처럼 새 글이 자주 올라오는 경우 최신 글 전달에 유리합니다.</li></ul>
+<p>사이트맵 작성 시 지켜야 할 기준은 다음과 같습니다.</p>
+<ol>
+<li>사이트맵에는 실제로 노출시키고 싶은 <strong>대표 URL(canonical)</strong>만 담습니다.</li>
+<li>404, 리다이렉트, noindex 페이지는 제외합니다.</li>
+<li><code>lastmod</code>는 실제 수정일을 반영하고, 변경이 없는데 매번 갱신하지 않습니다.</li>
+<li>글을 발행할 때마다 사이트맵도 같이 갱신합니다.</li></ol>
+<p>URL 설계가 일관되면 사이트맵 관리가 쉬워집니다. 자세한 기준은 <a href="/blog/url-structure-seo-guide">URL 구조 SEO 가이드</a>를 확인하세요.</p>
+
+<h2 id="s5">5. robots.txt 점검</h2>
+<p>서치어드바이저의 '검증 &gt; robots.txt'에서 현재 설정이 네이버 검색로봇에게 어떻게 보이는지 확인할 수 있습니다. 테스트 중 걸어둔 전체 차단 설정을 오픈 후에도 그대로 두는 실수가 가장 흔합니다.</p>
+<p><strong>수집을 막는 설정 (오픈 후에는 반드시 해제)</strong></p>
+<pre><code>User-agent: *
+Disallow: /</code></pre>
+<p><strong>수집을 허용하면서 사이트맵을 안내하는 기본 형태</strong></p>
+<pre><code>User-agent: *
+Allow: /
+
+Sitemap: https://designcoolcoolcool.vercel.app/sitemap.xml</code></pre>
+<p>관리자 페이지나 내부 검색 결과처럼 노출이 불필요한 경로만 선택적으로 막는 것이 안전합니다. robots.txt는 접근을 막을 뿐 "검색 결과에서 숨기기"를 보장하지 않는다는 점도 기억해 두세요.</p>
+
+<h2 id="s6">6. 웹 페이지 수집 요청</h2>
+<p>'요청 &gt; 웹 페이지 수집' 메뉴에서 특정 URL의 수집을 직접 요청할 수 있습니다. 새 페이지를 발행했거나 내용을 크게 고쳤을 때 유용합니다.</p>
+<ul>
+<li>중요 페이지(서비스 소개, 가격, 신규 포스팅)부터 요청합니다.</li>
+<li>같은 URL을 반복해서 요청해도 순위가 올라가지 않습니다. 한 번이면 충분합니다.</li>
+<li>요청은 '수집 신호'일 뿐, 노출 여부와 순위는 콘텐츠 품질이 결정합니다.</li></ul>
+<p>수집 요청 전에는 해당 페이지가 정상 응답(200)을 주는지, 내부 링크로 연결되어 있는지 확인하세요. 어디서도 링크되지 않은 고아 페이지는 수집돼도 평가가 낮을 수 있습니다. 링크 설계는 <a href="/blog/internal-linking-strategy-guide">내부링크 전략 가이드</a>에서 자세히 다뤘습니다.</p>
+
+<h2 id="s7">7. 검색 노출 리포트 읽는 법</h2>
+<p>등록 후에는 주기적으로 리포트를 확인해 문제를 조기에 발견하세요. 아래는 확인할 핵심 항목입니다.</p>
+<div class="table-wrap"><table><thead><tr><th>확인 항목</th><th>무엇을 보나</th><th>이상 신호와 대응</th></tr></thead><tbody>
+<tr><td>사이트맵 처리 현황</td><td>제출 URL 수와 수집 상태</td><td>오류 표시 시 주소·XML 형식·접근 권한 점검</td></tr>
+<tr><td>수집 현황</td><td>수집된 페이지 수 추이</td><td>급감하면 robots.txt, 서버 오류, 리다이렉트 확인</td></tr>
+<tr><td>검색 반응</td><td>노출·클릭 추이, 유입 검색어</td><td>노출은 높은데 클릭이 낮으면 제목·설명 개선</td></tr>
+<tr><td>사이트 최적화 진단</td><td>제목, 메타, 구조 관련 안내</td><td>안내 항목을 우선순위대로 수정</td></tr></tbody></table></div>
+<p>검색어별 성과 해석이 필요하다면 방문 이후 행동까지 보여주는 <a href="/blog/google-analytics-guide">구글 애널리틱스 가이드</a>의 지표 해석법을 함께 활용하세요. 서치어드바이저는 "검색에서 어떻게 보이는가", 애널리틱스는 "들어온 뒤 어떻게 행동하는가"를 담당합니다.</p>
+
+<h2 id="s8">8. 네이버 노출을 돕는 콘텐츠 원칙</h2>
+<p>등록은 출발선일 뿐입니다. 네이버가 사이트를 신뢰하고 오래 노출하려면 다음 원칙이 필요합니다.</p>
+<h3>1) 한 페이지에 한 주제</h3>
+<p>한 글에 여러 주제를 섞기보다, 하나의 질문에 끝까지 답하는 글이 평가에 유리합니다. 큰 주제는 기둥 글(pillar)과 세부 글로 나누고 서로 연결하세요.</p>
+<h3>2) 구조화된 마크업</h3>
+<p>글 정보, 작성자, FAQ를 구조화 데이터로 제공하면 검색엔진이 문서를 이해하기 쉬워집니다. 작성법은 <a href="/blog/schema-markup-seo-guide">스키마 마크업 SEO 가이드</a>에 있습니다.</p>
+<h3>3) 빠른 로딩</h3>
+<p>느린 페이지는 수집과 이탈 모두에 불리합니다. <a href="/blog/homepage-loading-speed">로딩 속도 개선</a>과 <a href="/blog/homepage-image-optimization">이미지 최적화</a>를 점검하세요.</p>
+<h3>4) 업데이트와 신뢰 신호</h3>
+<p>작성자, 작성일, 수정일, 연락처를 명확히 밝히고 오래된 정보는 갱신하세요. 사이트를 개편하는 경우에는 <a href="/blog/homepage-renewal-seo-ranking">리뉴얼 시 SEO 순위 유지법</a>대로 주소 변경을 관리해야 기존 노출을 잃지 않습니다.</p>
+<h3>5) AI 검색 환경 대비</h3>
+<p>포털 검색과 함께 AI 답변형 검색이 늘고 있습니다. 질문에 직접 답하는 문단과 명확한 출처 구조는 두 환경 모두에 도움이 됩니다. 자세한 내용은 <a href="/blog/geo-marketing-guide">GEO 마케팅 가이드</a>에서 확인하세요.</p>
+<p>검색 최적화 전반의 기본기는 <a href="/blog/homepage-seo">홈페이지 SEO 기본 가이드</a>에서 먼저 정리해 두면 좋습니다.</p>
+
+<h2 id="s9">9. 자주 하는 실수 7가지</h2>
+<ol>
+<li><strong>테스트 때 건 robots 차단을 해제하지 않음.</strong></li>
+<li><strong>www/non-www, http/https를 각각 등록하고 통일하지 않음.</strong></li>
+<li><strong>소유확인 후 메타 태그를 삭제함.</strong></li>
+<li><strong>사이트맵에 404·리다이렉트 URL을 포함함.</strong></li>
+<li><strong>모든 페이지 제목과 설명이 동일함.</strong></li>
+<li><strong>수집 요청만 반복하고 콘텐츠는 보강하지 않음.</strong></li>
+<li><strong>등록 후 리포트를 한 번도 확인하지 않음.</strong></li></ol>
+
+<h2 id="s10">오픈 직후 7일 실행 플랜</h2>
+<div class="table-wrap"><table><thead><tr><th>시점</th><th>할 일</th></tr></thead><tbody>
+<tr><td>Day 1</td><td>HTTPS·대표 도메인 통일, robots.txt 차단 해제 확인</td></tr>
+<tr><td>Day 1</td><td>서치어드바이저 등록, 메타 태그로 소유확인</td></tr>
+<tr><td>Day 2</td><td>sitemap.xml 제출, RSS 제출(블로그 운영 시)</td></tr>
+<tr><td>Day 3</td><td>핵심 페이지 5개 웹 페이지 수집 요청</td></tr>
+<tr><td>Day 7</td><td>수집 현황·사이트맵 처리 결과 첫 점검</td></tr>
+<tr><td>매월</td><td>검색 반응 리포트 확인, 제목·설명 개선</td></tr></tbody></table></div>
+
+<h2 id="faq">자주 묻는 질문 (FAQ)</h2>
+<div class="faq"><div class="faq-item"><h3>Q. 네이버 서치어드바이저 등록은 꼭 해야 하나요?</h3><p>필수는 아니지만, 등록하지 않으면 네이버가 새 사이트를 발견하는 데 오래 걸리거나 일부 페이지만 수집될 수 있습니다. 소유확인과 사이트맵 제출만 해도 수집 속도와 진단 가능성이 크게 달라집니다.</p></div><div class="faq-item"><h3>Q. 구글 서치콘솔만 등록하면 네이버에도 노출되나요?</h3><p>아닙니다. 두 검색엔진의 수집 시스템은 별개입니다. 구글에서 잘 보이는 사이트라도 네이버에는 별도로 등록해야 수집 상태를 확인하고 문제를 진단할 수 있습니다.</p></div><div class="faq-item"><h3>Q. 사이트 등록 후 검색 결과에 나오기까지 얼마나 걸리나요?</h3><p>사이트 규모와 품질에 따라 다르며 보통 며칠에서 수 주 정도 걸립니다. 웹 페이지 수집 요청을 하면 발견은 빨라질 수 있지만, 노출 순위와 색인 여부를 보장하지는 않습니다.</p></div><div class="faq-item"><h3>Q. robots.txt에서 네이버 검색로봇을 막으면 어떻게 되나요?</h3><p>네이버 검색로봇(Yeti)이 접근하지 못해 수집과 노출이 되지 않습니다. 실수로 전체 차단(Disallow: /) 상태인 경우가 많으니 서치어드바이저의 robots.txt 검사 도구로 반드시 확인하세요.</p></div><div class="faq-item"><h3>Q. 아임웹·워드프레스 같은 빌더 사이트도 등록할 수 있나요?</h3><p>가능합니다. 소유확인은 HTML 태그 방식이 가장 보편적이며, 대부분의 빌더는 head 영역 코드 삽입 기능을 제공합니다. 다만 빌더별 자동 사이트맵 경로는 직접 확인해야 합니다.</p></div></div>
+
+<h2>마무리: 네이버 SEO는 '알리기'와 '이해시키기'의 반복</h2>
+<p>서치어드바이저 등록은 30분이면 끝나지만, 그 뒤의 점검과 콘텐츠 개선이 노출을 만듭니다. 오늘 소유확인과 사이트맵 제출까지만 끝내도 큰 첫걸음입니다. 구글·네이버 양쪽 설정을 모두 마쳤다면, 다음은 <a href="/blog/homepage-conversion-rate">홈페이지 전환율 개선</a>으로 유입을 문의로 연결해 보세요.</p>
+</article>
+  <section class="cta">
+    <p>검색에 잘 잡히는 홈페이지,<br><em>설계부터 함께 고민해 드릴게요</em></p>
+    <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+  </section>
+  <p class="back"><a href="/blog">← 다른 포스팅 보러가기</a></p>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

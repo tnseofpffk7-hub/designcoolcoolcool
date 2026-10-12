@@ -3,16 +3,53 @@
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- 신규 포스팅 (2026-10-12) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-launch-checklist</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-contract-copyright-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-hosting-ssl-cdn-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-favicon-og-image-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-404-redirect-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <!-- 신규 포스팅 (2026-10-08) -->

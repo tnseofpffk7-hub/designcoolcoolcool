@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>파비콘·OG 이미지 설정 가이드, 링크 공유 썸네일과 브라우저 탭 아이콘 만들기 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="파비콘과 OG 이미지(링크 공유 썸네일)의 권장 규격, 제작 팁, 메타 태그 작성법, 카카오톡·SNS 미리보기 갱신 방법까지 정리했습니다. 브랜드 첫인상을 높이는 작은 설정 가이드입니다." />
+  <meta name="keywords" content="파비콘 만들기, OG 이미지, 링크 썸네일, og:image 설정, 카카오톡 미리보기, 브라우저 탭 아이콘" />
+  <meta name="author" content="이수연" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:title" content="파비콘·OG 이미지 설정 가이드, 링크 공유 썸네일과 브라우저 탭 아이콘 만들기" />
+  <meta property="og:description" content="파비콘과 OG 이미지(링크 공유 썸네일)의 권장 규격, 제작 팁, 메타 태그 작성법, 카카오톡·SNS 미리보기 갱신 방법까지 정리했습니다. 브랜드 첫인상을 높이는 작은 설정 가이드입니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/homepage-favicon-og-image-guide" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인 쿨쿨쿨" />
+  <meta property="article:published_time" content="2026-10-12" />
+  <meta property="article:modified_time" content="2026-10-12" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="파비콘·OG 이미지 설정 가이드, 링크 공유 썸네일과 브라우저 탭 아이콘 만들기" />
+  <meta name="twitter:description" content="파비콘과 OG 이미지(링크 공유 썸네일)의 권장 규격, 제작 팁, 메타 태그 작성법, 카카오톡·SNS 미리보기 갱신 방법까지 정리했습니다. 브랜드 첫인상을 높이는 작은 설정 가이드입니다." />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/homepage-favicon-og-image-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0e0e0e;--white:#f5f4f0;--grey:#2a2825;--accent:#c8b89a;--line:#e2e0da;--font-display:'DM Serif Display',Georgia,serif;--font-body:-apple-system,'SF Pro Text','SF Pro Display',BlinkMacSystemFont,'Helvetica Neue',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:var(--font-body);font-weight:300;font-size:15px;line-height:1.7}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;background:var(--white);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:var(--font-display);font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--black)}
+.nav-cta{text-decoration:none;color:var(--black);background:var(--white);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--black);border-radius:10px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--black);color:var(--white)}
+.post-hero{padding:160px 48px 48px;max-width:860px;margin:0 auto}
+.post-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.post-h1{font-family:var(--font-display);font-size:clamp(28px,4vw,46px);letter-spacing:-.02em;line-height:1.2;font-weight:400;margin-bottom:20px}
+.post-info{font-size:12px;letter-spacing:.08em;color:var(--grey)}
+article{max-width:860px;margin:0 auto;padding:0 48px 80px}
+.lead{font-size:16px;line-height:2;color:var(--grey);margin-bottom:36px}
+article h2{font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;line-height:1.3;margin:64px 0 20px;padding-top:28px;border-top:1px solid var(--line)}
+article h3{font-size:16px;font-weight:600;margin:28px 0 10px}
+article p{margin-bottom:18px;color:var(--grey);line-height:2}
+article ul,article ol{margin:0 0 22px 22px;color:var(--grey)}
+article li{margin-bottom:10px;line-height:1.9}
+article a{color:var(--black);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;transition:text-decoration-color .2s}
+article a:hover{text-decoration-color:var(--black)}
+code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:#ece9e2;padding:2px 6px;border-radius:4px}
+pre{background:var(--black);color:var(--white);padding:20px 24px;border-radius:10px;overflow-x:auto;margin:0 0 22px;line-height:1.7}
+pre code{background:none;padding:0;color:inherit}
+.toc{border:1px solid var(--line);padding:24px 28px;margin:0 0 20px}
+.toc-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px!important}
+.toc ol{margin-bottom:0}
+.toc li{margin-bottom:4px}
+.callout{border-left:3px solid var(--accent);background:#ece9e2;padding:18px 24px;margin:0 0 22px}
+.callout p{margin:0}
+.table-wrap{overflow-x:auto;margin:0 0 24px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.7}
+th{font-weight:600;border-bottom:1px solid var(--black);white-space:nowrap}
+.faq-item{border-bottom:1px solid var(--line);padding:20px 0}
+.faq-item h3{margin:0 0 8px}
+.faq-item p{margin:0}
+.cta{text-align:center;border-top:1px solid var(--line);padding:64px 24px}
+.cta p{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);line-height:1.5;margin-bottom:24px}
+.cta em{color:var(--grey)}
+.cta-btn{display:inline-block;text-decoration:none;color:var(--white);background:var(--black);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:10px}
+.back{display:block;text-align:center;padding:0 0 56px;font-size:13px}
+.back a{color:var(--grey);text-decoration:none}
+footer{display:flex;justify-content:space-between;align-items:center;padding:32px 48px;border-top:1px solid var(--line);font-size:12px;color:var(--grey)}
+.footer-links{list-style:none;display:flex;gap:32px}
+.footer-links a{text-decoration:none;color:var(--grey);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.footer-links a:hover{color:var(--black)}
+@media(max-width:900px){nav.top{padding:20px 24px}.post-hero{padding:120px 24px 32px}article{padding:0 24px 64px}footer{padding:24px;flex-direction:column;gap:16px;text-align:center}}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://designcoolcoolcool.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "블로그",
+      "item": "https://designcoolcoolcool.vercel.app/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "파비콘·OG 이미지 설정 가이드, 링크 공유 썸네일과 브라우저 탭 아이콘 만들기",
+      "item": "https://designcoolcoolcool.vercel.app/blog/homepage-favicon-og-image-guide"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "파비콘이 검색 결과에 바로 나오지 않는 이유가 뭔가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "검색엔진이 파비콘을 다시 수집하고 반영하는 데 시간이 걸립니다. 파일이 접근 가능하고 규격에 맞는지 확인한 뒤 기다리거나, 서치콘솔에서 해당 페이지 재수집을 요청해 볼 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OG 이미지를 바꿨는데 카카오톡에서 예전 이미지가 나와요.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "미리보기 캐시 때문입니다. 이미지 파일명을 바꿔 새 주소로 교체하고, 카카오 공유 디버거에서 캐시를 초기화한 뒤 다시 확인하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OG 이미지는 모든 페이지에 같은 걸 써도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능하지만 페이지별로 다른 이미지를 쓰면 공유 시 구분이 쉬워지고 클릭률에 유리합니다. 우선 대표 이미지를 넣고 중요한 글부터 맞춤 이미지로 확장하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "파비콘은 로고 전체를 넣어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "작은 크기에서 알아보기 어렵기 때문에 로고 전체보다 핵심 심볼이나 이니셜을 단순화해 사용하는 것이 좋습니다."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "파비콘·OG 이미지 설정 가이드, 링크 공유 썸네일과 브라우저 탭 아이콘 만들기",
+  "description": "파비콘과 OG 이미지(링크 공유 썸네일)의 권장 규격, 제작 팁, 메타 태그 작성법, 카카오톡·SNS 미리보기 갱신 방법까지 정리했습니다. 브랜드 첫인상을 높이는 작은 설정 가이드입니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/homepage-favicon-og-image-guide",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/homepage-favicon-og-image-guide"
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "ko",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <nav class="top" aria-label="주요 메뉴">
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+  <header class="post-hero">
+    <p class="post-eyebrow">브랜딩 · 메타 설정</p>
+    <h1 class="post-h1">파비콘·OG 이미지 설정 가이드, 링크 공유 썸네일과 브라우저 탭 아이콘 만들기</h1>
+    <p class="post-info"><time datetime="2026-10-12">2026. 10. 12</time> · 이수연</p>
+  </header>
+  <article>
+<p class="lead">홈페이지 링크를 카카오톡으로 보냈는데 썸네일이 비어 있거나 엉뚱한 이미지가 나온 적 있나요? 그리고 브라우저 탭에 기본 아이콘이 떠 있다면 브랜드 완성도는 거기서 한 번 떨어집니다. <strong>파비콘</strong>과 <strong>OG 이미지</strong>는 작지만 첫인상에 직접 영향을 주는 설정입니다.</p>
+<nav class="toc" aria-label="목차"><p class="toc-title">목차</p><ol><li><a href="#s1">1. 파비콘과 OG 이미지는 무엇이 다를까</a></li><li><a href="#s2">2. 파비콘 제작 가이드</a></li><li><a href="#s3">3. OG 이미지 제작 가이드</a></li><li><a href="#s4">4. 메타 태그 작성법</a></li><li><a href="#s5">5. 미리보기가 안 바뀔 때 해결법</a></li><li><a href="#s6">6. 체크리스트</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav>
+
+<h2 id="s1">1. 파비콘과 OG 이미지는 무엇이 다를까</h2>
+<div class="table-wrap"><table><thead><tr><th>구분</th><th>노출 위치</th><th>역할</th></tr></thead><tbody>
+<tr><td>파비콘</td><td>브라우저 탭, 즐겨찾기, 검색 결과 일부</td><td>사이트를 한눈에 식별하는 작은 아이콘</td></tr>
+<tr><td>OG 이미지</td><td>카카오톡·SNS·메신저 링크 미리보기</td><td>링크 클릭을 유도하는 대표 썸네일</td></tr></tbody></table></div>
+<p>브랜드 일관성을 위한 로고·색상 정리는 <a href="/blog/brand-homepage-identity-design">브랜드 홈페이지 아이덴티티 가이드</a>를 먼저 참고하면 좋습니다.</p>
+
+<h2 id="s2">2. 파비콘 제작 가이드</h2>
+<h3>권장 규격</h3>
+<ul>
+<li><strong>기본 파일:</strong> 정사각형 PNG 또는 SVG, 최소 48×48px 이상의 배수 크기 권장</li>
+<li><strong>애플 터치 아이콘:</strong> 180×180px PNG (아이폰 홈 화면 추가용)</li>
+<li><strong>안드로이드·웹앱용:</strong> 192×192px, 512×512px</li></ul>
+<h3>디자인 원칙</h3>
+<ol>
+<li><strong>단순하게:</strong> 16px로 줄어들어도 알아볼 수 있도록 로고 전체가 아닌 핵심 심볼이나 이니셜을 사용합니다.</li>
+<li><strong>대비 확보:</strong> 밝은 탭과 어두운 탭 모두에서 보이는지 확인합니다.</li>
+<li><strong>여백 최소화:</strong> 작은 크기에서는 여백이 많으면 심볼이 더 작아 보입니다.</li>
+<li><strong>브랜드 컬러 유지:</strong> 로고·사이트와 같은 색을 사용해 일관성을 줍니다.</li></ol>
+<h3>적용 코드</h3>
+<pre><code>&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;</code></pre>
+<p>구글 검색 결과에 파비콘을 표시하려면 홈페이지에서 접근 가능한 파비콘 파일이 필요하고, 검색 로봇이 접근할 수 있어야 합니다. 반영에는 시간이 걸리므로 오픈 직후 바로 바뀌지 않을 수 있습니다. 로봇 설정은 <a href="/blog/sitemap-robots-txt-guide">sitemap·robots.txt 가이드</a>를 참고하세요.</p>
+
+<h2 id="s3">3. OG 이미지 제작 가이드</h2>
+<h3>권장 규격</h3>
+<ul>
+<li><strong>비율:</strong> 1.91:1 (예: 1200×630px)</li>
+<li><strong>파일 형식:</strong> JPG 또는 PNG, 용량은 1MB 이하 권장</li>
+<li><strong>주소:</strong> 절대 경로(https://로 시작)로 지정</li></ul>
+<h3>디자인 원칙</h3>
+<ol>
+<li><strong>핵심 문구는 중앙에:</strong> 플랫폼마다 가장자리가 잘릴 수 있어 중요한 요소는 안쪽 안전 영역에 둡니다.</li>
+<li><strong>글자는 크게, 짧게:</strong> 모바일 미리보기는 작게 표시되므로 제목은 2줄 이내로 정리합니다.</li>
+<li><strong>브랜드 요소 포함:</strong> 로고와 대표 색상을 넣어 어떤 사이트인지 바로 알아보게 합니다.</li>
+<li><strong>페이지마다 다르게:</strong> 블로그 글은 글마다, 서비스 페이지는 페이지마다 맞춤 이미지를 쓰면 클릭률이 높아집니다.</li></ol>
+
+<h2 id="s4">4. 메타 태그 작성법</h2>
+<pre><code>&lt;meta property="og:title" content="페이지 제목" /&gt;
+&lt;meta property="og:description" content="페이지 설명 (80자 내외)" /&gt;
+&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:url" content="https://example.com/페이지주소" /&gt;
+&lt;meta property="og:image" content="https://example.com/images/og-page.jpg" /&gt;
+&lt;meta name="twitter:card" content="summary_large_image" /&gt;</code></pre>
+<ul>
+<li><code>og:title</code>, <code>og:description</code>은 <a href="/blog/title-tag-meta-description-guide">타이틀·메타 디스크립션 가이드</a>의 원칙대로 페이지마다 고유하게 작성합니다.</li>
+<li><code>og:url</code>은 canonical 주소와 같게 맞춥니다.</li>
+<li>이미지 주소가 로그인 필요 경로이거나 robots로 차단되면 미리보기가 나오지 않습니다.</li></ul>
+<p>검색 결과 확장용 구조화 데이터는 별도 영역입니다. 함께 설정하려면 <a href="/blog/schema-markup-seo-guide">스키마 마크업 가이드</a>를 확인하세요.</p>
+
+<h2 id="s5">5. 미리보기가 안 바뀔 때 해결법</h2>
+<p>SNS와 메신저는 한 번 가져온 미리보기를 <strong>캐시</strong>해 두어서, 이미지를 바꿔도 이전 썸네일이 계속 보일 수 있습니다.</p>
+<ol>
+<li>태그가 실제로 배포 사이트에 반영되었는지 페이지 소스 보기로 확인합니다.</li>
+<li>이미지 파일명을 바꾸고(예: og-v2.jpg) 주소를 새 파일로 교체합니다.</li>
+<li>카카오톡은 개발자 도구의 공유 디버거 도구에서 캐시를 초기화할 수 있습니다.</li>
+<li>페이스북·링크드인 등도 각 플랫폼의 공유 디버거로 다시 수집을 요청합니다.</li></ol>
+
+<h2 id="s6">6. 체크리스트</h2>
+<ul>
+<li>파비콘이 브라우저 탭에 정상 표시되는가</li>
+<li>애플 터치 아이콘이 설정되어 있는가</li>
+<li>OG 이미지가 1200×630px, 1MB 이하인가</li>
+<li>og:title, og:description, og:url, og:image가 모두 있는가</li>
+<li>카카오톡에 링크를 직접 보내 미리보기를 확인했는가</li></ul>
+<p>오픈 전 최종 점검은 <a href="/blog/homepage-launch-checklist">오픈 전 검수 체크리스트</a>와 함께 진행하세요. 링크 공유가 방문 전환으로 이어지는 구조는 <a href="/blog/homepage-conversion-rate">홈페이지 전환율 가이드</a>에서 확인할 수 있습니다.</p>
+
+<h2 id="faq">자주 묻는 질문 (FAQ)</h2>
+<div class="faq"><div class="faq-item"><h3>Q. 파비콘이 검색 결과에 바로 나오지 않는 이유가 뭔가요?</h3><p>검색엔진이 파비콘을 다시 수집하고 반영하는 데 시간이 걸립니다. 파일이 접근 가능하고 규격에 맞는지 확인한 뒤 기다리거나, 서치콘솔에서 해당 페이지 재수집을 요청해 볼 수 있습니다.</p></div><div class="faq-item"><h3>Q. OG 이미지를 바꿨는데 카카오톡에서 예전 이미지가 나와요.</h3><p>미리보기 캐시 때문입니다. 이미지 파일명을 바꿔 새 주소로 교체하고, 카카오 공유 디버거에서 캐시를 초기화한 뒤 다시 확인하세요.</p></div><div class="faq-item"><h3>Q. OG 이미지는 모든 페이지에 같은 걸 써도 되나요?</h3><p>가능하지만 페이지별로 다른 이미지를 쓰면 공유 시 구분이 쉬워지고 클릭률에 유리합니다. 우선 대표 이미지를 넣고 중요한 글부터 맞춤 이미지로 확장하세요.</p></div><div class="faq-item"><h3>Q. 파비콘은 로고 전체를 넣어야 하나요?</h3><p>작은 크기에서 알아보기 어렵기 때문에 로고 전체보다 핵심 심볼이나 이니셜을 단순화해 사용하는 것이 좋습니다.</p></div></div>
+<h2 id="end">마무리</h2>
+<p>파비콘과 OG 이미지는 한 번 만들어 두면 계속 쓰이는 <strong>가장 가성비 높은 브랜딩 설정</strong>입니다. 규격만 맞추고 카카오톡으로 직접 보내 확인하는 습관을 들이세요.</p>
+</article>
+  <section class="cta">
+    <p>브랜드가 담긴 홈페이지,<br><em>작은 디테일까지 함께 설계해요</em></p>
+    <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+  </section>
+  <p class="back"><a href="/blog">← 다른 포스팅 보러가기</a></p>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

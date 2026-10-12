@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 호스팅·SSL·CDN 가이드, 서버 선택부터 인증서 갱신까지 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="홈페이지 호스팅 종류(공유·VPS·클라우드·정적 호스팅) 비교, SSL 인증서 적용과 갱신, CDN이 필요한 경우, DNS 설정 순서와 장애 대비 백업까지 한 번에 정리했습니다." />
+  <meta name="keywords" content="홈페이지 호스팅, SSL 인증서, CDN, 웹호스팅 비교, DNS 설정, 서버 선택, HTTPS 적용" />
+  <meta name="author" content="이수연" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:title" content="홈페이지 호스팅·SSL·CDN 가이드, 서버 선택부터 인증서 갱신까지" />
+  <meta property="og:description" content="홈페이지 호스팅 종류(공유·VPS·클라우드·정적 호스팅) 비교, SSL 인증서 적용과 갱신, CDN이 필요한 경우, DNS 설정 순서와 장애 대비 백업까지 한 번에 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/homepage-hosting-ssl-cdn-guide" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인 쿨쿨쿨" />
+  <meta property="article:published_time" content="2026-10-12" />
+  <meta property="article:modified_time" content="2026-10-12" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="홈페이지 호스팅·SSL·CDN 가이드, 서버 선택부터 인증서 갱신까지" />
+  <meta name="twitter:description" content="홈페이지 호스팅 종류(공유·VPS·클라우드·정적 호스팅) 비교, SSL 인증서 적용과 갱신, CDN이 필요한 경우, DNS 설정 순서와 장애 대비 백업까지 한 번에 정리했습니다." />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/homepage-hosting-ssl-cdn-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0e0e0e;--white:#f5f4f0;--grey:#2a2825;--accent:#c8b89a;--line:#e2e0da;--font-display:'DM Serif Display',Georgia,serif;--font-body:-apple-system,'SF Pro Text','SF Pro Display',BlinkMacSystemFont,'Helvetica Neue',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:var(--font-body);font-weight:300;font-size:15px;line-height:1.7}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;background:var(--white);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:var(--font-display);font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--black)}
+.nav-cta{text-decoration:none;color:var(--black);background:var(--white);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--black);border-radius:10px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--black);color:var(--white)}
+.post-hero{padding:160px 48px 48px;max-width:860px;margin:0 auto}
+.post-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.post-h1{font-family:var(--font-display);font-size:clamp(28px,4vw,46px);letter-spacing:-.02em;line-height:1.2;font-weight:400;margin-bottom:20px}
+.post-info{font-size:12px;letter-spacing:.08em;color:var(--grey)}
+article{max-width:860px;margin:0 auto;padding:0 48px 80px}
+.lead{font-size:16px;line-height:2;color:var(--grey);margin-bottom:36px}
+article h2{font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;line-height:1.3;margin:64px 0 20px;padding-top:28px;border-top:1px solid var(--line)}
+article h3{font-size:16px;font-weight:600;margin:28px 0 10px}
+article p{margin-bottom:18px;color:var(--grey);line-height:2}
+article ul,article ol{margin:0 0 22px 22px;color:var(--grey)}
+article li{margin-bottom:10px;line-height:1.9}
+article a{color:var(--black);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;transition:text-decoration-color .2s}
+article a:hover{text-decoration-color:var(--black)}
+code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:#ece9e2;padding:2px 6px;border-radius:4px}
+pre{background:var(--black);color:var(--white);padding:20px 24px;border-radius:10px;overflow-x:auto;margin:0 0 22px;line-height:1.7}
+pre code{background:none;padding:0;color:inherit}
+.toc{border:1px solid var(--line);padding:24px 28px;margin:0 0 20px}
+.toc-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px!important}
+.toc ol{margin-bottom:0}
+.toc li{margin-bottom:4px}
+.callout{border-left:3px solid var(--accent);background:#ece9e2;padding:18px 24px;margin:0 0 22px}
+.callout p{margin:0}
+.table-wrap{overflow-x:auto;margin:0 0 24px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.7}
+th{font-weight:600;border-bottom:1px solid var(--black);white-space:nowrap}
+.faq-item{border-bottom:1px solid var(--line);padding:20px 0}
+.faq-item h3{margin:0 0 8px}
+.faq-item p{margin:0}
+.cta{text-align:center;border-top:1px solid var(--line);padding:64px 24px}
+.cta p{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);line-height:1.5;margin-bottom:24px}
+.cta em{color:var(--grey)}
+.cta-btn{display:inline-block;text-decoration:none;color:var(--white);background:var(--black);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:10px}
+.back{display:block;text-align:center;padding:0 0 56px;font-size:13px}
+.back a{color:var(--grey);text-decoration:none}
+footer{display:flex;justify-content:space-between;align-items:center;padding:32px 48px;border-top:1px solid var(--line);font-size:12px;color:var(--grey)}
+.footer-links{list-style:none;display:flex;gap:32px}
+.footer-links a{text-decoration:none;color:var(--grey);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.footer-links a:hover{color:var(--black)}
+@media(max-width:900px){nav.top{padding:20px 24px}.post-hero{padding:120px 24px 32px}article{padding:0 24px 64px}footer{padding:24px;flex-direction:column;gap:16px;text-align:center}}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://designcoolcoolcool.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "블로그",
+      "item": "https://designcoolcoolcool.vercel.app/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "홈페이지 호스팅·SSL·CDN 가이드, 서버 선택부터 인증서 갱신까지",
+      "item": "https://designcoolcoolcool.vercel.app/blog/homepage-hosting-ssl-cdn-guide"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "호스팅은 제작사가 제공해 주는 게 좋은가요, 직접 가입하는 게 좋은가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "편의성은 제작사 제공이 좋지만, 계정은 발주자 명의로 개설하는 것을 권장합니다. 제작사 명의일 경우 계약 종료 후 이전이나 접근에 어려움이 생길 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SSL 인증서는 꼭 유료여야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대부분의 사이트는 자동 갱신되는 무료 인증서로 충분합니다. 금융 서비스나 기업 인증이 필요한 경우처럼 특별한 요구가 있을 때 유료 인증서를 검토하면 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "호스팅을 옮기면 검색 순위가 떨어지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주소(도메인)와 URL 구조가 그대로이고 이전 중 접속 중단이 짧다면 큰 영향은 없습니다. 다만 주소가 바뀌거나 오류가 길어지면 순위가 흔들릴 수 있어 사전 점검과 리다이렉트 설정이 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CDN을 쓰면 SEO에도 도움이 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "직접적인 순위 요소라기보다 페이지 속도를 개선해 사용자 경험과 이탈률에 긍정적으로 작용합니다. 해외 방문자나 이미지 비중이 큰 사이트에서 체감이 큽니다."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "홈페이지 호스팅·SSL·CDN 가이드, 서버 선택부터 인증서 갱신까지",
+  "description": "홈페이지 호스팅 종류(공유·VPS·클라우드·정적 호스팅) 비교, SSL 인증서 적용과 갱신, CDN이 필요한 경우, DNS 설정 순서와 장애 대비 백업까지 한 번에 정리했습니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/homepage-hosting-ssl-cdn-guide",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/homepage-hosting-ssl-cdn-guide"
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "ko",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <nav class="top" aria-label="주요 메뉴">
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+  <header class="post-hero">
+    <p class="post-eyebrow">제작 지식 · 인프라</p>
+    <h1 class="post-h1">홈페이지 호스팅·SSL·CDN 가이드, 서버 선택부터 인증서 갱신까지</h1>
+    <p class="post-info"><time datetime="2026-10-12">2026. 10. 12</time> · 이수연</p>
+  </header>
+  <article>
+<p class="lead">홈페이지를 만들 때 디자인에는 신경을 많이 쓰지만, 그 사이트를 올려둘 <strong>집(호스팅)</strong>과 <strong>보안 열쇠(SSL)</strong>는 뒤늦게 챙기는 경우가 많습니다. 호스팅 선택에 따라 속도, 비용, 장애 대응이 달라집니다. 비개발자도 이해할 수 있게 호스팅의 종류부터 SSL, CDN, DNS까지 순서대로 정리합니다.</p>
+<nav class="toc" aria-label="목차"><p class="toc-title">목차</p><ol><li><a href="#s1">1. 도메인·호스팅·SSL, 무엇이 다를까</a></li><li><a href="#s2">2. 호스팅 종류와 선택 기준</a></li><li><a href="#s3">3. SSL 인증서와 HTTPS</a></li><li><a href="#s4">4. DNS 설정, 사이트 연결의 마지막 단계</a></li><li><a href="#s5">5. CDN이 필요한 경우</a></li><li><a href="#s6">6. 백업과 장애 대비</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav>
+
+<h2 id="s1">1. 도메인·호스팅·SSL, 무엇이 다를까</h2>
+<div class="table-wrap"><table><thead><tr><th>구성 요소</th><th>비유</th><th>역할</th></tr></thead><tbody>
+<tr><td>도메인</td><td>주소</td><td>방문자가 입력하는 이름 (example.com)</td></tr>
+<tr><td>호스팅</td><td>집(건물)</td><td>사이트 파일과 데이터가 저장되는 서버</td></tr>
+<tr><td>DNS</td><td>안내 데스크</td><td>도메인을 서버 위치와 연결</td></tr>
+<tr><td>SSL(HTTPS)</td><td>보안 봉투</td><td>방문자와 서버 사이 통신 암호화</td></tr>
+<tr><td>CDN</td><td>지점 창고</td><td>가까운 서버에서 파일을 빠르게 전달</td></tr></tbody></table></div>
+<p>도메인 선택과 등록은 <a href="/blog/homepage-domain-guide">도메인 가이드</a>에서 다뤘으므로 이 글에서는 호스팅 이후의 영역에 집중합니다.</p>
+
+<h2 id="s2">2. 호스팅 종류와 선택 기준</h2>
+<div class="table-wrap"><table><thead><tr><th>유형</th><th>특징</th><th>잘 맞는 사이트</th></tr></thead><tbody>
+<tr><td>빌더 포함 호스팅</td><td>아임웹 등 플랫폼에 서버가 포함되어 별도 관리가 거의 없음</td><td>소규모 브랜드·소상공인</td></tr>
+<tr><td>공유 호스팅</td><td>서버 자원을 여럿이 나눠 사용, 저렴하고 관리 쉬움</td><td>트래픽이 적은 기업 소개 사이트</td></tr>
+<tr><td>VPS·클라우드</td><td>독립 자원, 설정 자유도 높음, 서버 지식 필요</td><td>쇼핑몰·회원 기능·트래픽 변동이 큰 사이트</td></tr>
+<tr><td>정적 사이트 호스팅</td><td>HTML 파일 중심, 빠르고 보안 부담이 낮음</td><td>블로그·포트폴리오·랜딩페이지</td></tr></tbody></table></div>
+<h3>선택 질문 5가지</h3>
+<ol>
+<li><strong>회원가입·결제·DB가 필요한가?</strong> 필요하면 공유 호스팅 이상이 필요합니다.</li>
+<li><strong>예상 방문자와 피크 시점은?</strong> 이벤트 때 몰린다면 확장이 쉬운 클라우드가 안전합니다.</li>
+<li><strong>누가 서버를 관리할 것인가?</strong> 관리 인력이 없다면 관리형 서비스가 적합합니다.</li>
+<li><strong>백업과 장애 지원은 어디까지 포함인가?</strong></li>
+<li><strong>주 방문자는 어느 지역인가?</strong> 국내 방문자가 대부분이면 국내 리전이나 한국 접속이 빠른 서비스가 유리합니다.</li></ol>
+<p>플랫폼과 직접 제작 중 무엇이 맞는지는 <a href="/blog/homepage-platform">홈페이지 플랫폼 비교</a>와 <a href="/blog/nocode-vs-professional-homepage">노코드 vs 전문 제작</a>를 참고하세요.</p>
+
+<h2 id="s3">3. SSL 인증서와 HTTPS</h2>
+<p>SSL(정확히는 TLS) 인증서는 사이트 주소를 <code>https://</code>로 바꾸고 통신을 암호화합니다. 지금은 선택이 아니라 기본입니다. 브라우저가 "안전하지 않음"을 표시하면 방문자 신뢰가 크게 떨어지고, 문의 폼 같은 입력 기능은 사실상 신뢰를 잃습니다.</p>
+<h3>적용 순서</h3>
+<ol>
+<li>호스팅 서비스에서 무료 인증서(자동 발급) 지원 여부를 확인합니다.</li>
+<li>도메인을 연결한 뒤 인증서를 발급·활성화합니다.</li>
+<li>http 접속을 https로 <strong>301 리다이렉트</strong>합니다.</li>
+<li>사이트 내부의 이미지·스크립트 주소를 https로 바꿔 혼합 콘텐츠를 제거합니다.</li>
+<li>canonical, 사이트맵, 서치콘솔 등록 주소를 https 기준으로 통일합니다.</li></ol>
+<h3>갱신을 잊지 마세요</h3>
+<p>인증서는 만료일이 있습니다. 자동 갱신이 켜져 있는지, 갱신 알림이 누구에게 가는지 확인하세요. 만료된 사이트는 경고 화면이 떠서 접속 자체가 막힙니다. 유료 인증서는 달력에 만료 한 달 전 알림을 등록해 두는 것이 안전합니다.</p>
+<div class="callout"><p><strong>무료와 유료의 차이.</strong> 일반 기업·블로그 사이트는 자동 갱신되는 무료 인증서로 충분한 경우가 많습니다. 기업 인증 표기나 보증이 필요한 금융·대규모 서비스는 유료 인증서를 검토하세요. 보안 전반은 <a href="/blog/homepage-security-guide">홈페이지 보안 가이드</a>에서 다뤘습니다.</p></div>
+
+<h2 id="s4">4. DNS 설정, 사이트 연결의 마지막 단계</h2>
+<p>도메인을 서버에 연결하는 설정이 DNS입니다. 가장 흔한 레코드는 다음과 같습니다.</p>
+<div class="table-wrap"><table><thead><tr><th>레코드</th><th>용도</th></tr></thead><tbody>
+<tr><td>A</td><td>도메인을 서버 IP 주소에 연결</td></tr>
+<tr><td>CNAME</td><td>도메인을 다른 도메인(호스팅 제공 주소)에 연결</td></tr>
+<tr><td>MX</td><td>이메일 수신 서버 지정</td></tr>
+<tr><td>TXT</td><td>소유확인, 메일 인증 등 인증 정보 기록</td></tr></tbody></table></div>
+<ul>
+<li>DNS 변경은 반영까지 수 분에서 최대 하루 이상 걸릴 수 있습니다.</li>
+<li>이전 시 <strong>기존 메일(MX) 설정을 지우지 않도록</strong> 주의하세요. 사이트를 옮겼는데 회사 메일이 끊기는 사고가 자주 납니다.</li>
+<li>서치콘솔·서치어드바이저 소유확인용 TXT 레코드를 삭제하지 마세요. 등록 방법은 <a href="/blog/google-search-console-guide">구글 서치콘솔 가이드</a>와 <a href="/blog/naver-search-advisor-seo-guide">네이버 서치어드바이저 가이드</a>에 있습니다.</li></ul>
+
+<h2 id="s5">5. CDN이 필요한 경우</h2>
+<p>CDN(콘텐츠 전송 네트워크)은 이미지·CSS·JS 같은 정적 파일을 방문자와 가까운 서버에서 전달하는 서비스입니다.</p>
+<ul>
+<li><strong>효과가 큰 경우:</strong> 이미지가 많은 사이트, 해외 방문자가 있는 사이트, 트래픽이 몰리는 이벤트 페이지</li>
+<li><strong>효과가 작은 경우:</strong> 국내 방문자 중심의 작은 소개 사이트(이미 호스팅이 빠른 경우)</li></ul>
+<p>CDN을 쓰기 전에 먼저 이미지 용량과 불필요한 스크립트를 줄이는 것이 효과가 큽니다. 순서는 <a href="/blog/homepage-image-optimization">이미지 최적화</a> → <a href="/blog/homepage-loading-speed">로딩 속도 개선</a> → CDN 도입을 권장합니다. 많은 정적 호스팅 서비스는 CDN이 기본 포함되어 별도 설정이 필요 없습니다.</p>
+
+<h2 id="s6">6. 백업과 장애 대비</h2>
+<ol>
+<li><strong>자동 백업:</strong> 사이트 파일과 데이터베이스 모두 주기적으로 백업합니다.</li>
+<li><strong>백업 보관 위치:</strong> 같은 서버가 아닌 별도 저장소에 보관합니다.</li>
+<li><strong>복구 테스트:</strong> 백업 파일이 실제로 복원되는지 연 1회 확인합니다.</li>
+<li><strong>모니터링:</strong> 접속 불가를 알려 주는 무료 모니터링 서비스를 연결합니다.</li>
+<li><strong>비상 연락처:</strong> 장애 시 연락할 제작사·호스팅사 담당자를 문서로 남깁니다.</li></ol>
+<p>운영 단계의 관리 범위는 <a href="/blog/homepage-maintenance">홈페이지 유지보수 가이드</a>에서 확인할 수 있고, 오픈 전 서버·HTTPS 점검은 <a href="/blog/homepage-launch-checklist">오픈 전 검수 체크리스트</a>에 포함되어 있습니다. 호스팅·도메인 계정 명의와 인계 조건은 <a href="/blog/homepage-contract-copyright-guide">제작 계약서 가이드</a>에서 꼭 확인하세요.</p>
+
+<h2 id="faq">자주 묻는 질문 (FAQ)</h2>
+<div class="faq"><div class="faq-item"><h3>Q. 호스팅은 제작사가 제공해 주는 게 좋은가요, 직접 가입하는 게 좋은가요?</h3><p>편의성은 제작사 제공이 좋지만, 계정은 발주자 명의로 개설하는 것을 권장합니다. 제작사 명의일 경우 계약 종료 후 이전이나 접근에 어려움이 생길 수 있습니다.</p></div><div class="faq-item"><h3>Q. SSL 인증서는 꼭 유료여야 하나요?</h3><p>대부분의 사이트는 자동 갱신되는 무료 인증서로 충분합니다. 금융 서비스나 기업 인증이 필요한 경우처럼 특별한 요구가 있을 때 유료 인증서를 검토하면 됩니다.</p></div><div class="faq-item"><h3>Q. 호스팅을 옮기면 검색 순위가 떨어지나요?</h3><p>주소(도메인)와 URL 구조가 그대로이고 이전 중 접속 중단이 짧다면 큰 영향은 없습니다. 다만 주소가 바뀌거나 오류가 길어지면 순위가 흔들릴 수 있어 사전 점검과 리다이렉트 설정이 필요합니다.</p></div><div class="faq-item"><h3>Q. CDN을 쓰면 SEO에도 도움이 되나요?</h3><p>직접적인 순위 요소라기보다 페이지 속도를 개선해 사용자 경험과 이탈률에 긍정적으로 작용합니다. 해외 방문자나 이미지 비중이 큰 사이트에서 체감이 큽니다.</p></div></div>
+<h2 id="end">마무리</h2>
+<p>호스팅은 눈에 보이지 않지만 사이트의 <strong>속도, 안정성, 신뢰</strong>를 결정합니다. 사이트 성격에 맞는 유형을 고르고, 계정은 내 명의로 만들고, SSL 만료와 백업만 챙겨도 대부분의 사고를 예방할 수 있습니다.</p>
+</article>
+  <section class="cta">
+    <p>서버·도메인 설정이 막막하다면<br><em>기획 단계부터 함께 정리해 드릴게요</em></p>
+    <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+  </section>
+  <p class="back"><a href="/blog">← 다른 포스팅 보러가기</a></p>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 페이지와 301 리다이렉트 가이드, 깨진 링크로 손해 보지 않는 법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="404 오류가 SEO와 방문자 경험에 미치는 영향, 301·302 리다이렉트 차이, 주소 변경·리뉴얼 시 리다이렉트 맵 작성법, 친절한 404 페이지 디자인과 점검 방법을 정리했습니다." />
+  <meta name="keywords" content="404 페이지, 301 리다이렉트, 302 리다이렉트, 깨진 링크, 소프트 404, 리다이렉트 맵, 홈페이지 주소 변경" />
+  <meta name="author" content="이수연" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:title" content="404 페이지와 301 리다이렉트 가이드, 깨진 링크로 손해 보지 않는 법" />
+  <meta property="og:description" content="404 오류가 SEO와 방문자 경험에 미치는 영향, 301·302 리다이렉트 차이, 주소 변경·리뉴얼 시 리다이렉트 맵 작성법, 친절한 404 페이지 디자인과 점검 방법을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/homepage-404-redirect-guide" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인 쿨쿨쿨" />
+  <meta property="article:published_time" content="2026-10-12" />
+  <meta property="article:modified_time" content="2026-10-12" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="404 페이지와 301 리다이렉트 가이드, 깨진 링크로 손해 보지 않는 법" />
+  <meta name="twitter:description" content="404 오류가 SEO와 방문자 경험에 미치는 영향, 301·302 리다이렉트 차이, 주소 변경·리뉴얼 시 리다이렉트 맵 작성법, 친절한 404 페이지 디자인과 점검 방법을 정리했습니다." />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/homepage-404-redirect-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0e0e0e;--white:#f5f4f0;--grey:#2a2825;--accent:#c8b89a;--line:#e2e0da;--font-display:'DM Serif Display',Georgia,serif;--font-body:-apple-system,'SF Pro Text','SF Pro Display',BlinkMacSystemFont,'Helvetica Neue',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:var(--font-body);font-weight:300;font-size:15px;line-height:1.7}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;background:var(--white);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:var(--font-display);font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--black)}
+.nav-cta{text-decoration:none;color:var(--black);background:var(--white);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--black);border-radius:10px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--black);color:var(--white)}
+.post-hero{padding:160px 48px 48px;max-width:860px;margin:0 auto}
+.post-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.post-h1{font-family:var(--font-display);font-size:clamp(28px,4vw,46px);letter-spacing:-.02em;line-height:1.2;font-weight:400;margin-bottom:20px}
+.post-info{font-size:12px;letter-spacing:.08em;color:var(--grey)}
+article{max-width:860px;margin:0 auto;padding:0 48px 80px}
+.lead{font-size:16px;line-height:2;color:var(--grey);margin-bottom:36px}
+article h2{font-family:var(--font-display);font-weight:400;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;line-height:1.3;margin:64px 0 20px;padding-top:28px;border-top:1px solid var(--line)}
+article h3{font-size:16px;font-weight:600;margin:28px 0 10px}
+article p{margin-bottom:18px;color:var(--grey);line-height:2}
+article ul,article ol{margin:0 0 22px 22px;color:var(--grey)}
+article li{margin-bottom:10px;line-height:1.9}
+article a{color:var(--black);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;transition:text-decoration-color .2s}
+article a:hover{text-decoration-color:var(--black)}
+code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:#ece9e2;padding:2px 6px;border-radius:4px}
+pre{background:var(--black);color:var(--white);padding:20px 24px;border-radius:10px;overflow-x:auto;margin:0 0 22px;line-height:1.7}
+pre code{background:none;padding:0;color:inherit}
+.toc{border:1px solid var(--line);padding:24px 28px;margin:0 0 20px}
+.toc-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px!important}
+.toc ol{margin-bottom:0}
+.toc li{margin-bottom:4px}
+.callout{border-left:3px solid var(--accent);background:#ece9e2;padding:18px 24px;margin:0 0 22px}
+.callout p{margin:0}
+.table-wrap{overflow-x:auto;margin:0 0 24px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.7}
+th{font-weight:600;border-bottom:1px solid var(--black);white-space:nowrap}
+.faq-item{border-bottom:1px solid var(--line);padding:20px 0}
+.faq-item h3{margin:0 0 8px}
+.faq-item p{margin:0}
+.cta{text-align:center;border-top:1px solid var(--line);padding:64px 24px}
+.cta p{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);line-height:1.5;margin-bottom:24px}
+.cta em{color:var(--grey)}
+.cta-btn{display:inline-block;text-decoration:none;color:var(--white);background:var(--black);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:10px}
+.back{display:block;text-align:center;padding:0 0 56px;font-size:13px}
+.back a{color:var(--grey);text-decoration:none}
+footer{display:flex;justify-content:space-between;align-items:center;padding:32px 48px;border-top:1px solid var(--line);font-size:12px;color:var(--grey)}
+.footer-links{list-style:none;display:flex;gap:32px}
+.footer-links a{text-decoration:none;color:var(--grey);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.footer-links a:hover{color:var(--black)}
+@media(max-width:900px){nav.top{padding:20px 24px}.post-hero{padding:120px 24px 32px}article{padding:0 24px 64px}footer{padding:24px;flex-direction:column;gap:16px;text-align:center}}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://designcoolcoolcool.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "블로그",
+      "item": "https://designcoolcoolcool.vercel.app/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "404 페이지와 301 리다이렉트 가이드, 깨진 링크로 손해 보지 않는 법",
+      "item": "https://designcoolcoolcool.vercel.app/blog/homepage-404-redirect-guide"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "404 오류가 많으면 구글 순위가 떨어지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "존재하지 않는 페이지가 404를 반환하는 것 자체는 정상입니다. 다만 유입이나 외부 링크가 있던 페이지가 404가 되거나 내부 링크가 깨져 있으면 방문자 경험과 크롤링에 불리합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "삭제한 페이지는 301과 404 중 무엇이 좋나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대체할 만한 관련 페이지가 있으면 301로 연결하고, 의미 있는 대응 페이지가 없으면 404 또는 410으로 두는 것이 좋습니다. 관련 없는 페이지로 보내는 것은 피하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "301 리다이렉트는 얼마나 유지해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "검색엔진이 새 주소를 충분히 인식하고 외부 링크가 정리될 때까지 보통 최소 1년 이상 유지하는 것을 권장합니다. 가능하면 계속 유지하는 편이 안전합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "http에서 https로 바꿀 때도 301이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. http 주소로 들어오는 모든 요청을 대응하는 https 주소로 301 리다이렉트하고, 사이트맵·canonical도 https로 통일해야 합니다."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "404 페이지와 301 리다이렉트 가이드, 깨진 링크로 손해 보지 않는 법",
+  "description": "404 오류가 SEO와 방문자 경험에 미치는 영향, 301·302 리다이렉트 차이, 주소 변경·리뉴얼 시 리다이렉트 맵 작성법, 친절한 404 페이지 디자인과 점검 방법을 정리했습니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/homepage-404-redirect-guide",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/homepage-404-redirect-guide"
+  },
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "ko",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <nav class="top" aria-label="주요 메뉴">
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+  <header class="post-hero">
+    <p class="post-eyebrow">SEO · 기술</p>
+    <h1 class="post-h1">404 페이지와 301 리다이렉트 가이드, 깨진 링크로 손해 보지 않는 법</h1>
+    <p class="post-info"><time datetime="2026-10-12">2026. 10. 12</time> · 이수연</p>
+  </header>
+  <article>
+<p class="lead">사이트를 개편하면서 주소를 바꿨는데 몇 주 뒤 유입이 뚝 떨어졌다면 원인은 대부분 <strong>이전 주소로 들어온 방문자와 검색 로봇이 404 페이지를 만났기 때문</strong>입니다. 이 글은 404 페이지를 올바르게 만들고, 301 리다이렉트로 기존 가치를 새 주소로 넘기는 방법을 정리합니다.</p>
+<nav class="toc" aria-label="목차"><p class="toc-title">목차</p><ol><li><a href="#s1">1. HTTP 상태 코드 기초</a></li><li><a href="#s2">2. 404 오류는 SEO에 얼마나 해로울까</a></li><li><a href="#s3">3. 301과 302, 언제 무엇을 쓸까</a></li><li><a href="#s4">4. 리다이렉트 맵 작성법</a></li><li><a href="#s5">5. 친절한 404 페이지 만들기</a></li><li><a href="#s6">6. 정기 점검 루틴</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav>
+
+<h2 id="s1">1. HTTP 상태 코드 기초</h2>
+<div class="table-wrap"><table><thead><tr><th>코드</th><th>의미</th><th>사용 상황</th></tr></thead><tbody>
+<tr><td>200</td><td>정상</td><td>정상적으로 존재하는 페이지</td></tr>
+<tr><td>301</td><td>영구 이동</td><td>주소를 영구히 바꿨을 때</td></tr>
+<tr><td>302</td><td>임시 이동</td><td>잠시만 다른 주소로 보낼 때</td></tr>
+<tr><td>404</td><td>페이지 없음</td><td>존재하지 않는 주소 요청</td></tr>
+<tr><td>410</td><td>영구 삭제</td><td>의도적으로 완전히 삭제한 페이지</td></tr>
+<tr><td>500</td><td>서버 오류</td><td>서버 측 문제 발생</td></tr></tbody></table></div>
+
+<h2 id="s2">2. 404 오류는 SEO에 얼마나 해로울까</h2>
+<p>404가 몇 개 있다고 해서 사이트 전체가 불이익을 받는 것은 아닙니다. 없는 페이지에 404를 돌려주는 것은 정상적인 동작입니다. 문제가 되는 경우는 다음과 같습니다.</p>
+<ul>
+<li><strong>외부 링크·검색 순위가 있던 페이지가 404가 된 경우:</strong> 쌓인 신뢰가 사라집니다.</li>
+<li><strong>내부 링크가 404로 연결된 경우:</strong> 방문자 이탈과 크롤링 낭비로 이어집니다.</li>
+<li><strong>사이트맵에 404 주소가 들어 있는 경우:</strong> 검색엔진에 잘못된 신호를 줍니다.</li></ul>
+<p>내부 링크 설계는 <a href="/blog/internal-linking-strategy-guide">내부링크 전략 가이드</a>, 사이트맵 관리는 <a href="/blog/sitemap-robots-txt-guide">sitemap·robots.txt 가이드</a>를 참고하세요.</p>
+
+<h2 id="s3">3. 301과 302, 언제 무엇을 쓸까</h2>
+<ul>
+<li><strong>301:</strong> 주소 구조 변경, 도메인 이전, http→https 통일, www 통일처럼 <strong>영구적인 이동</strong>에 사용합니다. 기존 주소의 검색 신호를 새 주소로 넘기는 데 쓰입니다.</li>
+<li><strong>302:</strong> 점검 중 임시 안내 페이지처럼 <strong>일시적인 이동</strong>에 사용합니다. 영구 이동에 302를 쓰면 의도와 다르게 처리될 수 있습니다.</li></ul>
+<div class="callout"><p><strong>주의.</strong> 모든 404를 홈페이지로 301 리다이렉트하는 것은 권장하지 않습니다. 관련 없는 페이지로 보내면 방문자는 혼란스럽고, 검색엔진은 소프트 404로 판단할 수 있습니다. 내용이 대응되는 새 페이지가 있을 때만 1:1로 연결하세요.</p></div>
+
+<h2 id="s4">4. 리다이렉트 맵 작성법</h2>
+<p>리뉴얼이나 주소 변경 전에 반드시 <strong>옛 주소 → 새 주소 대응표</strong>를 만듭니다.</p>
+<ol>
+<li><strong>기존 URL 전체 수집:</strong> 사이트맵, 크롤링 도구, 서치콘솔의 페이지 목록으로 모읍니다.</li>
+<li><strong>중요도 분류:</strong> 유입·순위·외부 링크가 있는 페이지를 우선순위로 둡니다.</li>
+<li><strong>1:1 매핑:</strong> 가장 내용이 가까운 새 페이지에 연결합니다.</li>
+<li><strong>대응 페이지가 없으면:</strong> 상위 카테고리나 관련 목록으로 연결하거나 404/410으로 둡니다.</li>
+<li><strong>적용 후 검증:</strong> 맵의 모든 주소를 실제로 접속해 상태 코드를 확인합니다.</li></ol>
+<div class="table-wrap"><table><thead><tr><th>옛 주소</th><th>새 주소</th><th>처리</th></tr></thead><tbody>
+<tr><td>/blog/old-title</td><td>/blog/new-title</td><td>301</td></tr>
+<tr><td>/service.php?id=3</td><td>/services/web-design</td><td>301</td></tr>
+<tr><td>/event-2024</td><td>(대응 없음)</td><td>410 또는 404</td></tr></tbody></table></div>
+<p>새 주소 구조를 설계하는 기준은 <a href="/blog/url-structure-seo-guide">URL 구조 SEO 가이드</a>에, 리뉴얼 전체 전략은 <a href="/blog/homepage-renewal-seo-ranking">리뉴얼 시 SEO 순위 유지법</a>과 <a href="/blog/homepage-renewal">홈페이지 리뉴얼 가이드</a>에 정리되어 있습니다.</p>
+<h3>서버별 설정 예시</h3>
+<pre><code># Apache (.htaccess)
+Redirect 301 /old-page https://example.com/new-page
+
+# Nginx
+location = /old-page { return 301 https://example.com/new-page; }
+
+# Vercel (vercel.json)
+{ "redirects": [{ "source": "/old-page", "destination": "/new-page", "permanent": true }] }</code></pre>
+<p>플랫폼 서비스는 관리자 화면에서 리다이렉트 메뉴를 제공하는 경우가 많으니 먼저 확인하세요. 서버 환경은 <a href="/blog/homepage-hosting-ssl-cdn-guide">호스팅·SSL·CDN 가이드</a>를 참고하면 이해가 쉽습니다.</p>
+<h3>리다이렉트 체인 피하기</h3>
+<p>A→B→C처럼 여러 번 거치는 연결은 속도를 느리게 하고 크롤링 효율을 떨어뜨립니다. 옛 주소가 항상 <strong>최종 주소로 한 번에</strong> 이동하도록 맵을 갱신하세요.</p>
+
+<h2 id="s5">5. 친절한 404 페이지 만들기</h2>
+<p>방문자가 404를 만났을 때 사이트를 떠나지 않도록, 404 페이지는 <strong>길을 안내하는 페이지</strong>가 되어야 합니다.</p>
+<ol>
+<li><strong>명확한 문구:</strong> "페이지를 찾을 수 없습니다"처럼 상황을 짧게 설명합니다.</li>
+<li><strong>다음 행동 제시:</strong> 홈, 주요 서비스, 최신 글 링크를 보여줍니다.</li>
+<li><strong>검색창 제공:</strong> 콘텐츠가 많은 사이트라면 검색 기능을 넣습니다.</li>
+<li><strong>문의 경로 유지:</strong> 오류 신고나 문의 링크를 둡니다.</li>
+<li><strong>브랜드 톤 유지:</strong> 유머가 어울리는 브랜드라면 가볍게, 아니라면 담백하게 작성합니다.</li>
+<li><strong>상태 코드는 반드시 404:</strong> 디자인된 오류 페이지가 200으로 응답되면 소프트 404가 됩니다.</li></ol>
+<p>화면 설계와 동선은 <a href="/blog/homepage-ux-design">홈페이지 UX 디자인 가이드</a>를 참고하면 도움이 됩니다.</p>
+
+<h2 id="s6">6. 정기 점검 루틴</h2>
+<ul>
+<li>월 1회 서치콘솔의 "페이지 색인" 보고서에서 404·리다이렉트 오류 확인 (<a href="/blog/google-search-console-guide">서치콘솔 가이드</a>)</li>
+<li>네이버 서치어드바이저의 수집 현황에서 오류 확인 (<a href="/blog/naver-search-advisor-seo-guide">서치어드바이저 가이드</a>)</li>
+<li>글 삭제·주소 변경 시 즉시 리다이렉트 맵 갱신</li>
+<li>내부 링크 점검 도구로 깨진 링크 정기 확인</li>
+<li>오픈 직전에는 <a href="/blog/homepage-launch-checklist">오픈 전 검수 체크리스트</a>로 링크와 리다이렉트를 최종 확인</li></ul>
+
+<h2 id="faq">자주 묻는 질문 (FAQ)</h2>
+<div class="faq"><div class="faq-item"><h3>Q. 404 오류가 많으면 구글 순위가 떨어지나요?</h3><p>존재하지 않는 페이지가 404를 반환하는 것 자체는 정상입니다. 다만 유입이나 외부 링크가 있던 페이지가 404가 되거나 내부 링크가 깨져 있으면 방문자 경험과 크롤링에 불리합니다.</p></div><div class="faq-item"><h3>Q. 삭제한 페이지는 301과 404 중 무엇이 좋나요?</h3><p>대체할 만한 관련 페이지가 있으면 301로 연결하고, 의미 있는 대응 페이지가 없으면 404 또는 410으로 두는 것이 좋습니다. 관련 없는 페이지로 보내는 것은 피하세요.</p></div><div class="faq-item"><h3>Q. 301 리다이렉트는 얼마나 유지해야 하나요?</h3><p>검색엔진이 새 주소를 충분히 인식하고 외부 링크가 정리될 때까지 보통 최소 1년 이상 유지하는 것을 권장합니다. 가능하면 계속 유지하는 편이 안전합니다.</p></div><div class="faq-item"><h3>Q. http에서 https로 바꿀 때도 301이 필요한가요?</h3><p>네. http 주소로 들어오는 모든 요청을 대응하는 https 주소로 301 리다이렉트하고, 사이트맵·canonical도 https로 통일해야 합니다.</p></div></div>
+<h2 id="end">마무리</h2>
+<p>404와 리다이렉트는 평소엔 보이지 않다가 <strong>개편·이전 때 한꺼번에 문제가 터지는 영역</strong>입니다. 주소를 바꾸기 전에 대응표를 만들고, 바꾼 뒤에는 상태 코드를 직접 확인하는 것만으로 대부분의 순위 손실을 막을 수 있습니다.</p>
+</article>
+  <section class="cta">
+    <p>리뉴얼 때 순위를 잃지 않도록<br><em>주소 이전 계획부터 같이 짜요</em></p>
+    <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+  </section>
+  <p class="back"><a href="/blog">← 다른 포스팅 보러가기</a></p>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

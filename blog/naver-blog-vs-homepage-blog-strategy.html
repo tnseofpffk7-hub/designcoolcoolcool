@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- Favicon (이모지) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>네이버 블로그 vs 홈페이지 블로그, 병행 운영 전략 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="네이버 블로그와 홈페이지 자체 블로그의 차이를 소유권, 노출 경로, 전환, 운영 난이도로 비교하고, 업종별 조합과 중복 콘텐츠 없이 병행하는 방법, 주제 설계와 성과 측정까지 정리했습니다." />
+  <meta name="keywords" content="네이버 블로그, 홈페이지 블로그, 블로그 운영 전략, 중복 콘텐츠, 콘텐츠 마케팅, 블로그 병행" />
+  <meta name="author" content="이수연" />
+  <meta property="og:title" content="네이버 블로그 vs 홈페이지 블로그, 병행할 때 중복 없이 운영하는 전략" />
+  <meta property="og:description" content="네이버 블로그와 홈페이지 블로그를 비교하고, 중복 없이 병행 운영하는 실전 전략을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인쿨쿨쿨" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/naver-blog-vs-homepage-blog-strategy" />
+  <meta property="article:published_time" content="2026-10-28" />
+  <meta property="article:modified_time" content="2026-10-28" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/naver-blog-vs-homepage-blog-strategy" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .post-hero { padding: 160px 48px 56px; max-width: 880px; margin: 0 auto; }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 52px); letter-spacing: -0.03em; line-height: 1.15; font-weight: 400; }
+    .post-byline { margin-top: 24px; font-size: 12px; letter-spacing: 0.08em; color: var(--grey); }
+    article { max-width: 880px; margin: 0 auto; padding: 0 48px 80px; }
+    article p { margin: 0 0 22px; color: var(--grey); font-size: 15px; line-height: 1.95; }
+    article h2 { scroll-margin-top: 100px; font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.25; margin: 64px 0 20px; padding-top: 28px; border-top: 1px solid var(--line); }
+    article h3 { font-size: 16px; font-weight: 500; letter-spacing: -0.01em; margin: 36px 0 12px; color: var(--black); }
+    article ul, article ol { margin: 0 0 24px 20px; color: var(--grey); line-height: 1.9; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 500; color: var(--black); }
+    article a { color: var(--black); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    article a:hover { text-decoration-color: var(--black); }
+    .toc { border: 1px solid var(--line); padding: 28px 32px; margin: 0 0 48px; }
+    .toc-title { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+    .toc ol { margin: 0 0 0 18px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .callout { border-left: 2px solid var(--accent); padding: 4px 0 4px 22px; margin: 28px 0; }
+    .callout p { margin: 0; }
+    .table-wrap { overflow-x: auto; margin: 0 0 28px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.7; }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--grey); }
+    th { font-weight: 500; color: var(--black); font-size: 12px; letter-spacing: 0.04em; border-bottom: 1px solid var(--black); white-space: nowrap; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:first-of-type { border-top: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; line-height: 1.35; margin: 0 0 10px; font-weight: 400; color: var(--black); }
+    .faq-item p { margin: 0; }
+    .cta-box { border: 1px solid var(--black); padding: 40px; margin: 64px 0 40px; text-align: center; }
+    .cta-box p { margin-bottom: 20px; color: var(--black); }
+    .cta-box em { font-family: var(--font-display); font-size: 20px; }
+    .cta-btn { display: inline-block; text-decoration: none !important; color: var(--white) !important; background: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border-radius: 10px; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.8; }
+    .back-link { display: inline-block; font-size: 13px; letter-spacing: 0.06em; text-decoration: none !important; color: var(--black); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      article { padding: 0 24px 60px; }
+      .toc { padding: 22px 20px; }
+      .cta-box { padding: 28px 20px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+    article code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; background: rgba(14,14,14,0.05); padding: 1px 6px; }
+  article pre { overflow-x: auto; margin: 0 0 24px; padding: 18px 20px; background: rgba(14,14,14,0.05); border-left: 2px solid var(--accent); line-height: 1.7; }
+  article pre code { background: none; padding: 0; font-size: 12.5px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "네이버 블로그 글을 홈페이지에 그대로 옮겨도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "권장하지 않습니다. 같은 내용이 두 곳에 있으면 중복 콘텐츠로 판단되어 한쪽의 노출이 약해질 수 있습니다. 홈페이지에서는 더 깊고 구조화된 버전으로 다시 쓰고, 네이버에서는 요약·사례 중심으로 다르게 쓰는 방식을 추천합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "블로그가 없는 홈페이지는 SEO에 불리한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "블로그가 필수는 아닙니다. 다만 서비스 페이지만으로는 고객이 검색하는 다양한 질문에 대응하기 어렵기 때문에, 검색 유입을 키우려면 질문에 답하는 콘텐츠 영역이 있는 편이 유리합니다. 필요한 만큼 작게 시작해도 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "글은 얼마나 길게 써야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정해진 분량은 없습니다. 검색 의도에 맞는 정보를 빠짐없이 전달하는 길이면 충분합니다. 단순 정의는 짧게, 비교·가이드는 충분히 깊게 쓰고, 분량 채우기를 위한 반복은 피하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "글쓰기 시간이 부족하면 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "새 글 대신 기존 글을 최신화하거나, 상담에서 받은 질문 하나에 답하는 짧은 글부터 시작하세요. 월 1~2편이라도 꾸준히 쌓는 편이 몰아서 쓰고 멈추는 것보다 효과적입니다."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/naver-blog-vs-homepage-blog-strategy"
+  },
+  "headline": "네이버 블로그 vs 홈페이지 블로그, 병행할 때 중복 없이 운영하는 전략",
+  "description": "네이버 블로그와 홈페이지 자체 블로그의 차이를 소유권, 노출 경로, 전환, 운영 난이도로 비교하고, 업종별 조합과 중복 콘텐츠 없이 병행하는 방법, 주제 설계와 성과 측정까지 정리했습니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/naver-blog-vs-homepage-blog-strategy",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">블로그 운영·콘텐츠</p>
+    <h1 class="post-title">네이버 블로그 vs 홈페이지 블로그, 병행할 때 중복 없이 운영하는 전략</h1>
+    <p class="post-byline">2026. 10. 28 · 이수연</p>
+  </header>
+
+  <article>
+    <p>"블로그는 네이버에서 해야 하나요, 홈페이지에 만들어야 하나요?" 홈페이지 제작 상담에서 자주 받는 질문입니다. 정답은 업종과 목표에 따라 다르지만, 두 가지를 <strong>대립이 아닌 역할 분담</strong>으로 보면 선택이 쉬워집니다.</p>
+    <p>이 글은 두 블로그의 성격을 비교하고, 병행할 때 가장 문제가 되는 <strong>중복 콘텐츠</strong>를 피하면서 한정된 시간 안에 운영하는 방법을 정리했습니다. 콘텐츠 방향 자체는 <a href="/blog/homepage-content-strategy">홈페이지 콘텐츠 전략 가이드</a>를 함께 참고하세요.</p>
+
+    <div class="toc" role="navigation" aria-label="목차">
+      <p class="toc-title">목차</p>
+      <ol>
+        <li><a href="#role">두 블로그의 역할 차이</a></li>
+        <li><a href="#choose">업종·목표별 추천 조합</a></li>
+        <li><a href="#duplicate">병행 운영의 가장 큰 문제, 중복 콘텐츠</a></li>
+        <li><a href="#structure">홈페이지 블로그 구조 설계</a></li>
+        <li><a href="#topic">글 주제 설계: 고객의 질문에서 출발하기</a></li>
+        <li><a href="#cycle">지속 가능한 운영 리듬</a></li>
+        <li><a href="#seo">발행 후 노출을 위한 설정</a></li>
+        <li><a href="#measure">성과 측정 기준</a></li>
+        <li><a href="#mistakes">자주 하는 실수</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </div>
+
+    <h2 id="role">1. 두 블로그의 역할 차이</h2>
+    <p>네이버 블로그는 <strong>네이버 안에서의 발견</strong>에 강점이 있고, 홈페이지 블로그는 <strong>내 자산으로서의 축적과 전환</strong>에 강점이 있습니다. 어느 한쪽이 더 낫다기보다, 고객이 거치는 경로의 서로 다른 지점을 맡습니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>비교 항목</th><th>네이버 블로그</th><th>홈페이지 블로그</th></tr></thead>
+        <tbody>
+          <tr><td>소유권</td><td>플랫폼 안의 계정·콘텐츠. 정책과 노출 구조 변경의 영향을 받음</td><td>내 도메인에 쌓이는 자산</td></tr>
+          <tr><td>노출 경로</td><td>네이버 검색·블로그 영역·이웃 관계 중심</td><td>구글·네이버 웹 검색, 직접 방문, SNS 링크</td></tr>
+          <tr><td>디자인·구조 자유도</td><td>정해진 틀 안에서 제한적</td><td>브랜드에 맞게 자유롭게 설계, 문의 유도 영역 배치 가능</td></tr>
+          <tr><td>전환 설계</td><td>문의·예약 흐름을 만들기 어려움</td><td>CTA, 문의 폼, 관련 서비스 링크를 글 안에 설계 가능</td></tr>
+          <tr><td>초기 노출 속도</td><td>플랫폼 내 기존 이용자가 있어 시작이 빠른 편</td><td>신규 도메인은 신뢰가 쌓이기까지 시간이 필요</td></tr>
+          <tr><td>운영 난이도</td><td>가입 즉시 시작 가능</td><td>구조·기술 설정(사이트맵, 메타, URL) 이해 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>네이버 검색의 영역 구성과 노출 방식은 수시로 바뀌므로, 어느 채널이 우세한지는 특정 시점의 사실이 아니라 <strong>내 사이트의 실제 유입 데이터</strong>로 판단하는 것이 정확합니다.</p>
+
+    <h2 id="choose">2. 업종·목표별 추천 조합</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>상황</th><th>중심 채널</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td>동네 기반 매장(식당·미용·헬스 등)</td><td>네이버 블로그 + 플레이스, 홈페이지는 신뢰 기지</td><td>지역 탐색이 네이버에서 일어나며, 홈페이지는 예약·상세 안내를 맡음</td></tr>
+          <tr><td>상담형 전문직·B2B</td><td>홈페이지 블로그 중심</td><td>검색 의도가 정보 탐색·비교이며, 전문성 축적과 문의 전환이 중요</td></tr>
+          <tr><td>브랜드·커머스</td><td>홈페이지 블로그 + SNS</td><td>브랜드 서사와 구매 전환을 한 곳에서 설계</td></tr>
+          <tr><td>작가·강사·크리에이터</td><td>홈페이지 블로그 + 뉴스레터·SNS</td><td>독자·팬과의 관계를 내 채널에 쌓는 것이 핵심</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>어떤 조합이든 <strong>모든 채널에 같은 에너지를 쓰는 것</strong>은 지속하기 어렵습니다. 중심 채널 하나를 정하고, 나머지는 재활용과 요약으로 가볍게 운영하세요.</p>
+
+    <h2 id="duplicate">3. 병행 운영의 가장 큰 문제, 중복 콘텐츠</h2>
+    <p>같은 글을 두 곳에 그대로 올리면 어느 쪽이 원본인지 검색 엔진이 판단하기 어려워 한쪽이 묻힐 수 있고, 독자에게도 새로움이 없습니다. 원칙은 <strong>"복사하지 말고 역할을 나눠 다시 쓴다"</strong>입니다.</p>
+    <h3>안전한 재활용 방식</h3>
+    <ul>
+      <li><strong>홈페이지는 깊게, 네이버는 가볍게</strong>: 홈페이지에 정리한 가이드의 핵심을 네이버 블로그에서 요약·사례 중심으로 새로 쓰고 "자세한 내용은 홈페이지에서" 링크를 둡니다.</li>
+      <li><strong>다른 각도로 쓰기</strong>: 같은 주제라도 홈페이지는 원리와 체크리스트, 네이버는 고객 후기·현장 이야기·지역 정보처럼 관점을 다르게 합니다.</li>
+      <li><strong>발행 순서 정하기</strong>: 홈페이지에 먼저 올려 색인을 요청한 뒤, 일정 시간 후 네이버에 변형본을 올리는 방식이 안전합니다.</li>
+      <li><strong>그대로 올려야 한다면</strong>: 출처를 밝히고 원본 링크를 명시하세요. 가능하면 피하는 편이 낫습니다.</li>
+    </ul>
+
+    <h2 id="structure">4. 홈페이지 블로그 구조 설계</h2>
+    <p>홈페이지 블로그는 글이 쌓일수록 구조가 중요해집니다.</p>
+    <ul>
+      <li><strong>카테고리 3~7개</strong>: 고객의 고민 단계나 서비스 분류로 나눕니다. 너무 세분화하면 글 수가 적은 빈 카테고리가 생깁니다.</li>
+      <li><strong>URL은 짧은 영문 슬러그</strong>: <a href="/blog/url-structure-seo-guide">URL 구조 가이드</a>의 원칙을 따릅니다.</li>
+      <li><strong>핵심 글과 세부 글 연결</strong>: 큰 주제 글을 중심으로 세부 글이 서로 링크되도록 묶습니다 (<a href="/blog/internal-linking-strategy-guide">내부 링크 전략</a>).</li>
+      <li><strong>글마다 다음 행동 제시</strong>: 관련 서비스 페이지, 문의 버튼, 이어 읽을 글을 글 끝에 둡니다.</li>
+      <li><strong>CMS 선택</strong>: 글이 많아질 예정이면 수동 페이지보다 CMS 구조가 관리에 유리합니다 (<a href="/blog/webzine-cms-homepage-guide">웹매거진·CMS 구조 가이드</a>).</li>
+    </ul>
+
+    <h2 id="topic">5. 글 주제 설계: 고객의 질문에서 출발하기</h2>
+    <ol>
+      <li><strong>상담에서 반복되는 질문 목록화</strong>: 가격, 기간, 비교, 절차, 불안 요소가 좋은 주제입니다.</li>
+      <li><strong>검색 데이터로 검증</strong>: 자동완성·연관검색어와 서치 콘솔 검색어로 실제 표현을 확인합니다 (<a href="/blog/homepage-keyword-research-guide">키워드 리서치 가이드</a>).</li>
+      <li><strong>한 글에 하나의 의도</strong>: 정보형이면 정보에 충실하고, 비교형이면 기준과 표를 제공합니다.</li>
+      <li><strong>실제 경험을 담기</strong>: 직접 겪은 사례, 사진, 수치가 일반적인 글과 차이를 만듭니다. AI로 초안을 만들더라도 사람이 사실과 경험을 채워야 합니다 (<a href="/blog/ai-copywriting-homepage-content">AI 카피 활용 가이드</a>).</li>
+    </ol>
+
+    <h2 id="cycle">6. 지속 가능한 운영 리듬</h2>
+    <p>블로그는 화려한 시작보다 <strong>꾸준한 유지</strong>가 중요합니다. 지킬 수 있는 빈도를 정하세요.</p>
+    <ul>
+      <li>월 2~4편을 목표로 하되, 못 지키는 달에는 기존 글 업데이트로 대체합니다.</li>
+      <li>글 1편을 <strong>홈페이지 가이드 → 네이버 요약글 → SNS 카드뉴스</strong>로 쪼개 재활용합니다.</li>
+      <li>분기마다 오래된 글의 정보(가격, 규정, 스크린샷)를 점검해 최신 상태로 갱신합니다 (<a href="/blog/homepage-maintenance">유지보수 체크리스트</a>).</li>
+    </ul>
+
+    <h2 id="seo">7. 발행 후 노출을 위한 설정</h2>
+    <ol>
+      <li>사이트맵에 새 글이 자동 반영되는지 확인하고 제출합니다 (<a href="/blog/sitemap-robots-txt-guide">XML Sitemap·robots.txt 가이드</a>).</li>
+      <li>네이버는 서치어드바이저에서 사이트·사이트맵·RSS를 등록합니다 (<a href="/blog/naver-search-advisor-seo-guide">서치어드바이저 가이드</a>).</li>
+      <li>구글은 서치 콘솔에서 색인 상태를 확인합니다 (<a href="/blog/google-search-console-guide">서치 콘솔 가이드</a>).</li>
+      <li>제목·메타 설명, 구조화 데이터를 점검합니다 (<a href="/blog/title-tag-meta-description-guide">제목 태그·메타 설명</a>, <a href="/blog/schema-markup-seo-guide">구조화 데이터</a>).</li>
+    </ol>
+
+    <h2 id="measure">8. 성과 측정 기준</h2>
+    <p>"방문자 수"만 보면 방향을 잃기 쉽습니다. 다음 순서로 확인하세요.</p>
+    <ul>
+      <li><strong>채널별 유입</strong>: 애널리틱스에서 네이버 블로그, 검색, SNS에서 홈페이지로 오는 방문을 구분합니다 (<a href="/blog/google-analytics-guide">애널리틱스 가이드</a>).</li>
+      <li><strong>글별 다음 행동</strong>: 읽고 서비스 페이지로 이동했는지, 문의 버튼을 눌렀는지 확인합니다 (<a href="/blog/homepage-conversion-rate">문의 전환율 가이드</a>).</li>
+      <li><strong>검색어 변화</strong>: 서치 콘솔에서 새로 노출되는 검색어를 다음 글감으로 활용합니다.</li>
+    </ul>
+
+    <h2 id="mistakes">9. 자주 하는 실수</h2>
+    <ul>
+      <li><strong>같은 글을 그대로 복사해 양쪽 발행</strong>: 중복 판단 위험이 있고 독자에게 새로움도 없습니다.</li>
+      <li><strong>네이버 블로그에만 모든 콘텐츠 축적</strong>: 플랫폼 변화에 취약합니다. 핵심 자산은 내 홈페이지에 쌓으세요.</li>
+      <li><strong>홈페이지 블로그를 만들고 방치</strong>: 마지막 글이 1년 전이면 오히려 운영 중단 신호로 보일 수 있습니다.</li>
+      <li><strong>홍보 글만 올리기</strong>: 독자의 질문에 답하지 않는 글은 읽히지 않습니다.</li>
+      <li><strong>글 끝에 다음 행동이 없음</strong>: 읽고 나서 어디로 가야 할지 안내하세요.</li>
+    </ul>
+
+    <h2 id="faq">10. 자주 묻는 질문</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">네이버 블로그 글을 홈페이지에 그대로 옮겨도 되나요?</h3>
+      <p>권장하지 않습니다. 같은 내용이 두 곳에 있으면 중복 콘텐츠로 판단되어 한쪽의 노출이 약해질 수 있습니다. 홈페이지에서는 더 깊고 구조화된 버전으로 다시 쓰고, 네이버에서는 요약·사례 중심으로 다르게 쓰는 방식을 추천합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">블로그가 없는 홈페이지는 SEO에 불리한가요?</h3>
+      <p>블로그가 필수는 아닙니다. 다만 서비스 페이지만으로는 고객이 검색하는 다양한 질문에 대응하기 어렵기 때문에, 검색 유입을 키우려면 질문에 답하는 콘텐츠 영역이 있는 편이 유리합니다. 필요한 만큼 작게 시작해도 됩니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">글은 얼마나 길게 써야 하나요?</h3>
+      <p>정해진 분량은 없습니다. 검색 의도에 맞는 정보를 빠짐없이 전달하는 길이면 충분합니다. 단순 정의는 짧게, 비교·가이드는 충분히 깊게 쓰고, 분량 채우기를 위한 반복은 피하세요.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">글쓰기 시간이 부족하면 어떻게 하나요?</h3>
+      <p>새 글 대신 기존 글을 최신화하거나, 상담에서 받은 질문 하나에 답하는 짧은 글부터 시작하세요. 월 1~2편이라도 꾸준히 쌓는 편이 몰아서 쓰고 멈추는 것보다 효과적입니다.</p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>네이버 블로그와 홈페이지 블로그는 경쟁 관계가 아니라 <strong>발견은 넓게, 자산과 전환은 내 홈페이지에</strong>라는 역할 분담입니다. 중심 채널을 하나 정하고, 같은 글을 복사하지 않으며, 글 끝에 다음 행동을 설계해 보세요. 오늘 할 첫 단계는 상담에서 가장 자주 받는 질문 세 가지를 적어 보는 것입니다.</p>
+
+    <div class="cta-box">
+      <p><em>쌓일수록 힘이 되는 블로그,</em><br>홈페이지 구조부터 함께 설계해 드립니다</p>
+      <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+    </div>
+
+    <a class="back-link" href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </article>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

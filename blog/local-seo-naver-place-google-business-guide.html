@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- Favicon (이모지) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로컬 SEO 가이드, 네이버 플레이스·구글 비즈니스 프로필 연동 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="로컬 SEO 방법을 정리했습니다. 네이버 플레이스·구글 비즈니스 프로필 등록과 최적화, NAP 일관성, 지역 랜딩 페이지, LocalBusiness 스키마, 리뷰 관리까지 매장형 홈페이지 실전 가이드입니다." />
+  <meta name="keywords" content="로컬 SEO, 네이버 플레이스, 구글 비즈니스 프로필, 지역 SEO, NAP, 지도 검색 노출, 매장 홈페이지" />
+  <meta name="author" content="이수연" />
+  <meta property="og:title" content="로컬 SEO 가이드, 네이버 플레이스·구글 비즈니스 프로필과 홈페이지를 연결하는 법" />
+  <meta property="og:description" content="네이버 플레이스·구글 비즈니스 프로필과 홈페이지를 연결해 지역 검색 노출을 높이는 실전 가이드." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인쿨쿨쿨" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/local-seo-naver-place-google-business-guide" />
+  <meta property="article:published_time" content="2026-10-28" />
+  <meta property="article:modified_time" content="2026-10-28" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/local-seo-naver-place-google-business-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .post-hero { padding: 160px 48px 56px; max-width: 880px; margin: 0 auto; }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 52px); letter-spacing: -0.03em; line-height: 1.15; font-weight: 400; }
+    .post-byline { margin-top: 24px; font-size: 12px; letter-spacing: 0.08em; color: var(--grey); }
+    article { max-width: 880px; margin: 0 auto; padding: 0 48px 80px; }
+    article p { margin: 0 0 22px; color: var(--grey); font-size: 15px; line-height: 1.95; }
+    article h2 { scroll-margin-top: 100px; font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.25; margin: 64px 0 20px; padding-top: 28px; border-top: 1px solid var(--line); }
+    article h3 { font-size: 16px; font-weight: 500; letter-spacing: -0.01em; margin: 36px 0 12px; color: var(--black); }
+    article ul, article ol { margin: 0 0 24px 20px; color: var(--grey); line-height: 1.9; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 500; color: var(--black); }
+    article a { color: var(--black); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    article a:hover { text-decoration-color: var(--black); }
+    .toc { border: 1px solid var(--line); padding: 28px 32px; margin: 0 0 48px; }
+    .toc-title { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+    .toc ol { margin: 0 0 0 18px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .callout { border-left: 2px solid var(--accent); padding: 4px 0 4px 22px; margin: 28px 0; }
+    .callout p { margin: 0; }
+    .table-wrap { overflow-x: auto; margin: 0 0 28px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.7; }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--grey); }
+    th { font-weight: 500; color: var(--black); font-size: 12px; letter-spacing: 0.04em; border-bottom: 1px solid var(--black); white-space: nowrap; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:first-of-type { border-top: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; line-height: 1.35; margin: 0 0 10px; font-weight: 400; color: var(--black); }
+    .faq-item p { margin: 0; }
+    .cta-box { border: 1px solid var(--black); padding: 40px; margin: 64px 0 40px; text-align: center; }
+    .cta-box p { margin-bottom: 20px; color: var(--black); }
+    .cta-box em { font-family: var(--font-display); font-size: 20px; }
+    .cta-btn { display: inline-block; text-decoration: none !important; color: var(--white) !important; background: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border-radius: 10px; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.8; }
+    .back-link { display: inline-block; font-size: 13px; letter-spacing: 0.06em; text-decoration: none !important; color: var(--black); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      article { padding: 0 24px 60px; }
+      .toc { padding: 22px 20px; }
+      .cta-box { padding: 28px 20px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+    article code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; background: rgba(14,14,14,0.05); padding: 1px 6px; }
+  article pre { overflow-x: auto; margin: 0 0 24px; padding: 18px 20px; background: rgba(14,14,14,0.05); border-left: 2px solid var(--accent); line-height: 1.7; }
+  article pre code { background: none; padding: 0; font-size: 12.5px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "홈페이지가 없어도 네이버 플레이스만 잘 관리하면 되지 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "초기에는 플레이스만으로도 방문을 만들 수 있습니다. 다만 가격 기준, 포트폴리오, 전문성처럼 상세한 설명이 필요한 업종이나 상담 단가가 높은 업종은 홈페이지가 있어야 고객이 확신을 얻기 쉽습니다. 또한 플레이스는 외부 플랫폼이므로 정책 변경의 영향을 받습니다. 홈페이지는 내가 소유하는 자산이라는 점에서 병행을 권합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "구글 비즈니스 프로필은 국내 사업장도 꼭 등록해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필수는 아니지만, 구글 검색에서 내 사업장 정보가 틀리게 노출되는 것을 막고 외국인 고객이나 구글 검색 비중이 높은 업종에 노출되려면 등록하는 편이 유리합니다. 등록해 둔 뒤에는 정보 일관성만 주기적으로 점검하면 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAP이 조금 달라도 순위에 큰 영향이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "표기 차이가 순위에 미치는 영향의 크기는 단정하기 어렵습니다. 다만 같은 사업장이라는 신호를 명확히 주는 것이 안전하고, 무엇보다 고객에게 혼란을 주지 않기 위해서라도 통일하는 것이 좋습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "지점이 여러 개면 홈페이지 페이지를 지점마다 따로 만들어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "지점별로 주소, 사진, 인력, 후기처럼 고유한 정보가 있다면 별도 페이지를 만드는 것이 좋습니다. 내용이 거의 같은 복제 페이지는 가치가 낮으므로, 그럴 때는 하나의 지점 목록 페이지로 묶는 편이 낫습니다."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/local-seo-naver-place-google-business-guide"
+  },
+  "headline": "로컬 SEO 가이드, 네이버 플레이스·구글 비즈니스 프로필과 홈페이지를 연결하는 법",
+  "description": "로컬 SEO 방법을 정리했습니다. 네이버 플레이스·구글 비즈니스 프로필 등록과 최적화, NAP 일관성, 지역 랜딩 페이지, LocalBusiness 스키마, 리뷰 관리까지 매장형 홈페이지 실전 가이드입니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/local-seo-naver-place-google-business-guide",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">로컬 SEO·지도 검색</p>
+    <h1 class="post-title">로컬 SEO 가이드, 네이버 플레이스·구글 비즈니스 프로필과 홈페이지를 연결하는 법</h1>
+    <p class="post-byline">2026. 10. 28 · 이수연</p>
+  </header>
+
+  <article>
+    <p>"강남 필라테스", "합정 네일샵", "수원 인테리어 업체". 오프라인 방문이나 상담으로 이어지는 업종의 고객은 이렇게 <strong>지역명과 서비스명을 함께</strong> 검색합니다. 이때 결과 상단에 나타나는 것은 대개 홈페이지가 아니라 <strong>지도와 플레이스 정보</strong>입니다. 홈페이지만 잘 만들어서는 이 영역에 들어갈 수 없고, 반대로 플레이스만 관리해서는 고객이 신뢰할 근거를 충분히 얻지 못합니다.</p>
+    <p>이 글은 지역 검색 노출을 위한 <strong>로컬 SEO</strong>를 플레이스 등록, 정보 일관성, 홈페이지 설계, 리뷰 관리의 네 축으로 나누어 정리했습니다. 업종별 홈페이지 구조는 이미 각 가이드에서 다뤘기 때문에, 여기서는 "지도 검색과 홈페이지를 어떻게 연결할 것인가"에 집중합니다.</p>
+
+    <div class="toc" role="navigation" aria-label="목차">
+      <p class="toc-title">목차</p>
+      <ol>
+        <li><a href="#what">로컬 SEO란, 그리고 홈페이지의 역할</a></li>
+        <li><a href="#naver">네이버 플레이스 등록과 최적화</a></li>
+        <li><a href="#google">구글 비즈니스 프로필 등록과 최적화</a></li>
+        <li><a href="#nap">NAP 일관성, 로컬 SEO의 기본기</a></li>
+        <li><a href="#site">홈페이지에서 해야 할 로컬 SEO 작업</a></li>
+        <li><a href="#review">리뷰 관리 원칙</a></li>
+        <li><a href="#check">로컬 SEO 점검 체크리스트</a></li>
+        <li><a href="#mistakes">자주 하는 실수</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </div>
+
+    <h2 id="what">1. 로컬 SEO란, 그리고 홈페이지의 역할</h2>
+    <p>로컬 SEO는 <strong>특정 지역에서 검색하는 고객에게 내 사업장이 노출되도록 최적화하는 작업</strong>입니다. 일반 SEO가 웹 문서의 순위를 다룬다면, 로컬 SEO는 지도·플레이스 정보와 지역 검색 의도를 함께 다룹니다.</p>
+    <p>두 채널은 역할이 다릅니다. 플레이스는 <strong>발견과 방문 결정</strong>(위치, 영업시간, 리뷰, 전화·길찾기)을 맡고, 홈페이지는 <strong>신뢰와 상세 설명</strong>(서비스 구조, 포트폴리오, 가격 기준, 전문성)을 맡습니다. 플레이스에서 관심을 가진 고객이 홈페이지에서 확신을 얻고 예약·문의로 넘어가는 흐름을 만드는 것이 목표입니다.</p>
+
+    <h2 id="naver">2. 네이버 플레이스 등록과 최적화</h2>
+    <p>국내 지역 검색에서는 네이버 플레이스의 비중이 매우 큽니다. 네이버 스마트플레이스에서 사업장을 등록하고 인증을 마쳐야 지도와 통합검색의 장소 영역에 노출될 수 있습니다. 업종과 사업자 형태에 따라 요구되는 절차와 서류가 다르므로 등록 화면의 안내를 먼저 확인하세요.</p>
+    <h3>꼭 채워야 할 정보</h3>
+    <ul>
+      <li><strong>대표 사진과 사진 목록</strong>: 외관, 내부, 시술·제품·결과물, 메뉴판 순으로. 첫 인상을 결정합니다.</li>
+      <li><strong>영업시간·휴무일·브레이크 타임</strong>: 틀린 정보는 방문 후 불만 리뷰로 직결됩니다.</li>
+      <li><strong>메뉴·가격·서비스 소개</strong>: 홈페이지의 가격 안내 기준과 맞춰야 합니다.</li>
+      <li><strong>예약·문의 연결</strong>: 예약 기능이나 전화·톡톡 등 고객이 쓰는 채널을 열어 둡니다. 예약 방식 선택은 <a href="/blog/homepage-reservation-system-comparison">홈페이지 예약 시스템 비교 가이드</a>를 참고하세요.</li>
+      <li><strong>홈페이지 주소</strong>: 반드시 입력합니다. 플레이스 방문자가 홈페이지로 넘어오는 통로입니다.</li>
+      <li><strong>소식·알림</strong>: 신메뉴, 이벤트, 휴무 변경을 꾸준히 올리면 운영 중인 곳이라는 신호가 됩니다.</li>
+    </ul>
+
+    <h2 id="google">3. 구글 비즈니스 프로필 등록과 최적화</h2>
+    <p>구글 비즈니스 프로필은 구글 검색과 구글 지도에서 사업장 정보를 보여 줍니다. 해외 관광객이나 외국인 고객, 구글 검색 비중이 높은 B2B·전문직 업종에서 특히 의미가 있습니다. 다만 국내에서는 구글 지도의 일부 기능(길찾기 등)이 제한적이어서 방문 안내 채널로는 네이버·카카오맵이 더 많이 쓰입니다. 구글 프로필은 <strong>"구글에서 내 사업장 정보가 틀리지 않게 관리한다"</strong>는 관점으로 접근하세요.</p>
+    <ul>
+      <li><strong>소유 인증</strong>: 우편, 전화, 이메일, 영상 등 제공되는 방식으로 인증합니다. 인증 전에는 정보 수정이 제한됩니다.</li>
+      <li><strong>주 카테고리</strong>: 가장 정확한 업종 하나를 주 카테고리로 선택합니다. 노출에 영향이 큰 항목입니다.</li>
+      <li><strong>서비스 영역</strong>: 방문 서비스를 하는 업종(이사·청소 등)은 매장 주소 대신 서비스 지역을 설정합니다.</li>
+      <li><strong>사진·게시물·리뷰 답글</strong>: 정기적으로 업데이트하고, 리뷰에는 직접 답합니다.</li>
+    </ul>
+    <p>카카오맵에도 장소 정보가 노출되므로, 카카오 쪽에 등록된 정보가 틀리지 않았는지도 함께 확인해 두면 좋습니다.</p>
+
+    <h2 id="nap">4. NAP 일관성, 로컬 SEO의 기본기</h2>
+    <p>NAP은 <strong>이름(Name), 주소(Address), 전화번호(Phone)</strong>의 약자입니다. 홈페이지, 네이버 플레이스, 구글 프로필, 카카오맵, 인스타그램 소개 등 모든 곳의 표기가 같아야 합니다. 표기가 다르면 검색 엔진이 같은 사업장으로 인식하기 어렵고, 고객도 혼란을 느낍니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>점검 항목</th><th>흔한 불일치 예</th><th>해결 방법</th></tr></thead>
+        <tbody>
+          <tr><td>상호명</td><td>"○○스튜디오" / "○○ Studio" / "○○스튜디오 강남점"</td><td>공식 표기 하나를 정해 전 채널에 동일 적용</td></tr>
+          <tr><td>주소</td><td>"2층" 누락, 도로명·지번 혼용</td><td>도로명 주소 기준으로 층·호수까지 통일</td></tr>
+          <tr><td>전화번호</td><td>대표번호와 휴대폰 번호 혼재</td><td>대표 번호 하나를 정해 통일</td></tr>
+          <tr><td>영업시간</td><td>플레이스와 홈페이지 시간 상이</td><td>변경 시 전 채널을 한 번에 수정하는 체크 루틴 마련</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="site">5. 홈페이지에서 해야 할 로컬 SEO 작업</h2>
+    <h3>① 지역·서비스 키워드를 반영한 구조</h3>
+    <p>메인과 서비스 페이지의 제목, 소제목, 본문에 "지역 + 서비스" 표현을 자연스럽게 녹입니다. 어떤 조합을 쓸지는 <a href="/blog/homepage-keyword-research-guide">홈페이지 키워드 리서치 가이드</a>의 방법으로 먼저 조사하세요.</p>
+    <h3>② 찾아오는 길과 연락처 페이지</h3>
+    <p>주소, 지도, 대중교통·주차 안내, 영업시간, 전화 링크를 한 페이지에 모읍니다. 모바일에서는 전화번호를 눌러 바로 걸 수 있도록 링크로 만들어야 합니다. 지도는 이미지가 아닌 텍스트 주소와 함께 제공해야 검색 엔진과 접근성 도구가 읽을 수 있습니다.</p>
+    <h3>③ 지점별 페이지 (다지점 사업장)</h3>
+    <p>지점이 여러 개라면 지점마다 별도 페이지를 만들고, 지점 고유의 정보(주소, 사진, 담당 인력, 후기)를 넣어야 합니다. 주소만 바꾼 복제 페이지는 가치가 낮습니다. URL은 <code>/branches/gangnam</code>처럼 짧고 읽히게 설계하세요(<a href="/blog/url-structure-seo-guide">URL 구조 가이드</a> 참고).</p>
+    <h3>④ LocalBusiness 구조화 데이터</h3>
+    <p>사업장 이름, 주소, 전화번호, 영업시간, 위치를 구조화 데이터(JSON-LD)로 표기하면 검색 엔진이 정보를 더 정확히 이해합니다. 작성법과 검증 도구는 <a href="/blog/schema-markup-seo-guide">구조화 데이터 완벽 가이드</a>에서 다뤘습니다. 구조화 데이터의 값은 화면에 보이는 정보와 반드시 일치해야 합니다.</p>
+    <h3>⑤ 지역 후기·사례 콘텐츠</h3>
+    <p>"○○동 고객님의 시공 사례"처럼 지역이 드러나는 실제 사례는 지역 키워드와 신뢰를 동시에 쌓는 콘텐츠입니다. 고객 정보는 동의를 받고 공개 범위를 조정하세요.</p>
+
+    <h2 id="review">6. 리뷰 관리 원칙</h2>
+    <ul>
+      <li><strong>자연스러운 요청</strong>: 서비스 만족 직후 영수증·안내문·메시지로 리뷰를 부탁합니다.</li>
+      <li><strong>대가 제공 주의</strong>: 리뷰 작성 대가로 혜택을 주는 방식은 플랫폼 정책에 따라 제한될 수 있으니 각 플랫폼 운영 정책을 확인하세요.</li>
+      <li><strong>모든 리뷰에 답하기</strong>: 긍정 리뷰에는 감사를, 부정 리뷰에는 사실 확인과 해결 의지를 차분히 남깁니다. 답글은 리뷰어보다 이후 읽는 잠재 고객을 위한 것입니다.</li>
+      <li><strong>가짜 리뷰 금지</strong>: 직원·지인 동원이나 구매 리뷰는 적발 시 노출 제한 등 불이익이 따를 수 있고, 신뢰를 한 번에 잃습니다.</li>
+    </ul>
+    <p>업종별 후기 활용은 <a href="/blog/hair-salon-homepage">미용실 홈페이지</a>, <a href="/blog/pilates-yoga-studio-homepage">필라테스·요가 스튜디오 홈페이지</a>처럼 각 업종 가이드에 구체적으로 정리했습니다.</p>
+
+    <h2 id="check">7. 로컬 SEO 점검 체크리스트</h2>
+    <ol>
+      <li>네이버 플레이스·구글 프로필·카카오맵의 상호명, 주소, 전화번호가 홈페이지와 동일한가</li>
+      <li>플레이스마다 홈페이지 주소가 입력되어 있는가</li>
+      <li>대표 사진이 최근 상태를 반영하는가</li>
+      <li>영업시간과 휴무 변경이 전 채널에 반영되는가</li>
+      <li>홈페이지에 찾아오는 길, 지도, 전화 링크가 있는가</li>
+      <li>LocalBusiness 구조화 데이터가 화면 정보와 일치하는가</li>
+      <li>최근 리뷰에 답글을 달고 있는가</li>
+      <li>서치 콘솔·애널리틱스에서 지역 키워드 유입을 확인하고 있는가 (<a href="/blog/google-search-console-guide">서치 콘솔 가이드</a>, <a href="/blog/google-analytics-guide">애널리틱스 가이드</a>)</li>
+    </ol>
+
+    <h2 id="mistakes">8. 자주 하는 실수</h2>
+    <ul>
+      <li><strong>등록만 하고 방치</strong>: 폐업·이전 정보가 남아 있거나 영업시간이 틀린 상태가 가장 흔합니다.</li>
+      <li><strong>업종 카테고리 오선택</strong>: 비슷하지만 다른 카테고리를 고르면 엉뚱한 검색에 노출됩니다.</li>
+      <li><strong>상호명에 키워드 끼워 넣기</strong>: 실제 상호가 아닌 키워드를 덧붙이면 정책 위반으로 수정·제재될 수 있습니다.</li>
+      <li><strong>지도 채널과 홈페이지의 정보 불일치</strong>: 가격·시간이 다르면 신뢰가 깨집니다.</li>
+      <li><strong>홈페이지 주소 누락</strong>: 플레이스 방문자를 홈페이지로 연결할 기회를 놓칩니다.</li>
+    </ul>
+
+    <h2 id="faq">9. 자주 묻는 질문</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">홈페이지가 없어도 네이버 플레이스만 잘 관리하면 되지 않나요?</h3>
+      <p>초기에는 플레이스만으로도 방문을 만들 수 있습니다. 다만 가격 기준, 포트폴리오, 전문성처럼 상세한 설명이 필요한 업종이나 상담 단가가 높은 업종은 홈페이지가 있어야 고객이 확신을 얻기 쉽습니다. 또한 플레이스는 외부 플랫폼이므로 정책 변경의 영향을 받습니다. 홈페이지는 내가 소유하는 자산이라는 점에서 병행을 권합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">구글 비즈니스 프로필은 국내 사업장도 꼭 등록해야 하나요?</h3>
+      <p>필수는 아니지만, 구글 검색에서 내 사업장 정보가 틀리게 노출되는 것을 막고 외국인 고객이나 구글 검색 비중이 높은 업종에 노출되려면 등록하는 편이 유리합니다. 등록해 둔 뒤에는 정보 일관성만 주기적으로 점검하면 됩니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">NAP이 조금 달라도 순위에 큰 영향이 있나요?</h3>
+      <p>표기 차이가 순위에 미치는 영향의 크기는 단정하기 어렵습니다. 다만 같은 사업장이라는 신호를 명확히 주는 것이 안전하고, 무엇보다 고객에게 혼란을 주지 않기 위해서라도 통일하는 것이 좋습니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">지점이 여러 개면 홈페이지 페이지를 지점마다 따로 만들어야 하나요?</h3>
+      <p>지점별로 주소, 사진, 인력, 후기처럼 고유한 정보가 있다면 별도 페이지를 만드는 것이 좋습니다. 내용이 거의 같은 복제 페이지는 가치가 낮으므로, 그럴 때는 하나의 지점 목록 페이지로 묶는 편이 낫습니다.</p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>로컬 SEO는 화려한 기술보다 <strong>정확하고 일관된 정보를 꾸준히 관리하는 일</strong>에 가깝습니다. 플레이스에서 발견되고, 홈페이지에서 신뢰를 얻고, 리뷰에서 확신을 주는 흐름을 만들어 보세요. 오늘 할 수 있는 첫 단계는 모든 채널의 상호·주소·전화번호를 나란히 놓고 비교해 보는 것입니다.</p>
+
+    <div class="cta-box">
+      <p><em>지역 검색에서 선택받는 홈페이지,</em><br>플레이스와 연결되는 구조로 함께 설계해 드립니다</p>
+      <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+    </div>
+
+    <a class="back-link" href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </article>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- Favicon (이모지) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core Web Vitals 가이드, LCP·INP·CLS 기준과 개선 방법 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="Core Web Vitals(LCP, INP, CLS)의 뜻과 통과 기준, 측정 도구, 지표별 개선 방법을 정리했습니다. 필드 데이터와 랩 데이터의 차이, 플랫폼별 한계, 우선순위 정하는 법까지 실전 가이드입니다." />
+  <meta name="keywords" content="Core Web Vitals, LCP, INP, CLS, 코어 웹 바이탈, 페이지 경험, 홈페이지 속도, PageSpeed Insights" />
+  <meta name="author" content="이수연" />
+  <meta property="og:title" content="Core Web Vitals 가이드, LCP·INP·CLS 기준과 홈페이지 개선 방법" />
+  <meta property="og:description" content="LCP·INP·CLS 기준과 측정 도구, 지표별 개선 방법을 정리한 Core Web Vitals 실전 가이드." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인쿨쿨쿨" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/core-web-vitals-guide" />
+  <meta property="article:published_time" content="2026-10-28" />
+  <meta property="article:modified_time" content="2026-10-28" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/core-web-vitals-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .post-hero { padding: 160px 48px 56px; max-width: 880px; margin: 0 auto; }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 52px); letter-spacing: -0.03em; line-height: 1.15; font-weight: 400; }
+    .post-byline { margin-top: 24px; font-size: 12px; letter-spacing: 0.08em; color: var(--grey); }
+    article { max-width: 880px; margin: 0 auto; padding: 0 48px 80px; }
+    article p { margin: 0 0 22px; color: var(--grey); font-size: 15px; line-height: 1.95; }
+    article h2 { scroll-margin-top: 100px; font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.25; margin: 64px 0 20px; padding-top: 28px; border-top: 1px solid var(--line); }
+    article h3 { font-size: 16px; font-weight: 500; letter-spacing: -0.01em; margin: 36px 0 12px; color: var(--black); }
+    article ul, article ol { margin: 0 0 24px 20px; color: var(--grey); line-height: 1.9; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 500; color: var(--black); }
+    article a { color: var(--black); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    article a:hover { text-decoration-color: var(--black); }
+    .toc { border: 1px solid var(--line); padding: 28px 32px; margin: 0 0 48px; }
+    .toc-title { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+    .toc ol { margin: 0 0 0 18px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .callout { border-left: 2px solid var(--accent); padding: 4px 0 4px 22px; margin: 28px 0; }
+    .callout p { margin: 0; }
+    .table-wrap { overflow-x: auto; margin: 0 0 28px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.7; }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--grey); }
+    th { font-weight: 500; color: var(--black); font-size: 12px; letter-spacing: 0.04em; border-bottom: 1px solid var(--black); white-space: nowrap; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:first-of-type { border-top: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; line-height: 1.35; margin: 0 0 10px; font-weight: 400; color: var(--black); }
+    .faq-item p { margin: 0; }
+    .cta-box { border: 1px solid var(--black); padding: 40px; margin: 64px 0 40px; text-align: center; }
+    .cta-box p { margin-bottom: 20px; color: var(--black); }
+    .cta-box em { font-family: var(--font-display); font-size: 20px; }
+    .cta-btn { display: inline-block; text-decoration: none !important; color: var(--white) !important; background: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border-radius: 10px; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.8; }
+    .back-link { display: inline-block; font-size: 13px; letter-spacing: 0.06em; text-decoration: none !important; color: var(--black); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      article { padding: 0 24px 60px; }
+      .toc { padding: 22px 20px; }
+      .cta-box { padding: 28px 20px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+    article code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; background: rgba(14,14,14,0.05); padding: 1px 6px; }
+  article pre { overflow-x: auto; margin: 0 0 24px; padding: 18px 20px; background: rgba(14,14,14,0.05); border-left: 2px solid var(--accent); line-height: 1.7; }
+  article pre code { background: none; padding: 0; font-size: 12.5px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Core Web Vitals를 통과하면 검색 순위가 오르나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "통과가 순위 상승을 보장하지는 않습니다. 구글이 참고하는 여러 신호 중 하나이며, 콘텐츠의 관련성과 품질이 우선입니다. 다만 느리거나 불안정한 페이지는 이탈과 전환 손실로 이어지므로, 순위와 별개로 개선할 가치가 큽니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "서치 콘솔에 \"데이터 부족\"이라고 나옵니다. 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필드 데이터는 일정 수준 이상의 방문이 있어야 수집됩니다. 방문이 적은 사이트는 데이터가 표시되지 않을 수 있으며, 이때는 PageSpeed Insights의 랩 데이터와 진단 항목을 기준으로 개선하면 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "FID는 이제 사용하지 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, INP가 FID를 대체한 Core Web Vitals 지표입니다. FID가 첫 입력의 지연만 봤다면 INP는 방문 중 발생한 상호작용 전반의 반응성을 평가합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "모바일과 데스크톱 중 어느 쪽을 먼저 개선해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대부분의 사이트는 모바일 방문 비중이 높고 모바일 환경에서 지표가 더 나쁘게 나오므로 모바일을 먼저 개선하는 것이 일반적입니다. 서치 콘솔에서 두 환경의 보고서를 각각 확인해 우선순위를 정하세요."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/core-web-vitals-guide"
+  },
+  "headline": "Core Web Vitals 가이드, LCP·INP·CLS 기준과 홈페이지 개선 방법",
+  "description": "Core Web Vitals(LCP, INP, CLS)의 뜻과 통과 기준, 측정 도구, 지표별 개선 방법을 정리했습니다. 필드 데이터와 랩 데이터의 차이, 플랫폼별 한계, 우선순위 정하는 법까지 실전 가이드입니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/core-web-vitals-guide",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">Core Web Vitals·성능</p>
+    <h1 class="post-title">Core Web Vitals 가이드, LCP·INP·CLS 기준과 홈페이지 개선 방법</h1>
+    <p class="post-byline">2026. 10. 28 · 이수연</p>
+  </header>
+
+  <article>
+    <p>PageSpeed Insights에서 점수는 높은데 서치 콘솔의 "핵심 성능 보고서"에는 경고가 뜨는 경우가 있습니다. 반대로 점수는 낮은데 보고서는 양호하다고 나오기도 합니다. 이 차이를 이해하려면 <strong>Core Web Vitals(코어 웹 바이탈)</strong>가 무엇을 어떻게 재는지부터 알아야 합니다.</p>
+    <p>로딩 속도 전반의 개선은 이미 <a href="/blog/homepage-loading-speed">홈페이지 로딩 속도 개선 가이드</a>에서 다뤘습니다. 이 글은 그 연장선에서 <strong>구글이 공식 지표로 삼는 세 가지 항목</strong>의 기준과 해석, 개선 순서에 집중합니다.</p>
+
+    <div class="toc" role="navigation" aria-label="목차">
+      <p class="toc-title">목차</p>
+      <ol>
+        <li><a href="#what">Core Web Vitals란</a></li>
+        <li><a href="#metrics">세 가지 지표와 통과 기준</a></li>
+        <li><a href="#measure">측정 도구와 필드·랩 데이터의 차이</a></li>
+        <li><a href="#lcp">LCP 개선 방법</a></li>
+        <li><a href="#inp">INP 개선 방법</a></li>
+        <li><a href="#cls">CLS 개선 방법</a></li>
+        <li><a href="#platform">플랫폼별 현실적인 접근</a></li>
+        <li><a href="#priority">개선 우선순위 정하기</a></li>
+        <li><a href="#mistakes">자주 하는 실수</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </div>
+
+    <h2 id="what">1. Core Web Vitals란</h2>
+    <p>Core Web Vitals는 구글이 <strong>사용자 경험의 핵심 요소</strong>를 로딩, 상호작용, 시각적 안정성 세 측면에서 수치화한 지표 모음입니다. 구글 검색의 페이지 경험 평가에 참고되는 신호 중 하나이지만, 검색 순위를 좌우하는 유일한 요소는 아닙니다. 검색 의도에 맞는 좋은 콘텐츠가 여전히 가장 중요하며, 비슷한 품질의 페이지끼리 경쟁할 때 경험이 차이를 만드는 요소로 이해하는 것이 정확합니다.</p>
+    <p>무엇보다 이 지표들은 <strong>실제 방문자가 느끼는 불편</strong>을 측정하기 때문에, 순위와 별개로 이탈률과 문의 전환에 직접 영향을 줍니다.</p>
+
+    <h2 id="metrics">2. 세 가지 지표와 통과 기준</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>지표</th><th>의미</th><th>좋음</th><th>개선 필요</th><th>나쁨</th></tr></thead>
+        <tbody>
+          <tr><td>LCP<br>(Largest Contentful Paint)</td><td>화면에서 가장 큰 콘텐츠(대표 이미지·제목 블록)가 보이기까지의 시간</td><td>2.5초 이하</td><td>2.5~4초</td><td>4초 초과</td></tr>
+          <tr><td>INP<br>(Interaction to Next Paint)</td><td>클릭·탭·키 입력 후 화면이 반응하기까지의 지연</td><td>200ms 이하</td><td>200~500ms</td><td>500ms 초과</td></tr>
+          <tr><td>CLS<br>(Cumulative Layout Shift)</td><td>로딩 중 화면 요소가 예기치 않게 움직인 정도</td><td>0.1 이하</td><td>0.1~0.25</td><td>0.25 초과</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>구글은 페이지 방문의 <strong>75번째 백분위수</strong> 값으로 기준 충족 여부를 판단하며, 모바일과 데스크톱을 따로 평가합니다. 즉 대부분의 방문자(4명 중 3명)가 좋은 경험을 해야 통과입니다. INP는 이전의 FID(최초 입력 지연)를 대체한 지표입니다.</p>
+
+    <h2 id="measure">3. 측정 도구와 필드·랩 데이터의 차이</h2>
+    <p>측정 결과가 도구마다 다른 이유는 <strong>데이터의 출처</strong>가 다르기 때문입니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>필드 데이터</th><th>랩 데이터</th></tr></thead>
+        <tbody>
+          <tr><td>출처</td><td>실제 방문자 브라우저에서 수집(Chrome 사용자 경험 데이터)</td><td>정해진 환경에서 시뮬레이션(Lighthouse)</td></tr>
+          <tr><td>대표 도구</td><td>서치 콘솔 핵심 성능 보고서, PageSpeed Insights 상단의 "실제 사용자 경험"</td><td>PageSpeed Insights 하단 진단, 크롬 개발자 도구 Lighthouse</td></tr>
+          <tr><td>강점</td><td>실제 경험을 반영, 순위 신호와 직결</td><td>즉시 측정 가능, 원인 진단에 유리</td></tr>
+          <tr><td>한계</td><td>방문자가 적으면 데이터 없음, 반영에 시간 소요</td><td>실제 기기·네트워크와 다를 수 있음</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>실무 순서는 이렇습니다. 서치 콘솔에서 <strong>문제가 있는 페이지 유형</strong>을 파악하고, PageSpeed Insights와 Lighthouse로 <strong>원인을 진단</strong>해 수정한 뒤, 몇 주 후 필드 데이터가 개선됐는지 확인합니다. 서치 콘솔 사용법은 <a href="/blog/google-search-console-guide">구글 서치 콘솔 가이드</a>를 참고하세요. 트래픽이 적은 사이트는 필드 데이터가 아예 없을 수 있는데, 그때는 랩 데이터를 기준으로 개선하면 됩니다.</p>
+
+    <h2 id="lcp">4. LCP 개선 방법</h2>
+    <p>LCP 요소는 대개 <strong>첫 화면의 대표 이미지나 큰 제목 블록</strong>입니다. PageSpeed Insights 진단에서 어떤 요소가 LCP인지 먼저 확인하세요.</p>
+    <ul>
+      <li><strong>대표 이미지 경량화</strong>: 크기에 맞는 해상도와 WebP 등 효율적인 형식을 씁니다. 방법은 <a href="/blog/homepage-image-optimization">홈페이지 이미지 최적화 가이드</a>를 참고하세요.</li>
+      <li><strong>LCP 이미지에 지연 로딩 금지</strong>: 첫 화면 대표 이미지에 lazy loading을 걸면 오히려 늦어집니다. 스크롤 아래 이미지에만 적용합니다.</li>
+      <li><strong>우선순위 부여</strong>: 대표 이미지에 <code>fetchpriority="high"</code>를 주거나 preload를 고려합니다.</li>
+      <li><strong>서버 응답 시간 단축</strong>: 호스팅 성능, 캐시, CDN 활용이 효과적입니다 (<a href="/blog/homepage-hosting-ssl-cdn-guide">호스팅·SSL·CDN 가이드</a>).</li>
+      <li><strong>렌더링 차단 요소 줄이기</strong>: 첫 화면에 불필요한 CSS·스크립트·웹폰트를 줄입니다.</li>
+    </ul>
+
+    <h2 id="inp">5. INP 개선 방법</h2>
+    <p>INP가 나쁘다는 것은 <strong>버튼을 눌러도 화면이 곧바로 반응하지 않는다</strong>는 뜻입니다. 주로 자바스크립트가 메인 스레드를 오래 점유할 때 생깁니다.</p>
+    <ul>
+      <li><strong>서드파티 스크립트 점검</strong>: 채팅 위젯, 여러 개의 분석·광고 태그, 팝업 도구는 INP의 흔한 원인입니다. 꼭 필요한 것만 남기세요.</li>
+      <li><strong>무거운 인터랙션 단순화</strong>: 과도한 스크롤 애니메이션, 복잡한 슬라이더, 대형 메뉴 애니메이션을 줄입니다.</li>
+      <li><strong>긴 작업 쪼개기</strong>: 개발 가능한 환경이라면 긴 자바스크립트 작업을 나누고, 필요한 시점까지 로드를 미룹니다.</li>
+      <li><strong>입력에 즉시 반응하는 UI</strong>: 폼 제출이나 메뉴 열기 같은 동작은 먼저 시각적 반응을 주고 무거운 처리는 뒤로 넘깁니다.</li>
+    </ul>
+
+    <h2 id="cls">6. CLS 개선 방법</h2>
+    <p>텍스트를 읽다가 이미지가 늦게 뜨면서 글이 아래로 밀린 경험이 있을 것입니다. 이것이 레이아웃 이동이고, 잘못된 버튼 클릭까지 부를 수 있습니다.</p>
+    <ul>
+      <li><strong>이미지·영상에 크기 지정</strong>: width, height 속성이나 <code>aspect-ratio</code>로 공간을 미리 확보합니다.</li>
+      <li><strong>동적 요소 공간 예약</strong>: 배너, 쿠키 안내, 광고, 임베드가 들어갈 자리의 높이를 미리 잡아 둡니다.</li>
+      <li><strong>웹폰트 교체 이동 줄이기</strong>: <code>font-display</code> 설정과 비슷한 크기의 대체 폰트 지정이 도움이 됩니다 (<a href="/blog/homepage-font-guide">홈페이지 폰트 가이드</a>).</li>
+      <li><strong>상단 삽입 금지</strong>: 사용자 동작 없이 이미 보이는 콘텐츠 위에 새 요소를 끼워 넣지 않습니다.</li>
+    </ul>
+
+    <h2 id="platform">7. 플랫폼별 현실적인 접근</h2>
+    <p>아임웹, 카페24, 웹플랫폼 같은 호스팅형 빌더는 서버·코드 수정이 제한되어 <strong>이미지 최적화, 불필요한 위젯 제거, 팝업·애니메이션 절제</strong> 같은 사용자 단 개선이 중심이 됩니다. 반대로 자체 개발이나 CMS 환경은 캐시, 번들 최적화, 이미지 파이프라인까지 손볼 수 있습니다. 플랫폼 선택의 차이는 <a href="/blog/nocode-vs-professional-homepage">노코드 vs 전문가 비교</a>에서 정리했습니다. 한 번 만든 뒤에도 콘텐츠와 스크립트가 쌓이면 지표가 나빠지므로 <a href="/blog/homepage-maintenance">유지보수 체크리스트</a>에 성능 점검을 포함하세요.</p>
+
+    <h2 id="priority">8. 개선 우선순위 정하기</h2>
+    <ol>
+      <li><strong>서치 콘솔에서 "나쁨" URL 그룹 확인</strong>: 같은 템플릿을 쓰는 페이지는 한 번의 수정으로 묶여서 개선됩니다.</li>
+      <li><strong>모바일 먼저</strong>: 방문자 다수가 모바일이고 평가 기준도 더 엄격하게 나오는 경우가 많습니다 (<a href="/blog/homepage-mobile-optimization">모바일 최적화 가이드</a>).</li>
+      <li><strong>가장 쉬운 것부터</strong>: 이미지 용량, 불필요 스크립트 제거, 이미지 크기 지정은 효과 대비 난이도가 낮습니다.</li>
+      <li><strong>수정 후 재측정</strong>: 필드 데이터는 반영에 시간이 걸리므로 몇 주간 추이를 봅니다.</li>
+    </ol>
+
+    <h2 id="mistakes">9. 자주 하는 실수</h2>
+    <ul>
+      <li><strong>점수 100점에 집착</strong>: 목표는 만점이 아니라 "좋음" 기준 통과와 실제 체감 개선입니다.</li>
+      <li><strong>메인 페이지 한 곳만 측정</strong>: 문의가 일어나는 서비스·상세 페이지를 함께 봐야 합니다.</li>
+      <li><strong>랩 점수만 보고 판단</strong>: 실제 방문자 환경이 반영된 필드 데이터를 같이 확인하세요.</li>
+      <li><strong>기능 추가 후 재측정 생략</strong>: 새 위젯 하나가 INP를 크게 해칠 수 있습니다.</li>
+    </ul>
+
+    <h2 id="faq">10. 자주 묻는 질문</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">Core Web Vitals를 통과하면 검색 순위가 오르나요?</h3>
+      <p>통과가 순위 상승을 보장하지는 않습니다. 구글이 참고하는 여러 신호 중 하나이며, 콘텐츠의 관련성과 품질이 우선입니다. 다만 느리거나 불안정한 페이지는 이탈과 전환 손실로 이어지므로, 순위와 별개로 개선할 가치가 큽니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">서치 콘솔에 "데이터 부족"이라고 나옵니다. 어떻게 하나요?</h3>
+      <p>필드 데이터는 일정 수준 이상의 방문이 있어야 수집됩니다. 방문이 적은 사이트는 데이터가 표시되지 않을 수 있으며, 이때는 PageSpeed Insights의 랩 데이터와 진단 항목을 기준으로 개선하면 됩니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">FID는 이제 사용하지 않나요?</h3>
+      <p>네, INP가 FID를 대체한 Core Web Vitals 지표입니다. FID가 첫 입력의 지연만 봤다면 INP는 방문 중 발생한 상호작용 전반의 반응성을 평가합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">모바일과 데스크톱 중 어느 쪽을 먼저 개선해야 하나요?</h3>
+      <p>대부분의 사이트는 모바일 방문 비중이 높고 모바일 환경에서 지표가 더 나쁘게 나오므로 모바일을 먼저 개선하는 것이 일반적입니다. 서치 콘솔에서 두 환경의 보고서를 각각 확인해 우선순위를 정하세요.</p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>Core Web Vitals는 어려운 용어처럼 보이지만 결국 <strong>"빨리 보이고, 누르면 바로 반응하고, 읽는 중에 흔들리지 않는 페이지"</strong>를 만드는 세 가지 기준입니다. 서치 콘솔로 문제 페이지를 찾고, 이미지와 스크립트부터 정리한 뒤, 몇 주 후 데이터로 확인하는 순서로 시작해 보세요.</p>
+
+    <div class="cta-box">
+      <p><em>빠르고 안정적인 홈페이지,</em><br>성능까지 고려해 설계하고 싶다면 지금 문의해 주세요</p>
+      <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+    </div>
+
+    <a class="back-link" href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </article>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

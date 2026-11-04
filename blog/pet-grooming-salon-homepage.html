@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- Favicon (이모지) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☃️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>애견미용실·펫살롱 홈페이지 제작, 예약으로 잇는 구조 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="애견미용실·펫살롱 홈페이지 제작 전략을 정리했습니다. 견종·체중별 가격표, 비포·애프터 갤러리, 위생·안전 안내, 사전 상담 폼, 예약·취소 규정, 지역·견종 키워드 SEO와 동물미용업 등록 확인까지 다룹니다." />
+  <meta name="keywords" content="애견미용 홈페이지, 펫살롱 홈페이지 제작, 애견미용실 홈페이지, 강아지 미용 예약, 반려동물 미용 홈페이지, 애견미용 가격표" />
+  <meta name="author" content="이수연" />
+  <meta property="og:title" content="애견미용실·펫살롱 홈페이지 제작, 보호자의 불안을 줄이고 예약으로 잇는 구조" />
+  <meta property="og:description" content="견종·체중별 가격표부터 비포·애프터, 사전 상담 폼, 예약 규정, 지역 SEO까지 — 애견미용실 홈페이지 설계 가이드." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="디자인쿨쿨쿨" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/pet-grooming-salon-homepage" />
+  <meta property="article:published_time" content="2026-11-04" />
+  <meta property="article:modified_time" content="2026-11-04" />
+  <meta property="article:author" content="이수연" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/pet-grooming-salon-homepage" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825;
+      --accent: #c8b89a; --line: #e2e0da;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: -apple-system, 'SF Pro Text', 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .post-hero { padding: 160px 48px 56px; max-width: 880px; margin: 0 auto; }
+    .post-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+    .post-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--line); }
+    .post-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 52px); letter-spacing: -0.03em; line-height: 1.15; font-weight: 400; }
+    .post-byline { margin-top: 24px; font-size: 12px; letter-spacing: 0.08em; color: var(--grey); }
+    article { max-width: 880px; margin: 0 auto; padding: 0 48px 80px; }
+    article p { margin: 0 0 22px; color: var(--grey); font-size: 15px; line-height: 1.95; }
+    article h2 { scroll-margin-top: 100px; font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.25; margin: 64px 0 20px; padding-top: 28px; border-top: 1px solid var(--line); }
+    article h3 { font-size: 16px; font-weight: 500; letter-spacing: -0.01em; margin: 36px 0 12px; color: var(--black); }
+    article ul, article ol { margin: 0 0 24px 20px; color: var(--grey); line-height: 1.9; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 500; color: var(--black); }
+    article a { color: var(--black); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    article a:hover { text-decoration-color: var(--black); }
+    .toc { border: 1px solid var(--line); padding: 28px 32px; margin: 0 0 48px; }
+    .toc-title { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+    .toc ol { margin: 0 0 0 18px; }
+    .toc li { margin-bottom: 4px; font-size: 14px; }
+    .callout { border-left: 2px solid var(--accent); padding: 4px 0 4px 22px; margin: 28px 0; }
+    .callout p { margin: 0; }
+    .table-wrap { overflow-x: auto; margin: 0 0 28px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.7; }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--grey); }
+    th { font-weight: 500; color: var(--black); font-size: 12px; letter-spacing: 0.04em; border-bottom: 1px solid var(--black); white-space: nowrap; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
+    .faq-item:first-of-type { border-top: 1px solid var(--line); }
+    .faq-q { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; line-height: 1.35; margin: 0 0 10px; font-weight: 400; color: var(--black); }
+    .faq-item p { margin: 0; }
+    .cta-box { border: 1px solid var(--black); padding: 40px; margin: 64px 0 40px; text-align: center; }
+    .cta-box p { margin-bottom: 20px; color: var(--black); }
+    .cta-box em { font-family: var(--font-display); font-size: 20px; }
+    .cta-btn { display: inline-block; text-decoration: none !important; color: var(--white) !important; background: var(--black); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px; border-radius: 10px; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.8; }
+    .back-link { display: inline-block; font-size: 13px; letter-spacing: 0.06em; text-decoration: none !important; color: var(--black); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .post-hero { padding: 120px 24px 40px; }
+      article { padding: 0 24px 60px; }
+      .toc { padding: 22px 20px; }
+      .cta-box { padding: 28px 20px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+    article code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; background: rgba(14,14,14,0.05); padding: 1px 6px; }
+  article pre { overflow-x: auto; margin: 0 0 24px; padding: 18px 20px; background: rgba(14,14,14,0.05); border-left: 2px solid var(--accent); line-height: 1.7; }
+  article pre code { background: none; padding: 0; font-size: 12.5px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "애견미용실 홈페이지에 가격을 꼭 공개해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정해진 규칙은 없지만 공개하는 쪽이 유리합니다. 견종·체중 기준표와 추가요금 조건을 함께 보여 주면 불필요한 문의가 줄고 방문 후 분쟁도 예방됩니다. 동물미용업은 영업장 내 요금표 게시 등 준수사항이 있으므로 홈페이지와 매장 안내를 같은 기준으로 관리하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "비포·애프터 사진은 보호자에게 동의를 받아야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 동의를 받는 것을 권장합니다. 반려견 사진에는 보호자의 얼굴, 목소리, 위치 등이 함께 담길 수 있어 개인정보 문제가 될 수 있습니다. 예약·접수 단계에서 사진 게시 동의 여부를 체크 항목으로 받아 두면 편리합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "홈페이지 없이 네이버 플레이스만으로도 충분하지 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "초기 방문 유도에는 플레이스가 강력합니다. 다만 가격 기준, 안심 케어, 스타일 갤러리처럼 상세한 설명은 홈페이지에서 보여 주는 편이 신뢰를 쌓기 좋고, 플레이스 정책 변화에 덜 의존할 수 있습니다. 두 채널을 연결하는 구조를 권합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "동물미용업 등록은 어디서 확인하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "동물미용업은 동물보호법에 따라 등록이 필요한 영업이며, 시설 기준과 준수사항은 관할 시·군·구청에서 안내합니다. 등록 요건과 교육, 요금표 게시 같은 세부 사항은 개정될 수 있으므로 영업 전과 정기적으로 관할 지자체에 확인하세요."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/pet-grooming-salon-homepage"
+  },
+  "headline": "애견미용실·펫살롱 홈페이지 제작, 보호자의 불안을 줄이고 예약으로 잇는 구조",
+  "description": "애견미용실·펫살롱 홈페이지 제작 전략을 정리했습니다. 견종·체중별 가격표, 비포·애프터 갤러리, 위생·안전 안내, 사전 상담 폼, 예약·취소 규정, 지역·견종 키워드 SEO와 동물미용업 등록 확인까지 다룹니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/pet-grooming-salon-homepage",
+  "inLanguage": "ko-KR",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://designcoolcoolcool.vercel.app/logo.png"
+    }
+  }
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="https://designcoolcoolcool.vercel.app/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+
+  <header class="post-hero">
+    <p class="post-eyebrow">애견미용·펫살롱</p>
+    <h1 class="post-title">애견미용실·펫살롱 홈페이지 제작, 보호자의 불안을 줄이고 예약으로 잇는 구조</h1>
+    <p class="post-byline">2026. 11. 04 · 이수연</p>
+  </header>
+
+  <article>
+    <p>애견미용실을 고르는 보호자는 가격표만 비교하지 않습니다. 사실상 <strong>"내 아이를 몇 시간 동안 맡겨도 되는 곳인가"</strong>를 판단합니다. 미용 결과 사진이 마음에 들어도, 위생이 어떤지, 겁 많은 아이를 어떻게 대하는지, 예민한 부위를 어떻게 다루는지 알 수 없다면 예약 버튼을 누르지 못합니다.</p>
+    <p>반려동물 업종 전반은 <a href="/blog/pet-veterinary-homepage">동물병원·펫샵·반려동물 서비스 홈페이지 제작 전략</a>에서, 진료 중심 업종은 <a href="/blog/veterinary-clinic-homepage">동물병원 홈페이지 제작 가이드</a>에서 다뤘습니다. 이 글은 그중에서도 <strong>미용 서비스 자체의 특성</strong>(견종·체중별 가격, 비포·애프터, 첫 방문 전 정보 수집, 재방문 구조)에 초점을 맞춥니다.</p>
+
+    <div class="toc" role="navigation" aria-label="목차">
+      <p class="toc-title">목차</p>
+      <ol>
+        <li><a href="#why">애견미용 홈페이지가 달라야 하는 이유</a></li>
+        <li><a href="#structure">홈페이지 핵심 구성</a></li>
+        <li><a href="#price">가격표, 숨기지 말고 기준을 보여 주세요</a></li>
+        <li><a href="#gallery">비포·애프터 갤러리 구성</a></li>
+        <li><a href="#trust">안심 케어 정보, 보호자의 불안을 먼저 풀어 주세요</a></li>
+        <li><a href="#visit">첫 방문 안내와 사전 상담 폼</a></li>
+        <li><a href="#booking">예약 시스템 선택</a></li>
+        <li><a href="#repeat">재방문과 후기 구조</a></li>
+        <li><a href="#seo">지역·견종 키워드 SEO</a></li>
+        <li><a href="#mistakes">자주 하는 실수</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ol>
+    </div>
+
+    <h2 id="why">1. 애견미용 홈페이지가 달라야 하는 이유</h2>
+    <p>애견미용은 사람 미용실과 비슷해 보이지만 다른 점이 많습니다.</p>
+    <ul>
+      <li><strong>고객이 두 명입니다.</strong> 결제하는 사람은 보호자지만, 서비스를 받는 쪽은 말을 못 하는 반려견입니다. 보호자는 아이가 편안했는지를 가장 궁금해합니다.</li>
+      <li><strong>가격이 하나로 정해지지 않습니다.</strong> 견종, 체중, 털 상태(엉킴·길이), 성격에 따라 소요 시간과 비용이 달라집니다. 가격을 숨기면 문의가 늘고, 대충 보여 주면 현장 분쟁이 생깁니다.</li>
+      <li><strong>재방문 주기가 있습니다.</strong> 털이 자라는 속도에 따라 대체로 한두 달 간격으로 다시 찾는 업종이라, 첫 방문 전환만큼 재방문 구조가 중요합니다.</li>
+      <li><strong>사진이 곧 증거입니다.</strong> 결과물 사진, 매장 위생 상태, 미용사의 모습이 신뢰를 좌우합니다.</li>
+    </ul>
+
+    <h2 id="structure">2. 홈페이지 핵심 구성</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>페이지·섹션</th><th>목적</th><th>담을 내용</th></tr></thead>
+        <tbody>
+          <tr><td>메인</td><td>첫 5초에 업종·지역·안심 포인트 전달</td><td>대표 비포·애프터, 지역명, 예약 버튼, 영업시간</td></tr>
+          <tr><td>미용 메뉴·가격</td><td>가격 불안 제거</td><td>견종·체중 기준표, 소요 시간, 추가요금 기준</td></tr>
+          <tr><td>스타일 갤러리</td><td>원하는 스타일 상상하게 하기</td><td>견종별 비포·애프터, 스타일 이름, 참고용 사진</td></tr>
+          <tr><td>안심 케어</td><td>맡겨도 되는 곳이라는 신뢰</td><td>위생·소독, 작업 방식, 응급 대응, 미용사 소개</td></tr>
+          <tr><td>첫 방문 안내</td><td>방문 전 불안·실수 방지</td><td>준비물, 접종 확인, 사전 고지 사항, 진행 순서</td></tr>
+          <tr><td>예약·상담</td><td>전환</td><td>사전 상담 폼, 예약 연동, 취소 규정, 카카오톡 문의</td></tr>
+          <tr><td>후기·소식</td><td>사회적 증거, 재방문 유도</td><td>보호자 후기, 휴무·이벤트 공지</td></tr>
+          <tr><td>오시는 길</td><td>방문 장벽 낮추기</td><td>주차, 대기 공간, 픽업 서비스 여부</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>페이지 흐름과 문의 전환의 기본 원리는 <a href="/blog/homepage-conversion-rate">홈페이지 문의 전환율 가이드</a>를 함께 참고하세요.</p>
+
+    <h2 id="price">3. 가격표, 숨기지 말고 기준을 보여 주세요</h2>
+    <p>"문의 주세요"만 적힌 가격 페이지는 보호자에게 부담입니다. 정확한 금액을 모두 정할 수 없더라도 <strong>가격이 어떤 기준으로 정해지는지</strong>를 보여 주면 충분히 신뢰를 얻습니다.</p>
+    <h3>견종·체중 기준표</h3>
+    <p>체중 구간별(예: 소형·중형·대형)이나 견종군별로 기본 금액을 보여 주고, "○○원부터"로 표기한다면 추가 요금이 붙는 조건을 바로 아래에 함께 적으세요. "부터" 표기만 있고 조건이 없으면 방문 후 가격 불만으로 이어지기 쉽습니다.</p>
+    <h3>추가요금이 생기는 경우 미리 공지</h3>
+    <ul>
+      <li>털 엉킴·뭉침이 심해 별도 작업이 필요한 경우</li>
+      <li>피부 상태나 특수 케어(약욕, 스파 등)가 추가되는 경우</li>
+      <li>미용 시간이 크게 늘어나는 예민한 성격이나 대형견</li>
+      <li>발톱·귀·항문낭 등 부분 케어를 추가하는 경우</li>
+    </ul>
+    <h3>용어는 풀어서 설명</h3>
+    <p>전체미용, 부분미용, 위생미용, 가위컷, 클리핑 같은 업계 용어는 처음 방문하는 보호자에게 낯섭니다. 메뉴마다 <strong>무엇을 포함하는지, 소요 시간이 얼마나 되는지</strong>를 한 줄씩 적어 두세요.</p>
+    <div class="callout"><p>동물미용업은 동물보호법상 등록 대상 영업이며, 영업장 내 요금표 게시 등 준수사항이 있습니다. 홈페이지의 가격 안내와 매장 요금표가 서로 다르면 신뢰와 민원 양쪽에서 불리하므로, 두 곳을 항상 같은 기준으로 관리하세요.</p></div>
+
+    <h2 id="gallery">4. 비포·애프터 갤러리 구성</h2>
+    <p>애견미용 홈페이지에서 가장 힘이 센 콘텐츠입니다. 다만 단순히 예쁜 사진을 모아 두는 것보다 <strong>보호자가 자기 아이를 대입해 볼 수 있도록</strong> 설계해야 합니다.</p>
+    <ul>
+      <li><strong>견종·크기 기준 분류</strong>: 푸들, 말티즈, 비숑, 시츄, 대형견 등으로 필터를 제공하면 원하는 사례를 빨리 찾습니다.</li>
+      <li><strong>스타일 이름 표기</strong>: 곰돌이컷, 테디베어컷 같은 흔히 쓰는 스타일명을 붙이면 보호자가 상담 때 그대로 요청할 수 있습니다.</li>
+      <li><strong>같은 구도로 비포·애프터</strong>: 각도와 조명을 맞추면 변화가 정직하게 전달됩니다. 과한 보정은 오히려 불신을 부릅니다.</li>
+      <li><strong>작업 과정 일부 공개</strong>: 목욕, 건조, 컷 장면이나 짧은 영상은 케어 방식을 믿게 해 줍니다.</li>
+      <li><strong>보호자 동의 확인</strong>: 반려견 사진을 게시할 때 보호자 동의를 받고, 보호자의 얼굴이나 개인정보가 함께 노출되지 않도록 주의하세요.</li>
+    </ul>
+    <p>이미지가 많은 갤러리는 로딩 속도에 직접 영향을 줍니다. WebP 변환과 크기 최적화는 <a href="/blog/homepage-image-optimization">홈페이지 이미지 최적화 가이드</a>를 따라 하시면 됩니다. 디자인 갤러리 구성은 <a href="/blog/nail-salon-homepage">네일샵 홈페이지</a>, 시술 포트폴리오와 담당자 소개 구조는 <a href="/blog/hair-salon-homepage">미용실·헤어샵 홈페이지</a>와 비슷한 원리가 적용됩니다.</p>
+
+    <h2 id="trust">5. 안심 케어 정보, 보호자의 불안을 먼저 풀어 주세요</h2>
+    <p>보호자가 가장 알고 싶은 것은 "우리 아이가 무섭거나 아프지 않았을까"입니다. 다음 정보를 별도 섹션으로 정리하세요.</p>
+    <ul>
+      <li><strong>위생·소독</strong>: 미용 도구 소독, 욕조·테이블 관리, 작업 공간과 대기 공간 구분 방식</li>
+      <li><strong>케어 원칙</strong>: 한 번에 몇 마리를 담당하는지, 대기 시간은 어떻게 관리하는지, 불안해하는 아이를 어떻게 달래는지</li>
+      <li><strong>건강 이상 대응</strong>: 미용 중 이상 징후가 보일 때 보호자에게 연락하는 기준과 제휴 동물병원 안내</li>
+      <li><strong>미용사 소개</strong>: 경력, 교육 이수, 전문 분야(소형견 스타일, 대형견, 노견 케어 등)</li>
+      <li><strong>등록·준수 사항</strong>: 영업 등록 여부와 요금표 등 법정 사항을 정직하게 안내</li>
+    </ul>
+    <p>"100% 안전", "스트레스 제로" 같은 과장 표현은 사고가 났을 때 오히려 분쟁의 근거가 됩니다. 실제로 하는 일을 구체적으로 적는 쪽이 설득력도 높습니다.</p>
+
+    <h2 id="visit">6. 첫 방문 안내와 사전 상담 폼</h2>
+    <p>애견미용은 미용 전에 알아야 할 정보가 많습니다. 이 정보를 <strong>예약 단계에서 미리 받으면</strong> 현장 지연과 오해가 크게 줄어듭니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>폼 항목</th><th>필요한 이유</th></tr></thead>
+        <tbody>
+          <tr><td>견종·나이·체중·성별(중성화 여부)</td><td>가격·소요 시간 산정, 작업 계획</td></tr>
+          <tr><td>마지막 미용 시기, 털 상태(엉킴 여부)</td><td>추가 작업 필요 여부 파악</td></tr>
+          <tr><td>피부·관절·심장 등 건강 이슈, 복용 약</td><td>미용 중 주의사항 파악</td></tr>
+          <tr><td>예방접종 상태</td><td>다른 반려견과 함께하는 공간의 위생 관리</td></tr>
+          <tr><td>성격·예민 부위(발, 귀, 얼굴, 드라이기 등)</td><td>접근 방식 결정, 입질 사고 예방</td></tr>
+          <tr><td>원하는 스타일, 참고 사진</td><td>상담 시간 단축, 결과 만족도 향상</td></tr>
+          <tr><td>방문 방식(직접 방문·픽업 여부), 연락처</td><td>일정 조율</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>폼에서 건강 정보 등 민감할 수 있는 내용을 받는다면 수집 목적과 보관 기간을 폼 하단에 안내하고, 개인정보처리방침과 연결하세요 (<a href="/blog/homepage-privacy-policy-terms-guide">개인정보처리방침·이용약관 가이드</a>).</p>
+    <h3>미리 알려야 할 운영 규정</h3>
+    <ul>
+      <li><strong>미용이 어렵거나 보류될 수 있는 경우</strong>: 건강상태 문제, 공격성이 심한 경우 등 진행이 어려울 수 있는 상황과 그때의 환불·대안 방침</li>
+      <li><strong>예약 변경·취소·노쇼 규정</strong>: 몇 시간 전까지 무료 변경이 가능한지, 노쇼 시 어떻게 처리하는지</li>
+      <li><strong>소요 시간과 픽업 시간</strong>: 견종·상태에 따라 달라지는 범위를 안내</li>
+      <li><strong>당일 준비</strong>: 식사·배변 권장 시간, 목줄·이동장, 접종 증명 여부</li>
+    </ul>
+
+    <h2 id="booking">7. 예약 시스템 선택</h2>
+    <p>미용 예약은 <strong>시간 단위 슬롯</strong>이고, 견종에 따라 소요 시간이 다르므로 단순 예약 캘린더로는 부족합니다. 네이버 예약, 카카오톡 채널, 자체 예약 위젯의 차이는 <a href="/blog/homepage-reservation-system-comparison">홈페이지 예약 시스템 비교 가이드</a>에서 정리했습니다. 소형견 위주 매장은 네이버 예약만으로 충분한 경우가 많고, 견종별 소요 시간 관리나 정기 고객 관리가 중요한 매장은 홈페이지에 사전 상담 폼을 두고 예약 시스템과 연결하는 구조가 안정적입니다. 상담 단계에는 카카오톡 채널 연결도 효과적이며, 설정 방법은 <a href="/blog/kakaotalk-channel-homepage-integration">카카오톡 채널 홈페이지 연동 가이드</a>에서 다뤘습니다.</p>
+
+    <h2 id="repeat">8. 재방문과 후기 구조</h2>
+    <ul>
+      <li><strong>다음 미용 시기 안내</strong>: 미용 후 "다음 방문 권장 시기"를 알려 주고, 시기가 다가오면 채널 메시지나 안내로 리마인드합니다.</li>
+      <li><strong>후기 요청 시점</strong>: 귀가 후 아이 사진을 공유하는 때가 가장 자연스럽습니다. 후기 작성은 강요하지 말고 편한 경로(플레이스, 홈페이지)를 안내하세요.</li>
+      <li><strong>소식·공지</strong>: 휴무, 시즌 케어(여름 단모 컷, 겨울 보습), 이벤트를 꾸준히 올리면 운영 중인 곳이라는 신호가 됩니다.</li>
+      <li><strong>고객 데이터 관리</strong>: 견종, 선호 스타일, 지난 미용 기록을 정리해 두면 상담이 빠르고 단골 만족도가 높아집니다. 개인정보 수집과 이용에 대한 동의는 반드시 확인하세요.</li>
+    </ul>
+
+    <h2 id="seo">9. 지역·견종 키워드 SEO</h2>
+    <p>애견미용은 "내 동네에서 가까운 곳"과 "우리 견종을 잘 하는 곳"이 핵심 검색 의도입니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>조합 공식</th><th>예시</th><th>알맞은 페이지</th></tr></thead>
+        <tbody>
+          <tr><td>지역 + 애견미용</td><td>○○동 애견미용, ○○역 강아지 미용</td><td>메인·오시는 길</td></tr>
+          <tr><td>견종 + 미용·스타일</td><td>푸들 미용, 비숑 컷 스타일</td><td>견종별 갤러리·가이드 글</td></tr>
+          <tr><td>상황 + 미용</td><td>노견 미용, 겁 많은 강아지 미용, 대형견 미용</td><td>안심 케어·FAQ</td></tr>
+          <tr><td>가격 + 미용</td><td>애견미용 가격, 소형견 미용 비용</td><td>가격 안내</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>실제 검색량과 경쟁 정도는 <a href="/blog/homepage-keyword-research-guide">홈페이지 키워드 리서치 가이드</a>의 방법으로 확인하세요. 지도 검색 노출은 홈페이지만으로 해결되지 않으므로 <a href="/blog/local-seo-naver-place-google-business-guide">로컬 SEO 가이드</a>의 플레이스 등록·NAP 일관성 점검을 함께 진행해야 합니다. "견종별 미용 주기", "털 엉킴 관리법" 같은 정보 글을 쌓으면 장기적으로 검색 유입과 신뢰를 동시에 얻을 수 있습니다 (<a href="/blog/homepage-content-strategy">콘텐츠 전략</a>).</p>
+
+    <h2 id="mistakes">10. 자주 하는 실수</h2>
+    <ul>
+      <li><strong>가격을 아예 숨기기</strong>: 문의 장벽이 높아지고 비교에서 탈락합니다.</li>
+      <li><strong>결과 사진만 있고 위생·케어 정보가 없음</strong>: 예쁘지만 믿기 어려운 곳으로 보입니다.</li>
+      <li><strong>견종 정보 없이 예약받기</strong>: 현장에서 추가 요금·시간 분쟁이 생깁니다.</li>
+      <li><strong>보호자 동의 없이 반려견·보호자 사진 게시</strong>: 개인정보 문제로 번질 수 있습니다.</li>
+      <li><strong>플레이스와 홈페이지 정보 불일치</strong>: 영업시간·가격이 다르면 신뢰를 잃습니다.</li>
+      <li><strong>모바일 미흡</strong>: 방문자 대부분이 모바일입니다. 갤러리 속도와 예약 버튼 위치를 모바일 기준으로 점검하세요 (<a href="/blog/homepage-mobile-optimization">모바일 최적화 가이드</a>).</li>
+    </ul>
+
+    <h2 id="faq">11. 자주 묻는 질문</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">애견미용실 홈페이지에 가격을 꼭 공개해야 하나요?</h3>
+      <p>정해진 규칙은 없지만 공개하는 쪽이 유리합니다. 견종·체중 기준표와 추가요금 조건을 함께 보여 주면 불필요한 문의가 줄고 방문 후 분쟁도 예방됩니다. 동물미용업은 영업장 내 요금표 게시 등 준수사항이 있으므로 홈페이지와 매장 안내를 같은 기준으로 관리하세요.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">비포·애프터 사진은 보호자에게 동의를 받아야 하나요?</h3>
+      <p>네, 동의를 받는 것을 권장합니다. 반려견 사진에는 보호자의 얼굴, 목소리, 위치 등이 함께 담길 수 있어 개인정보 문제가 될 수 있습니다. 예약·접수 단계에서 사진 게시 동의 여부를 체크 항목으로 받아 두면 편리합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">홈페이지 없이 네이버 플레이스만으로도 충분하지 않나요?</h3>
+      <p>초기 방문 유도에는 플레이스가 강력합니다. 다만 가격 기준, 안심 케어, 스타일 갤러리처럼 상세한 설명은 홈페이지에서 보여 주는 편이 신뢰를 쌓기 좋고, 플레이스 정책 변화에 덜 의존할 수 있습니다. 두 채널을 연결하는 구조를 권합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">동물미용업 등록은 어디서 확인하나요?</h3>
+      <p>동물미용업은 동물보호법에 따라 등록이 필요한 영업이며, 시설 기준과 준수사항은 관할 시·군·구청에서 안내합니다. 등록 요건과 교육, 요금표 게시 같은 세부 사항은 개정될 수 있으므로 영업 전과 정기적으로 관할 지자체에 확인하세요.</p>
+    </div>
+
+    <h2>정리하며</h2>
+    <p>애견미용 홈페이지의 목표는 예쁜 결과물을 자랑하는 데서 끝나지 않고, <strong>"이곳이라면 우리 아이를 맡겨도 되겠다"는 확신</strong>을 만드는 것입니다. 가격 기준을 투명하게 밝히고, 비포·애프터와 케어 방식을 보여 주고, 사전 상담 폼으로 정보를 미리 받으세요. 그러면 예약은 더 쉬워지고 현장의 오해는 줄어듭니다.</p>
+
+    <div class="cta-box">
+      <p><em>보호자가 안심하고 예약하는 홈페이지,</em><br>애견미용실에 맞는 구조로 함께 설계해 드립니다</p>
+      <a class="cta-btn" href="https://designcoolcoolcool.vercel.app/contact">프로젝트 문의 →</a>
+    </div>
+
+    <a class="back-link" href="https://designcoolcoolcool.vercel.app/blog">← 다른 포스팅 보러가기</a>
+  </article>
+
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank" rel="noopener">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

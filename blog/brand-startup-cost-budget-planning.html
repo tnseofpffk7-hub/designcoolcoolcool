@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>브랜드 창업 비용 예산표 짜는 법, 손익분기 계산까지 | 디자인 쿨쿨쿨</title>
+  <meta name="description" content="브랜드 창업 비용을 손익분기부터 계산하고, 홈페이지 예산을 아끼면 왜 두 번 드는지 정리했습니다. 단위 경제 계산 예시, 예산 시나리오, 전문가에게 맡기는 편이 나은 이유까지 다룹니다." />
+  <meta name="keywords" content="브랜드 창업 비용, 화장품 창업, 브랜드 창업, 브랜드 런칭, 창업 예산, 손익분기" />
+  <meta property="og:title" content="브랜드 창업 비용 예산표 짜는 법, 손익분기 계산까지 | 디자인 쿨쿨쿨" />
+  <meta property="og:description" content="브랜드 창업 비용을 손익분기부터 계산하고, 홈페이지 예산을 아끼면 왜 두 번 드는지 정리했습니다. 단위 경제 계산 예시, 예산 시나리오, 전문가에게 맡기는 편이 나은 이유까지 다룹니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://designcoolcoolcool.vercel.app/blog/brand-startup-cost-budget-planning" />
+  <meta property="article:published_time" content="2026-11-16" />
+  <meta property="article:author" content="이수연" />
+  <link rel="canonical" href="https://designcoolcoolcool.vercel.app/blog/brand-startup-cost-budget-planning" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0e0e0e; --white: #f5f4f0; --grey: #2a2825; --accent: #c8b89a; --line: #e2e0da; --font-display: 'DM Serif Display', Georgia, serif; --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav-logo { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; text-decoration: none; color: var(--black); }
+    .nav-cta { text-decoration: none; color: var(--black); background: var(--white); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 22px; border: 1px solid var(--black); border-radius: 10px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .article-wrap { padding: 140px 48px 120px; max-width: 800px; margin: 0 auto; }
+    .article-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); margin-bottom: 24px; display: flex; align-items: center; gap: 20px; }
+    .article-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--line); }
+    .article-title { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 32px; }
+    .article-lead { font-size: 17px; color: var(--grey); line-height: 1.85; max-width: 640px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .article-body { max-width: 680px; }
+    .article-body p { color: var(--grey); font-size: 15px; line-height: 1.9; margin-bottom: 24px; }
+    .article-body strong { color: var(--black); font-weight: 500; }
+    .article-body a { color: var(--black); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .article-body h2 { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); letter-spacing: -0.02em; line-height: 1.2; margin: 64px 0 20px; color: var(--black); }
+    .article-body h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); margin: 36px 0 14px; }
+    .toc { border: 1px solid var(--line); padding: 24px 28px; margin: 0 0 48px; }
+    .toc p { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; font-size: 14px; color: var(--grey); line-height: 2; }
+    .toc a { color: var(--grey); text-decoration: none; }
+    .toc a:hover { color: var(--black); }
+    .checklist { list-style: none; padding: 0; margin: 20px 0 32px; border-top: 1px solid var(--line); }
+    .checklist li { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.6; }
+    .checklist li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 13px; }
+    .timeline { list-style: none; padding: 0; margin: 24px 0 32px; border-top: 1px solid var(--line); }
+    .timeline li { display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--grey); line-height: 1.7; }
+    .timeline .when { font-family: var(--font-display); font-size: 17px; color: var(--black); }
+    .callout { border-left: 2px solid var(--accent); padding: 20px 28px; margin: 32px 0; background: rgba(200,184,154,0.06); }
+    .callout p { font-size: 14px; color: var(--grey); line-height: 1.8; margin-bottom: 0; }
+    .section-num { font-family: var(--font-display); font-size: 80px; color: var(--line); line-height: 1; margin-bottom: -12px; letter-spacing: -0.04em; }
+    .faq-item { border-top: 1px solid var(--line); padding: 22px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-item h3 { text-transform: none; letter-spacing: 0; font-size: 15px; margin: 0 0 10px; }
+    .faq-item p { margin-bottom: 0; font-size: 14px; }
+    .article-cta { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .article-cta p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; line-height: 1.3; color: var(--black); margin: 0; }
+    .article-cta p em { font-style: italic; color: var(--grey); }
+    .cta-btn { display: inline-block; white-space: nowrap; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--black); padding: 16px 32px; transition: background 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: var(--grey); }
+    section.related { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--line); }
+    .related-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+    .related-item { text-decoration: none; color: inherit; padding: 24px 0; border-top: 1px solid var(--line); }
+    .related-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .related-title { font-family: var(--font-display); font-size: 17px; letter-spacing: -0.01em; line-height: 1.3; color: var(--black); transition: color 0.2s; }
+    .related-item:hover .related-title { color: var(--grey); }
+    footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; border-top: 1px solid var(--line); font-size: 12px; color: var(--grey); }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a { text-decoration: none; color: var(--grey); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    @media (max-width: 900px) { nav { padding: 20px 24px; } .article-wrap { padding: 120px 24px 80px; } .timeline li { grid-template-columns: 1fr; gap: 6px; } .article-cta { flex-direction: column; align-items: flex-start; } footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "브랜드 창업 비용 예산표 짜는 법, 손익분기부터 거꾸로 계산하는 런칭 자금 계획",
+  "description": "브랜드 창업 비용을 손익분기부터 계산하고, 홈페이지 예산을 아끼면 왜 두 번 드는지 정리했습니다. 단위 경제 계산 예시, 예산 시나리오, 전문가에게 맡기는 편이 나은 이유까지 다룹니다.",
+  "url": "https://designcoolcoolcool.vercel.app/blog/brand-startup-cost-budget-planning",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://designcoolcoolcool.vercel.app/blog/brand-startup-cost-budget-planning"
+  },
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "author": {
+    "@type": "Person",
+    "name": "이수연"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "디자인쿨쿨쿨",
+    "url": "https://designcoolcoolcool.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://framerusercontent.com/images/0voPhLHRZRyrHxyM5oHIPWIj90.png"
+    }
+  },
+  "articleSection": "브랜드 창업 비용",
+  "keywords": "브랜드 창업 비용, 화장품 창업, 브랜드 창업, 브랜드 런칭, 창업 예산, 손익분기",
+  "inLanguage": "ko-KR"
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">디자인 쿨쿨쿨</a>
+    <a href="/contact" class="nav-cta">무료 상담하기</a>
+  </nav>
+  <article class="article-wrap">
+    <div class="article-eyebrow"><span>브랜드 창업 비용</span><span>2026. 11. 16</span></div>
+    <h1 class="article-title">브랜드 창업 비용 예산표,<br><em>손익분기부터 거꾸로 계산하기</em></h1>
+    <p class="article-lead">브랜드 창업 비용을 계산하다 보면 홈페이지가 ‘아낄 수 있는 항목’처럼 보이기 쉽습니다. 하지만 홈페이지는 광고비의 효율과 재작업 비용을 좌우하는 항목입니다. 어디서 아끼고 어디에 써야 손익분기가 빨라지는지 예산표와 함께 정리했습니다.</p>
+    <div class="article-body">
+      <div class="toc"><p>목차</p><ol><li><a href="#structure">총비용보다 먼저 볼 것, 한 개 팔 때 남는 돈</a></li><li><a href="#example">손익분기 계산 예시 (가상 수치)</a></li><li><a href="#scenario">예산 시나리오 3가지</a></li><li><a href="#homepage">홈페이지 예산은 어디서 확보할까</a></li><li><a href="#hidden">놓치기 쉬운 숨은 비용</a></li><li><a href="#cash">런칭 후 6개월 현금 흐름 점검</a></li><li><a href="#expert">홈페이지 예산을 아끼면, 왜 결국 두 번 드는가</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></div>
+      
+      <p>브랜드 창업 비용을 알아보다 보면 사례마다 금액이 너무 달라 오히려 혼란스럽습니다. 제품 종류, 생산 방식, 판매 채널이 모두 다르기 때문입니다. 그래서 이 글은 특정 금액을 제시하지 않고, <strong>내 브랜드의 예산표를 직접 만드는 방법</strong>을 안내합니다. 항목 구성과 홈페이지 시작 시점은 <a href="/blog/cosmetics-brand-launch-homepage-guide">화장품 브랜드 창업·런칭 가이드</a>에서 먼저 정리했으니, 이 글에서는 계산과 시나리오에 집중합니다.</p>
+
+      <div class="section-num">01</div>
+      <h2 id="structure">총비용보다 먼저 볼 것, 한 개 팔 때 남는 돈</h2>
+      <p>창업 비용은 크게 <strong>초기에 한 번 드는 돈(고정비)</strong>과 <strong>한 개 팔 때마다 드는 돈(변동비)</strong>으로 나뉩니다. 고정비는 개발·촬영·홈페이지 제작·인허가처럼 판매량과 무관하게 먼저 나가는 돈이고, 변동비는 제조원가·수수료·배송비·광고비처럼 주문이 생길 때마다 붙는 돈입니다. 이 둘을 분리해야 ‘몇 개를 팔아야 본전인지’가 계산됩니다.</p>
+
+      <div class="section-num">02</div>
+      <h2 id="example">손익분기 계산 예시 (가상 수치)</h2>
+      <p>아래 수치는 이해를 돕기 위한 <strong>가상의 예시</strong>이며 실제 업종·업체별 비용과 다릅니다. 본인 수치를 넣어 같은 방식으로 계산해 보세요.</p>
+      <ul class="timeline">
+        <li><span class="when">판매가</span><span>30,000원</span></li>
+        <li><span class="when">제조원가</span><span>−7,500원 (용기·포장 포함)</span></li>
+        <li><span class="when">수수료</span><span>−1,500원 (결제·마켓 수수료 합산 가정)</span></li>
+        <li><span class="when">배송·포장</span><span>−3,000원</span></li>
+        <li><span class="when">광고·체험단</span><span>−8,000원 (주문 1건을 얻기 위한 평균 비용 가정)</span></li>
+        <li><span class="when">1개당 남는 돈</span><span><strong>10,000원</strong> (이를 ‘공헌이익’이라 부릅니다)</span></li>
+      </ul>
+      <p>이 브랜드의 초기 고정비를 3,000만 원으로 가정하면, 손익분기 판매량은 <strong>3,000만 원 ÷ 1만 원 = 3,000개</strong>입니다. 여기서 두 가지를 확인할 수 있습니다. 첫째, 광고비가 8,000원에서 12,000원으로 오르면 남는 돈이 6,000원으로 줄어 손익분기가 5,000개로 늘어납니다. 둘째, 고정비를 줄이는 것보다 <strong>1개당 남는 돈을 지키는 것</strong>이 훨씬 큰 영향을 줍니다.</p>
+
+      <div class="callout">
+        <p>예산표를 만들 때 가장 위험한 가정은 ‘광고비가 거의 안 든다’입니다. 신규 브랜드는 인지도가 없어 초기에는 주문당 광고비가 높게 나오는 것이 일반적입니다. 보수적인 숫자로 먼저 계산해 보세요.</p>
+      </div>
+
+      <div class="section-num">03</div>
+      <h2 id="scenario">예산 시나리오 3가지</h2>
+      <p>같은 브랜드라도 어디까지 한 번에 하느냐에 따라 예산 구조가 달라집니다. 정답은 없으며, 내 자금 여력과 검증 단계에 맞는 쪽을 고르면 됩니다.</p>
+      <h3>최소 검증형</h3>
+      <p>소량 생산으로 시장 반응부터 확인합니다. 홈페이지는 티저·브랜드 소개 중심의 가벼운 사이트로 두고, 판매는 스마트스토어 같은 기존 마켓을 활용합니다. 자금 부담이 적은 대신 브랜드 데이터는 천천히 쌓입니다.</p>
+      <h3>표준 런칭형</h3>
+      <p>자체 브랜드 사이트와 마켓을 병행합니다. 촬영·상세페이지에 비교적 투자하고, 사전예약으로 대기자를 모은 뒤 오픈합니다. 대부분의 신규 브랜드가 현실적으로 고려하는 구성입니다.</p>
+      <h3>확장형</h3>
+      <p>다채널 입점, 해외 판매, 정기구독까지 처음부터 설계합니다. 초기 투자가 크고 재고 위험도 커서 자금과 운영 인력이 충분할 때에 맞습니다. 해외 판매를 고려한다면 <a href="/blog/cafe24-vs-shopify">카페24 vs 쇼피파이</a>를 함께 검토하세요.</p>
+
+      <div class="section-num">04</div>
+      <h2 id="homepage">홈페이지 예산은 어디서 확보할까</h2>
+      <p>홈페이지는 고정비의 일부이지만, 단순 지출이 아니라 판매 채널이자 광고 효율에 영향을 주는 자산입니다. 같은 광고비를 써도 랜딩 품질에 따라 전환율이 달라지면 변동비 구조가 바뀌기 때문입니다.</p>
+      <ul class="checklist">
+        <li>제작비만 보지 말고 촬영·카피·결제 연동·수정 횟수까지 견적 범위를 확인한다 (<a href="/blog/homepage-quote-estimate-guide">견적서 확인 기준</a>)</li>
+        <li>유형별 가격 감을 잡고 싶다면 <a href="/blog/homepage-cost-guide-2026">홈페이지 제작 비용 2026</a>을 참고한다</li>
+        <li>예산이 적을수록 기능을 줄이고 콘텐츠 품질을 지킨다 (<a href="/blog/small-business-homepage">소규모 사업자 홈페이지 제작</a>)</li>
+        <li>호스팅·도메인·유지보수 같은 연간 운영비를 따로 잡는다 (<a href="/blog/homepage-maintenance">홈페이지 유지보수</a>)</li>
+      </ul>
+
+      <div class="section-num">05</div>
+      <h2 id="hidden">놓치기 쉬운 숨은 비용</h2>
+      <ul class="checklist">
+        <li>샘플 수정 반복으로 늘어나는 개발 기간과 비용</li>
+        <li>초도 물량이 팔리지 않을 때의 재고 부담과 폐기 비용</li>
+        <li>반품·교환·불량 대응 비용과 CS 인력</li>
+        <li>촬영 결과가 마음에 들지 않아 하는 재촬영</li>
+        <li>효과 없는 광고 테스트에 소진되는 예산</li>
+        <li>결제 수수료, 호스팅·도메인 갱신 같은 반복 비용</li>
+      </ul>
+
+      <div class="section-num">06</div>
+      <h2 id="cash">런칭 후 6개월 현금 흐름 점검</h2>
+      <p>예산표가 초기 지출만 다루면 반쪽입니다. 런칭 후에는 매출이 들어오기까지 시차가 있고, 재주문 자금이 먼저 필요해지는 시점이 옵니다. 아래 세 가지를 미리 확인해 두세요.</p>
+      <ul class="checklist">
+        <li>재주문(2차 생산)에 필요한 자금을 언제까지 확보해야 하는가</li>
+        <li>매출이 예상의 절반일 때도 3개월을 버틸 수 있는가</li>
+        <li>광고비를 줄여야 하는 기준(주문당 광고비 상한)을 정해 두었는가</li>
+      </ul>
+      <p>스타트업 관점의 채널 설계는 <a href="/blog/startup-homepage">스타트업 홈페이지 제작</a>, 판매 채널별 수수료 비교는 <a href="/blog/smartstore-vs-selfmall">스마트스토어 vs 자체 쇼핑몰</a>에서 이어서 볼 수 있습니다.</p>
+
+      <div class="section-num">07</div>
+      <h2 id="expert">홈페이지 예산을 아끼면, 왜 결국 두 번 드는가</h2>
+      <p>위 계산에서 확인했듯 브랜드 창업의 수익은 <strong>1개당 남는 돈</strong>이 좌우합니다. 그런데 이 숫자를 가장 크게 흔드는 것이 광고비이고, 광고비 효율은 방문자가 도착하는 랜딩과 홈페이지의 품질에 따라 달라집니다. 같은 광고비로 구매 전환이 두 배가 되면 주문당 광고비는 절반이 됩니다. 홈페이지는 고정비이면서 동시에 변동비를 바꾸는 항목인 셈입니다.</p>
+      <h3>싸게 해결하려다 두 번 드는 비용</h3>
+      <ul class="checklist">
+        <li>템플릿·AI로 급하게 만든 뒤 브랜드와 맞지 않아 재제작 (<a href="/blog/free-template-homepage-rebuild-cycle">1년 안에 다시 만들게 되는 이유</a>)</li>
+        <li>직접 제작하느라 대표의 시간이 제품·영업에 쓰이지 못하는 기회비용 (<a href="/blog/nocode-vs-professional-homepage">노코드 직접 제작 vs 전문가</a>)</li>
+        <li>기능은 많은데 브랜드 톤이 흐려 광고 전환이 낮은 홈페이지</li>
+        <li>견적 범위를 몰라 촬영·결제·수정이 추가 비용으로 돌아오는 경우</li>
+      </ul>
+      <p>그래서 예산이 빠듯할수록 <strong>‘싸게 한 번에’보다 ‘작게 시작해서 이어 붙일 수 있는 구조’</strong>가 낫습니다. 기획 단계에서 전문가와 단계별 범위(티저 → 정식 → 확장)를 나누어 잡으면, 지금 쓸 예산과 나중에 쓸 예산이 분리되어 초기 부담은 줄고 재작업은 없어집니다.</p>
+      <h3>예산 상담은 기획 단계일수록 효과가 큽니다</h3>
+      <p>제작 방식별 가격 감은 <a href="/blog/homepage-cost-guide-2026">홈페이지 제작 비용 2026</a>에서 볼 수 있지만, 내 브랜드에 맞는 범위는 기획을 같이 해봐야 정해집니다. 견적서를 받는 순간 이미 방향이 굳어져 있기 때문에, 견적 전에 목적·톤·확장 계획을 정리해 주는 파트너를 만나는 것이 안전합니다.</p>
+      <p>다만 모든 경우에 맡겨야 하는 것은 아닙니다. 출시일 알림만 받는 한 장짜리 티저 페이지처럼 범위가 작고 나중에 버려도 되는 페이지라면 직접 만드는 것도 방법입니다. 이 글이 말하는 것은 <strong>브랜드의 얼굴이 되고, 오래 쓰고, 매출과 연결되는 정식 홈페이지</strong>입니다.</p>
+
+      <h2 id="faq">자주 묻는 질문</h2>
+      <div class="faq-item"><h3>브랜드 창업 예산이 적을 때 홈페이지는 직접 만드는 게 낫지 않나요?</h3><p>범위가 작은 티저 페이지는 직접 만들어도 됩니다. 다만 정식 홈페이지를 저가·직접 제작으로 해결하면 브랜드와 어긋나 재제작으로 이어지는 경우가 많습니다. 예산이 적을수록 단계별로 범위를 나누어 전문가와 설계하는 편이 총비용을 줄입니다.</p></div><div class="faq-item"><h3>브랜드 창업 비용은 보통 얼마나 드나요?</h3><p>제품 종류, 생산 방식, 판매 채널에 따라 편차가 매우 커서 하나의 금액으로 말하기 어렵습니다. 고정비와 변동비를 나누고 손익분기 판매량을 계산하는 방식으로 내 브랜드의 예산표를 직접 만드는 것이 정확합니다.</p></div><div class="faq-item"><h3>손익분기점은 어떻게 계산하나요?</h3><p>초기 고정비를 1개당 남는 돈(판매가에서 제조원가·수수료·배송비·광고비를 뺀 금액)으로 나누면 됩니다. 광고비를 보수적으로 잡을수록 현실에 가까운 결과가 나옵니다.</p></div><div class="faq-item"><h3>홈페이지 제작비는 창업 예산의 몇 퍼센트가 적당한가요?</h3><p>정해진 비율은 없습니다. 판매 채널 전략에 따라 달라지므로 제작비뿐 아니라 촬영·상세페이지와 연간 운영비까지 포함해 판매 계획에 맞는 범위로 정하는 것이 좋습니다.</p></div><div class="faq-item"><h3>예산이 적으면 홈페이지를 나중에 만들어도 되나요?</h3><p>초기에는 티저 페이지와 기존 마켓으로 시작하고, 매출이 생긴 뒤 자체몰을 확장하는 방법이 있습니다. 다만 도메인과 브랜드 정보 페이지는 미리 확보해 두는 것을 권합니다.</p></div>
+    </div>
+    <div class="article-cta">
+      <p>예산에 맞는 브랜드 홈페이지,<br><em>기획 단계부터 같이 정리해볼까요?</em></p>
+      <a href="/#contact" class="cta-btn">예산 상담하기 →</a>
+    </div>
+    <section class="related" aria-label="관련 포스팅">
+      <p class="related-label">관련 포스팅</p>
+      <div class="related-grid">
+        <a href="/blog/cosmetics-brand-launch-homepage-guide" class="related-item"><p class="related-tag">런칭 가이드</p><p class="related-title">화장품 브랜드 창업·런칭 가이드, 홈페이지는 언제 얼마나 준비해야 할까</p></a>
+        <a href="/blog/homepage-cost-guide-2026" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;"><p class="related-tag">홈페이지 제작 비용</p><p class="related-title">홈페이지 제작 비용 2026, 유형별 가격 완벽 정리</p></a>
+        <a href="/blog/smartstore-vs-selfmall" class="related-item" style="border-left:1px solid var(--line);padding-left:32px;"><p class="related-tag">쇼핑몰</p><p class="related-title">네이버 스마트스토어 vs 자체 쇼핑몰, 무엇이 내게 맞을까</p></a>
+        
+      </div>
+    </section>
+  </article>
+  <footer>
+    <p>© 2026 Lee Sooyeon. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://www.behance.net/47e25c3c" target="_blank">Behance</a></li>
+      <li><a href="https://www.instagram.com/designcoolcoolcool" target="_blank">Instagram</a></li>
+      <li><a href="mailto:jpgpngwebp@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "브랜드 창업 예산이 적을 때 홈페이지는 직접 만드는 게 낫지 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "범위가 작은 티저 페이지는 직접 만들어도 됩니다. 다만 정식 홈페이지를 저가·직접 제작으로 해결하면 브랜드와 어긋나 재제작으로 이어지는 경우가 많습니다. 예산이 적을수록 단계별로 범위를 나누어 전문가와 설계하는 편이 총비용을 줄입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "브랜드 창업 비용은 보통 얼마나 드나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제품 종류, 생산 방식, 판매 채널에 따라 편차가 매우 커서 하나의 금액으로 말하기 어렵습니다. 고정비와 변동비를 나누고 손익분기 판매량을 계산하는 방식으로 내 브랜드의 예산표를 직접 만드는 것이 정확합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "손익분기점은 어떻게 계산하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "초기 고정비를 1개당 남는 돈(판매가에서 제조원가·수수료·배송비·광고비를 뺀 금액)으로 나누면 됩니다. 광고비를 보수적으로 잡을수록 현실에 가까운 결과가 나옵니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "홈페이지 제작비는 창업 예산의 몇 퍼센트가 적당한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "정해진 비율은 없습니다. 판매 채널 전략에 따라 달라지므로 제작비뿐 아니라 촬영·상세페이지와 연간 운영비까지 포함해 판매 계획에 맞는 범위로 정하는 것이 좋습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "예산이 적으면 홈페이지를 나중에 만들어도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "초기에는 티저 페이지와 기존 마켓으로 시작하고, 매출이 생긴 뒤 자체몰을 확장하는 방법이 있습니다. 다만 도메인과 브랜드 정보 페이지는 미리 확보해 두는 것을 권합니다."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

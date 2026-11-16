@@ -3,19 +3,49 @@
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-11-04) -->
+  <!-- 신규 포스팅 (2026-11-16) -->
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/brand-launch-presale-landing-page-guide</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/brand-startup-cost-budget-planning</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/brand-naming-domain-trademark-checklist</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/cosmetics-brand-launch-homepage-guide</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 기존 포스팅 -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/multilingual-homepage-hreflang-guide</loc>
@@ -38,10 +68,22 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-10-28) -->
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/naver-blog-vs-homepage-blog-strategy</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-keyword-research-guide</loc>
+    <loc>https://designcoolcoolcool.vercel.app/blog/backlink-strategy-guide</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/core-web-vitals-guide</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -55,27 +97,11 @@
   </url>
 
   <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/core-web-vitals-guide</loc>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-keyword-research-guide</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/backlink-strategy-guide</loc>
-    <lastmod>2026-10-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/naver-blog-vs-homepage-blog-strategy</loc>
-    <lastmod>2026-10-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 신규 포스팅 (2026-10-12) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/homepage-launch-checklist</loc>
@@ -112,16 +138,12 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-10-08) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/naver-search-advisor-seo-guide</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-10-01 ~ 2026-09-26) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/homepage-quote-estimate-guide</loc>
@@ -157,8 +179,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-09-23) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/schema-markup-seo-guide</loc>
@@ -202,16 +222,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-09-13) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/cafe24-vs-shopify</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-09-12) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/homepage-web-accessibility-guide</loc>
@@ -248,16 +264,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-09-11) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/webzine-cms-homepage-guide</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-09-10) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/geo-marketing-guide</loc>
@@ -279,8 +291,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-09-02) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/study-cafe-homepage</loc>
@@ -317,16 +327,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-09-01) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/homepage-reservation-system-comparison</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-08-21) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/brand-homepage-guide-summary</loc>
@@ -356,16 +362,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-08-20) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/ai-free-homepage-guide-summary</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-08-19 ~ 2026-08-18) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/free-homepage-builder-hidden-costs</loc>
@@ -402,16 +404,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-08-17) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/ai-homepage-vs-professional-designer</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-08-14) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/photo-studio-homepage</loc>
@@ -469,8 +467,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-08-13 ~ 2026-08-11) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/hair-salon-homepage</loc>
     <lastmod>2026-08-13</lastmod>
@@ -526,8 +522,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-08-11 ~ 2026-08-08) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/homepage-renewal-seo-ranking</loc>
@@ -585,8 +579,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-08-06 ~ 2026-08-01) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/law-firm-homepage</loc>
     <lastmod>2026-08-06</lastmod>
@@ -643,7 +635,54 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-05-21) -->
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/hospital-homepage-cost</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/corporate-homepage</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-cost-guide-2026</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-making-agency</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/landing-page-design</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/responsive-homepage</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://designcoolcoolcool.vercel.app/blog/website-making-guide</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/nonprofit-social-enterprise-homepage</loc>
@@ -672,8 +711,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-05-20) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/homepage-conversion-rate</loc>
@@ -717,16 +754,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 신규 포스팅 (2026-05-19) -->
-
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/manufacturing-b2b-homepage</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 신규 포스팅 (2026-05-15) -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/clinic-hospital-homepage</loc>
@@ -776,8 +809,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 기존 포스팅 -->
 
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/online-class-homepage</loc>
@@ -1027,57 +1058,6 @@
   <url>
     <loc>https://designcoolcoolcool.vercel.app/blog/website-cost</loc>
     <lastmod>2026-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 누락 보충 (index.html에는 있으나 기존 sitemap에 없던 2026-06-11 포스팅) -->
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/hospital-homepage-cost</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/corporate-homepage</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-cost-guide-2026</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/homepage-making-agency</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/landing-page-design</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/responsive-homepage</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://designcoolcoolcool.vercel.app/blog/website-making-guide</loc>
-    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

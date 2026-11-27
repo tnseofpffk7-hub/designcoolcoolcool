@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://designcoolcoolcool.vercel.app/sitemap.xml
+Sitemap: https://designcoolcoolcool.com/sitemap.xml

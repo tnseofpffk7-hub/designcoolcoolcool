@@ -19,4 +19,4 @@
     { "source": "/page", "destination": "/blog", "permanent": true },
     { "source": "/works", "destination": "/", "permanent": true },
     { "source": "/styles", "destination": "/", "permanent": true },
-    { "source": "/contact", "destination": "/",
+    { "source": "/contact", "destination": "/", "permanent": true },
